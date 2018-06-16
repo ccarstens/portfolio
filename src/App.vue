@@ -14,7 +14,7 @@ export default {
     data () {
         return {
             play: true,
-            src: '../assets/scrollcast_1.mp4'
+            src: 'assets/scrollcast_1.mp4'
         }
     },
     methods: {

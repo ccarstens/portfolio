@@ -1,6 +1,7 @@
 <template>
-    <video v-on:load="init" :src="srcUrl"></video>
-
+    <video @load="init" autoplay>
+        <source v-if="srcUrl" :src="absoluteSrcUrl">
+    </video>
 </template>
 
 <script>
@@ -12,7 +13,7 @@ export default {
     ],
     data () {
         return {
-            srcUrl: ''
+            srcUrl: undefined,
         }
     },
     created () {
@@ -20,8 +21,13 @@ export default {
         this.srcUrl = this.$props.src
     },
     mounted () {
+        this.$el.load()
         this.updatePlay(this.$props.play)
-        console.log(this.$el)
+    },
+    computed: {
+        absoluteSrcUrl(){
+            return require('../' + this.srcUrl)
+        }
     },
     methods: {
         init () {
@@ -30,9 +36,6 @@ export default {
         updatePlay (play) {
             if(play) this.$el.play()
             else this.$el.pause()
-        },
-        changeSource(){
-            this.srcUrl = '../assets/scrollcast_1.mp4'
         }
     },
     watch: {
