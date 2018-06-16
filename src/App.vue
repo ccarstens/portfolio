@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-      <ProjectElement :content="projectContent"/>
-    <!--<VideoItem :play="play" :src="src"></VideoItem>-->
+      <ProjectElement v-for="project in projects" :content="project"/>
+
   </div>
 </template>
 
@@ -13,35 +13,48 @@ export default {
     name: 'App',
     data () {
         return {
-            play: true,
-            src: 'assets/scrollcast_1.mp4',
-            projectContent: {
-                title: 'EEE',
-                year: 2016,
-                description: 'fashion magazine that uses verses of a poem generated using <i>pattern</i> an NLP library',
-                url: 'http://goetze.xyz',
-                globalAudio: {
-                   src: 'assets/audio.mp3'
-                },
-                media: [
-                    {
-                        src: 'assets/01_EEE_CORNELIUS_CARSTENS.jpg'
+
+            projects: [
+                {
+                    title: 'EEE',
+                    year: 2016,
+                    description: 'fashion magazine that uses verses of a poem generated using <i>pattern</i> an NLP library',
+                    url: 'http://goetze.xyz',
+                    globalAudio: {
+                        src: 'assets/audio.mp3'
                     },
-                    {
-                        src: 'assets/scrollcast_1.mp4'
-                    }
-                ]
-            }
+                    media: [
+                        {
+                            src: 'assets/01_EEE_CORNELIUS_CARSTENS.jpg',
+                            description: 'Application of the verses'
+                        },
+                    ]
+                },
+                {
+                    title: 'Marius Hirschel',
+                    year: 2016,
+                    description: 'custom portfolio for berlin based hair stylist',
+                    url: 'http://mariushirschel.com',
+                    media: [
+
+                        {
+                            src: 'assets/scrollcast_1.mp4',
+                            description: 'Fadings applied'
+                        },
+                        {
+                            src: 'assets/01_MARIUS_CORNELIUS_CARSTENS.png',
+                            description: 'Front Page of Marius Hirschel'
+                        }
+                    ]
+                }
+            ]
         }
     },
     methods: {
-        changeValue () {
-            this.play = !this.play
-        }
+
     },
     components: {
         ProjectElement,
-        VideoItem
     }
 }
 </script>

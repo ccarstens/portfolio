@@ -1,5 +1,5 @@
 <template>
-    <video @load="init" autoplay>
+    <video @load="init" autoplay loop>
         <source v-if="srcUrl" :src="absoluteSrcUrl">
     </video>
 </template>
@@ -45,6 +45,8 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="scss">
+    video{
+        max-width: 100%;
+    }
 </style>

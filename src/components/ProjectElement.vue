@@ -2,16 +2,26 @@
     <article>
         <header v-html="description"></header>
         <div class="content">
-            <div v-for="m in projectContent.media" class="media">
-                {{ m.src }}
-            </div>
+            <carousel :per-page="1" :pagination-enabled="false">
+                <slide v-for="(slide, index) in projectContent.media" :key="index">
+                    <VisualElement :content="slide" ></VisualElement>
+                </slide>
+            </carousel>
         </div>
     </article>
 </template>
 
 <script>
+
+    import {Carousel, Slide} from 'vue-carousel'
+    import VisualElement from './VisualElement'
     export default {
         name: "ProjectElement",
+        components: {
+            Carousel,
+            Slide,
+            VisualElement
+        },
         props: [
             'content'
         ],
@@ -34,6 +44,13 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss">
 
+    .VueCarousel{
+        width: 50%;
+    }
+
+    .VueCarousel-slide{
+        width: 100vw;
+    }
 </style>
