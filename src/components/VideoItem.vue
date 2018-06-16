@@ -17,7 +17,6 @@ export default {
         }
     },
     created () {
-        console.log(this.$props.src)
         this.srcUrl = this.$props.src
     },
     mounted () {
