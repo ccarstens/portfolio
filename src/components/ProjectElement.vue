@@ -1,8 +1,9 @@
 <template>
-    <article class="project-element" v-observe-visibility="{
+    <article :class="classObject" v-observe-visibility="{
     callback: visibilityChanged,
-    throttle: 1000,
+    throttle,
     intersection: {
+        threshold
     }
     }">
         <header v-html="description"></header>
@@ -33,7 +34,9 @@
         data () {
             return {
                 projectContent: {},
-                isVisible: false
+                isVisible: false,
+                threshold: 0.8,
+                throttle: 300
             }
         },
         created(){
@@ -41,8 +44,6 @@
         },
         methods: {
             visibilityChanged(isVisible){
-                console.log("win: " + window.innerHeight)
-                console.log(this.$el.clientHeight)
                 this.isVisible = isVisible
             }
         },
@@ -53,12 +54,11 @@
                     <p>${ this.projectContent.description }</p>
                 `
             },
-            visibilityMargin(){
-                return parseInt(
-                    (window.innerHeight - this.$el.clientHeight)
-                    / 2
-                    * 0.95
-                )
+            classObject(){
+                return {
+                    visible: this.isVisible,
+                    'project-element': true
+                }
             }
         }
     }
