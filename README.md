@@ -1,6 +1,4 @@
-# portfolio
 
-> cornelius projects
 
 ## Build Setup
 
