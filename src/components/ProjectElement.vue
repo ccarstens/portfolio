@@ -1,5 +1,10 @@
 <template>
-    <article>
+    <article class="project-element" v-observe-visibility="{
+    callback: visibilityChanged,
+    throttle: 1000,
+    intersection: {
+    }
+    }">
         <header v-html="description"></header>
         <div class="content">
             <carousel :per-page="1" :pagination-enabled="false">
@@ -27,11 +32,19 @@
         ],
         data () {
             return {
-                projectContent: {}
+                projectContent: {},
+                isVisible: false
             }
         },
         created(){
             this.projectContent = this.content
+        },
+        methods: {
+            visibilityChanged(isVisible){
+                console.log("win: " + window.innerHeight)
+                console.log(this.$el.clientHeight)
+                this.isVisible = isVisible
+            }
         },
         computed: {
             description(){
@@ -39,6 +52,13 @@
                     <p>${ this.projectContent.title } - ${this.projectContent.year}</p>
                     <p>${ this.projectContent.description }</p>
                 `
+            },
+            visibilityMargin(){
+                return parseInt(
+                    (window.innerHeight - this.$el.clientHeight)
+                    / 2
+                    * 0.95
+                )
             }
         }
     }
@@ -52,5 +72,9 @@
 
     .VueCarousel-slide{
         width: 100vw;
+    }
+
+    .project-element{
+        margin-bottom: 10em;
     }
 </style>

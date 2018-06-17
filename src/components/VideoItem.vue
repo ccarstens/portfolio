@@ -20,8 +20,7 @@ export default {
         this.srcUrl = this.$props.src
     },
     mounted () {
-        this.$el.load()
-        this.updatePlay(this.$props.play)
+        // this.updatePlay(this.$props.play)
     },
     computed: {
         absoluteSrcUrl(){

@@ -1,12 +1,11 @@
 <template>
   <div id="app">
-      <ProjectElement v-for="project in projects" :content="project"/>
+      <ProjectElement v-for="(project, key) in projects" :key="key" :content="project"/>
 
   </div>
 </template>
 
 <script>
-import VideoItem from './components/VideoItem'
 import ProjectElement from './components/ProjectElement'
 
 export default {
