@@ -35,7 +35,6 @@
             return {
                 projectContent: {},
                 isVisible: false,
-                threshold: 0.8,
                 throttle: 300
             }
         },
@@ -45,6 +44,11 @@
         methods: {
             visibilityChanged(isVisible){
                 this.isVisible = isVisible
+            }
+        },
+        watch: {
+            content(newContent){
+                this.projectContent = newContent
             }
         },
         computed: {
@@ -59,6 +63,9 @@
                     visible: this.isVisible,
                     'project-element': true
                 }
+            },
+            threshold(){
+                return window.innerWidth > 400 ? 0.8 : 0
             }
         }
     }
@@ -76,5 +83,9 @@
 
     .project-element{
         margin-bottom: 10em;
+    }
+
+    .visible{
+        background: rgba(0, 255, 128, 0.1);
     }
 </style>
