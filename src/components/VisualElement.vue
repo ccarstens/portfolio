@@ -47,4 +47,8 @@
     img{
         max-width: 100%;
     }
+
+    .visual-content{
+        z-index: 1;
+    }
 </style>

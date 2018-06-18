@@ -1,5 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" class="">
+      <HeaderElement></HeaderElement>
+      <AboutElement v-html="fullData.content.about"/>
       <button @click="switchGerman">Deutsch</button>
       <ProjectElement v-for="(project, key) in fullData.content.projects" :key="key" :content="project"/>
 
@@ -7,7 +9,9 @@
 </template>
 
 <script>
+import HeaderElement from './components/HeaderElement'
 import ProjectElement from './components/ProjectElement'
+import AboutElement from './components/AboutElement'
 
 
 export default {
@@ -41,6 +45,8 @@ export default {
     },
     components: {
         ProjectElement,
+        HeaderElement,
+        AboutElement
     }
 }
 </script>
@@ -53,10 +59,12 @@ export default {
 
 
     @import '../node_modules/bootstrap-scss/reboot';
-    @import '../node_modules/bootstrap-scss/type';
     @import '../node_modules/bootstrap-scss/images';
     @import '../node_modules/bootstrap-scss/grid';
 
+    @import '../node_modules/bootstrap-scss/utilities/display';
+    @import '../node_modules/bootstrap-scss/utilities/flex';
+    @import '../node_modules/bootstrap-scss/utilities/position';
 
 #app {
     font-family: Helvetica, Arial, sans-serif;

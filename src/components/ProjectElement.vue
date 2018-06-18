@@ -6,7 +6,7 @@
         threshold
     }
     }">
-        <header v-html="description"></header>
+        <header v-html="description" class="description"></header>
         <div class="content">
             <carousel :per-page="1" :pagination-enabled="false">
                 <slide v-for="(slide, index) in projectContent.media" :key="index">
@@ -85,7 +85,11 @@
         margin-bottom: 10em;
     }
 
+    .description{
+        z-index: -10;
+    }
+
     .visible{
-        background: rgba(0, 255, 128, 0.1);
+        /*background: rgba(0, 255, 128, 0.1);*/
     }
 </style>

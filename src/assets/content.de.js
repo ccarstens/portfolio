@@ -1,7 +1,7 @@
 export default {
     projects: [
         {
-            title: 'EEE',
+            title: 'EEE はじめまして、わたしわはじめまして、わたしわ Привет',
             year: 2016,
             description: 'Mode Magazin, das generierte Gedichte nutzt',
             url: 'http://goetze.xyz',

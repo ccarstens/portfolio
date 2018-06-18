@@ -1,4 +1,12 @@
 export default {
+    about: `
+    <p>Hello, I’m cornelius,</p>
+<p>an interdisciplinary student of visual communication with backgrounds in fashion photography, web development, interactive installations and piano music.</p>
+<p>While studying I ran the web design agency Awesome Boys for two years with a fellow student and am currently employed by Apple.</p>
+<p>I like learning new things, feedback, getting hired, reading, bread with butter and Apfelschorle.</p>
+<p>I am looking forward to hearing from you.</p>
+Best,
+`,
     projects: [
         {
             title: 'EEE',
