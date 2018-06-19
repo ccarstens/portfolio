@@ -30,10 +30,10 @@ Best,
             url: 'http://mariushirschel.com',
             media: [
 
-                // {
-                //     src: 'assets/scrollcast_1.mp4',
-                //     description: 'Fadings applied'
-                // },
+                {
+                    src: 'assets/scrollcast_1.mp4',
+                    description: 'Fadings applied'
+                },
                 {
                     src: 'assets/01_MARIUS_CORNELIUS_CARSTENS.png',
                     description: 'Front Page of Marius Hirschel'

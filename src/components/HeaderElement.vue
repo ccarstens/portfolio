@@ -8,6 +8,7 @@
                     <li class="d-block d-flex justify-content-center"><a href="#">projects</a></li>
                     <li class="d-block d-flex justify-content-center"></li>
                 </ul>
+                <span>{{ offset.top }}</span>
             </nav>
         </header>
     </div>
@@ -15,7 +16,31 @@
 
 <script>
     export default {
-        name: "HeaderElement"
+        name: "HeaderElement",
+        data(){
+            return {
+                offsetTop: 0,
+                offset: {}
+            }
+        },
+        created(){
+            window.addEventListener('resize', this.handleResize)
+        },
+        mounted(){
+            this.handleResize()
+
+        },
+        methods: {
+            handleResize(){
+                this.offset = this.$el.getElementsByTagName('li')[0].getBoundingClientRect()
+                this.offsetTop = this.$el.getElementsByTagName('li')[0].getBoundingClientRect().top
+            }
+        },
+        watch: {
+            offsetTop(newOffset){
+                this.$emit('offset-has-changed', this.offsetTop)
+            }
+        }
     }
 </script>
 
@@ -41,6 +66,18 @@
         z-index: 0;
 
     }
+
+    nav{
+        padding-top: 20px;
+    }
+
+    @media screen and (max-width: 500px){
+        nav{
+            padding-top: 40px;
+        }
+    }
+
+
     ul {
         list-style-type: none;
         padding-left: 0;

@@ -1,4 +1,5 @@
 export default {
+    about: `Das ist der deutsche about me text`,
     projects: [
         {
             title: 'EEE はじめまして、わたしわはじめまして、わたしわ Привет',

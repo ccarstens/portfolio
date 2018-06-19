@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="">
-      <HeaderElement></HeaderElement>
-      <AboutElement v-html="fullData.content.about"/>
+      <HeaderElement @offset-has-changed="headerOffset = $event"></HeaderElement>
+      <AboutElement :text="fullData.content.about"/>
       <button @click="switchGerman">Deutsch</button>
       <ProjectElement v-for="(project, key) in fullData.content.projects" :key="key" :content="project"/>
 
@@ -21,7 +21,8 @@ export default {
     ],
     data () {
         return{
-            fullData: {}
+            fullData: {},
+            headerOffset: 0
         }
     },
     methods: {
@@ -30,7 +31,7 @@ export default {
             this.$root.switchToGerman()
 
 
-        }
+        },
     },
     created(){
         this.fullData = this.$props.mainData
