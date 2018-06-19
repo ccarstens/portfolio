@@ -1,25 +1,34 @@
 <template>
-    <div class="about">
+    <div :class="classObject">
         <div class="maintext" v-html="text"></div>
-        <NameScrollElement></NameScrollElement>
+        <NameScrollElement/>
     </div>
 </template>
 
 <script>
 
     import NameScrollElement from './NameScrollElement'
+    import state from '../state'
 
     export default {
         name: "AboutElement",
         props: [
-            'text'
+            'text',
         ],
         components: {
             NameScrollElement
         },
         data(){
             return {
-
+                state: state
+            }
+        },
+        computed: {
+            classObject(){
+                return {
+                    about: true,
+                    'no-show': this.state.state.scrollableIsAtHeaderPosition
+                }
             }
         }
     }
@@ -28,5 +37,9 @@
 <style scoped>
     .about{
         margin-bottom: 20em;
+    }
+
+    .no-show{
+        opacity: 0;
     }
 </style>

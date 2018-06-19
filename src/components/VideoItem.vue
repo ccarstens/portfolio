@@ -1,5 +1,5 @@
 <template>
-    <video @load="init" autoplay loop>
+    <video @load="init" autoplay loop muted playsinline>
         <source v-if="srcUrl" :src="absoluteSrcUrl">
     </video>
 </template>

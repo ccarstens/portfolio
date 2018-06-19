@@ -1,7 +1,9 @@
 <template>
   <div id="app" class="">
-      <HeaderElement @offset-has-changed="headerOffset = $event"></HeaderElement>
-      <AboutElement :text="fullData.content.about"/>
+      <HeaderElement/>
+      <AboutElement
+              :text="fullData.content.about"
+      />
       <button @click="switchGerman">Deutsch</button>
       <ProjectElement v-for="(project, key) in fullData.content.projects" :key="key" :content="project"/>
 
@@ -13,6 +15,8 @@ import HeaderElement from './components/HeaderElement'
 import ProjectElement from './components/ProjectElement'
 import AboutElement from './components/AboutElement'
 
+import state from './state'
+
 
 export default {
     name: 'App',
@@ -22,7 +26,7 @@ export default {
     data () {
         return{
             fullData: {},
-            headerOffset: 0
+            state: state,
         }
     },
     methods: {

@@ -4,23 +4,26 @@
         <header id="site-header" class="fixed-top">
             <nav>
                 <ul class="d-flex justify-content-between">
-                    <li class="d-block d-flex justify-content-left"><a href="#">cornelius</a></li>
-                    <li class="d-block d-flex justify-content-center"><a href="#">projects</a></li>
-                    <li class="d-block d-flex justify-content-center"></li>
+                    <li :class="pageNameClasses"><a href="#">cornelius</a></li>
+                    <li class="d-flex justify-content-center"><a href="#">projects</a></li>
+                    <li class="d-flex justify-content-center"></li>
                 </ul>
-                <span>{{ offset.top }}</span>
             </nav>
         </header>
     </div>
 </template>
 
 <script>
+
+    import state from '../state'
+
+
     export default {
         name: "HeaderElement",
         data(){
             return {
                 offsetTop: 0,
-                offset: {}
+                state: state
             }
         },
         created(){
@@ -32,13 +35,24 @@
         },
         methods: {
             handleResize(){
-                this.offset = this.$el.getElementsByTagName('li')[0].getBoundingClientRect()
-                this.offsetTop = this.$el.getElementsByTagName('li')[0].getBoundingClientRect().top
+                setTimeout((event) => {
+                    if(this.state.debug) console.log('window.resize triggered, HeaderElement is handling')
+                    this.offsetTop = this.$el.getElementsByTagName('li')[0].getBoundingClientRect().top
+                }, 100)
+            }
+        },
+        computed: {
+            pageNameClasses(){
+                return {
+                    'd-flex': true,
+                    'justify-content-left': true,
+                    'no-show': !this.state.state.scrollableIsAtHeaderPosition
+                }
             }
         },
         watch: {
             offsetTop(newOffset){
-                this.$emit('offset-has-changed', this.offsetTop)
+                this.state.setHeaderOffset(newOffset)
             }
         }
     }
@@ -95,6 +109,10 @@
             /*color: #000000;*/
 
         }
+    }
+
+    li.no-show{
+        opacity: 0;
     }
 
 </style>
