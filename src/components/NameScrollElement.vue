@@ -1,8 +1,8 @@
 <template>
     <li class="name-scroll">
-        <a href="">cornelius</a>
+        <p>cornelius</p>
         <div class="debug">
-            <p>{{ state.state.headerOffset }}</p>
+            <!--<p>{{ state.state.headerOffset }}</p>-->
             <!--<p>{{ offsetTop }}</p>-->
         </div>
     </li>
@@ -49,10 +49,16 @@
             left: 0;
             z-index: 100;
         }
+        p{
+            margin: 0;
+            padding: 0;
+        }
     }
 
     li{
         list-style-type: none;
         font-weight: 700;
     }
+
+
 </style>

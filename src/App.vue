@@ -1,10 +1,11 @@
 <template>
   <div id="app" class="">
       <HeaderElement/>
+      <!--<button @click="switchGerman">Deutsch</button>-->
       <AboutElement
               :text="fullData.content.about"
       />
-      <button @click="switchGerman">Deutsch</button>
+
       <ProjectElement v-for="(project, key) in fullData.content.projects" :key="key" :content="project"/>
 
   </div>
@@ -79,4 +80,30 @@ export default {
     color: #000;
     margin-top: 60px;
 }
+
+    @include media-breakpoint-up(xs){
+        #app{
+            font-size: 1.25rem;
+        }
+    }
+
+    @include media-breakpoint-up(sm){
+
+        #app{
+            font-size: 1.375rem;
+        }
+
+        #site-header, #about{
+            font-size: 1.5rem;
+        }
+
+
+
+    }
+
+    @include media-breakpoint-up(md){
+        #app{
+
+        }
+    }
 </style>

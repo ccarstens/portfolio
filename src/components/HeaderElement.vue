@@ -1,7 +1,7 @@
 <template>
     <div class="site-header-container">
         <!--<div class="gradient fixed-top"></div>-->
-        <header id="site-header" class="fixed-top">
+        <header id="site-header" class="fixed-top container">
             <nav>
                 <ul class="d-flex justify-content-between">
                     <li :class="pageNameClasses"><a href="#">cornelius</a></li>
@@ -85,11 +85,11 @@
         padding-top: 20px;
     }
 
-    @media screen and (max-width: 500px){
-        nav{
-            padding-top: 40px;
-        }
-    }
+    /*@media screen and (max-width: 500px){*/
+        /*nav{*/
+            /*padding-top: 40px;*/
+        /*}*/
+    /*}*/
 
 
     ul {

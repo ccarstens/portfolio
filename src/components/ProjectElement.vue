@@ -6,13 +6,15 @@
         threshold
     }
     }">
-        <header v-html="description" class="description"></header>
-        <div class="content">
-            <carousel :per-page="1" :pagination-enabled="false">
-                <slide v-for="(slide, index) in projectContent.media" :key="index">
-                    <VisualElement :content="slide" ></VisualElement>
-                </slide>
-            </carousel>
+        <div class="row">
+            <header v-html="description" class="description col order-0 col-md-4 order-md-1"></header>
+            <div class="content col order-1 col-md-8 order-md-0">
+                <carousel :per-page="1" :pagination-enabled="false" class="">
+                    <slide v-for="(slide, index) in projectContent.media" :key="index">
+                        <VisualElement :content="slide" ></VisualElement>
+                    </slide>
+                </carousel>
+            </div>
         </div>
     </article>
 </template>
@@ -61,7 +63,8 @@
             classObject(){
                 return {
                     visible: this.isVisible,
-                    'project-element': true
+                    'project-element': true,
+                    container: true
                 }
             },
             threshold(){
@@ -74,7 +77,8 @@
 <style lang="scss">
 
     .VueCarousel{
-        width: 50%;
+        width: 100%;
+        touch-action: none;
     }
 
     .VueCarousel-slide{

@@ -4,7 +4,7 @@ export default {
 <p>an interdisciplinary student of visual communication with backgrounds in fashion photography, web development, interactive installations and piano music.</p>
 <p>While studying I ran the web design agency Awesome Boys for two years with a fellow student and am currently employed by Apple.</p>
 <p>I like learning new things, feedback, getting hired, reading, bread with butter and Apfelschorle.</p>
-<p>I am looking forward to hearing from you.</p>
+<p>I am looking forward to <a href="mailto:cornelius.carstens@me.com">hearing from you</a>.</p>
 Best,
 `,
     projects: [
@@ -17,6 +17,10 @@ Best,
                 src: 'assets/audio.mp3'
             },
             media: [
+                {
+                    src: 'assets/00_EEE_CORNELIUS_CARSTENS.jpg',
+                    description: 'Application of the verses'
+                },
                 {
                     src: 'assets/01_EEE_CORNELIUS_CARSTENS.jpg',
                     description: 'Application of the verses'
@@ -35,7 +39,7 @@ Best,
                     description: 'Fadings applied'
                 },
                 {
-                    src: 'assets/01_MARIUS_CORNELIUS_CARSTENS.png',
+                    src: 'assets/01_MARIUS_CORNELIUS_CARSTENS.jpg',
                     description: 'Front Page of Marius Hirschel'
                 }
             ]

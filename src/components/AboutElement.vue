@@ -1,6 +1,8 @@
 <template>
-    <div :class="classObject">
-        <div class="maintext" v-html="text"></div>
+    <div id="about" :class="classObject">
+        <div class="row">
+            <div class="maintext col col-sm-10 col-md-7 col-lg-5" v-html="text"></div>
+        </div>
         <NameScrollElement/>
     </div>
 </template>
@@ -27,19 +29,30 @@
             classObject(){
                 return {
                     about: true,
-                    'no-show': this.state.state.scrollableIsAtHeaderPosition
+                    'no-show': this.state.state.scrollableIsAtHeaderPosition,
+                    'container': true
                 }
             }
         }
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    /*@import '../../node_modules/bootstrap-scss/grid';*/
+    /*@import '../../node_modules/bootstrap-scss/mixins/breakpoints';*/
+
     .about{
+        padding-top: 35vh;
         margin-bottom: 20em;
     }
 
     .no-show{
         opacity: 0;
     }
+
+    /*@include media-breakpoint-between(xs, md){
+        .about{
+            font-size: 1.375rem;
+        }
+    }*/
 </style>
