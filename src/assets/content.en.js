@@ -14,7 +14,7 @@ Best,
             description: 'fashion magazine that uses verses of a poem generated using <i>pattern</i> an NLP library',
             url: 'http://goetze.xyz',
             globalAudio: {
-                src: 'assets/audio.mp3'
+                src: 'assets/nantes.mp3'
             },
             media: [
                 {

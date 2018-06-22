@@ -7,9 +7,10 @@
     }
     }">
         <div class="row">
+            <AudioElement v-if="projectContent.hasOwnProperty('globalAudio')" :play="playAudio"></AudioElement>
             <header v-html="description" class="description col order-0 col-md-4 order-md-1"></header>
             <div class="content col order-1 col-md-8 order-md-0">
-                <carousel :per-page="1" :pagination-enabled="false" class="">
+                <carousel :per-page="1" :pagination-enabled="true" :navigation-enabled="false" class="">
                     <slide v-for="(slide, index) in projectContent.media" :key="index">
                         <VisualElement :content="slide" ></VisualElement>
                     </slide>
@@ -21,14 +22,17 @@
 
 <script>
 
+    // import {Carousel, Slide} from '../../../vue-carousel/dist/vue-carousel.min'
     import {Carousel, Slide} from 'vue-carousel'
     import VisualElement from './VisualElement'
+    import AudioElement from './AudioElement'
     export default {
         name: "ProjectElement",
         components: {
             Carousel,
             Slide,
-            VisualElement
+            VisualElement,
+            AudioElement
         },
         props: [
             'content'
@@ -51,7 +55,7 @@
         watch: {
             content(newContent){
                 this.projectContent = newContent
-            }
+            },
         },
         computed: {
             description(){
@@ -69,6 +73,9 @@
             },
             threshold(){
                 return window.innerWidth > 400 ? 0.8 : 0
+            },
+            playAudio(){
+                return this.isVisible
             }
         }
     }
@@ -78,7 +85,7 @@
 
     .VueCarousel{
         width: 100%;
-        touch-action: none;
+        /*touch-action: none;*/
     }
 
     .VueCarousel-slide{

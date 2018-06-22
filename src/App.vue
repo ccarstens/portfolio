@@ -1,7 +1,9 @@
 <template>
   <div id="app" class="">
+
       <HeaderElement/>
       <!--<button @click="switchGerman">Deutsch</button>-->
+      <button @click="listAll">audio</button>
       <AboutElement
               :text="fullData.content.about"
       />
@@ -15,6 +17,7 @@
 import HeaderElement from './components/HeaderElement'
 import ProjectElement from './components/ProjectElement'
 import AboutElement from './components/AboutElement'
+import AudioElement from './components/AudioElement'
 
 import state from './state'
 
@@ -28,6 +31,7 @@ export default {
         return{
             fullData: {},
             state: state,
+            hit: false
         }
     },
     methods: {
@@ -37,9 +41,21 @@ export default {
 
 
         },
+        listAll(){
+            this.$el.getElementsByTagName('audio')[0].play()
+            this.$el.getElementsByTagName('audio')[0].pause()
+        }
     },
     created(){
         this.fullData = this.$props.mainData
+
+        window.addEventListener('scroll', () => {
+            if(!this.hit){
+                this.$el.getElementsByTagName('audio')[0].play()
+                this.hit = true
+            }
+        })
+
     },
     watch: {
         mainData: {
@@ -52,7 +68,8 @@ export default {
     components: {
         ProjectElement,
         HeaderElement,
-        AboutElement
+        AboutElement,
+        AudioElement
     }
 }
 </script>
