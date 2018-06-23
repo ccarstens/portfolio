@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div style="">
         <vue-p5
-                @sketch="sketch"
+                v-if="show"
                 @preload="preload"
                 @setup="setup"
                 @draw="draw"
@@ -9,16 +9,7 @@
                 @mouse-moved="mouseMoved"
                 @mouse-dragged="mouseDragged">
         </vue-p5>
-        <p>
-            Red: {{ red }} <br/>
-            Green: {{ green }} <br/>
-            Blue: {{ blue }} <br/>
-        </p>
-        <p>
-            Press <button @click="toggleRed()">button</button> to toggle red color <br/>
-            Press <code>g</code> to toggle green color <br/>
-            Use mouse to draw lines <br/>
-        </p>
+        {{ shown }}
     </div>
 </template>
 
@@ -30,58 +21,36 @@
             "vue-p5": VueP5
         },
         data: () => ({
-            red: 255,
-            green: 0,
-            blue: 0,
-            lines: [],
-            // backgroundImage: null
+            show: true,
+            shown: 0
         }),
         methods: {
-            sketch(sketch) {
-                sketch.draw = () => {
-                    this.blue = (this.blue + 3) % 255;
-                    const { red, green, blue } = this;
-                    sketch.background(red, green, blue);
-                };
-            },
             preload(sketch) {
                 // this.backgroundImage = sketch.loadImage("static/p5js.png");
                 // console.log(this.backgroundImage);
             },
             setup(sketch) {
-                sketch.createCanvas(400, 400);
+                sketch.createCanvas(window.innerWidth / 2, 200);
+                sketch.background(0)
+                sketch.frameRate(25)
+                window.addEventListener('resize', () => {
+                    sketch.resizeCanvas(window.innerWidth / 2, 200)
+                    sketch.background(0)
+                    // this.setup(sketch)
+                    // console.log(sketch.canvas)
+                })
+
             },
             draw(sketch) {
-                const { width, height } = sketch;
-                // sketch.image(this.backgroundImage, 0, 0, 0.5 * width, 0.5 * height);
-                for (let line of this.lines) {
-                    sketch.stroke(line.color);
-                    sketch.line(line.pmouseX, line.pmouseY, line.mouseX, line.mouseY);
-                }
+                this.shown ++
             },
             keyPressed({ keyCode }) {
-                // 'g' key
-                if (keyCode === 71) {
-                    this.toggleGreen();
-                }
+
             },
             mouseMoved({ mouseX, mouseY, pmouseX, pmouseY }) {
-                this.pushLine({ mouseX, mouseY, pmouseX, pmouseY, color: 0 });
             },
             mouseDragged({ mouseX, mouseY, pmouseX, pmouseY }) {
-                this.pushLine({ mouseX, mouseY, pmouseX, pmouseY, color: 255 });
             },
-            toggleRed() {
-                this.red = 255 - this.red;
-            },
-            toggleGreen() {
-                this.green = 255 - this.green;
-            },
-            pushLine(line) {
-                let lines = this.lines;
-                lines.push(line);
-                this.lines = lines.slice(-100);
-            }
         }
     };
 </script>
