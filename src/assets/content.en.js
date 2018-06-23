@@ -32,6 +32,9 @@ Best,
             year: 2016,
             description: 'custom portfolio for berlin based hair stylist',
             url: 'http://mariushirschel.com',
+            globalAudio: {
+                src: 'assets/wolves.mp3'
+            },
             media: [
 
                 {

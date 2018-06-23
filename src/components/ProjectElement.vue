@@ -7,7 +7,7 @@
     }
     }">
         <div class="row">
-            <AudioElement v-if="hasGlobalAudio" :play="playAudio"></AudioElement>
+            <AudioElement v-if="hasGlobalAudio" :play="playAudio" :src="projectContent.globalAudio.src"></AudioElement>
             <header v-html="description" class="description col order-0 col-md-4 order-md-1"></header>
             <div class="content col order-1 col-md-8 order-md-0">
                 <carousel :per-page="1" :pagination-enabled="true" :navigation-enabled="false" class="">

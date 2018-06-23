@@ -89,7 +89,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         // any required modules inside node_modules are extracted to vendor
         return (
           module.resource &&
-          /\.js$/.test(module.resource) &&
+          /\.js$/.srcUrl(module.resource) &&
           module.resource.indexOf(
             path.join(__dirname, '../node_modules')
           ) === 0
@@ -130,7 +130,7 @@ if (config.build.productionGzip) {
     new CompressionWebpackPlugin({
       asset: '[path].gz[query]',
       algorithm: 'gzip',
-      test: new RegExp(
+      srcUrl: new RegExp(
         '\\.(' +
         config.build.productionGzipExtensions.join('|') +
         ')$'

@@ -4,7 +4,7 @@
         <button @click="init">Click me</button>
 
         <audio  controls>
-            <source :src="test" type="audio/mpeg">
+            <source :src="srcUrl" type="audio/mpeg">
         </audio>
     </div>
 </template>
@@ -13,13 +13,22 @@
   export default {
     name: "AudioElement",
       props: [
-          'play'
+          'play',
+          'src'
       ],
       data(){
         return {
             audio: undefined,
             playing: false,
-            volume: 0
+            volume: 0,
+            fadeIn: {
+                inProgress: false,
+                timeout: undefined
+            },
+            fadeOut: {
+                inProgress: false,
+                timeout: undefined
+            }
         }
       },
       mounted(){
@@ -46,29 +55,49 @@
             this.audio.volume = this.volume
         },
         increaseVolumeStepwise(){
-            setTimeout(() => {
-                if(this.volume !== 1){
+
+            if(this.fadeOut.inProgress){
+                this.stopFadeOut()
+            }
+            this.fadeIn.inProgress = true
+            this.fadeIn.timeout =  setTimeout(() => {
+                if(this.volume < 1){
                     this.setVolume(this.volume + 0.05)
                     this.increaseVolumeStepwise()
+                }else{
+                    this.fadeIn.inProgress = false
                 }
-            }, 50)
+            }, 25)
         },
         decreaseVolumeStepwise(){
-            setTimeout(() => {
+
+            if(this.fadeIn.inProgress) this.stopFadeIn()
+
+            this.fadeOut.inProgress = true;
+            this.fadeOut.timeout = setTimeout(() => {
                 if(this.volume > 0){
                     this.setVolume(this.volume - 0.05)
                     this.decreaseVolumeStepwise()
                 }else{
                     this.audio.pause()
+                    this.fadeOut.inProgress = false;
                 }
 
-            }, 50)
+            }, 25)
+        },
+        stopFadeOut(){
+            clearTimeout(this.fadeOut.timeout)
+            this.fadeOut.inProgress = false
+        },
+        stopFadeIn(){
+            clearTimeout(this.fadeIn.timeout)
+            this.fadeIn.inProgress = false
         }
 
       },
       computed: {
-        test(){
-            return require('../assets/nantes.mp3')
+        srcUrl(){
+            return require('../' + this.src)
         }
       },
       watch: {

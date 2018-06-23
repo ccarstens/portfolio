@@ -9,7 +9,7 @@
     "dev-net": "webpack-dev-server --inline --progress --port 3000 --hot --host 0.0.0.0 --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
-    "test": "npm run unit",
+    "srcUrl": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
     "build": "node build/build.js"
   },
