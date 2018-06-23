@@ -1,8 +1,9 @@
 <template>
     <div class="visual-content">
         <figure>
-            <img v-if="isImage(visualElementContent.src)" :src="test"/>
-            <VideoItem v-if="isVideo(visualElementContent.src)" :src="visualElementContent.src" :play="true"/>
+            <img v-if="isImage(visualElementContent)" :src="test"/>
+            <VideoItem v-if="isVideo(visualElementContent)" :src="visualElementContent.src" :play="true"/>
+            <P5Sketch v-if="isP5Sketch(visualElementContent)" :name="visualElementContent.sketchName"></P5Sketch>
             <figcaption>{{ visualElementContent.description }}</figcaption>
         </figure>
     </div>
@@ -10,13 +11,15 @@
 
 <script>
     import VideoItem from './VideoItem'
+    import P5Sketch from './P5Sketch'
     export default {
         name: "VisualElement",
         props: [
             'content'
         ],
         components: {
-            VideoItem
+            VideoItem,
+            P5Sketch
         },
         created(){
             this.visualElementContent = this.content
@@ -32,11 +35,20 @@
             }
         },
         methods: {
-            isImage(url){
-                return url.match(/(gif|jpg|jpeg|png)$/)
+            isImage(visualElement){
+                if(visualElement.hasOwnProperty('src')){
+                    return visualElement.src.match(/(gif|jpg|jpeg|png)$/)
+                }
+                return false
             },
-            isVideo(url){
-                return url.match(/(mp4|mov)$/)
+            isVideo(visualElement){
+                if(visualElement.hasOwnProperty('src')){
+                    return visualElement.src.match(/(mp4|mov)$/)
+                }
+                return false
+            },
+            isP5Sketch(visualElement){
+                return visualElement.hasOwnProperty('sketchName')
             }
         }
     }

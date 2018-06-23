@@ -9,6 +9,19 @@ Best,
 `,
     projects: [
         {
+            title: 'Stethoscope',
+            year: 2018,
+            description: 'interactive installation connecting a user with her own hearbeat using a stethoscope and a holographic projection',
+            globalAudio: {
+                src: 'assets/wolves.mp3'
+            },
+            media: [
+                {
+                    sketchName: 'DotCloud'
+                }
+            ]
+        },
+        {
             title: 'EEE',
             year: 2016,
             description: 'fashion magazine that uses verses of a poem generated using <i>pattern</i> an NLP library',

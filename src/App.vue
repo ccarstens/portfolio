@@ -3,11 +3,11 @@
 
       <HeaderElement/>
       <!--<button @click="switchGerman">Deutsch</button>-->
-      <ProcessingSketch></ProcessingSketch>
       <button @click="initAudioElements">audio</button>
       <AboutElement
               :text="fullData.content.about"
       />
+      <!--<component v-bind:is="name"></component>-->
 
       <ProjectElement v-for="(project, key) in fullData.content.projects" :key="key" :content="project"/>
 
@@ -19,7 +19,7 @@ import HeaderElement from './components/HeaderElement'
 import ProjectElement from './components/ProjectElement'
 import AboutElement from './components/AboutElement'
 import AudioElement from './components/AudioElement'
-import ProcessingSketch from './components/ProcessingSketch'
+import DotCloud from './components/DotCloud'
 
 import state from './state'
 
@@ -33,6 +33,7 @@ export default {
         return{
             fullData: {},
             state: state,
+            name: "DotCloud"
         }
     },
     methods: {
@@ -72,7 +73,7 @@ export default {
         HeaderElement,
         AboutElement,
         AudioElement,
-        ProcessingSketch
+        DotCloud
     }
 }
 </script>
