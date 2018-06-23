@@ -1,6 +1,6 @@
 <template>
     <video @load="init" autoplay loop muted playsinline>
-        <source v-if="srcUrl" :src="absoluteSrcUrl">
+        <source v-if="test" :src="absolutetest">
     </video>
 </template>
 
@@ -13,18 +13,18 @@ export default {
     ],
     data () {
         return {
-            srcUrl: undefined,
+            test: undefined,
         }
     },
     created () {
-        this.srcUrl = this.$props.src
+        this.test = this.$props.src
     },
     mounted () {
         // this.updatePlay(this.$props.play)
     },
     computed: {
-        absoluteSrcUrl(){
-            return require('../' + this.srcUrl)
+        absolutetest(){
+            return require('../' + this.test)
         }
     },
     methods: {

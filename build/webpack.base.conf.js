@@ -9,7 +9,7 @@ function resolve (dir) {
 }
 
 const createLintingRule = () => ({
-  srcUrl: /\.(js|vue)$/,
+  test: /\.(js|vue)$/,
   loader: 'eslint-loader',
   enforce: 'pre',
   include: [resolve('src'), resolve('test')],
@@ -42,17 +42,17 @@ module.exports = {
     rules: [
       // ...(config.dev.useEslint ? [createLintingRule()] : []),
       {
-        srcUrl: /\.vue$/,
+        test: /\.vue$/,
         loader: 'vue-loader',
         options: vueLoaderConfig
       },
       {
-        srcUrl: /\.js$/,
+        test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
-        srcUrl: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 10000,
@@ -60,7 +60,7 @@ module.exports = {
         }
       },
       {
-        srcUrl: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 10000,
@@ -68,7 +68,7 @@ module.exports = {
         }
       },
       {
-        srcUrl: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 10000,

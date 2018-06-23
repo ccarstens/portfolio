@@ -1,7 +1,7 @@
 <template>
     <div class="visual-content">
         <figure>
-            <img v-if="isImage(visualElementContent.src)" :src="srcUrl"/>
+            <img v-if="isImage(visualElementContent.src)" :src="test"/>
             <VideoItem v-if="isVideo(visualElementContent.src)" :src="visualElementContent.src" :play="true"/>
             <figcaption>{{ visualElementContent.description }}</figcaption>
         </figure>
@@ -27,7 +27,7 @@
             }
         },
         computed: {
-            srcUrl(){
+            test(){
                 return require('../' + this.visualElementContent.src)
             }
         },

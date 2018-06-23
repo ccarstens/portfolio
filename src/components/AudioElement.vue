@@ -4,7 +4,7 @@
         <button @click="init">Click me</button>
 
         <audio  controls>
-            <source :src="srcUrl" type="audio/mpeg">
+            <source :src="test" type="audio/mpeg">
         </audio>
     </div>
 </template>
@@ -96,7 +96,7 @@
 
       },
       computed: {
-        srcUrl(){
+        test(){
             return require('../' + this.src)
         }
       },
