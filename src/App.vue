@@ -3,7 +3,7 @@
 
       <HeaderElement/>
       <!--<button @click="switchGerman">Deutsch</button>-->
-      <button @click="listAll">audio</button>
+      <button @click="initAudioElements">audio</button>
       <AboutElement
               :text="fullData.content.about"
       />
@@ -31,7 +31,6 @@ export default {
         return{
             fullData: {},
             state: state,
-            hit: false
         }
     },
     methods: {
@@ -41,20 +40,21 @@ export default {
 
 
         },
-        listAll(){
-            this.$el.getElementsByTagName('audio')[0].play()
-            this.$el.getElementsByTagName('audio')[0].pause()
+        initAudioElements(){
+            const audioElements = this.$el.getElementsByTagName('audio')
+            const audioElementCount = audioElements.length
+
+            for(let i = 0; i < audioElementCount; i++){
+                this.initAudioElement(audioElements[i])
+            }
+        },
+        initAudioElement(audioElement){
+            audioElement.play().then(() => audioElement.pause())
+
         }
     },
     created(){
         this.fullData = this.$props.mainData
-
-        window.addEventListener('scroll', () => {
-            if(!this.hit){
-                this.$el.getElementsByTagName('audio')[0].play()
-                this.hit = true
-            }
-        })
 
     },
     watch: {

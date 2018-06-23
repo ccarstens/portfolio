@@ -1,7 +1,7 @@
 <template>
     <div class="audio-element" style="display: none;">
 
-        <button @click="init">Click me</button>
+        <button @click="init">{{ prettyVolume }}</button>
 
         <audio  controls>
             <source :src="test" type="audio/mpeg">
@@ -98,7 +98,10 @@
       computed: {
         test(){
             return require('../' + this.src)
-        }
+        },
+          prettyVolume(){
+            return Math.trunc(this.volume * 100)
+          }
       },
       watch: {
         play(newPlayState){
