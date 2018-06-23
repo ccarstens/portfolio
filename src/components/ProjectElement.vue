@@ -7,7 +7,7 @@
     }
     }">
         <div class="row">
-            <AudioElement v-if="projectContent.hasOwnProperty('globalAudio')" :play="playAudio"></AudioElement>
+            <AudioElement v-if="hasGlobalAudio" :play="playAudio"></AudioElement>
             <header v-html="description" class="description col order-0 col-md-4 order-md-1"></header>
             <div class="content col order-1 col-md-8 order-md-0">
                 <carousel :per-page="1" :pagination-enabled="true" :navigation-enabled="false" class="">
@@ -23,7 +23,7 @@
 <script>
 
     // import {Carousel, Slide} from '../../../vue-carousel/dist/vue-carousel.min'
-    import {Carousel, Slide} from 'vue-carousel'
+    import {Carousel, Slide} from 'vue-carousel/'
     import VisualElement from './VisualElement'
     import AudioElement from './AudioElement'
     export default {
@@ -76,6 +76,9 @@
             },
             playAudio(){
                 return this.isVisible
+            },
+            hasGlobalAudio(){
+                return this.projectContent.hasOwnProperty('globalAudio')
             }
         }
     }
