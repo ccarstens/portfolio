@@ -1,60 +1,87 @@
 <template>
-    <div class="processing">
-        <div ref="canvas"></div>
+    <div>
+        <vue-p5
+                @sketch="sketch"
+                @preload="preload"
+                @setup="setup"
+                @draw="draw"
+                @key-pressed="keyPressed"
+                @mouse-moved="mouseMoved"
+                @mouse-dragged="mouseDragged">
+        </vue-p5>
+        <p>
+            Red: {{ red }} <br/>
+            Green: {{ green }} <br/>
+            Blue: {{ blue }} <br/>
+        </p>
+        <p>
+            Press <button @click="toggleRed()">button</button> to toggle red color <br/>
+            Press <code>g</code> to toggle green color <br/>
+            Use mouse to draw lines <br/>
+        </p>
     </div>
 </template>
 
 <script>
-    import Vector from '../p5/Vector'
+    import VueP5 from "vue-p5";
     export default {
-        data: function () {
-            return {
-                script: null,
-                ps: null,
-                x: 0,
-                y: 0,
-                canvas: null,
-                vector: null
-            }
+        name: "ProcessingElement",
+        components: {
+            "vue-p5": VueP5
         },
-        mounted () {
-            this.script = p => {
-                this.x = 100
-                this.y = 100
-
-                p.setup = _ => {
-
-
-                    this.canvas = p.createCanvas(600, 420)
-
-                    this.vector = new Vector(p)
-                    this.vector.setCo(0, 0)
-
-                    this.canvas.parent(this.$refs.canvas)
-                    p.frameRate(60)
+        data: () => ({
+            red: 255,
+            green: 0,
+            blue: 0,
+            lines: [],
+            // backgroundImage: null
+        }),
+        methods: {
+            sketch(sketch) {
+                sketch.draw = () => {
+                    this.blue = (this.blue + 3) % 255;
+                    const { red, green, blue } = this;
+                    sketch.background(red, green, blue);
+                };
+            },
+            preload(sketch) {
+                // this.backgroundImage = sketch.loadImage("static/p5js.png");
+                // console.log(this.backgroundImage);
+            },
+            setup(sketch) {
+                sketch.createCanvas(400, 400);
+            },
+            draw(sketch) {
+                const { width, height } = sketch;
+                // sketch.image(this.backgroundImage, 0, 0, 0.5 * width, 0.5 * height);
+                for (let line of this.lines) {
+                    sketch.stroke(line.color);
+                    sketch.line(line.pmouseX, line.pmouseY, line.mouseX, line.mouseY);
                 }
-
-                p.draw = _ => {
-                    p.background(0)
-
-                    this.vector.show()
-                    this.vector.update()
-                    p.fill(255)
-                    // p.rect(this.x, this.y, 50, 50)
-                    p.rect(p.mouseX, p.mouseY, 50, 50)
-
-
-                    // if(this.x > 600) this.x = 0
-                    // this.x ++
+            },
+            keyPressed({ keyCode }) {
+                // 'g' key
+                if (keyCode === 71) {
+                    this.toggleGreen();
                 }
+            },
+            mouseMoved({ mouseX, mouseY, pmouseX, pmouseY }) {
+                this.pushLine({ mouseX, mouseY, pmouseX, pmouseY, color: 0 });
+            },
+            mouseDragged({ mouseX, mouseY, pmouseX, pmouseY }) {
+                this.pushLine({ mouseX, mouseY, pmouseX, pmouseY, color: 255 });
+            },
+            toggleRed() {
+                this.red = 255 - this.red;
+            },
+            toggleGreen() {
+                this.green = 255 - this.green;
+            },
+            pushLine(line) {
+                let lines = this.lines;
+                lines.push(line);
+                this.lines = lines.slice(-100);
             }
-            const P5 = require('p5')
-            this.ps = new P5(this.script)
-            console.log(this.ps)
         }
-    }
+    };
 </script>
-
-<style scoped>
-
-</style>
