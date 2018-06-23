@@ -3,6 +3,7 @@
 
       <HeaderElement/>
       <!--<button @click="switchGerman">Deutsch</button>-->
+      <ProcessingSketch></ProcessingSketch>
       <button @click="initAudioElements">audio</button>
       <AboutElement
               :text="fullData.content.about"
@@ -18,6 +19,7 @@ import HeaderElement from './components/HeaderElement'
 import ProjectElement from './components/ProjectElement'
 import AboutElement from './components/AboutElement'
 import AudioElement from './components/AudioElement'
+import ProcessingSketch from './components/ProcessingSketch'
 
 import state from './state'
 
@@ -69,7 +71,8 @@ export default {
         ProjectElement,
         HeaderElement,
         AboutElement,
-        AudioElement
+        AudioElement,
+        ProcessingSketch
     }
 }
 </script>

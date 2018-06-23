@@ -8,8 +8,10 @@ import VueObserveVisibility from 'vue-observe-visibility'
 import contentEn from './assets/content.en'
 import contentDe from './assets/content.de'
 
+
 Vue.config.productionTip = false
 Vue.use(VueObserveVisibility)
+
 
 /* eslint-disable no-new */
 new Vue({
@@ -27,6 +29,6 @@ new Vue({
             this.mainContent = copyContent
         }
     },
-    template: '<App :mainData="mainContent"/>',
+    template: `<App :mainData="mainContent"/>`,
 
 })
