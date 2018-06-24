@@ -6,7 +6,9 @@
             <P5Sketch
                     v-if="isP5Sketch(visualElementContent)"
                     :name="visualElementContent.sketchName"
-                    :dimensions="standardDimensions"></P5Sketch>
+                    :dimensions="standardDimensions"
+                    :isVisible="isActive"
+            ></P5Sketch>
             <figcaption>{{ visualElementContent.description }}</figcaption>
         </figure>
     </div>
@@ -19,7 +21,8 @@
         name: "VisualElement",
         props: [
             'content',
-            'standardDimensions'
+            'standardDimensions',
+            'isVisible'
         ],
         components: {
             VideoItem,
@@ -29,16 +32,21 @@
             this.visualElementContent = this.content
         },
         mounted(){
-            console.log(this.$el.getBoundingClientRect())
+            this.slide = this.$parent
         },
         data(){
             return {
-                visualElementContent: {}
+                visualElementContent: {},
+                slide: null
             }
         },
         computed: {
             test(){
                 return require('../' + this.visualElementContent.src)
+            },
+            isActive(){
+                // console.log("getting isactive")
+                return this.slide ? this.slide.isActive : false
             }
         },
         methods: {

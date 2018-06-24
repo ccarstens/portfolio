@@ -10,9 +10,22 @@
             <AudioElement v-if="hasGlobalAudio" :play="playAudio" :src="projectContent.globalAudio.src"></AudioElement>
             <header v-html="description" class="description col order-0 col-md-4 order-md-1"></header>
             <div class="content col order-1 col-md-8 order-md-0">
-                <carousel :per-page="1" :pagination-enabled="true" :navigation-enabled="false" class="">
-                    <slide v-for="(slide, index) in projectContent.media" :key="index">
-                        <VisualElement :content="slide" :standardDimensions="standardContentDimensions"></VisualElement>
+                <carousel
+                        :per-page="1"
+                        :pagination-enabled="true"
+                        :navigation-enabled="false"
+                        @pageChange="handlePageChange"
+                        class=""
+                >
+                    <slide
+                            v-for="(slide, index) in projectContent.media"
+                            :key="index"
+                    >
+                        <VisualElement
+                                :content="slide"
+                                :standardDimensions="standardContentDimensions"
+                                :isVisible="isVisible"
+                        ></VisualElement>
                     </slide>
                 </carousel>
             </div>
@@ -43,6 +56,7 @@
                 isVisible: false,
                 throttle: 300,
                 carousel: null,
+                activeSlide: 0,
                 standardContentDimensions: {
                     width: 0,
                     height: 0
@@ -53,7 +67,6 @@
             this.projectContent = this.content
         },
         mounted(){
-            console.log("mounted project")
             this.carousel = this.$el.getElementsByClassName('VueCarousel')[0]
 
             this.standardContentDimensions.width = this.carousel.getBoundingClientRect().width
@@ -77,6 +90,9 @@
         methods: {
             visibilityChanged(isVisible){
                 this.isVisible = isVisible
+            },
+            handlePageChange(activeSlide){
+                this.activeSlide = activeSlide
             }
         },
         watch: {
@@ -85,6 +101,9 @@
             },
         },
         computed: {
+            test(a){
+                return this.activeSlide + a
+            },
             description(){
                 return `
                     <p>${ this.projectContent.title } - ${this.projectContent.year}</p>
@@ -95,7 +114,8 @@
                 return {
                     visible: this.isVisible,
                     'project-element': true,
-                    'container-fluid': true
+                    'container-fluid': true,
+                    dark: this.projectContent.title == "Stethoscope"
                 }
             },
             threshold(){
@@ -125,10 +145,19 @@
 
     .project-element{
         margin-bottom: 10em;
+        padding-top: 5em;
+        padding-bottom: 3em;
+        color: #007bff;
     }
 
+    .project-element.dark{
+        background: black;
+    }
+
+
     .description{
-        z-index: -10;
+        /*<!--z-index: -10;-->*/
+
     }
 
     .visible{

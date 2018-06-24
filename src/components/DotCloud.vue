@@ -24,7 +24,8 @@
         },
         props: [
             'width',
-            'height'
+            'height',
+            'play'
         ],
         data: () => ({
             movers: [],
@@ -112,33 +113,40 @@
             mouseOut(){
                 this.mouseOnCanvas = false
                 this.resetMouse()
-                this.s.frameRate(0)
             },
             mouseOver(){
                 this.mouseOnCanvas = true
-                this.s.frameRate(this.frameRate)
             },
             resizeCanvas(width, height){
                 if(this.s){
                     this.s.resizeCanvas(width, height)
-
                 }
+            },
+            startPlayMode(){
+                this.s.frameRate(this.frameRate)
+            },
+            stopPlayMode(){
+                this.s.frameRate(0)
             }
-
         },
         computed: {
 
         },
         watch: {
-            // height(newHeight){
-            //     this.resizeCanvas(this.width, newHeight)
-            // },
             width(newWidth){
-                // console.log(this)
                 if(this.hasOwnProperty('resizeCanvas')){
                     this.resizeCanvas(newWidth, this.height)
                 }
+            },
+            play(newState){
+                console.log("p5 play changed to", newState)
+                if(this.s){
+                    console.log("passed")
+                    if(newState) this.startPlayMode()
+                    else this.stopPlayMode()
+                }
             }
+
         }
     };
 </script>

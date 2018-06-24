@@ -1,7 +1,7 @@
 <template>
     <div class="p5-sketch">
         <button v-if="show" @click="show = true">start</button>
-        <component v-if="true" :is="name" :width="dimensions.width" :height="dimensions.height"></component>
+        <component :is="name" :width="dimensions.width" :height="dimensions.height" :play="isVisible"></component>
     </div>
 </template>
 
@@ -25,18 +25,16 @@
             },
             dimensions: {
                 type: Object
+            },
+            isVisible: {
+                type: Boolean
             }
         },
         updated(){
             // this.updateElementValues()
         },
         mounted(){
-            console.log("mounted p5")
-            // this.$el.style.height = this.dimensions.height
-            // setTimeout(() => this.updateElementValues(), 1500)
-            // window.addEventListener('resize', () => {
-            //     this.updateElementValues()
-            // })
+
         },
         methods: {
             init(){
