@@ -12,7 +12,7 @@
             <div class="content col order-1 col-md-8 order-md-0">
                 <carousel :per-page="1" :pagination-enabled="true" :navigation-enabled="false" class="">
                     <slide v-for="(slide, index) in projectContent.media" :key="index">
-                        <VisualElement :content="slide" ></VisualElement>
+                        <VisualElement :content="slide" :standardDimensions="standardContentDimensions"></VisualElement>
                     </slide>
                 </carousel>
             </div>
@@ -41,11 +41,38 @@
             return {
                 projectContent: {},
                 isVisible: false,
-                throttle: 300
+                throttle: 300,
+                carousel: null,
+                standardContentDimensions: {
+                    width: 0,
+                    height: 0
+                }
             }
         },
         created(){
             this.projectContent = this.content
+        },
+        mounted(){
+            console.log("mounted project")
+            this.carousel = this.$el.getElementsByClassName('VueCarousel')[0]
+
+            this.standardContentDimensions.width = this.carousel.getBoundingClientRect().width
+            this.standardContentDimensions.height = this.carousel.getBoundingClientRect().width / 4 * 3
+
+            const firstImage = this.$el.getElementsByTagName('img')[0]
+
+            firstImage.onload = (event) => {
+                this.$nextTick(() => {
+                    this.standardContentDimensions.height = event.target.height
+                })
+            }
+
+
+            window.addEventListener('resize', () => {
+                this.standardContentDimensions.width = firstImage.width
+                this.standardContentDimensions.height = firstImage.height
+            })
+            // console.log("img", this.$el.getElementsByTagName('img')[0].naturalWidth)
         },
         methods: {
             visibilityChanged(isVisible){
@@ -68,7 +95,7 @@
                 return {
                     visible: this.isVisible,
                     'project-element': true,
-                    container: true
+                    'container-fluid': true
                 }
             },
             threshold(){
@@ -92,7 +119,8 @@
     }
 
     .VueCarousel-slide{
-        width: 100vw;
+        /*width: 100vw;*/
+        /*background: lightgrey;*/
     }
 
     .project-element{

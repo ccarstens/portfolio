@@ -22,7 +22,7 @@
     "vue": "^2.5.16",
     "vue-carousel": "^0.8.1",
     "vue-observe-visibility": "^0.4.1",
-    "vue-p5": "^0.4.3"
+    "vue-p5": "^0.6.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

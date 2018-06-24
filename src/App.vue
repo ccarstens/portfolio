@@ -7,7 +7,7 @@
       <AboutElement
               :text="fullData.content.about"
       />
-      <!--<component v-bind:is="name"></component>-->
+      <!--<P5Sketch name="DotCloud"></P5Sketch>-->
 
       <ProjectElement v-for="(project, key) in fullData.content.projects" :key="key" :content="project"/>
 
@@ -19,7 +19,7 @@ import HeaderElement from './components/HeaderElement'
 import ProjectElement from './components/ProjectElement'
 import AboutElement from './components/AboutElement'
 import AudioElement from './components/AudioElement'
-import DotCloud from './components/DotCloud'
+import P5Sketch from './components/P5Sketch'
 
 import state from './state'
 
@@ -29,6 +29,13 @@ export default {
     props: [
         'mainData'
     ],
+    components: {
+        ProjectElement,
+        HeaderElement,
+        AboutElement,
+        AudioElement,
+        P5Sketch
+    },
     data () {
         return{
             fullData: {},
@@ -68,13 +75,6 @@ export default {
             deep: true
         }
     },
-    components: {
-        ProjectElement,
-        HeaderElement,
-        AboutElement,
-        AudioElement,
-        DotCloud
-    }
 }
 </script>
 

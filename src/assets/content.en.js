@@ -18,12 +18,12 @@ Best,
             media: [
 
                 {
-                    src: 'assets/Stethoskop.gif',
-                    description: 'View of the holographic installation'
-                },
-                {
                     sketchName: 'DotCloud',
                     description: 'Interaction demo of a wip state of the particle visualisation'
+                },
+                {
+                    src: 'assets/Stethoskop.gif',
+                    description: 'View of the holographic installation'
                 },
             ]
         },

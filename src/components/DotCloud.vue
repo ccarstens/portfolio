@@ -1,12 +1,14 @@
 <template>
-    <div style="user-select: none;">
+    <div style="user-select: none;" @mouseout="mouseOut" @mouseover="mouseOver">
         <vue-p5
+                @sketch="sketch"
                 @preload="preload"
                 @setup="setup"
                 @draw="draw"
-                @key-pressed="keyPressed"
-                @mouse-moved="mouseMoved"
-                @mouse-dragged="mouseDragged">
+                @keypressed="keyPressed"
+                @mousemoved="mouseMoved"
+                @mousedragged="mouseDragged">
+
         </vue-p5>
     </div>
 </template>
@@ -20,43 +22,64 @@
         components: {
             "vue-p5": VueP5
         },
+        props: [
+            'width',
+            'height'
+        ],
         data: () => ({
             movers: [],
             bgColor: null,
-            canvasWidth: window.innerWidth,
-            canvasHeight: window.innerHeight * 0.75,
-            moverCount: 300,
+            moverCount: 900,
             s: null,
-            mouse: null
+            mouse: null,
+            mouseOnCanvas: false,
+            canvasWidth: 0,
+            canvasHeight: 0,
+            frameRate: 30,
         }),
+        created(){
+
+        },
+        mounted(){
+
+        },
         methods: {
+            sketch(s){
+                s.draw = () => {
+                    // console.log("there")
+                    s.background(255, 0, 0)
+                }
+            },
             preload(s) {
                 // this.backgroundImage = s.loadImage("static/p5js.png");
                 // console.log(this.backgroundImage);
             },
             setup(s) {
                 this.s = s
+                // this.bgColor = s.color(255, 200, 128)
                 this.bgColor = s.color(0)
 
-                this.mouse = s.createVector(this.canvasWidth / 2, this.canvasHeight / 2)
+                this.resetMouse()
 
-                s.createCanvas(this.canvasWidth, this.canvasHeight, s.WEBGL);
+                s.createCanvas(this.width, this.height, s.WEBGL);
+                console.log("setup", this.width, this.height)
+                // s.createCanvas(300, 150, s.WEBGL);
                 s.background(this.bgColor)
-                s.frameRate(40)
+                s.frameRate(this.frameRate)
 
                 this.createMovers()
 
-                window.addEventListener('resize', () => {
-                    s.resizeCanvas(this.canvasWidth, this.canvasHeight)
-                    s.background(this.bgColor)
-                })
+                // window.addEventListener('resize', () => {
+                //     s.resizeCanvas(this.width, this.height)
+                //     s.background(this.bgColor)
+                // })
 
             },
             createMovers(){
                 for(let i = 0; i < this.moverCount; i++){
                     this.movers.push(new Mover(this.s,
-                        this.s.random(0, this.canvasWidth),
-                        this.s.random(0, this.canvasHeight)
+                        this.s.random(this.width / 5 * 3, this.width),
+                        this.s.random(this.height / 5 * 3, this.height)
                     ))
                 }
             },
@@ -78,14 +101,44 @@
 
             },
             mouseMoved({ mouseX, mouseY, pmouseX, pmouseY }) {
-                this.mouse = this.s.createVector(mouseX, mouseY)
+                if(this.mouseOnCanvas) this.mouse = this.s.createVector(mouseX, mouseY)
             },
             mouseDragged({ mouseX, mouseY, pmouseX, pmouseY }) {
-                this.mouse = this.s.createVector(mouseX, mouseY)
+                if(this.mouseOnCanvas) this.mouse = this.s.createVector(mouseX, mouseY)
             },
+            resetMouse(){
+                this.mouse = this.s.createVector(this.width / 2, this.height / 2)
+            },
+            mouseOut(){
+                this.mouseOnCanvas = false
+                this.resetMouse()
+                this.s.frameRate(0)
+            },
+            mouseOver(){
+                this.mouseOnCanvas = true
+                this.s.frameRate(this.frameRate)
+            },
+            resizeCanvas(width, height){
+                if(this.s){
+                    this.s.resizeCanvas(width, height)
+
+                }
+            }
+
         },
         computed: {
 
+        },
+        watch: {
+            // height(newHeight){
+            //     this.resizeCanvas(this.width, newHeight)
+            // },
+            width(newWidth){
+                // console.log(this)
+                if(this.hasOwnProperty('resizeCanvas')){
+                    this.resizeCanvas(newWidth, this.height)
+                }
+            }
         }
     };
 </script>

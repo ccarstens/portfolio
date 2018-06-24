@@ -3,7 +3,10 @@
         <figure>
             <img v-if="isImage(visualElementContent)" :src="test"/>
             <VideoItem v-if="isVideo(visualElementContent)" :src="visualElementContent.src" :play="true"/>
-            <P5Sketch v-if="isP5Sketch(visualElementContent)" :name="visualElementContent.sketchName"></P5Sketch>
+            <P5Sketch
+                    v-if="isP5Sketch(visualElementContent)"
+                    :name="visualElementContent.sketchName"
+                    :dimensions="standardDimensions"></P5Sketch>
             <figcaption>{{ visualElementContent.description }}</figcaption>
         </figure>
     </div>
@@ -15,7 +18,8 @@
     export default {
         name: "VisualElement",
         props: [
-            'content'
+            'content',
+            'standardDimensions'
         ],
         components: {
             VideoItem,
@@ -23,6 +27,9 @@
         },
         created(){
             this.visualElementContent = this.content
+        },
+        mounted(){
+            console.log(this.$el.getBoundingClientRect())
         },
         data(){
             return {
@@ -58,6 +65,8 @@
 
     img{
         max-width: 100%;
+        width: 100%;
+        height: auto;
     }
 
     .visual-content{
