@@ -1,6 +1,6 @@
 <template>
     <div class="p5-sketch">
-        <button @click="show = true">start</button>
+        <button v-if="!show" @click="show = true">start</button>
         <component v-if="show" v-bind:is="name" ></component>
     </div>
 </template>
@@ -17,7 +17,12 @@
         components: {
             DotCloud
         },
-        props: [ 'name' ]
+        props: [ 'name' ],
+        methods: {
+            init(){
+                this.show = true
+            }
+        }
     }
 </script>
 

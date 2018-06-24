@@ -67,7 +67,7 @@
                 }else{
                     this.fadeIn.inProgress = false
                 }
-            }, 25)
+            }, 50)
         },
         decreaseVolumeStepwise(){
 
@@ -83,7 +83,7 @@
                     this.fadeOut.inProgress = false;
                 }
 
-            }, 25)
+            }, 50)
         },
         stopFadeOut(){
             clearTimeout(this.fadeOut.timeout)
