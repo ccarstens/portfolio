@@ -38,7 +38,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
     .name-scroll{
         margin-top: 3em;

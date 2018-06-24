@@ -79,8 +79,9 @@
             createMovers(){
                 for(let i = 0; i < this.moverCount; i++){
                     this.movers.push(new Mover(this.s,
-                        this.s.random(this.width / 5 * 3, this.width),
-                        this.s.random(this.height / 5 * 3, this.height)
+                        this.s.random(this.width / 15 * 14, this.width),
+                        // this.s.random(this.height / 5 * 3, this.height)
+                        this.s.random(0, this.height)
                     ))
                 }
             },

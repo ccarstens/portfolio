@@ -1,19 +1,15 @@
 <template>
     <div class="site-header-container">
-        <!--<div class="gradient fixed-top"></div>-->
         <header id="site-header" class="fixed-top container-fluid">
-            <!--<div class="row">-->
-                <nav class="row">
-                    <!--<ul class="d-flex justify-content-between">-->
-                    <ul class="col offset-1 d-flex justify-content-start">
-                        <li :class="pageNameClasses"><a href="#">cornelius</a></li>
-                        <li class=""><a href="#">projects</a></li>
-                        <!--<li class="d-flex justify-content-center"><a href="#">projects</a></li>-->
-                        <!--<li class="d-flex justify-content-center"></li>-->
-                        <li class=""></li>
-                    </ul>
-                </nav>
-            <!--</div>-->
+            <nav class="row">
+                <ul class="col offset-1 d-flex justify-content-start">
+                    <li :class="pageNameClasses"><a href="#">cornelius</a></li>
+                    <li class=""><a href="#">projects</a></li>
+                    <li class="offset-1">
+                        <LanguageSwitcher></LanguageSwitcher>
+                    </li>
+                </ul>
+            </nav>
         </header>
     </div>
 </template>
@@ -22,9 +18,14 @@
 
     import state from '../state'
 
+    import LanguageSwitcher from './LanguageSwitcher'
+
 
     export default {
         name: "HeaderElement",
+        components: {
+            LanguageSwitcher
+        },
         data(){
             return {
                 offsetTop: 0,
@@ -73,8 +74,10 @@
     #site-header{
         z-index: 2;
 
-        font-weight: 700;
 
+    }
+    .site-header-container{
+        font-weight: 700;
     }
 
     .gradient{
