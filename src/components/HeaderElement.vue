@@ -1,14 +1,19 @@
 <template>
     <div class="site-header-container">
         <!--<div class="gradient fixed-top"></div>-->
-        <header id="site-header" class="fixed-top container">
-            <nav>
-                <ul class="d-flex justify-content-between">
-                    <li :class="pageNameClasses"><a href="#">cornelius</a></li>
-                    <li class="d-flex justify-content-center"><a href="#">projects</a></li>
-                    <li class="d-flex justify-content-center"></li>
-                </ul>
-            </nav>
+        <header id="site-header" class="fixed-top container-fluid">
+            <!--<div class="row">-->
+                <nav class="row">
+                    <!--<ul class="d-flex justify-content-between">-->
+                    <ul class="col offset-1 d-flex justify-content-start">
+                        <li :class="pageNameClasses"><a href="#">cornelius</a></li>
+                        <li class=""><a href="#">projects</a></li>
+                        <!--<li class="d-flex justify-content-center"><a href="#">projects</a></li>-->
+                        <!--<li class="d-flex justify-content-center"></li>-->
+                        <li class=""></li>
+                    </ul>
+                </nav>
+            <!--</div>-->
         </header>
     </div>
 </template>
@@ -44,8 +49,8 @@
         computed: {
             pageNameClasses(){
                 return {
-                    'd-flex': true,
-                    'justify-content-left': true,
+                    // 'd-flex': true,
+                    // 'justify-content-left': true,
                     'no-show': !this.state.state.scrollableIsAtHeaderPosition
                 }
             }
@@ -101,7 +106,8 @@
     }
 
     li{
-        width: 30%;
+        /*width: 30%;*/
+        padding-right: .5em;
 
 
         a{

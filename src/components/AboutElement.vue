@@ -1,9 +1,13 @@
 <template>
     <div id="about" :class="classObject">
         <div class="row">
-            <div class="maintext col col-sm-10 col-md-7 col-lg-5" v-html="text"></div>
+            <div class="maintext col col-sm-10 col-md-7 col-lg-5 offset-sm-1" v-html="text"></div>
         </div>
-        <NameScrollElement/>
+        <div class="row">
+            <div class="col col-sm-10 col-md-7 col-lg-5 offset-sm-1">
+                <NameScrollElement/>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -30,7 +34,7 @@
                 return {
                     about: true,
                     'no-show': this.state.state.scrollableIsAtHeaderPosition,
-                    'container': true
+                    'container-fluid': true
                 }
             }
         }

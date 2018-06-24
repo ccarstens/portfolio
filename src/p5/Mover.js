@@ -24,8 +24,8 @@ class Mover{
 
     show(){
         this.p.noStroke()
-        // this.p.fill(0, 123, 255)
-        this.p.fill(255, 0, 0)
+        this.p.fill(0, 123, 255)
+        // this.p.fill(255, 0, 0)
         this.p.ellipse(this.location.x, this.location.y, this.size, this.size)
     }
 
