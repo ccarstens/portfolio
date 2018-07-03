@@ -1,12 +1,20 @@
 export default {
-    about: `
-    <p>Hello, I’m cornelius,</p>
-<p>an interdisciplinary student of visual communication with backgrounds in fashion photography, web development, interactive installations and piano music.</p>
-<p>While studying I ran the web design agency Awesome Boys for two years with a fellow student and am currently employed by Apple.</p>
-<p>I like learning new things, feedback, getting hired, reading, bread with butter and Apfelschorle.</p>
-<p>I am looking forward to <a href="mailto:cornelius.carstens@me.com">hearing from you</a>.</p>
-Best,
-`,
+    about: {
+        en: `
+            <p>Hello, I’m cornelius,</p>
+            <p>an interdisciplinary student of visual communication with backgrounds in fashion photography, web development, interactive installations and piano music.</p>
+            <p>While studying I ran the web design agency Awesome Boys for two years with a fellow student and am currently employed by Apple.</p>
+            <p>I like learning new things, feedback, getting hired, reading, bread with butter and Apfelschorle.</p>
+            <p>I am looking forward to <a href="mailto:cornelius.carstens@me.com">hearing from you</a>.</p>
+            Best,
+        `,
+        de: `
+            <p>Hallo, ich bin Cornelius,</p>
+            <p>ein interdisziplinärer Student.</p>
+        `
+
+
+    },
     projects: [
         {
             title: 'Stethoscope',

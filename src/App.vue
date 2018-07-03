@@ -1,15 +1,16 @@
 <template>
-  <div id="app" class="">
+  <div id="app" :class="{hide: state.getLanguageSwitcherInAction()}">
 
       <HeaderElement/>
       <!--<button @click="switchGerman">Deutsch</button>-->
       <AudioActivation @click="initAudioElements"></AudioActivation>
+
       <AboutElement
-              :text="fullData.content.about"
+              :text="e(content.about)"
       />
       <!--<P5Sketch name="DotCloud"></P5Sketch>-->
 
-      <ProjectElement v-for="(project, key) in fullData.content.projects" :key="key" :content="project"/>
+      <ProjectElement v-for="(project, key) in content.projects" :key="key" :content="project"/>
 
   </div>
 </template>
@@ -23,13 +24,12 @@ import P5Sketch from './components/P5Sketch'
 import AudioActivation from './components/AudioActivation'
 
 import state from './state'
+import e from './localizedContent'
 
+import mainContent from './assets/content'
 
 export default {
     name: 'App',
-    props: [
-        'mainData'
-    ],
     components: {
         ProjectElement,
         HeaderElement,
@@ -40,12 +40,13 @@ export default {
     },
     data () {
         return{
-            fullData: {},
+            content: mainContent,
             state: state,
             name: "DotCloud"
         }
     },
     methods: {
+        e,
         switchGerman(){
 
             this.$root.switchToGerman()
@@ -65,14 +66,15 @@ export default {
 
         }
     },
-    created(){
-        this.fullData = this.$props.mainData
-
+    computed: {
+        classObject(){
+            fadeOut: this.state.getLanguageSwitcherInAction()
+        }
     },
     watch: {
         mainData: {
             handler: function(newData){
-                this.fullData = newData
+                this.content = newData
             },
             deep: true
         }
@@ -102,7 +104,13 @@ export default {
     /*text-align: center;*/
     color: #007bff;
     margin-top: 60px;
+
+    opacity: 1;
+    transition: opacity 300ms ease-out;
 }
+    #app.hide{
+        opacity: 0;
+    }
 
     @include media-breakpoint-up(xs){
         #app{
@@ -129,4 +137,6 @@ export default {
 
         }
     }
+
+
 </style>

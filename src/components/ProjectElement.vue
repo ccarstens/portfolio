@@ -175,7 +175,7 @@
     }
 
     .fading-description{
-        margin-top: 3em;
+        margin-top: 5em;
     }
 
     .fade-enter, .fade-leave-to{
