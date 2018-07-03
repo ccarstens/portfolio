@@ -8,14 +8,25 @@
     }">
         <div class="row">
             <AudioElement v-if="hasGlobalAudio" :play="playAudio" :src="projectContent.globalAudio.src"></AudioElement>
-            <header v-html="description" class="description col order-0 col-md-4 order-md-1"></header>
+            <header class="description col order-0 col-md-4 order-md-1">
+                <p>
+                    <h3>{{projectContent.title}}</h3> {{projectContent.year}}
+                </p>
+                <p>
+                    {{ projectContent.description }}
+                </p>
+                <transition name="fade" mode="out-in">
+                    <div v-for="(slide, index) in projectContent.media" :key="index" v-if="index === currentPage" class="fading-description">
+                            {{ slide.description }}
+                    </div>
+                </transition>
+            </header>
             <div class="content col order-1 col-md-8 order-md-0">
                 <carousel
                         :per-page="1"
                         :pagination-enabled="true"
                         :navigation-enabled="false"
-                        @pageChange="handlePageChange"
-                        class=""
+                        v-model="currentPage"
                 >
                     <slide
                             v-for="(slide, index) in projectContent.media"
@@ -35,8 +46,8 @@
 
 <script>
 
-    // import {Carousel, Slide} from '../../../vue-carousel/dist/vue-carousel.min'
-    import {Carousel, Slide} from 'vue-carousel/'
+    import {Carousel, Slide} from '../../../vue-carousel/dist/vue-carousel.min'
+    // import {Carousel, Slide} from 'vue-carousel'
     import VisualElement from './VisualElement'
     import AudioElement from './AudioElement'
     export default {
@@ -52,11 +63,11 @@
         ],
         data () {
             return {
+                currentPage: 0,
                 projectContent: {},
                 isVisible: false,
                 throttle: 300,
                 carousel: null,
-                activeSlide: 0,
                 standardContentDimensions: {
                     width: 0,
                     height: 0
@@ -91,9 +102,6 @@
             visibilityChanged(isVisible){
                 this.isVisible = isVisible
             },
-            handlePageChange(activeSlide){
-                this.activeSlide = activeSlide
-            }
         },
         watch: {
             content(newContent){
@@ -101,9 +109,6 @@
             },
         },
         computed: {
-            test(a){
-                return this.activeSlide + a
-            },
             description(){
                 return `
                     <p><h3>${ this.projectContent.title }</h3> ${this.projectContent.year}</p>
@@ -167,5 +172,25 @@
 
     .visible{
         /*background: rgba(0, 255, 128, 0.1);*/
+    }
+
+    .fading-description{
+        margin-top: 3em;
+    }
+
+    .fade-enter, .fade-leave-to{
+        opacity: 0;
+    }
+
+    .fade-enter-to, .fade-leave{
+        opacity: 1;
+    }
+
+    .fade-enter-active{
+        transition: opacity 500ms ease-out;
+    }
+
+    .fade-leave-active{
+        transition: opacity 200ms ease-out;
     }
 </style>
