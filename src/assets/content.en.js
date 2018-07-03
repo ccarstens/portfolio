@@ -1,6 +1,5 @@
 export default {
     about: `
-<p style="font-size: 64px;">click 🔊</p>
     <p>Hello, I’m cornelius,</p>
 <p>an interdisciplinary student of visual communication with backgrounds in fashion photography, web development, interactive installations and piano music.</p>
 <p>While studying I ran the web design agency Awesome Boys for two years with a fellow student and am currently employed by Apple.</p>

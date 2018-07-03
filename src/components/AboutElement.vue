@@ -46,7 +46,7 @@
     /*@import '../../node_modules/bootstrap-scss/mixins/breakpoints';*/
 
     .about{
-        padding-top: 35vh;
+        /*padding-top: 35vh;*/
         margin-bottom: 20em;
     }
 

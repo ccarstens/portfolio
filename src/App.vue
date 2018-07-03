@@ -3,7 +3,7 @@
 
       <HeaderElement/>
       <!--<button @click="switchGerman">Deutsch</button>-->
-      <button @click="initAudioElements">audio</button>
+      <AudioActivation @click="initAudioElements"></AudioActivation>
       <AboutElement
               :text="fullData.content.about"
       />
@@ -20,6 +20,7 @@ import ProjectElement from './components/ProjectElement'
 import AboutElement from './components/AboutElement'
 import AudioElement from './components/AudioElement'
 import P5Sketch from './components/P5Sketch'
+import AudioActivation from './components/AudioActivation'
 
 import state from './state'
 
@@ -34,7 +35,8 @@ export default {
         HeaderElement,
         AboutElement,
         AudioElement,
-        P5Sketch
+        P5Sketch,
+        AudioActivation
     },
     data () {
         return{

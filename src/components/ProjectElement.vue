@@ -106,7 +106,7 @@
             },
             description(){
                 return `
-                    <p>${ this.projectContent.title } - ${this.projectContent.year}</p>
+                    <p><h3>${ this.projectContent.title }</h3> ${this.projectContent.year}</p>
                     <p>${ this.projectContent.description }</p>
                 `
             },
@@ -148,6 +148,11 @@
         padding-top: 5em;
         padding-bottom: 3em;
         color: #007bff;
+
+        h3{
+            font-size: inherit;
+            display: inline-block;
+        }
     }
 
     .project-element.dark{

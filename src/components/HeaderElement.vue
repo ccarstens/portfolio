@@ -73,7 +73,32 @@
 
     #site-header{
         z-index: 2;
+        pointer-events: none;
 
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+
+            /*-webkit-justify-content: space-between;*/
+
+        }
+
+        li{
+            /*width: 30%;*/
+            padding-right: .5em;
+
+
+            a{
+                display: inline-block;
+                /*color: #000000;*/
+                pointer-events: auto;
+
+            }
+        }
+
+        li.no-show{
+            opacity: 0;
+        }
 
     }
     .site-header-container{
@@ -100,28 +125,6 @@
     /*}*/
 
 
-    ul {
-        list-style-type: none;
-        padding-left: 0;
 
-        /*-webkit-justify-content: space-between;*/
-
-    }
-
-    li{
-        /*width: 30%;*/
-        padding-right: .5em;
-
-
-        a{
-            display: inline-block;
-            /*color: #000000;*/
-
-        }
-    }
-
-    li.no-show{
-        opacity: 0;
-    }
 
 </style>
