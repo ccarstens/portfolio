@@ -1,4 +1,18 @@
 export default {
+    labels: {
+        click: {
+            en: 'click',
+            de: 'klick',
+            ru: 'щелчок',
+            jp: 'クリック'
+        },
+        projects: {
+            en: 'projects',
+            de: 'projekte',
+            jp: 'プロジェクト',
+            ru: 'проектов'
+        }
+    },
     about: {
         en: `
             <p>Hello, I’m cornelius,</p>
@@ -11,6 +25,32 @@ export default {
         de: `
             <p>Hallo, ich bin Cornelius,</p>
             <p>ein interdisziplinärer Student.</p>
+        `,
+        ru: `
+        Привет, я cornelius,
+
+междисциплинарный студент визуальной коммуникации с фоном в модной фотографии, веб-разработкой, интерактивными установками и фортепианной музыкой.
+
+Во время учебы я управлял агентством веб-дизайна Awesome Boys в течение двух лет с одним студентом и в настоящее время занимаюсь Apple.
+
+Мне нравится изучать новые вещи, обратную связь, нанимать, читать, хлеб с маслом и Apfelschorle.
+
+Я с нетерпением жду услышать от вас.
+
+Лучший
+        `,
+        jp: `
+        こんにちは、私はコーネリアスです、
+
+ファッション写真、ウェブ開発、インタラクティブインスタレーション、ピアノ音楽の背景を持つ学際的なコミュニケーションの学生です。
+
+勉強している間、私はWebデザインエージェンシーのAwesome Boysを2年間仲間と走り、現在Appleに雇われています。
+
+私は新しいこと、フィードバック、雇用、読書、バターとApfelschorleのパンを学ぶのが好きです。
+
+お返事を待っています。
+
+ベスト
         `
 
 
@@ -24,9 +64,12 @@ export default {
                 ru: 'стетоскоп'
             },
             year: 2018,
+            darkMode: true,
             description: {
                 en: 'interactive installation connecting a user with her own hearbeat using a stethoscope and a holographic projection',
-                de: 'Interaktive Installation bei der die Betrachterin durch ein Stethoskop mit dem eigenen Herzschlag und einer holografischen Projektion verbunden wird'
+                de: 'Interaktive Installation bei der die Betrachterin durch ein Stethoskop mit dem eigenen Herzschlag und einer holografischen Projektion verbunden wird',
+                ru: 'интерактивная установка, соединяющая пользователя с ее собственным слухом, используя стетоскоп и голографическую проекцию',
+                jp: '聴診器とホログラフィックプロジェクションを使用して、自分のヒアビートとユーザーを接続するインタラクティブインストール',
             },
             globalAudio: {
                 src: 'assets/wolves.mp3'

@@ -12,11 +12,9 @@
                 <p>
                     <h3>{{e(projectContent.title)}}</h3> {{projectContent.year}}
                 </p>
-                <p>
-                    {{ e(projectContent.description) }}
-                </p>
+                <p v-html="e(projectContent.description) "></p>
                 <transition name="fade" mode="out-in">
-                    <div v-for="(slide, index) in projectContent.media" :key="index" v-if="index === currentPage" class="fading-description">
+                    <div v-for="(slide, index) in projectContent.media" :key="index" v-if="index === currentPage" class="fading-description d-none d-sm-block">
                             {{ e(slide.description) }}
                     </div>
                 </transition>
@@ -26,6 +24,9 @@
                         :per-page="1"
                         :pagination-enabled="true"
                         :navigation-enabled="false"
+                        paginationActiveColor="rgba(0, 123, 255, 1)"
+                        paginationColor="rgba(0, 123, 255, .5)"
+                        :paginationSize="9"
                         v-model="currentPage"
                 >
                     <slide
@@ -122,7 +123,7 @@
                     visible: this.isVisible,
                     'project-element': true,
                     'container-fluid': true,
-                    dark: this.projectContent.title == "Stethoscope"
+                    dark: this.hasDarkMode
                 }
             },
             threshold(){
@@ -133,6 +134,12 @@
             },
             hasGlobalAudio(){
                 return this.projectContent.hasOwnProperty('globalAudio')
+            },
+            hasDarkMode(){
+                if(this.projectContent.hasOwnProperty('darkMode')){
+                    return this.projectContent.darkMode
+                }
+                return false
             }
         }
     }
@@ -142,12 +149,22 @@
 
     .VueCarousel{
         width: 100%;
-        /*touch-action: none;*/
+        cursor: url(../assets/cursor.png), auto;
+        cursor: -webkit-image-set(
+            url(../assets/cursor.png) 2x
+        ), auto;
+    }
+
+    .VueCarousel-wrapper{
+        margin-bottom: -18px;
     }
 
     .VueCarousel-slide{
         /*width: 100vw;*/
         /*background: lightgrey;*/
+        figure{
+            margin-bottom: 0;
+        }
     }
 
     .project-element{

@@ -4,7 +4,7 @@
             <nav class="row">
                 <ul class="col offset-1 d-flex justify-content-start">
                     <li :class="pageNameClasses"><a href="#">cornelius</a></li>
-                    <li class=""><a href="#">projects</a></li>
+                    <li class=""><a href="#">{{e($parent.content.labels.projects)}}</a></li>
                     <li class="offset-1">
                         <LanguageSwitcher></LanguageSwitcher>
                     </li>
@@ -17,6 +17,7 @@
 <script>
 
     import state from '../state'
+    import e from '../localizedContent'
 
     import LanguageSwitcher from './LanguageSwitcher'
 
@@ -40,6 +41,7 @@
 
         },
         methods: {
+            e,
             handleResize(){
                 setTimeout((event) => {
                     if(this.state.debug) console.log('window.resize triggered, HeaderElement is handling')

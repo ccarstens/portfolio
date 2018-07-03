@@ -3,7 +3,7 @@ export default {
     state: {
         headerOffset: 0,
         scrollableIsAtHeaderPosition: false,
-        activeLanguage: 'de',
+        activeLanguage: 'en',
         languageSwitcherInAction: false
     },
     setHeaderOffset(newValue){
