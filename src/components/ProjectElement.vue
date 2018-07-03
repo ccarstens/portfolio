@@ -10,14 +10,14 @@
             <AudioElement v-if="hasGlobalAudio" :play="playAudio" :src="projectContent.globalAudio.src"></AudioElement>
             <header class="description col order-0 col-md-4 order-md-1">
                 <p>
-                    <h3>{{projectContent.title}}</h3> {{projectContent.year}}
+                    <h3>{{e(projectContent.title)}}</h3> {{projectContent.year}}
                 </p>
                 <p>
-                    {{ projectContent.description }}
+                    {{ e(projectContent.description) }}
                 </p>
                 <transition name="fade" mode="out-in">
                     <div v-for="(slide, index) in projectContent.media" :key="index" v-if="index === currentPage" class="fading-description">
-                            {{ slide.description }}
+                            {{ e(slide.description) }}
                     </div>
                 </transition>
             </header>
@@ -50,6 +50,7 @@
     // import {Carousel, Slide} from 'vue-carousel'
     import VisualElement from './VisualElement'
     import AudioElement from './AudioElement'
+    import e from '../localizedContent'
     export default {
         name: "ProjectElement",
         components: {
@@ -99,6 +100,7 @@
             // console.log("img", this.$el.getElementsByTagName('img')[0].naturalWidth)
         },
         methods: {
+            e,
             visibilityChanged(isVisible){
                 this.isVisible = isVisible
             },

@@ -17,20 +17,34 @@ export default {
     },
     projects: [
         {
-            title: 'Stethoscope',
+            title: {
+                en: 'Stethoscope',
+                de: 'Stethoskop',
+                jp: '聴診器',
+                ru: 'стетоскоп'
+            },
             year: 2018,
-            description: 'interactive installation connecting a user with her own hearbeat using a stethoscope and a holographic projection',
+            description: {
+                en: 'interactive installation connecting a user with her own hearbeat using a stethoscope and a holographic projection',
+                de: 'Interaktive Installation bei der die Betrachterin durch ein Stethoskop mit dem eigenen Herzschlag und einer holografischen Projektion verbunden wird'
+            },
             globalAudio: {
                 src: 'assets/wolves.mp3'
             },
             media: [
                 {
                     src: 'assets/Stethoskop.gif',
-                    description: 'View of the holographic installation'
+                    description: {
+                        en: 'View of the holographic installation',
+                        de: 'Anblick der holografischen Installation'
+                    }
                 },
                 {
                     sketchName: 'DotCloud',
-                    description: 'Interaction demo of a wip state of the particle visualisation'
+                    description: {
+                        en: 'Interaction demo of a wip state of the particle visualisation',
+                        de: 'Interaktive Demo aus dem Findungsprozess der Partikel-Animationen'
+                    }
                 },
 
             ]

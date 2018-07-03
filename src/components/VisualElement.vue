@@ -9,7 +9,7 @@
                     :dimensions="standardDimensions"
                     :isVisible="isActive"
             ></P5Sketch>
-            <figcaption>{{ visualElementContent.description }}</figcaption>
+            <figcaption>{{ e(visualElementContent.description) }}</figcaption>
         </figure>
     </div>
 </template>
@@ -17,6 +17,7 @@
 <script>
     import VideoItem from './VideoItem'
     import P5Sketch from './P5Sketch'
+    import e from '../localizedContent'
     export default {
         name: "VisualElement",
         props: [
@@ -50,6 +51,7 @@
             }
         },
         methods: {
+            e,
             isImage(visualElement){
                 if(visualElement.hasOwnProperty('src')){
                     return visualElement.src.match(/(gif|jpg|jpeg|png)$/)
