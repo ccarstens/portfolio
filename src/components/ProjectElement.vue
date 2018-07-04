@@ -28,9 +28,10 @@
                         paginationColor="rgba(0, 123, 255, .5)"
                         :paginationSize="9"
                         v-model="currentPage"
+                        @click.native="handleCarouselClick"
                 >
                     <slide
-                            v-for="(slide, index) in projectContent.media"
+                        v-for="(slide, index) in projectContent.media"
                             :key="index"
                     >
                         <VisualElement
@@ -70,6 +71,7 @@
                 isVisible: false,
                 throttle: 300,
                 carousel: null,
+                slideCount: 0,
                 standardContentDimensions: {
                     width: 0,
                     height: 0
@@ -78,6 +80,7 @@
         },
         created(){
             this.projectContent = this.content
+            this.slideCount = this.projectContent.media.length
         },
         mounted(){
             this.carousel = this.$el.getElementsByClassName('VueCarousel')[0]
@@ -105,6 +108,19 @@
             visibilityChanged(isVisible){
                 this.isVisible = isVisible
             },
+            handleCarouselClick(e){
+                if(this.getLeftRightByEvent(e) === 'left'){
+                    if(this.currentPage > 0) this.currentPage --
+                }else{
+                    if(this.currentPage + 1 < this.slideCount) this.currentPage ++
+
+                }
+            },
+            getLeftRightByEvent(e){
+                const targetWidth = e.target.offsetWidth
+                const clickedLocation = e.offsetX
+                return clickedLocation <= targetWidth / 2 ? 'left' : 'right'
+            }
         },
         watch: {
             content(newContent){
