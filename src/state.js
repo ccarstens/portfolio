@@ -30,6 +30,14 @@ export default {
         if (this.debug) console.log('Get languageSwitcherInAction with value', this.state.languageSwitcherInAction)
         return this.state.languageSwitcherInAction
     },
+    setIsTouch(newValue) {
+        if (this.debug) console.log('Set isTouch to', newValue)
+        this.state.isTouch = newValue
+    },
+    getIsTouch() {
+        if (this.debug) console.log('Get isTouch with value', this.state.isTouch)
+        return this.state.isTouch
+    },
 
 
 

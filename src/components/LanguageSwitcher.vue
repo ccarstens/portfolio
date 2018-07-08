@@ -1,5 +1,5 @@
 <template>
-    <ul class="language-switcher">
+    <ul class="language-switcher text-right text-sm-left">
         <li><a href="#" @click.prevent="switchLanguage" data-language="en">english</a></li>
         <li><a href="#" @click.prevent="switchLanguage" data-language="de">Deutsch</a></li>
         <li><a href="#" @click.prevent="switchLanguage" data-language="jp">日本語</a></li>
@@ -35,8 +35,15 @@
 </script>
 
 <style lang="scss" scoped>
+
+    @import '../../node_modules/bootstrap-scss/functions';
+    @import '../../node_modules/bootstrap-scss/variables';
+    @import '../../node_modules/bootstrap-scss/mixins';
+    @import '../../node_modules/bootstrap-scss/grid';
+
     .language-switcher{
         font-weight: normal;
+        font-size: 1.25rem;
 
         li{
             margin-bottom: -.4em;
@@ -48,6 +55,18 @@
 
         a:link{
             text-decoration: underline;
+        }
+    }
+
+    @include media-breakpoint-down(md){
+        .language-switcher{
+            font-size: 1rem;
+
+            li{
+                margin-bottom: .1em;
+            }
+
+
         }
     }
 </style>

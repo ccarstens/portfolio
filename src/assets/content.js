@@ -24,7 +24,10 @@ export default {
         `,
         de: `
             <p>Hallo, ich bin Cornelius,</p>
-            <p>ein interdisziplinärer Student.</p>
+<p>ich studiere Kommunikationsdesign in Berlin und beschäftige mich mit web development, Installationsprojekten, Modefotografie und Klavierimprovisation.</p>
+<p>Neben dem Studium habe ich die web design Agentur Awesome Boys geführt und arbeite momentan für Apple.</p>
+<p>Ich mag es neue Dinge zu lernen, Feedback bekommen und geben, Jobs bekommen, Lesen, Brot mit Butter und Apfelschorle.</p>
+<p>Ich freue mich darauf von euch zu hören.</p>
         `,
         ru: `
         Привет, я cornelius,
@@ -57,6 +60,52 @@ export default {
     },
     projects: [
         {
+            title: 'Marius Hirschel',
+            year: 2016,
+            description: 'custom portfolio for berlin based hair stylist',
+            url: 'http://mariushirschel.com',
+            globalAudio: {
+                src: 'assets/wolves.mp3'
+            },
+            media: [
+
+                {
+                    src: 'assets/projects/mh/01_marius_hirschel_cornelius_carstens_midhigh.mp4',
+                    description: 'Fadings bound to scroll hello'
+                },
+                {
+                    src: 'assets/projects/mh/02_marius_hirschel_cornelius_carstens.jpg',
+                    description: 'Front Page of Marius Hirschel'
+                }
+            ]
+        },
+        {
+            title: 'Goetze',
+            year: 2016,
+            description: {
+                de: 'Website und online shop für menswear label aus Berlin'
+            },
+            darkMode: false,
+            media: [
+                {
+                    src: 'assets/01_scrollcast_marius.mp4',
+                    description: 'Startseite mit Videoeinbindung'
+                },
+                {
+                    src: 'assets/01_main.png',
+                    description: 'Startseite mit Videoeinbindung'
+                },
+                {
+                    src: 'assets/02_shop.png',
+                    description: 'Shop'
+                },
+                {
+                    src: 'assets/03_product.png',
+                    description: 'Detailansicht eines Produktes'
+                },
+            ]
+        },
+        {
             title: {
                 en: 'Stethoscope',
                 de: 'Stethoskop',
@@ -67,7 +116,9 @@ export default {
             darkMode: true,
             description: {
                 en: 'interactive installation connecting a user with her own hearbeat using a stethoscope and a holographic projection',
-                de: 'Interaktive Installation bei der die Betrachterin durch ein Stethoskop mit dem eigenen Herzschlag und einer holografischen Projektion verbunden wird',
+                de: 'embodied interfaces\n' +
+                'Im Zentrum dieser Installation steht die Auseinandersetzung der Betrachter mit ihren körpereigenen Signalen. In einem dunklen Raum wird mithilfe eines Stethoskops der eigene Herzschlag abgehört. In der Raummitte bewegen sich Partikel im Takt des Herzschlags in einer holographischen Projektion.\n' +
+                'Die auditive und visuelle Wahrnehmung der Teilnehmer wird nahezu vollständig von Signalen des eigenen Körpers bestimmt während die meisten anderen Sinneseindrücke in diesem Aufbau vermieden werden.',
                 ru: 'интерактивная установка, соединяющая пользователя с ее собственным слухом, используя стетоскоп и голографическую проекцию',
                 jp: '聴診器とホログラフィックプロジェクションを使用して、自分のヒアビートとユーザーを接続するインタラクティブインストール',
             },
@@ -85,7 +136,7 @@ export default {
                 {
                     sketchName: 'DotCloud',
                     description: {
-                        en: 'Interaction demo of a wip state of the particle visualisation',
+                        en: 'Interaction demo of a wip state of the particle visualisation particle visualisation',
                         de: 'Interaktive Demo aus dem Findungsprozess der Partikel-Animationen'
                     }
                 },
@@ -107,29 +158,10 @@ export default {
                 },
                 {
                     src: 'assets/01_EEE_CORNELIUS_CARSTENS.jpg',
-                    description: 'Application of the verses'
+                    description: 'Application of the verses Application of the verses Application of the verses Application of the verses'
                 },
             ]
         },
-        {
-            title: 'Marius Hirschel',
-            year: 2016,
-            description: 'custom portfolio for berlin based hair stylist',
-            url: 'http://mariushirschel.com',
-            globalAudio: {
-                src: 'assets/wolves.mp3'
-            },
-            media: [
 
-                {
-                    src: 'assets/scrollcast_1.mp4',
-                    description: 'Fadings applied'
-                },
-                {
-                    src: 'assets/01_MARIUS_CORNELIUS_CARSTENS.jpg',
-                    description: 'Front Page of Marius Hirschel'
-                }
-            ]
-        }
     ]
 }

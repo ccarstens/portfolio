@@ -2,13 +2,15 @@
     <div class="site-header-container">
         <header id="site-header" class="fixed-top container-fluid">
             <nav class="row">
-                <ul class="col offset-1 d-flex justify-content-start">
-                    <li :class="pageNameClasses"><a href="#">cornelius</a></li>
-                    <li class=""><a href="#">{{e($parent.content.labels.projects)}}</a></li>
-                    <li class="offset-1">
-                        <LanguageSwitcher></LanguageSwitcher>
-                    </li>
-                </ul>
+                <div class="wrapper col  offset-md-1">
+                    <ul class="nav-list d-flex">
+                        <li :class="pageNameClasses"><a href="#">cornelius</a></li>
+                        <li class=""><a href="#">{{e($parent.content.labels.projects)}}</a></li>
+                        <li class="ml-auto ml-lg-5 offset-lg-1">
+                            <LanguageSwitcher></LanguageSwitcher>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </header>
     </div>
@@ -73,6 +75,10 @@
         height: 30px;
     }
 
+    .nav-list > li:not(:last-child){
+        padding-right: .5em;
+    }
+
     #site-header{
         z-index: 2;
         pointer-events: none;
@@ -82,12 +88,11 @@
             padding-left: 0;
 
             /*-webkit-justify-content: space-between;*/
-
         }
+
 
         li{
             /*width: 30%;*/
-            padding-right: .5em;
 
 
             a{

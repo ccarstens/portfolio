@@ -8,24 +8,28 @@
     }">
         <div class="row">
             <AudioElement v-if="hasGlobalAudio" :play="playAudio" :src="projectContent.globalAudio.src"></AudioElement>
-            <header class="description col order-0 col-md-4 order-md-1">
-                <p>
+
+            <header class="description col-12 order-0 col-md-4 order-md-1 d-flex flex-column">
+                <div>
                     <h3>{{e(projectContent.title)}}</h3> {{projectContent.year}}
-                </p>
+                </div>
+
                 <p v-html="e(projectContent.description) "></p>
+
                 <transition name="fade" mode="out-in">
-                    <div v-for="(slide, index) in projectContent.media" :key="index" v-if="index === currentPage" class="fading-description d-none d-sm-block">
+                    <div class="fading-description mt-md-auto" v-for="(slide, index) in projectContent.media" :key="index" v-if="index === currentPage">
                             {{ e(slide.description) }}
                     </div>
                 </transition>
             </header>
-            <div class="content col order-1 col-md-8 order-md-0">
+
+            <div class="content col-12 order-1 col-md-8 order-md-0">
                 <carousel
                         :per-page="1"
-                        :pagination-enabled="true"
+                        :pagination-enabled="false"
                         :navigation-enabled="false"
                         paginationActiveColor="rgba(0, 123, 255, 1)"
-                        paginationColor="rgba(0, 123, 255, .5)"
+                        paginationColor="rgba(0, 123, 255, .25)"
                         :paginationSize="9"
                         v-model="currentPage"
                         @click.native="handleCarouselClick"
@@ -52,6 +56,7 @@
     // import {Carousel, Slide} from 'vue-carousel'
     import VisualElement from './VisualElement'
     import AudioElement from './AudioElement'
+    import state from '../state'
     import e from '../localizedContent'
     export default {
         name: "ProjectElement",
@@ -66,6 +71,7 @@
         ],
         data () {
             return {
+                state: state,
                 currentPage: 0,
                 projectContent: {},
                 isVisible: false,
@@ -109,11 +115,12 @@
                 this.isVisible = isVisible
             },
             handleCarouselClick(e){
-                if(this.getLeftRightByEvent(e) === 'left'){
-                    if(this.currentPage > 0) this.currentPage --
-                }else{
-                    if(this.currentPage + 1 < this.slideCount) this.currentPage ++
-
+                if(!this.state.getIsTouch()){
+                    if(this.getLeftRightByEvent(e) === 'left'){
+                        if(this.currentPage > 0) this.currentPage --
+                    }else{
+                        if(this.currentPage + 1 < this.slideCount) this.currentPage ++
+                    }
                 }
             },
             getLeftRightByEvent(e){
@@ -163,6 +170,11 @@
 
 <style lang="scss">
 
+    @import '../../node_modules/bootstrap-scss/functions';
+    @import '../../node_modules/bootstrap-scss/variables';
+    @import '../../node_modules/bootstrap-scss/mixins';
+    @import '../../node_modules/bootstrap-scss/grid';
+
     .VueCarousel{
         width: 100%;
         cursor: url(../assets/cursor.png), auto;
@@ -172,7 +184,7 @@
     }
 
     .VueCarousel-wrapper{
-        margin-bottom: -18px;
+        /*<!--margin-bottom: -18px;-->*/
     }
 
     .VueCarousel-slide{
@@ -210,7 +222,18 @@
     }
 
     .fading-description{
-        margin-top: 5em;
+        /*margin-top: 2em;*/
+        /*background: red;*/
+        /*min-height: 5em;*/
+        margin-bottom: 2em;
+    }
+
+    @include media-breakpoint-up(md){
+        .fading-description{
+            /*margin-top: 5em;*/
+            min-height: 0;
+            margin-bottom: 0;
+        }
     }
 
     .fade-enter, .fade-leave-to{

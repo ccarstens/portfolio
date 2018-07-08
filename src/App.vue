@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :class="{hide: state.getLanguageSwitcherInAction()}">
+  <div id="app" :class="classObject">
 
       <HeaderElement/>
       <!--<button @click="switchGerman">Deutsch</button>-->
@@ -45,14 +45,11 @@ export default {
             name: "DotCloud"
         }
     },
+    created(){
+        this.state.setIsTouch(typeof window !== "undefined" && "ontouchstart" in window)
+    },
     methods: {
         e,
-        switchGerman(){
-
-            this.$root.switchToGerman()
-
-
-        },
         initAudioElements(){
             const audioElements = this.$el.getElementsByTagName('audio')
             const audioElementCount = audioElements.length
@@ -68,7 +65,10 @@ export default {
     },
     computed: {
         classObject(){
-            fadeOut: this.state.getLanguageSwitcherInAction()
+            return {
+                hide: this.state.getLanguageSwitcherInAction(),
+                'no-hover': this.state.getIsTouch()
+            }
         }
     },
     watch: {
@@ -96,6 +96,8 @@ export default {
     @import '../node_modules/bootstrap-scss/utilities/display';
     @import '../node_modules/bootstrap-scss/utilities/flex';
     @import '../node_modules/bootstrap-scss/utilities/position';
+    @import '../node_modules/bootstrap-scss/utilities/spacing';
+    @import '../node_modules/bootstrap-scss/utilities/text';
 
 #app {
     font-family: Helvetica, Arial, sans-serif;
@@ -112,6 +114,7 @@ export default {
         opacity: 0;
     }
 
+    // -up-FROM
     @include media-breakpoint-up(xs){
         #app{
             font-size: 1.25rem;

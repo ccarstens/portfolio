@@ -9,9 +9,6 @@
                     :dimensions="standardDimensions"
                     :isVisible="isActive"
             ></P5Sketch>
-            <figcaption
-                class="d-block d-sm-none"
-            >{{ e(visualElementContent.description) }}</figcaption>
         </figure>
     </div>
 </template>
