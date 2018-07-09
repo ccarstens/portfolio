@@ -66,10 +66,10 @@ export default {
                 de: 'Rapid Prototype einer Installation bei der sich ein Sturmgewehr automatisch auf den Kopf der Betrachter ausrichtet und sie verfolgt. \n' +
                 'Kritische Auseinandersetzung mit autonomen Waffensystemen und automatisierter Kriegsführung'
             },
-            url: '',
-            globalAudio: {
-                src: ''
-            },
+            darkMode: true,
+            // globalAudio: {
+            //     src: ''
+            // },
             media: [
                 {
                     src: 'assets/projects/fear/01_fear_cornelius_carstens.jpg',
@@ -172,9 +172,6 @@ export default {
                 ru: 'интерактивная установка, соединяющая пользователя с ее собственным слухом, используя стетоскоп и голографическую проекцию',
                 jp: '聴診器とホログラフィックプロジェクションを使用して、自分のヒアビートとユーザーを接続するインタラクティブインストール',
             },
-            globalAudio: {
-                src: 'assets/wolves.mp3'
-            },
             media: [
                 {
                     src: 'assets/projects/stethoscope/01_stethoscope_cornelius_carstens.gif',
@@ -241,10 +238,6 @@ export default {
                     description: 'DESC'
                 },
                 {
-                    src: 'assets/projects/lea/02_lea_cornelius_carstens.jpg',
-                    description: 'DESC'
-                },
-                {
                     src: 'assets/projects/lea/03_lea_cornelius_carstens.jpg',
                     description: 'DESC'
                 },
@@ -272,6 +265,10 @@ export default {
                     src: 'assets/projects/lea/09_lea_cornelius_carstens.jpg',
                     description: 'DESC'
                 },
+                {
+                    src: 'assets/projects/lea/02_lea_cornelius_carstens.jpg',
+                    description: 'DESC'
+                },
             ]
         },
         {
@@ -279,35 +276,47 @@ export default {
             year: 2016,
             description: 'fashion magazine that uses verses of a poem generated using <i>pattern</i> an NLP library',
             url: 'http://goetze.xyz',
-            globalAudio: {
-                src: 'assets/nantes.mp3'
-            },
+            // globalAudio: {
+            //     src: 'assets/nantes.mp3'
+            // },
             media: [
                 {
-                    src: 'assets/00_EEE_CORNELIUS_CARSTENS.jpg',
-                    description: 'Application of the verses'
+                    src: 'assets/projects/eee/01_eee_cornelius_carstens.jpg',
+                    description: 'DESC'
                 },
                 {
-                    src: 'assets/01_EEE_CORNELIUS_CARSTENS.jpg',
-                    description: 'Application of the verses Application of the verses Application of the verses Application of the verses'
+                    src: 'assets/projects/eee/02_eee_cornelius_carstens.jpg',
+                    description: 'DESC'
                 },
-            ]
-        },
-        {
-            title: '',
-            year: 2016,
-            description: '',
-            url: '',
-            globalAudio: {
-                src: ''
-            },
-            media: [
                 {
-                    src: 'assets/projects/',
+                    src: 'assets/projects/eee/03_eee_cornelius_carstens.jpg',
+                    description: 'DESC'
+                },
+                {
+                    src: 'assets/projects/eee/04_eee_cornelius_carstens.jpg',
+                    description: 'DESC'
+                },
+                {
+                    src: 'assets/projects/eee/05_eee_cornelius_carstens.jpg',
                     description: 'DESC'
                 },
             ]
         },
+        // {
+        //     title: '',
+        //     year: 2016,
+        //     description: '',
+        //     url: '',
+        //     globalAudio: {
+        //         src: ''
+        //     },
+        //     media: [
+        //         {
+        //             src: 'assets/projects/',
+        //             description: 'DESC'
+        //         },
+        //     ]
+        // },
 
     ]
 }
