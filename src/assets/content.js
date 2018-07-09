@@ -60,23 +60,33 @@ export default {
     },
     projects: [
         {
-            title: 'Marius Hirschel',
+            title: 'Fear',
             year: 2016,
-            description: 'custom portfolio for berlin based hair stylist',
-            url: 'http://mariushirschel.com',
+            description: {
+                de: 'Rapid Prototype einer Installation bei der sich ein Sturmgewehr automatisch auf den Kopf der Betrachter ausrichtet und sie verfolgt. \n' +
+                'Kritische Auseinandersetzung mit autonomen Waffensystemen und automatisierter Kriegsführung'
+            },
+            url: '',
             globalAudio: {
-                src: 'assets/wolves.mp3'
+                src: ''
             },
             media: [
-
                 {
-                    src: 'assets/projects/mh/01_marius_hirschel_cornelius_carstens_midhigh.mp4',
-                    description: 'Fadings bound to scroll hello'
+                    src: 'assets/projects/fear/01_fear_cornelius_carstens.jpg',
+                    description: 'DESC'
                 },
                 {
-                    src: 'assets/projects/mh/02_marius_hirschel_cornelius_carstens.jpg',
-                    description: 'Front Page of Marius Hirschel'
-                }
+                    src: 'assets/projects/fear/02_fear_cornelius_carstens.mp4',
+                    description: 'DESC'
+                },
+                {
+                    src: 'assets/projects/fear/03_fear_cornelius_carstens.jpg',
+                    description: 'DESC'
+                },
+                {
+                    src: 'assets/projects/fear/04_fear_cornelius_carstens.mp4',
+                    description: 'DESC'
+                },
             ]
         },
         {
@@ -88,20 +98,60 @@ export default {
             darkMode: false,
             media: [
                 {
-                    src: 'assets/01_scrollcast_marius.mp4',
-                    description: 'Startseite mit Videoeinbindung'
+                    src: 'assets/projects/goetze/01_goetze_cornelius_carstens.jpg',
+                    description: 'DESC'
                 },
                 {
-                    src: 'assets/01_main.png',
-                    description: 'Startseite mit Videoeinbindung'
+                    src: 'assets/projects/goetze/02_goetze_cornelius_carstens.jpg',
+                    description: 'DESC '
                 },
                 {
-                    src: 'assets/02_shop.png',
-                    description: 'Shop'
+                    src: 'assets/projects/goetze/03_goetze_cornelius_carstens.jpg',
+                    description: 'DESC'
                 },
                 {
-                    src: 'assets/03_product.png',
-                    description: 'Detailansicht eines Produktes'
+                    src: 'assets/projects/goetze/04_goetze_cornelius_carstens.jpg',
+                    description: 'DESC'
+                },
+                {
+                    src: 'assets/projects/goetze/05_goetze_cornelius_carstens.mp4',
+                    description: 'DESC'
+                },
+            ]
+        },
+        {
+            title: 'Marius Hirschel',
+            year: 2017,
+            description: 'custom portfolio for berlin based hair stylist',
+            url: 'http://mariushirschel.com',
+            media: [
+                {
+                    src: 'assets/projects/mh/01_marius_hirschel_cornelius_carstens.mp4',
+                    description: 'DESC'
+                },
+                {
+                    src: 'assets/projects/mh/02_marius_hirschel_cornelius_carstens.jpg',
+                    description: 'DESC'
+                }
+            ]
+        },
+        {
+            title: 'Christian Stemmler',
+            year: 2016,
+            description: 'custom portfolio for berlin based fashion stylist',
+            url: 'http://christianstemmler.com',
+            media: [
+                {
+                    src: 'assets/projects/stemmi/01_christian_stemmler_cornelius_carstens.jpg',
+                    description: 'DESC'
+                },
+                {
+                    src: 'assets/projects/stemmi/02_christian_stemmler_cornelius_carstens.mp4',
+                    description: 'DESC'
+                },
+                {
+                    src: 'assets/projects/stemmi/03_christian_stemmler_cornelius_carstens.jpg',
+                    description: 'DESC'
                 },
             ]
         },
@@ -127,10 +177,22 @@ export default {
             },
             media: [
                 {
-                    src: 'assets/Stethoskop.gif',
+                    src: 'assets/projects/stethoscope/01_stethoscope_cornelius_carstens.gif',
                     description: {
                         en: 'View of the holographic installation',
                         de: 'Anblick der holografischen Installation'
+                    }
+                },
+                {
+                    src: 'assets/projects/stethoscope/02_stethoscope_cornelius_carstens.mp4',
+                    description: {
+                        en: 'DESC',
+                    }
+                },
+                {
+                    src: 'assets/projects/stethoscope/03_stethoscope_cornelius_carstens.jpg',
+                    description: {
+                        en: 'DESC',
                     }
                 },
                 {
@@ -140,7 +202,76 @@ export default {
                         de: 'Interaktive Demo aus dem Findungsprozess der Partikel-Animationen'
                     }
                 },
-
+                {
+                    src: 'assets/projects/stethoscope/04_stethoscope_cornelius_carstens.mp4',
+                    description: {
+                        en: 'DESC',
+                    }
+                },
+                {
+                    src: 'assets/projects/stethoscope/05_stethoscope_cornelius_carstens.jpg',
+                    description: {
+                        en: 'DESC',
+                    }
+                },
+                {
+                    src: 'assets/projects/stethoscope/06_stethoscope_cornelius_carstens.mp4',
+                    description: {
+                        en: 'DESC',
+                    }
+                },
+            ]
+        },
+        {
+            title: 'Conversation with LEA',
+            year: 2017,
+            description: {
+                de: `
+                <p>Interaktive Installation bei der die Betrachtenden einzeln in einem Kinderzelt aus Tüchern sitzen. In dieser intimen Atmosphäre entwickelt sich ein Gespräch zwischen einer kindlich klingenden Computerstimme und der Betrachterin. Die Stimme stellt Fragen mit denen sie die menschliche Welt zu verstehen versucht. Bedingt durch die Antworten der Teilnehmer ist der Gesprächsverlauf in jedem Gespräch unterschiedlich.</p>
+                <p>Ausgestellt auf dem World Usability Day Berlin 2017</p>
+                `
+            },
+            url: '',
+            globalAudio: {
+                src: 'assets/projects/lea/lea_cornelius_carstens.mp3'
+            },
+            media: [
+                {
+                    src: 'assets/projects/lea/01_lea_cornelius_carstens.jpg',
+                    description: 'DESC'
+                },
+                {
+                    src: 'assets/projects/lea/02_lea_cornelius_carstens.jpg',
+                    description: 'DESC'
+                },
+                {
+                    src: 'assets/projects/lea/03_lea_cornelius_carstens.jpg',
+                    description: 'DESC'
+                },
+                {
+                    src: 'assets/projects/lea/04_lea_cornelius_carstens.jpg',
+                    description: 'DESC'
+                },
+                {
+                    src: 'assets/projects/lea/05_lea_cornelius_carstens.jpg',
+                    description: 'DESC'
+                },
+                {
+                    src: 'assets/projects/lea/06_lea_cornelius_carstens.jpg',
+                    description: 'DESC'
+                },
+                {
+                    src: 'assets/projects/lea/07_lea_cornelius_carstens.jpg',
+                    description: 'DESC'
+                },
+                {
+                    src: 'assets/projects/lea/08_lea_cornelius_carstens.jpg',
+                    description: 'DESC'
+                },
+                {
+                    src: 'assets/projects/lea/09_lea_cornelius_carstens.jpg',
+                    description: 'DESC'
+                },
             ]
         },
         {
@@ -159,6 +290,21 @@ export default {
                 {
                     src: 'assets/01_EEE_CORNELIUS_CARSTENS.jpg',
                     description: 'Application of the verses Application of the verses Application of the verses Application of the verses'
+                },
+            ]
+        },
+        {
+            title: '',
+            year: 2016,
+            description: '',
+            url: '',
+            globalAudio: {
+                src: ''
+            },
+            media: [
+                {
+                    src: 'assets/projects/',
+                    description: 'DESC'
                 },
             ]
         },
