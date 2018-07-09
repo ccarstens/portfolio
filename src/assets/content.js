@@ -60,6 +60,96 @@ export default {
     },
     projects: [
         {
+            title: 'Conversation with LEA',
+            year: 2017,
+            description: {
+                de: `
+                <p>Interaktive Installation bei der die Betrachtenden einzeln in einem Kinderzelt aus Tüchern sitzen. In dieser intimen Atmosphäre entwickelt sich ein Gespräch zwischen einer kindlich klingenden Computerstimme und der Betrachterin. Die Stimme stellt Fragen mit denen sie die menschliche Welt zu verstehen versucht. Bedingt durch die Antworten der Teilnehmer ist der Gesprächsverlauf in jedem Gespräch unterschiedlich.</p>
+                <p>Ausgestellt auf dem World Usability Day Berlin 2017</p>
+                `,
+                en: `
+                <p>For this installation the audience sits one by one in a children's tent. In this intimate atmosphere a conversation between a childish sounding synthetic voice and the interacting visitor develops.
+The voice mimics the curiosity of a child by asking questions that aim at getting an understanding how the world of the humans works.
+Based on the Answers of the participant the conversation takes different directions.</p>
+                <p>Shown at World Usability Day Berlin 2017</p>
+                `
+            },
+            url: '',
+            globalAudio: {
+                src: 'assets/projects/lea/lea_cornelius_carstens.mp3'
+            },
+            media: [
+
+                {
+                    src: 'assets/projects/lea/04_lea_cornelius_carstens.jpg',
+                    description: {
+                        en: '',
+                        de: ''
+                    }
+                },
+                {
+                    src: 'assets/projects/lea/01_lea_cornelius_carstens.jpg',
+                    description: {
+                        en: 'After kicking off their shoes the visitors enter the tent through a narrow opening.\n' +
+                        'The atmosphere aims to bring the visitors in a calm and trusting mood.',
+                        de: 'Nachdem die Besucher ihre Schuhe ausgezogen haben betreten sie durch eine schmale Öffnung das Zelt.\n' +
+                        'Die Atmosphäre zielt darauf ab die Teilnehmer in eine entspannte und vertrauende Haltung zu bringen.'
+                    },
+                    alt: {
+                        en: 'interior of the tent',
+                        de: 'Innenraum des Zeltes'
+                    }
+                },
+                {
+                    src: 'assets/projects/lea/03_lea_cornelius_carstens.jpg',
+                    description: {
+                        en: 'hand written draft of the conversation sequences',
+                        de: 'Handschriftlicher Entwurf der Gesprächssequenzen'
+                    },
+                    alt: {
+                        en: 'Original draft of the conversation sequences',
+                        de: 'Grundentwurf der Gesprächssequenzen'
+                    }
+                },
+                {
+                    src: 'assets/projects/lea/05_lea_cornelius_carstens.jpg',
+                    description: {
+                        en: 'The conversation has a structure of single sequences which have their own topic each.\n' +
+                        'The sequences contain Leas reactions to the responses of the participant.',
+                        de: 'Das Gespräch ist anhand einzelner Themen in Sequenzen unterteilt.\n' +
+                        'Sequenzen beinhalten Leas Reaktionen auf die Antworten der Teilnehmer.',
+                    }
+                },
+                {
+                    src: 'assets/projects/lea/06_lea_cornelius_carstens.jpg',
+                    description: 'DESC'
+                },
+                {
+                    src: 'assets/projects/lea/07_lea_cornelius_carstens.jpg',
+                    description: 'DESC'
+                },
+                {
+                    src: 'assets/projects/lea/08_lea_cornelius_carstens.jpg',
+                    description: 'DESC'
+                },
+                {
+                    src: 'assets/projects/lea/09_lea_cornelius_carstens.jpg',
+                    description: 'DESC'
+                },
+                {
+                    src: 'assets/projects/lea/02_lea_cornelius_carstens.jpg',
+                    description: {
+                        en: 'Construction of the tent; left is the tent, right is the access tunnel with space for the rooms door',
+                        de: 'Zeltkonstruktion; links Zelt, rechts Zugangstunnel mit Platz für die Türe des Raumes',
+                    },
+                    alt: {
+                        en: 'exterior view of the tent\'s construction',
+                        de: 'Zeltkonstruktion von Außen'
+                    }
+                },
+            ]
+        },
+        {
             title: 'Fear',
             year: 2016,
             description: {
@@ -73,7 +163,12 @@ export default {
             media: [
                 {
                     src: 'assets/projects/fear/01_fear_cornelius_carstens.jpg',
-                    description: 'DESC'
+                    description: {
+                        en: 'Mockup of a possible exhibition of the prototype',
+                        de: 'Mockup in möglichem Ausstellungskontext',
+                        ru: '',
+                        jp: ''
+                    }
                 },
                 {
                     src: 'assets/projects/fear/02_fear_cornelius_carstens.mp4',
@@ -216,58 +311,6 @@ export default {
                     description: {
                         en: 'DESC',
                     }
-                },
-            ]
-        },
-        {
-            title: 'Conversation with LEA',
-            year: 2017,
-            description: {
-                de: `
-                <p>Interaktive Installation bei der die Betrachtenden einzeln in einem Kinderzelt aus Tüchern sitzen. In dieser intimen Atmosphäre entwickelt sich ein Gespräch zwischen einer kindlich klingenden Computerstimme und der Betrachterin. Die Stimme stellt Fragen mit denen sie die menschliche Welt zu verstehen versucht. Bedingt durch die Antworten der Teilnehmer ist der Gesprächsverlauf in jedem Gespräch unterschiedlich.</p>
-                <p>Ausgestellt auf dem World Usability Day Berlin 2017</p>
-                `
-            },
-            url: '',
-            globalAudio: {
-                src: 'assets/projects/lea/lea_cornelius_carstens.mp3'
-            },
-            media: [
-                {
-                    src: 'assets/projects/lea/01_lea_cornelius_carstens.jpg',
-                    description: 'DESC'
-                },
-                {
-                    src: 'assets/projects/lea/03_lea_cornelius_carstens.jpg',
-                    description: 'DESC'
-                },
-                {
-                    src: 'assets/projects/lea/04_lea_cornelius_carstens.jpg',
-                    description: 'DESC'
-                },
-                {
-                    src: 'assets/projects/lea/05_lea_cornelius_carstens.jpg',
-                    description: 'DESC'
-                },
-                {
-                    src: 'assets/projects/lea/06_lea_cornelius_carstens.jpg',
-                    description: 'DESC'
-                },
-                {
-                    src: 'assets/projects/lea/07_lea_cornelius_carstens.jpg',
-                    description: 'DESC'
-                },
-                {
-                    src: 'assets/projects/lea/08_lea_cornelius_carstens.jpg',
-                    description: 'DESC'
-                },
-                {
-                    src: 'assets/projects/lea/09_lea_cornelius_carstens.jpg',
-                    description: 'DESC'
-                },
-                {
-                    src: 'assets/projects/lea/02_lea_cornelius_carstens.jpg',
-                    description: 'DESC'
                 },
             ]
         },

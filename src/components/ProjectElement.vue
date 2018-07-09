@@ -17,7 +17,7 @@
                 <p v-html="e(projectContent.description) "></p>
 
                 <transition name="fade" mode="out-in">
-                    <div class="fading-description mt-md-auto" v-for="(slide, index) in projectContent.media" :key="index" v-if="index === currentPage">
+                    <div class="fading-description" v-for="(slide, index) in projectContent.media" :key="index" v-if="index === currentPage">
                             {{ e(slide.description) }}
                     </div>
                 </transition>
@@ -222,17 +222,17 @@
     }
 
     .fading-description{
-        /*margin-top: 2em;*/
+        margin-top: 1em;
         /*background: red;*/
         /*min-height: 5em;*/
-        margin-bottom: 2em;
+        /*margin-bottom: 2em;*/
     }
 
     @include media-breakpoint-up(md){
         .fading-description{
             /*margin-top: 5em;*/
-            min-height: 0;
-            margin-bottom: 0;
+            /*min-height: 0;*/
+            /*margin-bottom: 0;*/
         }
     }
 
