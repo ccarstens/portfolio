@@ -3,7 +3,7 @@
 
       <HeaderElement/>
       <!--<button @click="switchGerman">Deutsch</button>-->
-      <AudioActivation @click="initAudioElements"></AudioActivation>
+      <AudioActivation @click=""></AudioActivation>
 
       <AboutElement
               :text="e(content.about)"
@@ -59,18 +59,6 @@ export default {
     },
     methods: {
         e,
-        initAudioElements(){
-            const audioElements = this.$el.getElementsByTagName('audio')
-            const audioElementCount = audioElements.length
-
-            for(let i = 0; i < audioElementCount; i++){
-                this.initAudioElement(audioElements[i])
-            }
-        },
-        initAudioElement(audioElement){
-            audioElement.play().then(() => audioElement.pause())
-
-        },
         loadVideos(){
             const videos = this.$el.getElementsByTagName('video')
             for(let i = 0; i < videos.length; i++){

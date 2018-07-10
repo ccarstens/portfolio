@@ -1,23 +1,32 @@
 <template>
     <ul class="language-switcher text-right text-sm-left">
-        <li><a href="#" @click.prevent="switchLanguage" data-language="en">english</a></li>
-        <li><a href="#" @click.prevent="switchLanguage" data-language="de">Deutsch</a></li>
-        <li><a href="#" @click.prevent="switchLanguage" data-language="jp">日本語</a></li>
-        <li><a href="#" @click.prevent="switchLanguage" data-language="ru">русский</a></li>
+        <li v-for="locale in locales">
+            <router-link
+                :key="locale.code"
+                :to="`/${locale.code}`"
+            >
+                {{ locale.name }}
+            </router-link>
+        </li>
     </ul>
 </template>
 
 <script>
     import state from '../state'
+    import {locales} from '../locales'
     export default {
         name: "LanguageSwitcher",
         data(){
             return {
-                state: state
+                state,
+                locales
             }
         },
+        created(){
+            this.switchLanguage()
+        },
         methods: {
-            switchLanguage(e){
+            switchLanguageX(e){
                 const target = e.target
                 const language = target.getAttribute('data-language')
                 if(language !== this.state.getActiveLanguage()){
@@ -29,6 +38,28 @@
                         })
                     }, 300)
                 }
+            },
+            switchLanguage(){
+                const newLocale = this.$route.params.locale
+                if(newLocale !== this.state.getActiveLanguage()){
+                    this.state.setLanguageSwitcherInAction(true)
+                    setTimeout(() => {
+                        this.state.setActiveLanguage(newLocale)
+                        this.$nextTick(() => {
+                            this.state.setLanguageSwitcherInAction(false)
+                        })
+                    }, 300)
+                }
+            }
+        },
+        computed: {
+            current(){
+                return this.$route.params.locale
+            }
+        },
+        watch: {
+            '$route' (to, from){
+                this.switchLanguage()
             }
         }
     }

@@ -1,19 +1,19 @@
 export const labels = {
     click: {
         en: 'click',
-            de: 'klick',
-            ru: 'щелчок',
-            jp: 'クリック'
+        de: 'klick',
+        ru: 'щелчок',
+        ja: 'クリック'
     },
     projects: {
         en: 'projects',
-            de: 'projekte',
-            jp: 'プロジェクト',
-            ru: 'проектов'
+        de: 'projekte',
+        ja: 'プロジェクト',
+        ru: 'проектов'
     },
     visit: {
-        en: 'Visit online version',
-            de: 'Online Version ansehen'
+        en: 'visit online version',
+        de: 'Online Version ansehen'
     }
 }
 
@@ -47,7 +47,7 @@ export default {
 
 Лучший
         `,
-        jp: `
+        ja: `
         こんにちは、私はコーネリアスです、
 
 ファッション写真、ウェブ開発、インタラクティブインスタレーション、ピアノ音楽の背景を持つ学際的なコミュニケーションの学生です。
@@ -95,8 +95,10 @@ Based on the Answers of the participant the conversation takes different directi
                 {
                     src: 'assets/projects/lea/01_lea_cornelius_carstens.jpg',
                     description: {
-                        en: 'After kicking off their shoes the visitors enter the tent through a narrow opening.\n' +
-                        'The atmosphere aims to bring the visitors in a calm and trusting mood.',
+                        en: `
+                        <p>After kicking off their shoes the visitors enter the tent through a narrow opening.</p>
+                        <p>The atmosphere aims to bring the visitors in a calm and trusting mood.</p>
+                        `,
                         de: 'Nachdem die Besucher ihre Schuhe ausgezogen haben betreten sie durch eine schmale Öffnung das Zelt.\n' +
                         'Die Atmosphäre zielt darauf ab die Teilnehmer in eine entspannte und vertrauende Haltung zu bringen.'
                     },
@@ -172,7 +174,7 @@ Based on the Answers of the participant the conversation takes different directi
                         en: 'Mockup of a possible exhibition of the prototype',
                         de: 'Mockup in möglichem Ausstellungskontext',
                         ru: '',
-                        jp: ''
+                        ja: ''
                     }
                 },
                 {
@@ -260,7 +262,7 @@ Based on the Answers of the participant the conversation takes different directi
             title: {
                 en: 'Stethoscope',
                 de: 'Stethoskop',
-                jp: '聴診器',
+                ja: '聴診器',
                 ru: 'стетоскоп'
             },
             year: 2018,
@@ -271,7 +273,7 @@ Based on the Answers of the participant the conversation takes different directi
                 'Im Zentrum dieser Installation steht die Auseinandersetzung der Betrachter mit ihren körpereigenen Signalen. In einem dunklen Raum wird mithilfe eines Stethoskops der eigene Herzschlag abgehört. In der Raummitte bewegen sich Partikel im Takt des Herzschlags in einer holographischen Projektion.\n' +
                 'Die auditive und visuelle Wahrnehmung der Teilnehmer wird nahezu vollständig von Signalen des eigenen Körpers bestimmt während die meisten anderen Sinneseindrücke in diesem Aufbau vermieden werden.',
                 ru: 'интерактивная установка, соединяющая пользователя с ее собственным слухом, используя стетоскоп и голографическую проекцию',
-                jp: '聴診器とホログラフィックプロジェクションを使用して、自分のヒアビートとユーザーを接続するインタラクティブインストール',
+                ja: '聴診器とホログラフィックプロジェクションを使用して、自分のヒアビートとユーザーを接続するインタラクティブインストール',
             },
             media: [
                 {

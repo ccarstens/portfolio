@@ -1,5 +1,5 @@
 <template>
-    <video @load="init" autoplay loop playsinline :controls="state.getIsTouch()">
+    <video @load="init" loop playsinline :controls="state.getIsTouch()">
         <source v-if="test" :data-src="videoUrl">
     </video>
 </template>
@@ -52,5 +52,6 @@ export default {
 <style lang="scss">
     video{
         max-width: 100%;
+        max-height: 90vh;
     }
 </style>

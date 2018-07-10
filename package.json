@@ -22,7 +22,8 @@
     "vue": "^2.5.16",
     "vue-carousel": "github:ccarstens/vue-carousel#master",
     "vue-observe-visibility": "^0.4.1",
-    "vue-p5": "^0.6.0"
+    "vue-p5": "^0.6.0",
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

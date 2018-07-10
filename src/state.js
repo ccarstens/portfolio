@@ -6,6 +6,7 @@ export default {
         activeLanguage: 'en',
         languageSwitcherInAction: false,
         isTouch: false,
+        audioInitialized: false,
     },
     setHeaderOffset(newValue){
         if(this.debug) console.log('Setting headerOffset to ', newValue)
@@ -38,6 +39,14 @@ export default {
     getIsTouch() {
         if (this.debug) console.log('Get isTouch with value', this.state.isTouch)
         return this.state.isTouch
+    },
+    setAudioInitialized(newValue) {
+        if (this.debug) console.log('Set audioInitialized to', newValue)
+        this.state.audioInitialized = newValue
+    },
+    getAudioInitialized() {
+        if (this.debug) console.log('Get audioInitialized with value', this.state.audioInitialized)
+        return this.state.audioInitialized
     },
     
 

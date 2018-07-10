@@ -2,15 +2,14 @@
     <div class="visual-content">
         <figure>
             <img v-if="isImage(visualElementContent)" :data-src="imageUrl"/>
-            <VideoItem v-if="isVideo(visualElementContent)" :src="visualElementContent.src" :play="true"/>
+            <VideoItem v-if="isVideo(visualElementContent)" :src="visualElementContent.src" :play="isVisible"/>
             <P5Sketch
                     v-if="isP5Sketch(visualElementContent)"
                     :name="visualElementContent.sketchName"
                     :dimensions="standardDimensions"
                     :isVisible="isActive"
             ></P5Sketch>
-            <figcaption>
-                {{ e(visualElementContent.description)}}
+            <figcaption v-html="e(visualElementContent.description)">
             </figcaption>
         </figure>
     </div>
@@ -40,7 +39,8 @@
         data(){
             return {
                 visualElementContent: {},
-                slide: null
+                slide: null,
+                test: false
             }
         },
         computed: {
@@ -50,7 +50,8 @@
             isActive(){
                 // console.log("getting isactive")
                 return this.slide ? this.slide.isActive : false
-            }
+            },
+            testIsVisible(){}
         },
         methods: {
             e,
@@ -69,6 +70,9 @@
             isP5Sketch(visualElement){
                 return visualElement.hasOwnProperty('sketchName')
             }
+        },
+        watch: {
+
         }
     }
 </script>
@@ -83,5 +87,15 @@
 
     .visual-content{
         z-index: 1;
+    }
+
+    figcaption{
+        font-size: .75em;
+        padding: .2em .3em 0 .3em;
+
+        p{
+            margin-bottom: 0;
+            /*line-height: 1.1em;*/
+        }
     }
 </style>

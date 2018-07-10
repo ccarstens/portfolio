@@ -1,6 +1,6 @@
 <template>
     <article :class="classObject" v-observe-visibility="{
-    callback: visibilityChanged,
+    callback: viewportVisibilityChanged,
     throttle,
     intersection: {
         threshold
@@ -45,7 +45,7 @@
                         <VisualElement
                                 :content="slide"
                                 :standardDimensions="standardContentDimensions"
-                                :isVisible="isVisible"
+                                :isVisible="projectInViewport && currentPage === index"
                         ></VisualElement>
                     </slide>
                 </carousel>
@@ -80,7 +80,7 @@
                 state: state,
                 currentPage: 0,
                 projectContent: {},
-                isVisible: false,
+                projectInViewport: false,
                 throttle: 300,
                 carousel: null,
                 slideCount: 0,
@@ -117,8 +117,8 @@
         },
         methods: {
             e,
-            visibilityChanged(isVisible){
-                this.isVisible = isVisible
+            viewportVisibilityChanged(projectInViewport){
+                this.projectInViewport = projectInViewport
             },
             handleCarouselClick(e){
                 if(!this.state.getIsTouch()){
@@ -149,17 +149,17 @@
             },
             classObject(){
                 return {
-                    visible: this.isVisible,
+                    visible: this.projectInViewport,
                     'project-element': true,
                     'container-fluid': true,
                     dark: this.hasDarkMode
                 }
             },
             threshold(){
-                return window.innerWidth > 400 ? 0.8 : 0
+                return window.innerWidth > 400 ? 0.4 : 0.4
             },
             playAudio(){
-                return this.isVisible
+                return this.projectInViewport
             },
             hasGlobalAudio(){
                 return this.projectContent.hasOwnProperty('globalAudio')
@@ -221,6 +221,9 @@
         h3{
             font-size: inherit;
             display: inline-block;
+        }
+        a{
+            text-decoration: underline;
         }
     }
 
