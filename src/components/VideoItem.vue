@@ -1,5 +1,5 @@
 <template>
-    <video @load="init" autoplay loop muted playsinline :controls="state.getIsTouch()">
+    <video @load="init" autoplay loop playsinline :controls="state.getIsTouch()">
         <source v-if="test" :data-src="videoUrl">
     </video>
 </template>

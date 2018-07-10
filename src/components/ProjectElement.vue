@@ -16,6 +16,10 @@
 
                 <p v-html="e(projectContent.description) "></p>
 
+                <p v-if="hasUrl">
+                    <a :href="projectContent.url" target="_blank">{{e(labels.visit)}}</a>
+                </p>
+
                 <!--<transition name="fade" mode="out-in">-->
                     <!--<div class="fading-description" v-for="(slide, index) in projectContent.media" :key="index" v-if="index === currentPage">-->
                             <!--{{ e(slide.description) }}-->
@@ -57,6 +61,7 @@
     import VisualElement from './VisualElement'
     import AudioElement from './AudioElement'
     import state from '../state'
+    import {labels} from '../assets/content'
     import e from '../localizedContent'
     export default {
         name: "ProjectElement",
@@ -71,6 +76,7 @@
         ],
         data () {
             return {
+                labels: labels,
                 state: state,
                 currentPage: 0,
                 projectContent: {},
@@ -163,6 +169,17 @@
                     return this.projectContent.darkMode
                 }
                 return false
+            },
+            hasUrl(){
+                if(this.projectContent.hasOwnProperty('url')){
+                    return this.projectContent.url.length > 0
+                }
+                return false
+            },
+            projectUrl(){
+                if(this.hasUrl()){
+                    return this.projectContent.url
+                }
             }
         }
     }

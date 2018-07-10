@@ -1,18 +1,23 @@
-export default {
-    labels: {
-        click: {
-            en: 'click',
+export const labels = {
+    click: {
+        en: 'click',
             de: 'klick',
             ru: 'щелчок',
             jp: 'クリック'
-        },
-        projects: {
-            en: 'projects',
+    },
+    projects: {
+        en: 'projects',
             de: 'projekte',
             jp: 'プロジェクト',
             ru: 'проектов'
-        }
     },
+    visit: {
+        en: 'Visit online version',
+            de: 'Online Version ansehen'
+    }
+}
+
+export default {
     about: {
         en: `
             <p>Hello, I’m cornelius,</p>
@@ -191,6 +196,7 @@ Based on the Answers of the participant the conversation takes different directi
                 de: 'Website und online shop für menswear label aus Berlin'
             },
             darkMode: false,
+            url: 'http://goetze.xyz',
             media: [
                 {
                     src: 'assets/projects/goetze/01_goetze_cornelius_carstens.jpg',
@@ -218,7 +224,7 @@ Based on the Answers of the participant the conversation takes different directi
             title: 'Marius Hirschel',
             year: 2017,
             description: 'custom portfolio for berlin based hair stylist',
-            url: 'http://mariushirschel.com',
+            url: 'http://mariushirschel.de',
             media: [
                 {
                     src: 'assets/projects/mh/01_marius_hirschel_cornelius_carstens.mp4',

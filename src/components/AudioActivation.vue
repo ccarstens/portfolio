@@ -3,14 +3,20 @@
         <a
                 @click="$emit('click')"
                 @touchstart="$emit('click')"
-                href="#">{{e($parent.content.labels.click)}} 🔊</a>
+                href="#">{{e(labels.click)}} 🔊</a>
     </div>
 </template>
 
 <script>
+    import {labels} from '../assets/content'
     import e from '../localizedContent'
     export default {
         name: "AudioActivation",
+        data(){
+            return {
+                labels: labels,
+            }
+        },
         methods: {
             e
         }

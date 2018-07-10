@@ -10,7 +10,9 @@
       />
       <!--<P5Sketch name="DotCloud"></P5Sketch>-->
 
-      <ProjectElement v-for="(project, key) in content.projects" :key="key" :content="project"/>
+      <div id="projects">
+        <ProjectElement v-for="(project, key) in content.projects" :key="key" :content="project"/>
+      </div>
 
   </div>
 </template>

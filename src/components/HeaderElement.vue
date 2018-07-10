@@ -5,7 +5,7 @@
                 <div class="wrapper col  offset-md-1">
                     <ul class="nav-list d-flex">
                         <li :class="pageNameClasses"><a href="#">cornelius</a></li>
-                        <li class=""><a href="#">{{e($parent.content.labels.projects)}}</a></li>
+                        <li class=""><a href="#projects">{{e(labels.projects)}}</a></li>
                         <li class="ml-auto ml-lg-5 offset-lg-1">
                             <LanguageSwitcher></LanguageSwitcher>
                         </li>
@@ -19,6 +19,7 @@
 <script>
 
     import state from '../state'
+    import {labels} from '../assets/content'
     import e from '../localizedContent'
 
     import LanguageSwitcher from './LanguageSwitcher'
@@ -31,6 +32,7 @@
         },
         data(){
             return {
+                labels: labels,
                 offsetTop: 0,
                 state: state
             }
