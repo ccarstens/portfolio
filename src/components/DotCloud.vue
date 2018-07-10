@@ -30,7 +30,7 @@
         data: () => ({
             movers: [],
             bgColor: null,
-            moverCount: 900,
+            moverCount: 300,
             s: null,
             mouse: null,
             mouseOnCanvas: false,

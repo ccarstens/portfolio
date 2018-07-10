@@ -1,10 +1,11 @@
 <template>
-    <video @load="init" autoplay loop muted playsinline>
-        <source v-if="test" :src="absolutetest">
+    <video @load="init" autoplay loop muted playsinline :controls="state.getIsTouch()">
+        <source v-if="test" :data-src="videoUrl">
     </video>
 </template>
 
 <script>
+    import state from '../state'
 export default {
     name: 'VideoItem',
     props: [
@@ -13,6 +14,7 @@ export default {
     ],
     data () {
         return {
+            state: state,
             test: undefined,
         }
     },
@@ -23,7 +25,7 @@ export default {
         // this.updatePlay(this.$props.play)
     },
     computed: {
-        absolutetest(){
+        videoUrl(){
             return require('../' + this.test)
         }
     },
@@ -32,7 +34,10 @@ export default {
             this.$el.play()
         },
         updatePlay (play) {
-            if(play) this.$el.play()
+            if(play){
+                this.$el.play()
+                // this.$el.webkitEnterFullScreen()
+            }
             else this.$el.pause()
         }
     },

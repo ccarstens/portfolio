@@ -47,6 +47,13 @@ export default {
     },
     created(){
         this.state.setIsTouch(typeof window !== "undefined" && "ontouchstart" in window)
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                this.loadImages()
+                this.loadVideos()
+            }, 1200)
+        })
+
     },
     methods: {
         e,
@@ -61,6 +68,25 @@ export default {
         initAudioElement(audioElement){
             audioElement.play().then(() => audioElement.pause())
 
+        },
+        loadVideos(){
+            const videos = this.$el.getElementsByTagName('video')
+            for(let i = 0; i < videos.length; i++){
+                const video = videos[i]
+                const source = videos[i].getElementsByTagName('source')[0]
+                source.src = source.dataset.src
+                video.load()
+            }
+
+            if(this.state.debug) console.log('Lazy loaded video content for', videos.length, 'videos')
+        },
+        loadImages(){
+            const images = this.$el.getElementsByTagName('img')
+            for(let i = 0; i < images.length; i++){
+                const img = images[i]
+                img.src = img.dataset.src
+            }
+            if(this.state.debug) console.log('Lazy loaded image content for', images.length, 'images')
         }
     },
     computed: {

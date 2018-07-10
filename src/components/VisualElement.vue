@@ -1,7 +1,7 @@
 <template>
     <div class="visual-content">
         <figure>
-            <img v-if="isImage(visualElementContent)" :src="test"/>
+            <img v-if="isImage(visualElementContent)" :data-src="imageUrl"/>
             <VideoItem v-if="isVideo(visualElementContent)" :src="visualElementContent.src" :play="true"/>
             <P5Sketch
                     v-if="isP5Sketch(visualElementContent)"
@@ -9,6 +9,9 @@
                     :dimensions="standardDimensions"
                     :isVisible="isActive"
             ></P5Sketch>
+            <figcaption>
+                {{ e(visualElementContent.description)}}
+            </figcaption>
         </figure>
     </div>
 </template>
@@ -41,7 +44,7 @@
             }
         },
         computed: {
-            test(){
+            imageUrl(){
                 return require('../' + this.visualElementContent.src)
             },
             isActive(){

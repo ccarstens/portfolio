@@ -4,7 +4,8 @@ export default {
         headerOffset: 0,
         scrollableIsAtHeaderPosition: false,
         activeLanguage: 'en',
-        languageSwitcherInAction: false
+        languageSwitcherInAction: false,
+        isTouch: false,
     },
     setHeaderOffset(newValue){
         if(this.debug) console.log('Setting headerOffset to ', newValue)
@@ -38,6 +39,7 @@ export default {
         if (this.debug) console.log('Get isTouch with value', this.state.isTouch)
         return this.state.isTouch
     },
+    
 
 
 

@@ -9,21 +9,21 @@
         <div class="row">
             <AudioElement v-if="hasGlobalAudio" :play="playAudio" :src="projectContent.globalAudio.src"></AudioElement>
 
-            <header class="description col-12 order-0 col-md-4 order-md-1 d-flex flex-column">
+            <header class="description col-12 order-0 col-lg-4 order-lg-1 d-flex flex-column">
                 <div>
                     <h3>{{e(projectContent.title)}}</h3> {{projectContent.year}}
                 </div>
 
                 <p v-html="e(projectContent.description) "></p>
 
-                <transition name="fade" mode="out-in">
-                    <div class="fading-description" v-for="(slide, index) in projectContent.media" :key="index" v-if="index === currentPage">
-                            {{ e(slide.description) }}
-                    </div>
-                </transition>
+                <!--<transition name="fade" mode="out-in">-->
+                    <!--<div class="fading-description" v-for="(slide, index) in projectContent.media" :key="index" v-if="index === currentPage">-->
+                            <!--{{ e(slide.description) }}-->
+                    <!--</div>-->
+                <!--</transition>-->
             </header>
 
-            <div class="content col-12 order-1 col-md-8 order-md-0">
+            <div class="content col-12 order-1 col-lg-8 order-lg-0">
                 <carousel
                         :per-page="1"
                         :pagination-enabled="false"
