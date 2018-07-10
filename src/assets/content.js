@@ -21,17 +21,17 @@ export default {
     about: {
         en: `
             <p>Hello, I’m cornelius,</p>
-            <p>an interdisciplinary student of visual communication with backgrounds in web development, interactive installations, fashion photography and piano improvisation.</p>
-            <p>While studying I ran the web design agency Awesome Boys and am currently employed by Apple.</p>
-            <p>I like learning new things, feedback, getting hired, reading, bread with butter and Apfelschorle.</p>
+            <p>an interdisciplinary student of visual communication with interest in web development, interactive installations, fashion photography and physical computing.</p>
+            <p>While studying I ran the web design agency <a href="http://awesome-boys.com">Awesome Boys</a> and am currently employed by Apple.</p>
+            <p>I like learning new things, feedback, getting hired, reading, bread with butter piano improv and Apfelschorle.</p>
             <p>I am looking forward to <a href="mailto:cornelius.carstens@me.com">hearing from you</a>.</p>
             Best,
         `,
         de: `
             <p>Hallo, ich bin Cornelius,</p>
-<p>ich studiere Kommunikationsdesign in Berlin und beschäftige mich mit web development, Installationsprojekten, Modefotografie und Klavierimprovisation.</p>
-<p>Neben dem Studium habe ich die web design Agentur Awesome Boys geführt und arbeite momentan für Apple.</p>
-<p>Ich mag es neue Dinge zu lernen, Feedback bekommen und geben, Jobs bekommen, Lesen, Brot mit Butter und Apfelschorle.</p>
+<p>ich studiere Kommunikationsdesign in Berlin und beschäftige mich mit web development, Installationsprojekten, Modefotografie und physical computing.</p>
+<p>Neben dem Studium habe ich die Web Design Agentur <a href="http://awesome-boys.com">Awesome Boys</a> geführt und arbeite momentan für Apple.</p>
+<p>Ich mag es neue Dinge zu lernen, Feedback, Jobs bekommen, Lesen, Brot mit Butter, Klavierimprovisation und Apfelschorle.</p>
 <p>Ich freue mich darauf von euch zu hören.</p>
         `,
         ru: `

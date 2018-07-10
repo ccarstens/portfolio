@@ -82,9 +82,6 @@
 
         a{
             margin-bottom: -1em;
-        }
-
-        a:link{
             text-decoration: underline;
         }
     }

@@ -112,6 +112,10 @@
     }
     .site-header-container{
         font-weight: 700;
+
+        a{
+            text-decoration: none;
+        }
     }
 
     .gradient{

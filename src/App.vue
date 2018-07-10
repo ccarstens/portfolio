@@ -142,6 +142,10 @@ export default {
         opacity: 0;
     }
 
+    a{
+        text-decoration: underline;
+    }
+
     // -up-FROM
     @include media-breakpoint-up(xs){
         #app{

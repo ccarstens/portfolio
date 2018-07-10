@@ -1,5 +1,5 @@
 export default {
-    debug: true,
+    debug: false,
     state: {
         headerOffset: 0,
         scrollableIsAtHeaderPosition: false,
