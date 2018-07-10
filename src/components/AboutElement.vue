@@ -47,7 +47,7 @@
 
     .about{
         /*padding-top: 35vh;*/
-        margin-bottom: 20em;
+        margin-bottom: 40vh;
     }
 
     .no-show{

@@ -21,8 +21,8 @@ export default {
     about: {
         en: `
             <p>Hello, I’m cornelius,</p>
-            <p>an interdisciplinary student of visual communication with backgrounds in fashion photography, web development, interactive installations and piano music.</p>
-            <p>While studying I ran the web design agency Awesome Boys for two years with a fellow student and am currently employed by Apple.</p>
+            <p>an interdisciplinary student of visual communication with backgrounds in web development, interactive installations, fashion photography and piano improvisation.</p>
+            <p>While studying I ran the web design agency Awesome Boys and am currently employed by Apple.</p>
             <p>I like learning new things, feedback, getting hired, reading, bread with butter and Apfelschorle.</p>
             <p>I am looking forward to <a href="mailto:cornelius.carstens@me.com">hearing from you</a>.</p>
             Best,
@@ -129,19 +129,19 @@ Based on the Answers of the participant the conversation takes different directi
                 },
                 {
                     src: 'assets/projects/lea/06_lea_cornelius_carstens.jpg',
-                    description: 'DESC'
+                    description: ''
                 },
                 {
                     src: 'assets/projects/lea/07_lea_cornelius_carstens.jpg',
-                    description: 'DESC'
+                    description: ''
                 },
                 {
                     src: 'assets/projects/lea/08_lea_cornelius_carstens.jpg',
-                    description: 'DESC'
+                    description: ''
                 },
                 {
                     src: 'assets/projects/lea/09_lea_cornelius_carstens.jpg',
-                    description: 'DESC'
+                    description: ''
                 },
                 {
                     src: 'assets/projects/lea/02_lea_cornelius_carstens.jpg',
@@ -160,8 +160,8 @@ Based on the Answers of the participant the conversation takes different directi
             title: 'Fear',
             year: 2016,
             description: {
-                de: 'Rapid Prototype einer Installation bei der sich ein Sturmgewehr automatisch auf den Kopf der Betrachter ausrichtet und sie verfolgt. \n' +
-                'Kritische Auseinandersetzung mit autonomen Waffensystemen und automatisierter Kriegsführung'
+                en: 'Rapid prototype of an assault rifle that automatically aims at the head of the viewer. This installation is a critical examination of autonomous combat systems and automated warfare.',
+                de: 'Rapid Prototype einer Installation bei der sich ein Sturmgewehr automatisch auf den Kopf der Betrachter ausrichtet und sie verfolgt. Kritische Auseinandersetzung mit autonomen Waffensystemen und automatisierter Kriegsführung'
             },
             darkMode: true,
             // globalAudio: {
@@ -179,15 +179,21 @@ Based on the Answers of the participant the conversation takes different directi
                 },
                 {
                     src: 'assets/projects/fear/02_fear_cornelius_carstens.mp4',
-                    description: 'DESC'
+                    description: {
+                        en: 'By using video imaging in conjunction with face recognition the position of the viewer is calculated. The servo motors receive that information via serial communication and adjust their angles respectively.',
+                        de: 'Über ein Videobild und Gesichtserkennung wird die Position des Betrachters ermittelt. Auf dieser Grundlage werden Servomotoren seriell angesteuert und bewegen das Gewehr an die entsprechende Position.'
+                    }
                 },
                 {
                     src: 'assets/projects/fear/03_fear_cornelius_carstens.jpg',
-                    description: 'DESC'
+                    description: ''
                 },
                 {
                     src: 'assets/projects/fear/04_fear_cornelius_carstens.mp4',
-                    description: 'DESC'
+                    description: {
+                        en: 'first tests combining facial recognition and serial communication',
+                        de: 'Grundlegende Tests zu Gesichtserkennung und serieller Kommunikation'
+                    }
                 },
             ]
         },
@@ -195,30 +201,34 @@ Based on the Answers of the participant the conversation takes different directi
             title: 'Goetze',
             year: 2016,
             description: {
+                en: 'Website and online shop for a berlin based menswear label',
                 de: 'Website und online shop für menswear label aus Berlin'
             },
             darkMode: false,
             url: 'http://goetze.xyz',
             media: [
                 {
-                    src: 'assets/projects/goetze/01_goetze_cornelius_carstens.jpg',
-                    description: 'DESC'
-                },
-                {
-                    src: 'assets/projects/goetze/02_goetze_cornelius_carstens.jpg',
-                    description: 'DESC '
-                },
-                {
-                    src: 'assets/projects/goetze/03_goetze_cornelius_carstens.jpg',
-                    description: 'DESC'
-                },
-                {
-                    src: 'assets/projects/goetze/04_goetze_cornelius_carstens.jpg',
-                    description: 'DESC'
+                    src: 'assets/projects/goetze/01_goetze_cornelius_carstens.mp4',
+                    description: ''
                 },
                 {
                     src: 'assets/projects/goetze/05_goetze_cornelius_carstens.mp4',
-                    description: 'DESC'
+                    description: {
+                        en: 'Inspired by images of <a href="http://www.tvfilmprops.co.uk/userdata/prodpics/PRODPIC-2426-6.jpg">stacks of tube TVs</a> we developed a video wall feature that displays accordingly produced videos synchronously',
+                        de: 'Inspiriert durch Röhrenfernseher-Wände haben wir ein video wall feature entwickelt, das entsprechend produzierte Videos synchron wiedergibt'
+                    }
+                },
+                {
+                    src: 'assets/projects/goetze/02_goetze_cornelius_carstens.jpg',
+                    description: ''
+                },
+                {
+                    src: 'assets/projects/goetze/03_goetze_cornelius_carstens.jpg',
+                    description: ''
+                },
+                {
+                    src: 'assets/projects/goetze/04_goetze_cornelius_carstens.jpg',
+                    description: ''
                 },
             ]
         },
@@ -230,11 +240,17 @@ Based on the Answers of the participant the conversation takes different directi
             media: [
                 {
                     src: 'assets/projects/mh/01_marius_hirschel_cornelius_carstens.mp4',
-                    description: 'DESC'
+                    description: {
+                        en: 'In order to guide the viewers attention to every single image, the photos do not scroll vertically but fade in an out governed scrolling on the page',
+                        de: 'Um die Aufmerksamkeit der Benutzer auf jedes einzelne Bild zu lenken werden die Inhalte nicht vertikal bewegt sondern durch scrollen auf der Seite ein und aus gefaded'
+                    }
                 },
                 {
                     src: 'assets/projects/mh/02_marius_hirschel_cornelius_carstens.jpg',
-                    description: 'DESC'
+                    description: {
+                        en: 'In order to work without a hint to scroll the contents the first image is positioned in a way that forces the user to scroll in order to see it fully.',
+                        de: 'Um auf einen Hinweis zum Scrollen verzichten zu können ist das erste Bild so platziert, dass auf jeden Fall gescrollt werden muss'
+                    }
                 }
             ]
         },
@@ -246,15 +262,15 @@ Based on the Answers of the participant the conversation takes different directi
             media: [
                 {
                     src: 'assets/projects/stemmi/01_christian_stemmler_cornelius_carstens.jpg',
-                    description: 'DESC'
+                    description: ''
                 },
                 {
                     src: 'assets/projects/stemmi/02_christian_stemmler_cornelius_carstens.mp4',
-                    description: 'DESC'
+                    description: ''
                 },
                 {
                     src: 'assets/projects/stemmi/03_christian_stemmler_cornelius_carstens.jpg',
-                    description: 'DESC'
+                    description: ''
                 },
             ]
         },
@@ -268,7 +284,11 @@ Based on the Answers of the participant the conversation takes different directi
             year: 2018,
             darkMode: true,
             description: {
-                en: 'interactive installation connecting a user with her own hearbeat using a stethoscope and a holographic projection',
+                en: `
+                Core to this installation is the confrontation of the participant with her own bodily signals. The participants listens to their own heartbeat using a stethoscope while standing in a dark room.
+In the center of the room particles move upwards in the pace of the heart beat in a holographic projection.
+The auditive and visual perception of the participant is governed almost fully by signals of her own body while other sensory impressions are avoided.
+                `,
                 de: 'embodied interfaces\n' +
                 'Im Zentrum dieser Installation steht die Auseinandersetzung der Betrachter mit ihren körpereigenen Signalen. In einem dunklen Raum wird mithilfe eines Stethoskops der eigene Herzschlag abgehört. In der Raummitte bewegen sich Partikel im Takt des Herzschlags in einer holographischen Projektion.\n' +
                 'Die auditive und visuelle Wahrnehmung der Teilnehmer wird nahezu vollständig von Signalen des eigenen Körpers bestimmt während die meisten anderen Sinneseindrücke in diesem Aufbau vermieden werden.',
@@ -279,45 +299,50 @@ Based on the Answers of the participant the conversation takes different directi
                 {
                     src: 'assets/projects/stethoscope/01_stethoscope_cornelius_carstens.gif',
                     description: {
-                        en: 'View of the holographic installation',
-                        de: 'Anblick der holografischen Installation'
+                        en: 'Due to the unrestricted viewing angle the participant can roam freely while interacting with the installation',
+                        de: 'durch den uneingeschränkten Betrachtungswinkel kann sich die Betrachterin frei im Raum bewegen'
                     }
                 },
                 {
                     src: 'assets/projects/stethoscope/02_stethoscope_cornelius_carstens.mp4',
                     description: {
-                        en: 'DESC',
+                        en: 'Please listen with headphones',
+                        de: 'Bitte mit Kopfhörern hören'
                     }
                 },
                 {
                     src: 'assets/projects/stethoscope/03_stethoscope_cornelius_carstens.jpg',
                     description: {
-                        en: 'DESC',
+                        en: 'customized stethoscope with built in microphone and headphones',
+                        de: 'manipuliertes Stethoskop mit eingebautem Tonabnehmer und Kopfhörern'
                     }
                 },
                 {
                     sketchName: 'DotCloud',
                     description: {
-                        en: 'Interaction demo of a wip state of the particle visualisation particle visualisation',
-                        de: 'Interaktive Demo aus dem Findungsprozess der Partikel-Animationen'
+                        en: 'work in progress state of the particle simulation based on \'nature of code\', Shiffmann',
+                        de: 'Vorstufe der Partikel-Simulation auf Basis von \'Nature of Code\', Shiffmann'
                     }
                 },
                 {
                     src: 'assets/projects/stethoscope/04_stethoscope_cornelius_carstens.mp4',
                     description: {
-                        en: 'DESC',
+                        en: 'In order to guarantee that there is only a single reflection visible in the holograph, the thickness of the acrylic sheets for the pyramid is 1.5mm',
+                        de: 'Damit es im Hologramm nur eine einzelne sichtbare Spiegelung gibt ist die Pyramide aus 1.5mm dünnem Acrylglas gefertigt'
                     }
                 },
                 {
                     src: 'assets/projects/stethoscope/05_stethoscope_cornelius_carstens.jpg',
                     description: {
-                        en: 'DESC',
+                        en: 'prototype of the acrylic pyramid for the holograph',
+                        de: 'Prototyp der Acryl-Pyramide für das Hologramm'
                     }
                 },
                 {
                     src: 'assets/projects/stethoscope/06_stethoscope_cornelius_carstens.mp4',
                     description: {
-                        en: 'DESC',
+                        en: 'test image for adjusting the suspension of the acrylic pyramid',
+                        de: 'Testbild zur Justierung der Aufhängung'
                     }
                 },
             ]
@@ -325,31 +350,41 @@ Based on the Answers of the participant the conversation takes different directi
         {
             title: 'EEE',
             year: 2016,
-            description: 'fashion magazine that uses verses of a poem generated using <i>pattern</i> an NLP library',
-            url: 'http://goetze.xyz',
+            description: {
+                en: `
+                <p>Experiment Excess Ethics</p>
+                <p>Generating of text content and fashion photography for interdisciplinary magazine project</p>
+                <p>Verses of a poem that was generated based on a collectively drafted text make up for the whole text content of the magazine.</p>
+                ` ,
+                de: `
+                <p>Experiment Exzess Ethik</p>
+                <p>Generierung von Textinhalten und Modefotografie für interdisziplinäres Magazinprojekt</p>
+                <p>Der gesamte Text besteht aus Versen eines generativen Gedichts welches auf Basis eines kollektiv verfassten Textes erzeugt wurde.</p>
+                `
+            },
             // globalAudio: {
             //     src: 'assets/nantes.mp3'
             // },
             media: [
                 {
                     src: 'assets/projects/eee/01_eee_cornelius_carstens.jpg',
-                    description: 'DESC'
+                    description: ''
                 },
                 {
                     src: 'assets/projects/eee/02_eee_cornelius_carstens.jpg',
-                    description: 'DESC'
+                    description: ''
                 },
                 {
                     src: 'assets/projects/eee/03_eee_cornelius_carstens.jpg',
-                    description: 'DESC'
+                    description: ''
                 },
                 {
                     src: 'assets/projects/eee/04_eee_cornelius_carstens.jpg',
-                    description: 'DESC'
+                    description: ''
                 },
                 {
                     src: 'assets/projects/eee/05_eee_cornelius_carstens.jpg',
-                    description: 'DESC'
+                    description: ''
                 },
             ]
         },
@@ -364,7 +399,7 @@ Based on the Answers of the participant the conversation takes different directi
         //     media: [
         //         {
         //             src: 'assets/projects/',
-        //             description: 'DESC'
+        //             description: ''
         //         },
         //     ]
         // },

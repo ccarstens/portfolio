@@ -13,6 +13,18 @@
       <div id="projects">
         <ProjectElement v-for="(project, key) in content.projects" :key="key" :content="project"/>
       </div>
+      <footer class="container">
+          <div class="row">
+              <div class="col">
+                  <p>Cornelius Carstens</p>
+                  <p>Sredzkistr. 30 <br>
+                      10435 Berlin <br>
+                      Germany</p>
+                  <p><a href="mailto:test@test.de">Mail</a> <a href="http://github.com/ccarstens" target="_blank">GitHub</a></p>
+                  <p>DE314889795 </p>
+              </div>
+          </div>
+      </footer>
 
   </div>
 </template>
