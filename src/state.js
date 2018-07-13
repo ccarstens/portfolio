@@ -8,6 +8,7 @@ export default {
         isTouch: false,
         canAutoplayAudio: false,
         mediaElementsLoaded: false,
+        globalVolume: 1,
     },
     setHeaderOffset(newValue){
         if(this.debug) console.log('Setting headerOffset to ', newValue)
@@ -56,6 +57,14 @@ export default {
     getMediaElementsLoaded() {
         if (this.debug) console.log('Get mediaElementsLoaded with value', this.state.mediaElementsLoaded)
         return this.state.mediaElementsLoaded
+    },
+    setGlobalVolume(newValue) {
+        if (this.debug) console.log('Set globalVolume to', newValue)
+        this.state.globalVolume = newValue
+    },
+    getGlobalVolume() {
+        if (this.debug) console.log('Get globalVolume with value', this.state.globalVolume)
+        return this.state.globalVolume
     },
 
 

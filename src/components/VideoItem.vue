@@ -1,5 +1,5 @@
 <template>
-    <video @load="init" loop playsinline :controls="state.getIsTouch()">
+    <video @load="init" loop playsinline :controls="state.getIsTouch()" :muted="muted">
         <source v-if="test" :data-src="videoUrl">
     </video>
 </template>
@@ -14,19 +14,23 @@ export default {
     ],
     data () {
         return {
-            state: state,
+            state,
             test: undefined,
+            element: null,
         }
     },
     created () {
         this.test = this.$props.src
     },
     mounted () {
-        // this.updatePlay(this.$props.play)
+
     },
     computed: {
         videoUrl(){
             return require('../' + this.test)
+        },
+        muted(){
+            return !this.state.state.globalVolume
         }
     },
     methods: {
@@ -44,6 +48,9 @@ export default {
     watch: {
         play (newPlayState, b) {
             this.updatePlay(newPlayState)
+        },
+        'state.state.globalVolume': function(to, from){
+            this.$el.volume = to
         }
     }
 }

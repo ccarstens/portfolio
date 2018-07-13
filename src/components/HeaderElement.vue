@@ -9,8 +9,8 @@
                         <li class="ml-auto ml-lg-5 offset-lg-1">
                             <LanguageSwitcher></LanguageSwitcher>
                         </li>
-                        <li style="font-size: 1.5em;">
-                            <span data-v-2c6f498c="" class="emoji">🔊</span>
+                        <li class="ml-auto" style="font-size: 1.5em;">
+                            <GlobalAudioControl></GlobalAudioControl>
                         </li>
                     </ul>
                 </div>
@@ -21,17 +21,20 @@
 
 <script>
 
+
     import state from '../state'
     import {labels} from '../assets/content'
     import e from '../localizedContent'
 
     import LanguageSwitcher from './LanguageSwitcher'
+    import GlobalAudioControl from './GlobalAudioControl'
 
 
     export default {
         name: "HeaderElement",
         components: {
-            LanguageSwitcher
+            LanguageSwitcher,
+            GlobalAudioControl
         },
         data(){
             return {
@@ -99,11 +102,11 @@
         li{
             /*width: 30%;*/
 
+            pointer-events: auto;
 
             a{
                 display: inline-block;
                 /*color: #000000;*/
-                pointer-events: auto;
 
             }
         }

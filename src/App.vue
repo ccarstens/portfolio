@@ -80,6 +80,7 @@ export default {
                 element.oncanplay = () => {
                     element.dataset.lazyLoadTriggered = 'true'
                     this.loadedMediaElementsCount++
+
                 }
                 source.src = source.dataset.src
                 element.load()
