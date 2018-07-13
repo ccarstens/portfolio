@@ -6,10 +6,10 @@
                     <ul class="nav-list d-flex">
                         <li :class="pageNameClasses"><a href="#">cornelius</a></li>
                         <li class=""><a href="#projects">{{e(labels.projects)}}</a></li>
-                        <li class="ml-auto ml-lg-5 offset-lg-1">
+                        <li class="ml-auto ml-md-5 offset-lg-1 order-4 order-md-3">
                             <LanguageSwitcher></LanguageSwitcher>
                         </li>
-                        <li class="ml-auto" style="font-size: 1.5em;">
+                        <li class="ml-auto order-3 order-md-4" style="font-size: 1.5em;">
                             <GlobalAudioControl></GlobalAudioControl>
                         </li>
                     </ul>
