@@ -1,15 +1,13 @@
 <template>
     <div class="audio-element" style="display: none;">
-
-        <button @click="init">{{ prettyVolume }}</button>
-
-        <audio  controls>
-            <source :src="test" type="audio/mpeg">
+        <audio  controls data-lazy-load-triggered="false">
+            <source :data-src="test" type="audio/mpeg">
         </audio>
     </div>
 </template>
 
 <script>
+    import state from '../state'
   export default {
     name: "AudioElement",
       props: [
@@ -18,6 +16,7 @@
       ],
       data(){
         return {
+            state,
             audio: undefined,
             playing: false,
             volume: 0,
@@ -36,16 +35,19 @@
         this.audio.volume = 0
       },
       methods: {
-        init(){
-            this.audio.play()
-            this.audio.pause()
+        getInit(){
+            return this.audio.dataset.lazyLoadTriggered == 'true'
         },
         playAudio(){
-            this.audio.play()
-            this.increaseVolumeStepwise()
+            if(this.getInit()){
+                this.audio.play()
+                this.increaseVolumeStepwise()
+            }
         },
         pauseAudio(){
-            this.decreaseVolumeStepwise()
+            if(this.getInit()){
+                this.decreaseVolumeStepwise()
+            }
         },
         setVolume(newValue){
             if(newValue > 1)  this.volume = 1
@@ -99,9 +101,12 @@
         test(){
             return require('../' + this.src)
         },
-          prettyVolume(){
+        prettyVolume(){
             return Math.trunc(this.volume * 100)
-          }
+        },
+        initialized(){
+            return this.audio.dataset.lazyLoadTriggered === 'true'
+}
       },
       watch: {
         play(newPlayState){
@@ -110,7 +115,7 @@
                 this.pauseAudio()
             }
             this.playing = newPlayState
-        }
+        },
       }
   }
 </script>

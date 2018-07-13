@@ -9,6 +9,9 @@
                         <li class="ml-auto ml-lg-5 offset-lg-1">
                             <LanguageSwitcher></LanguageSwitcher>
                         </li>
+                        <li style="font-size: 1.5em;">
+                            <span data-v-2c6f498c="" class="emoji">🔊</span>
+                        </li>
                     </ul>
                 </div>
             </nav>

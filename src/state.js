@@ -1,12 +1,13 @@
 export default {
-    debug: false,
+    debug: true,
     state: {
         headerOffset: 0,
         scrollableIsAtHeaderPosition: false,
         activeLanguage: 'en',
         languageSwitcherInAction: false,
         isTouch: false,
-        audioInitialized: false,
+        canAutoplayAudio: false,
+        mediaElementsLoaded: false,
     },
     setHeaderOffset(newValue){
         if(this.debug) console.log('Setting headerOffset to ', newValue)
@@ -40,15 +41,22 @@ export default {
         if (this.debug) console.log('Get isTouch with value', this.state.isTouch)
         return this.state.isTouch
     },
-    setAudioInitialized(newValue) {
-        if (this.debug) console.log('Set audioInitialized to', newValue)
-        this.state.audioInitialized = newValue
+    setCanAutoplayAudio(newValue) {
+        if (this.debug) console.log('Set canAutoplayAudio to', newValue)
+        this.state.canAutoplayAudio = newValue
     },
-    getAudioInitialized() {
-        if (this.debug) console.log('Get audioInitialized with value', this.state.audioInitialized)
-        return this.state.audioInitialized
+    getCanAutoplayAudio() {
+        if (this.debug) console.log('Get canAutoplayAudio with value', this.state.canAutoplayAudio)
+        return this.state.canAutoplayAudio
     },
-    
+    setMediaElementsLoaded(newValue) {
+        if (this.debug) console.log('Set mediaElementsLoaded to', newValue)
+        this.state.mediaElementsLoaded = newValue
+    },
+    getMediaElementsLoaded() {
+        if (this.debug) console.log('Get mediaElementsLoaded with value', this.state.mediaElementsLoaded)
+        return this.state.mediaElementsLoaded
+    },
 
 
 

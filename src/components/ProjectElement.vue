@@ -1,12 +1,15 @@
 <template>
-    <article :class="classObject" v-observe-visibility="{
+    <article :class="classObject"
+             >
+        <div class="row"
+             v-observe-visibility="{
     callback: viewportVisibilityChanged,
     throttle,
     intersection: {
         threshold
     }
-    }">
-        <div class="row">
+    }"
+        >
             <AudioElement v-if="hasGlobalAudio" :play="playAudio" :src="projectContent.globalAudio.src"></AudioElement>
 
             <header class="description col-12 order-0 col-lg-4 order-lg-1 d-flex flex-column">
@@ -76,8 +79,8 @@
         ],
         data () {
             return {
-                labels: labels,
-                state: state,
+                labels,
+                state,
                 currentPage: 0,
                 projectContent: {},
                 projectInViewport: false,
@@ -213,9 +216,9 @@
     }
 
     .project-element{
-        margin-bottom: 10em;
-        padding-top: 5em;
-        padding-bottom: 3em;
+        min-height: 100vh;
+        padding-top: 20vh;
+        padding-bottom: 15vh;
         color: #007bff;
 
         h3{

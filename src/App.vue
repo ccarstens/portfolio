@@ -4,7 +4,6 @@
       <HeaderElement/>
       <!--<button @click="switchGerman">Deutsch</button>-->
       <AudioActivation @click=""></AudioActivation>
-
       <AboutElement
               :text="e(content.about)"
       />
@@ -54,9 +53,11 @@ export default {
     },
     data () {
         return{
+            state,
             content: mainContent,
-            state: state,
-            name: "DotCloud"
+            name: "DotCloud",
+            mediaElements: null,
+            loadedMediaElementsCount: 0,
         }
     },
     created(){
@@ -64,23 +65,28 @@ export default {
         document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 this.loadImages()
-                this.loadVideos()
+                this.loadMedia()
             }, 1200)
         })
 
     },
     methods: {
         e,
-        loadVideos(){
-            const videos = this.$el.getElementsByTagName('video')
-            for(let i = 0; i < videos.length; i++){
-                const video = videos[i]
-                const source = videos[i].getElementsByTagName('source')[0]
+        loadMedia(){
+            this.mediaElements = document.querySelectorAll('audio, video')
+            for(let i = 0; i < this.mediaElements.length; i++){
+                const element = this.mediaElements[i]
+                const source = element.getElementsByTagName('source')[0]
+                element.oncanplay = () => {
+                    element.dataset.lazyLoadTriggered = 'true'
+                    this.loadedMediaElementsCount++
+                }
                 source.src = source.dataset.src
-                video.load()
+                element.load()
+
             }
 
-            if(this.state.debug) console.log('Lazy loaded video content for', videos.length, 'videos')
+            if(this.state.debug) console.log('Lazy loaded video content for', this.mediaElements.length, 'media elements (audio and video)')
         },
         loadImages(){
             const images = this.$el.getElementsByTagName('img')
@@ -97,6 +103,9 @@ export default {
                 hide: this.state.getLanguageSwitcherInAction(),
                 'no-hover': this.state.getIsTouch()
             }
+        },
+        allMediaElementsLoaded(){
+            return this.mediaElements ? this.loadedMediaElementsCount === this.mediaElements.length : false
         }
     },
     watch: {
@@ -105,6 +114,11 @@ export default {
                 this.content = newData
             },
             deep: true
+        },
+        loadedMediaElementsCount(to, from){
+            this.state.setMediaElementsLoaded(
+                this.mediaElements ? to === this.mediaElements.length : false
+            )
         }
     },
 }

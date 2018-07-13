@@ -20,8 +20,8 @@ export const labels = {
 export default {
     about: {
         en: `
-            <p>Hello, I’m cornelius,</p>
-            <p>an interdisciplinary student of visual communication with interest in web development, interactive installations, fashion photography and physical computing.</p>
+            <p>Hello, I’m Cornelius,</p>
+            <p>an interdisciplinary student of visual communication with interest in web development, interaction design, fashion photography and physical computing.</p>
             <p>While studying I ran the web design agency <a href="http://awesome-boys.com">Awesome Boys</a> and am currently employed by Apple.</p>
             <p>I like learning new things, feedback, getting hired, reading, bread with butter piano improv and Apfelschorle.</p>
             <p>I am looking forward to <a href="mailto:cornelius.carstens@me.com">hearing from you</a>.</p>
@@ -29,36 +29,36 @@ export default {
         `,
         de: `
             <p>Hallo, ich bin Cornelius,</p>
-<p>ich studiere Kommunikationsdesign in Berlin und beschäftige mich mit Web Development, Installationsprojekten, Modefotografie und Physical Computing.</p>
+<p>ich studiere Kommunikationsdesign in Berlin und beschäftige mich mit Web Development, Interaktionsgestaltung, Modefotografie und Physical Computing.</p>
 <p>Neben dem Studium habe ich die Web Design Agentur <a href="http://awesome-boys.com">Awesome Boys</a> geführt und arbeite momentan für Apple.</p>
 <p>Ich mag es neue Dinge zu lernen, Feedback, Jobs bekommen, Lesen, Brot mit Butter, Klavierimprovisation und Apfelschorle.</p>
-<p>Ich freue mich darauf von Euch zu hören.</p>
+<p>Ich freue mich darauf von Euch zu <a href="mailto:cornelius.carstens@me.com">hören</a>.</p>
         `,
         ru: `
-        Привет, я cornelius,
+        <p>Привет, я Cornelius,</p>
 
-междисциплинарный студент визуальной коммуникации с фоном в модной фотографии, веб-разработкой, интерактивными установками и фортепианной музыкой.
+<p>междисциплинарный студент визуальной коммуникации с фоном в модной фотографии, веб-разработкой, интерактивными установками и фортепианной музыкой.</p>
 
-Во время учебы я управлял агентством веб-дизайна Awesome Boys в течение двух лет с одним студентом и в настоящее время занимаюсь Apple.
+<p>Во время учебы я управлял агентством веб-дизайна Awesome Boys в течение двух лет с одним студентом и в настоящее время занимаюсь Apple.</p>
 
-Мне нравится изучать новые вещи, обратную связь, нанимать, читать, хлеб с маслом и Apfelschorle.
+<p>Мне нравится изучать новые вещи, обратную связь, нанимать, читать, хлеб с маслом и Apfelschorle.</p>
 
-Я с нетерпением жду услышать от вас.
+<p>Я с нетерпением жду услышать от вас.</p>
 
-Лучший
+<p>Лучший</p>
         `,
         ja: `
-        こんにちは、私はコーネリアスです、
+        <p>こんにちは、私はコーネリアスです、</p>
 
-ファッション写真、ウェブ開発、インタラクティブインスタレーション、ピアノ音楽の背景を持つ学際的なコミュニケーションの学生です。
+<p>ファッション写真、ウェブ開発、インタラクティブインスタレーション、ピアノ音楽の背景を持つ学際的なコミュニケーションの学生です。</p>
 
-勉強している間、私はWebデザインエージェンシーのAwesome Boysを2年間仲間と走り、現在Appleに雇われています。
+<p>勉強している間、私はWebデザインエージェンシーのAwesome Boysを2年間仲間と走り、現在Appleに雇われています。</p>
 
-私は新しいこと、フィードバック、雇用、読書、バターとApfelschorleのパンを学ぶのが好きです。
+<p>私は新しいこと、フィードバック、雇用、読書、バターとApfelschorleのパンを学ぶのが好きです。</p>
 
-お返事を待っています。
+<p>お返事を待っています。</p>
 
-ベスト
+<p>ベスト</p>
         `
 
 
@@ -198,15 +198,15 @@ Based on the Answers of the participant the conversation takes different directi
                 {
                     src: 'assets/projects/mh/01_marius_hirschel_cornelius_carstens.mp4',
                     description: {
-                        en: 'In order to guide the viewers attention to every single image, the photos do not scroll vertically but fade in an out governed scrolling on the page',
-                        de: 'Um die Aufmerksamkeit der Benutzer auf jedes einzelne Bild zu lenken werden die Inhalte nicht vertikal bewegt sondern durch scrollen auf der Seite ein und aus gefaded'
+                        en: 'In order to guide the viewers attention to every single image, the photos do not scroll vertically but fade in an out governed scrolling on the page.',
+                        de: 'Um die Aufmerksamkeit der Benutzer auf jedes einzelne Bild zu lenken werden die Inhalte nicht vertikal bewegt sondern durch scrollen auf der Seite ein und aus gefaded.'
                     }
                 },
                 {
                     src: 'assets/projects/mh/02_marius_hirschel_cornelius_carstens.jpg',
                     description: {
                         en: 'In order to work without a hint to scroll the contents the first image is positioned in a way that forces the user to scroll in order to see it fully.',
-                        de: 'Um auf einen Hinweis zum Scrollen verzichten zu können ist das erste Bild so platziert, dass auf jeden Fall gescrollt werden muss'
+                        de: 'Um auf einen Hinweis zum Scrollen verzichten zu können ist das erste Bild so platziert, dass auf jeden Fall gescrollt werden muss.'
                     }
                 }
             ]
@@ -270,7 +270,7 @@ Based on the Answers of the participant the conversation takes different directi
                     src: 'assets/projects/goetze/05_goetze_cornelius_carstens.mp4',
                     description: {
                         en: 'Inspired by images of <a href="http://www.tvfilmprops.co.uk/userdata/prodpics/PRODPIC-2426-6.jpg" target="_blank">stacks of tube TVs</a> we developed a video wall feature that displays accordingly produced videos synchronously',
-                        de: 'Inspiriert durch <a href="http://www.tvfilmprops.co.uk/userdata/prodpics/PRODPIC-2426-6.jpg" target="_blank">Röhrenfernseher-Wände</a> haben wir ein video wall feature entwickelt, das entsprechend produzierte Videos synchron wiedergibt'
+                        de: 'Inspiriert durch <a @click.stop="" href="http://www.tvfilmprops.co.uk/userdata/prodpics/PRODPIC-2426-6.jpg" target="_blank">Röhrenfernseher-Wände</a> haben wir ein video wall feature entwickelt, das entsprechend produzierte Videos synchron wiedergibt'
                     }
                 },
                 {
