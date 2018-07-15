@@ -7,6 +7,7 @@
 
 <script>
     import state from '../state'
+
     export default {
         name: "GlobalAudioControl",
         data(){
@@ -26,7 +27,7 @@
         computed: {
             classObject(){
                 return {
-                    hide: !this.state.getCanAutoplayAudio() || !this.state.getMediaElementsLoaded()
+                    show: this.state.getCanAutoplayAudio() || this.state.getAtLeastOneMediaElementInitialized()
                 }
             }
         }
@@ -35,23 +36,27 @@
 
 <style lang="scss" scoped>
 
-
-    .hide{
-        opacity: 0;
-        pointer-events: none;
-    }
-
     button:focus{
         outline: none;
     }
 
     button{
+        opacity: 0;
+        pointer-events: none;
+
         background: none;
         border: none;
         pointer-events: auto;
         cursor: pointer;
 
         transition: opacity 300ms ease-in-out;
+        position: relative;
+        top: -.2em;
 
+    }
+
+    .show{
+        opacity: 1;
+        pointer-events: auto;
     }
 </style>

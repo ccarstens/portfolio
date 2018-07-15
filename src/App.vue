@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :class="classObject">
+  <div id="app" :class="classObject" @touchstart="initPendingMedia" @mousedown="initPendingMedia">
 
       <HeaderElement/>
       <!--<button @click="switchGerman">Deutsch</button>-->
@@ -38,6 +38,7 @@ import AudioActivation from './components/AudioActivation'
 
 import state from './state'
 import e from './localizedContent'
+import av from './av'
 
 import mainContent from './assets/content'
 
@@ -54,49 +55,25 @@ export default {
     data () {
         return{
             state,
+            av,
             content: mainContent,
             name: "DotCloud",
             mediaElements: null,
             loadedMediaElementsCount: 0,
+            toInitialize: [],
         }
     },
     created(){
         this.state.setIsTouch(typeof window !== "undefined" && "ontouchstart" in window)
-        document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                this.loadMedia()
-                this.loadImages()
-            }, 1200)
-        })
+
+        this.av.init()
 
     },
     methods: {
         e,
-        loadMedia(){
-            this.mediaElements = document.querySelectorAll('audio, video')
-            for(let i = 0; i < this.mediaElements.length; i++){
-                const element = this.mediaElements[i]
-                const source = element.getElementsByTagName('source')[0]
-                element.onloadstart = () => {
-                    element.dataset.lazyLoadTriggered = 'true'
-                    this.loadedMediaElementsCount++
-
-                }
-                source.src = source.dataset.src
-                element.load()
-
-            }
-
-            if(this.state.debug) console.log('Lazy loaded video content for', this.mediaElements.length, 'media elements (audio and video)')
+        initPendingMedia(){
+            this.av.initPendingMedia()
         },
-        loadImages(){
-            const images = this.$el.getElementsByTagName('img')
-            for(let i = 0; i < images.length; i++){
-                const img = images[i]
-                img.src = img.dataset.src
-            }
-            if(this.state.debug) console.log('Lazy loaded image content for', images.length, 'images')
-        }
     },
     computed: {
         classObject(){
@@ -105,9 +82,6 @@ export default {
                 'no-hover': this.state.getIsTouch()
             }
         },
-        allMediaElementsLoaded(){
-            return this.mediaElements ? this.loadedMediaElementsCount === this.mediaElements.length : false
-        }
     },
     watch: {
         mainData: {
@@ -116,11 +90,6 @@ export default {
             },
             deep: true
         },
-        loadedMediaElementsCount(to, from){
-            this.state.setMediaElementsLoaded(
-                this.mediaElements ? to === this.mediaElements.length : false
-            )
-        }
     },
 }
 </script>

@@ -34,6 +34,7 @@
                 return {
                     about: true,
                     'no-show': this.state.state.scrollableIsAtHeaderPosition,
+                    'no-audio-activation': this.state.getCanAutoplayAudio() || this.state.getIsTouch(),
                     'container-fluid': true
                 }
             }
@@ -48,6 +49,10 @@
     .about{
         /*padding-top: 35vh;*/
         margin-bottom: 40vh;
+    }
+
+    .no-audio-activation{
+        margin-top: 40vh;
     }
 
     .no-show{

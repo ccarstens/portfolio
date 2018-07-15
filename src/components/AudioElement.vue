@@ -8,6 +8,7 @@
 
 <script>
     import state from '../state'
+    import {event} from '../event'
     export default {
         name: "AudioElement",
         props: [
@@ -17,6 +18,7 @@
         data(){
             return {
                 state,
+                event,
                 audio: undefined,
                 playing: false,
                 volume: 0,
@@ -33,12 +35,22 @@
         mounted(){
             this.audio = this.$el.getElementsByTagName('audio')[0]
             this.audio.volume = 0
+
+            this.event.$on('av-hooked-element-to-canplay', (element) =>{
+                if(element === this.audio){
+                    this.audio.addEventListener('canplay', () => {
+                        this.playAudio()
+                    })
+                }
+            });
+
         },
         methods: {
             getInit(){
-                return this.audio.dataset.lazyLoadTriggered == 'true'
+                return this.audio.dataset.init == 'true'
             },
             playAudio(){
+                console.log(this.audio)
                 if(this.getInit() && this.state.getGlobalVolume() && this.play){
                     this.audio.play()
                     this.playing = true

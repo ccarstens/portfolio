@@ -81,15 +81,23 @@
 
     img{
         max-width: 100%;
-        width: 100%;
+        max-height: 90vh;
+        /*width: 100%;*/
         height: auto;
+        margin: auto;
+
     }
 
     .visual-content{
         z-index: 1;
     }
 
+    figure{
+        text-align: center;
+    }
+
     figcaption{
+        text-align: left;
         font-size: .75em;
         padding: .2em .3em 0 .3em;
 

@@ -1,5 +1,5 @@
 export default {
-    debug: false,
+    debug: true,
     state: {
         headerOffset: 0,
         scrollableIsAtHeaderPosition: false,
@@ -7,8 +7,8 @@ export default {
         languageSwitcherInAction: false,
         isTouch: false,
         canAutoplayAudio: false,
-        mediaElementsLoaded: false,
         globalVolume: 1,
+        atLeastOneMediaElementInitialized: false,
     },
     setHeaderOffset(newValue){
         if(this.debug) console.log('Setting headerOffset to ', newValue)
@@ -50,14 +50,6 @@ export default {
         if (this.debug) console.log('Get canAutoplayAudio with value', this.state.canAutoplayAudio)
         return this.state.canAutoplayAudio
     },
-    setMediaElementsLoaded(newValue) {
-        if (this.debug) console.log('Set mediaElementsLoaded to', newValue)
-        this.state.mediaElementsLoaded = newValue
-    },
-    getMediaElementsLoaded() {
-        if (this.debug) console.log('Get mediaElementsLoaded with value', this.state.mediaElementsLoaded)
-        return this.state.mediaElementsLoaded
-    },
     setGlobalVolume(newValue) {
         if (this.debug) console.log('Set globalVolume to', newValue)
         this.state.globalVolume = newValue
@@ -65,6 +57,14 @@ export default {
     getGlobalVolume() {
         if (this.debug) console.log('Get globalVolume with value', this.state.globalVolume)
         return this.state.globalVolume
+    },
+    setAtLeastOneMediaElementInitialized(newValue) {
+        if (this.debug) console.log('Set atLeastOneMediaElementInitialized to', newValue)
+        this.state.atLeastOneMediaElementInitialized = newValue
+    },
+    getAtLeastOneMediaElementInitialized() {
+        if (this.debug) console.log('Get atLeastOneMediaElementInitialized with value', this.state.atLeastOneMediaElementInitialized)
+        return this.state.atLeastOneMediaElementInitialized
     },
 
 

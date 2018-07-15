@@ -1,11 +1,12 @@
 <template>
-    <video @load="init" loop playsinline :controls="state.getIsTouch()" :muted="muted">
+    <video loop playsinline :controls="state.getIsTouch()" :muted="muted">
         <source v-if="test" :data-src="videoUrl">
     </video>
 </template>
 
 <script>
     import state from '../state'
+    import {event} from '../event'
 export default {
     name: 'VideoItem',
     props: [
@@ -15,6 +16,7 @@ export default {
     data () {
         return {
             state,
+            event,
             test: undefined,
             element: null,
         }
@@ -23,7 +25,13 @@ export default {
         this.test = this.$props.src
     },
     mounted () {
-
+        this.event.$on('av-hooked-element-to-canplay', (element) => {
+            if(element === this.$el){
+                this.$el.addEventListener('canplay', () => {
+                    this.playVideo()
+                })
+            }
+        })
     },
     computed: {
         videoUrl(){
@@ -34,15 +42,25 @@ export default {
         }
     },
     methods: {
-        init () {
-            this.$el.play()
+        getInit(){
+            return this.$el.dataset.init == 'true'
+        },
+        playVideo(){
+            if(this.getInit() && this.play){
+                this.$el.play()
+            }
+        },
+        pauseVideo(){
+            if(this.getInit()){
+                this.$el.pause()
+            }
         },
         updatePlay (play) {
             if(play){
-                this.$el.play()
+                this.playVideo()
                 // this.$el.webkitEnterFullScreen()
             }
-            else this.$el.pause()
+            else this.pauseVideo()
         }
     },
     watch: {
@@ -60,5 +78,7 @@ export default {
     video{
         max-width: 100%;
         max-height: 90vh;
+        width: 100%;
+        object-fit: contain;
     }
 </style>
