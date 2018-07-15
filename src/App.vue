@@ -64,8 +64,8 @@ export default {
         this.state.setIsTouch(typeof window !== "undefined" && "ontouchstart" in window)
         document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
-                this.loadImages()
                 this.loadMedia()
+                this.loadImages()
             }, 1200)
         })
 
@@ -77,7 +77,7 @@ export default {
             for(let i = 0; i < this.mediaElements.length; i++){
                 const element = this.mediaElements[i]
                 const source = element.getElementsByTagName('source')[0]
-                element.oncanplay = () => {
+                element.onloadstart = () => {
                     element.dataset.lazyLoadTriggered = 'true'
                     this.loadedMediaElementsCount++
 

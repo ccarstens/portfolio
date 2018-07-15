@@ -82,7 +82,8 @@
         },
         computed: {
             noActivationNeeded(){
-                return !this.state.getMediaElementsLoaded() || this.state.getCanAutoplayAudio()
+                // return !this.state.getMediaElementsLoaded() || this.state.getCanAutoplayAudio()
+                return !this.state.getMediaElementsLoaded()
             },
             classObject(){
                 return {
