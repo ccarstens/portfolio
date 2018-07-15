@@ -40,6 +40,8 @@
                         :paginationSize="9"
                         v-model="currentPage"
                         @click.native="handleCarouselClick"
+                        @mousemove.native="handleCarouselMousemove"
+                        :class="carouselClassObject"
                 >
                     <slide
                         v-for="(slide, index) in projectContent.media"
@@ -87,6 +89,7 @@
                 throttle: 300,
                 carousel: null,
                 slideCount: 0,
+                cursorPosition: 'left',
                 standardContentDimensions: {
                     width: 0,
                     height: 0
@@ -132,10 +135,13 @@
                     }
                 }
             },
+            handleCarouselMousemove(e){
+                this.cursorPosition = this.getLeftRightByEvent(e)
+            },
             getLeftRightByEvent(e){
                 const targetWidth = e.target.offsetWidth
-                const clickedLocation = e.offsetX
-                return clickedLocation <= targetWidth / 2 ? 'left' : 'right'
+                const targetLocation = e.offsetX
+                return targetLocation <= targetWidth / 2 ? 'left' : 'right'
             }
         },
         watch: {
@@ -155,7 +161,12 @@
                     visible: this.projectInViewport,
                     'project-element': true,
                     'container-fluid': true,
-                    dark: this.hasDarkMode
+                    dark: this.hasDarkMode,
+                }
+            },
+            carouselClassObject(){
+                return {
+                    'cursor-right': this.cursorPosition === 'right',
                 }
             },
             threshold(){
@@ -199,7 +210,13 @@
         width: 100%;
         cursor: url(../assets/cursor.png), auto;
         cursor: -webkit-image-set(
-            url(../assets/cursor.png) 2x
+                        url(../assets/cursor-left.png) 2x
+        ), auto;
+    }
+
+    .VueCarousel.cursor-right{
+        cursor: -webkit-image-set(
+                        url(../assets/cursor-right.png) 2x
         ), auto;
     }
 
