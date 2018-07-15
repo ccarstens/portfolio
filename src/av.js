@@ -25,7 +25,6 @@ export default {
         let tmp = this.toInitialize
         this.toInitialize = []
         for(let el of tmp){
-            console.log(el)
             const elVol = el.volume
             el.volume = 0
             el.play().then(() => {
@@ -39,13 +38,11 @@ export default {
         }
     },
     loadMedia(){
-        console.log("THERE",this.mediaElements.length)
         for(let i = 0; i < this.mediaElements.length; i++){
 
             const element = this.mediaElements[i]
             const source = element.getElementsByTagName('source')[0]
             element.addEventListener('canplay', () => {
-                console.log("element", element)
                 if(this.state.debug) console.log("CANPLAY")
 
                 if(this.state.getCanAutoplayAudio()){

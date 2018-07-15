@@ -50,7 +50,6 @@
                 return this.audio.dataset.init == 'true'
             },
             playAudio(){
-                console.log(this.audio)
                 if(this.getInit() && this.state.getGlobalVolume() && this.play){
                     this.audio.play()
                     this.playing = true
@@ -67,8 +66,6 @@
                 if(newValue > 1)  this.volume = 1
                 else if(newValue < 0)  this.volume = 0
                 else this.volume = newValue
-
-                console.log("this.volume", this.volume)
 
                 this.audio.volume = this.volume
 
