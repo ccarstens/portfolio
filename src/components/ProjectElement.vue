@@ -41,6 +41,7 @@
                         v-model="currentPage"
                         @click.native="handleCarouselClick"
                         @mousemove.native="handleCarouselMousemove"
+                        @mouseout.native="handleCarouselMouseout"
                         :class="carouselClassObject"
                 >
                     <slide
@@ -89,7 +90,7 @@
                 throttle: 300,
                 carousel: null,
                 slideCount: 0,
-                cursorPosition: 'left',
+                cursorPosition: '',
                 standardContentDimensions: {
                     width: 0,
                     height: 0
@@ -138,6 +139,9 @@
             handleCarouselMousemove(e){
                 this.cursorPosition = this.getLeftRightByEvent(e)
             },
+            handleCarouselMouseout(e){
+                this.cursorPosition = ''
+            },
             getLeftRightByEvent(e){
                 const targetWidth = e.target.offsetWidth
                 const targetLocation = e.offsetX
@@ -167,6 +171,7 @@
             carouselClassObject(){
                 return {
                     'cursor-right': this.cursorPosition === 'right',
+                    'cursor-left': this.cursorPosition === 'left'
                 }
             },
             threshold(){
@@ -208,15 +213,19 @@
 
     .VueCarousel{
         width: 100%;
-        cursor: url(../assets/cursor.png), auto;
-        cursor: -webkit-image-set(
-                        url(../assets/cursor-left.png) 2x
-        ), auto;
     }
 
     .VueCarousel.cursor-right{
+        cursor: url(../assets/cursor-right.png), auto;
         cursor: -webkit-image-set(
                         url(../assets/cursor-right.png) 2x
+        ), auto;
+    }
+
+    .VueCarousel.cursor-left{
+        cursor: url(../assets/cursor-left.png), auto;
+        cursor: -webkit-image-set(
+                        url(../assets/cursor-left.png) 2x
         ), auto;
     }
 

@@ -22,25 +22,30 @@ export default {
         })
     },
     initPendingMedia(){
-        let tmp = this.toInitialize
-        this.toInitialize = []
-        for(let el of tmp){
-            const elVol = el.volume
-            el.volume = 0
-            el.play().then(() => {
-                el.pause()
-                el.currentTime = 0
-                el.volume = elVol
-                el.dataset.init = 'true'
-                this.initializedElements.push(el)
-                if(!this.state.getAtLeastOneMediaElementInitialized()) this.state.setAtLeastOneMediaElementInitialized(true)
-            })
+
+        if(this.toInitialize.length > 0){
+            let tmp = this.toInitialize.slice()
+            this.toInitialize.length = 0
+
+            for(let el of tmp){
+                const elVol = el.volume
+                el.volume = 0
+                el.play().then(() => {
+                    el.pause()
+                    el.currentTime = 0
+                    el.volume = elVol
+                    el.dataset.init = 'true'
+                    this.initializedElements.push(el)
+                    if(!this.state.getAtLeastOneMediaElementInitialized()) this.state.setAtLeastOneMediaElementInitialized(true)
+                })
+            }
         }
+
     },
     loadMedia(){
-        for(let i = 0; i < this.mediaElements.length; i++){
 
-            const element = this.mediaElements[i]
+        this.mediaElements.forEach((element) => {
+
             const source = element.getElementsByTagName('source')[0]
             element.addEventListener('canplay', () => {
                 if(this.state.debug) console.log("CANPLAY")
@@ -49,7 +54,10 @@ export default {
                     element.dataset.init = 'true'
                     this.initializedElements.push(element)
                 }else{
-                    this.toInitialize.push(element)
+                    if(element.dataset.init === undefined){
+                        this.toInitialize.push(element)
+
+                    }
                 }
 
             })
@@ -59,7 +67,7 @@ export default {
             source.src = source.dataset.src
             element.load()
 
-        }
+        })
     },
     loadImages(){
         const images = document.querySelectorAll('img')

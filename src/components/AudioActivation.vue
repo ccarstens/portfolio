@@ -1,7 +1,7 @@
 <template>
     <div v-if="!removeActivation" :class="classObject">
         <a
-                @click="userInteracted = true"
+                @click.prevent="initMedia"
                 @touchstart="$emit('click')"
                 href="#">
             <span class="word">{{e(labels.click)}}</span><span v-if="false" class="emoji">🔈</span>
@@ -37,7 +37,7 @@
         methods: {
             e,
             initMedia(){
-                // this.user
+                this.userInteracted = true
             }
         },
         computed: {
