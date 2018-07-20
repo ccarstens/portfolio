@@ -52,27 +52,27 @@
                 }
             },
             preload(s) {
-                // this.backgroundImage = s.loadImage("static/p5js.png");
+                // this.backgroundImage = p.loadImage("static/p5js.png");
                 // console.log(this.backgroundImage);
             },
             setup(s) {
                 this.s = s
-                // this.bgColor = s.color(255, 200, 128)
+                // this.bgColor = p.color(255, 200, 128)
                 this.bgColor = s.color(0)
 
                 this.resetMouse()
 
                 s.createCanvas(this.width, this.height, s.WEBGL);
                 console.log("setup", this.width, this.height)
-                // s.createCanvas(300, 150, s.WEBGL);
+                // p.createCanvas(300, 150, p.WEBGL);
                 s.background(this.bgColor)
                 s.frameRate(this.frameRate)
 
                 this.createMovers()
 
                 // window.addEventListener('resize', () => {
-                //     s.resizeCanvas(this.width, this.height)
-                //     s.background(this.bgColor)
+                //     p.resizeCanvas(this.width, this.height)
+                //     p.background(this.bgColor)
                 // })
 
             },

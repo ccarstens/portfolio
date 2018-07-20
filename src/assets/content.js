@@ -1,19 +1,21 @@
 export const labels = {
     click: {
-        en: 'click',
-        de: 'klick',
-        ru: 'щелчок',
-        ja: 'クリック'
+        en: 'click for sound',
+        de: 'klick für Ton',
+        ja: 'JAPANESE GOES HERE',
+        ru: 'щелчок'
     },
     projects: {
         en: 'projects',
         de: 'projekte',
-        ja: 'プロジェクト',
-        ru: 'проектов'
+        ja: 'JAPANESE GOES HERE',
+        ru: 'проекты'
     },
     visit: {
         en: 'visit online version',
-        de: 'Online Version ansehen'
+        de: 'Online Version ansehen',
+        ja: 'JAPANESE GOES HERE',
+        ru: 'посетить онлайн версию'
     }
 }
 
@@ -21,9 +23,9 @@ export default {
     about: {
         en: `
             <p>Hello, I’m Cornelius,</p>
-            <p>an interdisciplinary student of visual communication with interest in web development, interaction design, fashion photography and physical computing.</p>
-            <p>While studying I ran the web design agency <a href="http://awesome-boys.com">Awesome Boys</a> and am currently employed by Apple.</p>
-            <p>I like learning new things, feedback, getting hired, reading, bread with butter piano improv and Apfelschorle.</p>
+            <p>an interdisciplinary visual communication student interested in web development, interaction design, fashion photography and physical computing.</p>
+            <p>While studying I ran the web design agency <a href="http://awesome-boys.com">Awesome Boys</a> and currently work at Apple.</p>
+            <p>I like learning new things, feedback, getting hired, reading, bread with butter, piano improv, and Apfelschorle.</p>
             <p>I am looking forward to <a href="mailto:cornelius.carstens@me.com">hearing from you</a>.</p>
             Best,
         `,
@@ -34,32 +36,12 @@ export default {
 <p>Ich mag es neue Dinge zu lernen, Feedback, Jobs bekommen, Lesen, Brot mit Butter, Klavierimprovisation und Apfelschorle.</p>
 <p>Ich freue mich darauf von Euch zu <a href="mailto:cornelius.carstens@me.com">hören</a>.</p>
         `,
-        ru: `
-        <p>Привет, я Cornelius,</p>
-
-<p>междисциплинарный студент визуальной коммуникации с фоном в модной фотографии, веб-разработкой, интерактивными установками и фортепианной музыкой.</p>
-
-<p>Во время учебы я управлял агентством веб-дизайна Awesome Boys в течение двух лет с одним студентом и в настоящее время занимаюсь Apple.</p>
-
-<p>Мне нравится изучать новые вещи, обратную связь, нанимать, читать, хлеб с маслом и Apfelschorle.</p>
-
-<p>Я с нетерпением жду услышать от вас.</p>
-
-<p>Лучший</p>
-        `,
-        ja: `
-        <p>こんにちは、私はコーネリアスです、</p>
-
-<p>ファッション写真、ウェブ開発、インタラクティブインスタレーション、ピアノ音楽の背景を持つ学際的なコミュニケーションの学生です。</p>
-
-<p>勉強している間、私はWebデザインエージェンシーのAwesome Boysを2年間仲間と走り、現在Appleに雇われています。</p>
-
-<p>私は新しいこと、フィードバック、雇用、読書、バターとApfelschorleのパンを学ぶのが好きです。</p>
-
-<p>お返事を待っています。</p>
-
-<p>ベスト</p>
-        `
+        ja: 'JAPANESE GOES HERE',
+        ru: `<p>Привет, я Корнелиус</p>
+        <p>междисциплинарный студент визуальной коммуникации с интересом к веб-разработке, дизайну, модной фотографии и физическим вычислениям.</p>
+    <p>во время учебы я руководил агентством веб-дизайна <a href="http://awesome-boys.com"> Удивительные ребята </a> которое в настоящее время работает на Apple.</p>
+<p>Мне нравится узнавать новое,общаться,работать,читать,импровизировать на фортепиано, есть хлеб с маслом и пить яблочный напиток.</p>
+<p>Я с нетерпением жду <a href="mailto:cornelius.carstens@me.com">ваше мнение, отзыв</a>.</p>`
 
 
     },
@@ -68,18 +50,29 @@ export default {
             title: 'Conversation with LEA',
             year: 2017,
             description: {
+
+
                 de: `
                 <p>Interaktive Installation bei der die Betrachtenden einzeln in einem Kinderzelt aus Tüchern sitzen. In dieser intimen Atmosphäre entwickelt sich ein Gespräch zwischen einer kindlich klingenden Computerstimme und der Betrachterin. Die Stimme stellt Fragen mit denen sie die menschliche Welt zu verstehen versucht. Bedingt durch die Antworten der Teilnehmer ist der Gesprächsverlauf in jedem Gespräch unterschiedlich.</p>
                 <p>Ausgestellt auf dem World Usability Day Berlin 2017</p>
                 `,
+
+
                 en: `
-                <p>For this installation the audience sits one by one in a children's tent. In this intimate atmosphere a conversation between a childish sounding synthetic voice and the interacting visitor develops.
-The voice mimics the curiosity of a child by asking questions that aim at getting an understanding how the world of the humans works.
-Based on the Answers of the participant the conversation takes different directions.</p>
-                <p>Shown at World Usability Day Berlin 2017</p>
-                `
+                	For this installation, the audience sits one by one in a children's tent.
+                          In this intimate atmosphere, a conversation between a child-like synthetic voice and the interacting visitor develops.
+                          The voice mimics the curiosity of a child; by asking questions, it attempts to understand how the human world works.
+                          Based on the answers of the participant, the conversation takes different directions.</p>
+                          <p>Shown at World Usability Day Berlin 2017</p>
+                `,
+                ja: 'JAPANESE GOES HERE',
+                ru: `<p>Для этой инсталляции зрители сидят один за другим в детской палатке.
+            В этой интимной атмосфере развивается разговор между детским звучащим синтетическим голосом и самим посетителем.
+                Голос имитирует любопытство ребенка, задает вопросы, направленные на понимание того, как работает мир людей.
+                Исходя из ответов участника, разговор идет в разных направлениях.</p>
+        Это я показал на Всемирный день юзабилити в Берлине в 2017 году.`
             },
-            url: '',
+            url: ``,
             globalAudio: {
                 src: 'assets/projects/lea/lea_cornelius_carstens.mp3'
             },
@@ -88,125 +81,163 @@ Based on the Answers of the participant the conversation takes different directi
                 {
                     src: 'assets/projects/lea/04_lea_cornelius_carstens.jpg',
                     description: {
-                        en: '',
-                        de: ''
+                        en: ``,
+                        de: ``
                     }
                 },
                 {
                     src: 'assets/projects/lea/01_lea_cornelius_carstens.jpg',
                     description: {
                         en: `
-                        <p>After kicking off their shoes the visitors enter the tent through a narrow opening.</p>
-                        <p>The atmosphere aims to bring the visitors in a calm and trusting mood.</p>
+                        After kicking off their shoes, the visitors enter the tent through a narrow opening.
+                        The atmosphere creates a calm and trusting mood.
                         `,
                         de: 'Nachdem die Besucher ihre Schuhe ausgezogen haben betreten sie durch eine schmale Öffnung das Zelt.\n' +
-                        'Die Atmosphäre zielt darauf ab die Teilnehmer in eine entspannte und vertrauende Haltung zu bringen.'
+                        'Die Atmosphäre zielt darauf ab die Teilnehmer in eine entspannte und vertrauende Haltung zu bringen.',
+                        ja: 'JAPANESE GOES HERE',
+                        ru: `Сняв обувь, посетители входят в палатку через узкое отверстие
+            Атмосфера направлена ​​на то, чтобы принести посетителям спокойное и доверительное настроение`
                     },
                     alt: {
                         en: 'interior of the tent',
-                        de: 'Innenraum des Zeltes'
+                        de: 'Innenraum des Zeltes',
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'Интерьер шатра'
                     }
                 },
                 {
                     src: 'assets/projects/lea/02_lea_cornelius_carstens.jpg',
                     description: {
-                        en: 'Construction of the tent; left is the tent, right is the access tunnel with space for the rooms door',
+                        en: 'Construction of the tent: left is the tent, right is the access tunnel',
                         de: 'Zeltkonstruktion; links Zelt, rechts Zugangstunnel mit Platz für die Türe des Raumes',
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'Конструкция шатра: левый шатер, правый туннель с пространством для двери комнаты'
                     },
                     alt: {
                         en: 'exterior view of the tent\'s construction',
-                        de: 'Zeltkonstruktion von Außen'
+                        de: 'Zeltkonstruktion von Außen',
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'внешний вид конструкции палатки'
                     }
                 },
                 {
                     src: 'assets/projects/lea/03_lea_cornelius_carstens.jpg',
                     description: {
                         en: 'hand written draft of the conversation sequences',
-                        de: 'Handschriftlicher Entwurf der Gesprächssequenzen'
+                        de: 'Handschriftlicher Entwurf der Gesprächssequenzen',
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'рукописный черновик последовательности разговоров'
                     },
                     alt: {
                         en: 'Original draft of the conversation sequences',
-                        de: 'Grundentwurf der Gesprächssequenzen'
+                        de: 'Grundentwurf der Gesprächssequenzen',
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'Первоначальный черновик последовательности бесед'
                     }
                 },
                 {
                     src: 'assets/projects/lea/07_lea_cornelius_carstens.jpg',
                     description: {
                         en: `
-                        The conversation has a structure of single sequences which have their own topic each. The sequences contain Leas reactions to the responses of the participant.
+                       The conversation consists of individual sequences containing Lea's reaction to the participants responses.
                         `,
                         de: `
                         Das Gespräch ist anhand einzelner Themen in Sequenzen unterteilt. Sequenzen beinhalten Leas Reaktionen auf die Antworten der Teilnehmer.
-                        `
+                        `,
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'Разговор имеет структуру отдельных последовательностей, каждая из которых имеет свою тему.Последовательности содержат реакции Леа на ответы участника. '
                     }
                 },
                 {
                     src: 'assets/projects/lea/09_lea_cornelius_carstens.jpg',
                     description: {
                         en: `
-                        Lea understands affirmative, negative and undetermined responses. Moreover for some questions she expects free answers and acknowledges the response.
+                        Lea understands affirmative, negative, and undetermined responses. For some questions, she expects "wildcard" answers and acknowledges the response.
                         `,
                         de: `
                         Lea versteht bejahende, verneinende und unentschlossene Antworten. Zudem erwartet sie auf manche Fragen eine freie Antwort, die sie zur Kenntnis nimmt.
-                        `
-                    }
-                },
-                {
-                    src: 'assets/projects/lea/05_lea_cornelius_carstens.jpg',
-                    description: {
-                        en: `
-                        Leas voice uses vocal smileys to enrich her expressions with meaning and accentuation. In conjunction with precisely controlled delays an impression of human comprehension comes up.
                         `,
-                        de: `
-                        Leas Stimme verfügt über Vocal Smileys, die den Aussagen Betonung und Ausdruck hinzufügen. In Verbindung mit präzise austarierten Verzögerungen wird der Eindruck von menschlichem Verständnis erzeugt.
-                        `
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'Леа понимает позитивные, негативные и неопределенные ответы. Более того, на некоторые вопросы она ожидает свободных ответов и подтверждает ответ'
                     }
                 },
-                {
-                    src: 'assets/projects/lea/06_lea_cornelius_carstens.jpg',
-                    description: {
-                        en: `
-                        The conversation can be clustered in three phases. In the beginning Lea asks questions on secular and natural science matters. The second phase deals with social norms that regulate the daily human interaction. In the last phase she inquires about ethical questions.
-                        `,
-                        de: `
-                        Das Gespräch gliedert sich in drei Phasen. Zu Beginn stellt Lea weltliche, naturwissenschaftliche Fragen. Die zweite Phase bezieht sich auf psychosoziale Normen, die den tagtäglichen Umgang mit anderen Menschen betreffen. Die letzte Phase befasst sich mit moralischen Fragestellungen.
-                        `
-                    }
-                },
-                {
-                    src: 'assets/projects/lea/08_lea_cornelius_carstens.jpg',
-                    description: {
-                        en: `
-                        'Is it ok to kill people whom I don't like?' is one of the core questions of the project. Participants gave the feedback that it nearly impossible, even just as a joke, to respond with 'Yes' since after some time you feel responsible for her.
-                        `,
-                        de: `
-                        Die Frage ob man Menschen, die man nicht mag töten darf ist eine der Kernfragen. Teilnehmer haben die Rückmeldung gegeben, dass es aufgrund des Verantwortungsbewusstseins für Lea schwer fällt auch nur zum Scherz mit 'Ja' zu antworten.
-                        `
-                    }
-                },
+    //             {
+    //                 src: 'assets/projects/lea/05_lea_cornelius_carstens.jpg',
+    //                 description: {
+    //                     en: `
+    //                     Leas voice uses vocal smilies to enrich her expressions with meaning and accentuation.
+		// 				In conjunction with precisely controlled delays, an impression of lifelike comprehension is given.
+    //                     `,
+    //                     de: `
+    //                     Leas Stimme verfügt über Vocal Smileys, die den Aussagen Betonung und Ausdruck hinzufügen.
+		// 				In Verbindung mit präzise austarierten Verzögerungen wird der Eindruck von menschlichem Verständnis erzeugt.
+    //                     `,
+    //                     ja: 'JAPANESE GOES HERE',
+    //                     ru: 'Голос Леа использует голосовые смайлики, чтобы обогатить свои выражения смыслом и интонацией.В сочетании с точно контролируемыми паузами между словами возникает впечатление человеческого понимания'
+    //                 }
+    //             },
+    //             {
+    //                 src: 'assets/projects/lea/06_lea_cornelius_carstens.jpg',
+    //                 description: {
+    //                     en: `
+    //                     The conversation can be clustered in three phases. In the beginning Lea asks questions on natural science matters.
+		// 				The second phase deals with social norms that regulate the daily human interaction. In the last phase she inquires about ethical questions.
+    //                     `,
+    //                     de: `
+    //                     Das Gespräch gliedert sich in drei Phasen. Zu Beginn stellt Lea weltliche, naturwissenschaftliche Fragen.
+		// 				Die zweite Phase bezieht sich auf psychosoziale Normen, die den tagtäglichen Umgang mit anderen Menschen betreffen.
+		// 				Die letzte Phase befasst sich mit moralischen Fragestellungen.
+    //                     `,
+    //                     ja: 'JAPANESE GOES HERE',
+    //                     ru: `Диалог можно сгруппировать в три этапа. Сначала Леа задает вопросы по естественным наукам.
+    // Второй этап касается социальных норм, регулирующих повседневное взаимодействие человека. На последнем этапе она интересуется этическими вопросами`
+    //                 }
+    //             },
+    //             {
+    //                 src: 'assets/projects/lea/08_lea_cornelius_carstens.jpg',
+    //                 description: {
+    //                     en: `
+    //                     'Is it ok to kill people I don't like?' is one of the core questions of the project.
+		// 				Participants reported that it nearly impossible to respond affirmatively, even as a joke, because they felt somewhat responsible for Lea.
+    //                     `,
+    //                     de: `
+    //                     Die Frage ob man Menschen, die man nicht mag töten darf ist eine der Kernfragen.
+		// 				Teilnehmer haben die Rückmeldung gegeben, dass es aufgrund des Verantwortungsbewusstseins für Lea schwer fällt auch nur zum Scherz mit 'Ja' zu antworten.
+    //                     `,
+    //                     ja: 'JAPANESE GOES HERE',
+    //                     ru: `Нормально ли убивать людей, которые мне не нравятся?"это один из ключевых вопросов проекта.
+    // Участники ответили, что это почти невозможно. Даже если в шутку ответить "да", то через некоторое время вы чувствуете ответственность за нее`
+    //                 }
+    //             },
             ]
         },
         {
             title: 'Marius Hirschel',
             year: 2017,
             description: {
-                en: 'Design and development of custom portfolio for berlin based hair stylist',
-                de: 'Design und Entwicklung von Custom Portfolio für Hair Stylist aus Berlin'
+                en: 'Design and development of custom portfolio for the Berlin based hair stylist Marius Hirschel',
+                de: 'Design und Entwicklung von Custom Portfolio für Hair Stylist aus Berlin',
+                ja: 'JAPANESE GOES HERE',
+                ru: 'Дизайн и разработка индивидуального портфолио для берлинского парикмахера'
             },
             url: 'http://mariushirschel.de',
             media: [
                 {
                     src: 'assets/projects/mh/01_marius_hirschel_cornelius_carstens.mp4',
                     description: {
-                        en: 'In order to guide the viewers attention to every single image, the photos do not scroll vertically but fade in an out governed scrolling on the page.',
-                        de: 'Um die Aufmerksamkeit der Benutzer auf jedes einzelne Bild zu lenken werden die Inhalte nicht vertikal bewegt sondern durch scrollen auf der Seite ein und aus gefaded.'
+                        en: 'In order to guide the viewer\'s attention to each image, the photos do not scroll vertically but fade in-and-out governed scrolling on the page.',
+                        de: 'Um die Aufmerksamkeit der Benutzer auf jedes einzelne Bild zu lenken werden die Inhalte nicht vertikal bewegt sondern durch scrollen auf der Seite ein und aus gefaded.',
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'Чтобы привлечь внимание зрителя к каждому изображению, фотографии не прокручиваются вертикально, а исчезают при прокрутке страницы'
                     }
                 },
                 {
                     src: 'assets/projects/mh/02_marius_hirschel_cornelius_carstens.jpg',
                     description: {
-                        en: 'In order to work without a hint to scroll the contents the first image is positioned in a way that forces the user to scroll in order to see it fully.',
-                        de: 'Um auf einen Hinweis zum Scrollen verzichten zu können ist das erste Bild so platziert, dass auf jeden Fall gescrollt werden muss.'
+                        en: 'In order to work without a hint to scroll, the contents the first image is positioned in a way that forces the user to scroll in order to see it fully.',
+                        de: 'Um auf einen Hinweis zum Scrollen verzichten zu können ist das erste Bild so platziert, dass auf jeden Fall gescrollt werden muss.',
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'Для того, чтобы работать без подсказки, первое изображение расположено таким образом, что заставляет пользователя прокручивать, чтобы увидеть его полностью'
                     }
                 }
             ]
@@ -216,11 +247,13 @@ Based on the Answers of the participant the conversation takes different directi
             year: 2016,
             description: {
                 en: 'Rapid prototype of an assault rifle that automatically aims at the head of the viewer. This installation is a critical examination of autonomous combat systems and automated warfare.',
-                de: 'Rapid Prototype einer Installation bei der sich ein Sturmgewehr automatisch auf den Kopf der Betrachter ausrichtet und sie verfolgt. Kritische Auseinandersetzung mit autonomen Waffensystemen und automatisierter Kriegsführung.'
+                de: 'Rapid Prototype einer Installation bei der sich ein Sturmgewehr automatisch auf den Kopf der Betrachter ausrichtet und sie verfolgt. Kritische Auseinandersetzung mit autonomen Waffensystemen und automatisierter Kriegsführung.',
+                ja: 'JAPANESE GOES HERE',
+                ru: 'Быстрый прототип штурмовой винтовки, которая автоматически целится в голову зрителя. Данная установка представляет собой критическое экспертизу автономных боевых систем и средств автоматизированной борьбы'
             },
             darkMode: true,
             // globalAudio: {
-            //     src: ''
+            //     src: ``
             // },
             media: [
                 {
@@ -228,26 +261,30 @@ Based on the Answers of the participant the conversation takes different directi
                     description: {
                         en: 'Mockup of a possible exhibition of the prototype',
                         de: 'Mockup in möglichem Ausstellungskontext',
-                        ru: '',
-                        ja: ''
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'Макет возможной выставки прототипа'
                     }
                 },
                 {
                     src: 'assets/projects/fear/02_fear_cornelius_carstens.mp4',
                     description: {
-                        en: 'By using video imaging in conjunction with face recognition the position of the viewer is calculated. The servo motors receive that information via serial communication and adjust their angles respectively.',
-                        de: 'Über ein Videobild und Gesichtserkennung wird die Position des Betrachters ermittelt. Auf dieser Grundlage werden Servomotoren seriell angesteuert und bewegen das Gewehr an die entsprechende Position.'
+                        en: 'By using video imaging in conjunction with face recognition, the position of the viewer is calculated. The servo motors receive that information via serial communication and adjust their angles respectively.',
+                        de: 'Über ein Videobild und Gesichtserkennung wird die Position des Betrachters ermittelt. Auf dieser Grundlage werden Servomotoren seriell angesteuert und bewegen das Gewehr an die entsprechende Position.',
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'При использовании видео в сочетании с распознаванием лиц рассчитывается позиция зрителя. Моторы сервопривода получают эту информацию через серийное сообщение и регулируют их углы соответственно'
                     }
                 },
-                {
-                    src: 'assets/projects/fear/03_fear_cornelius_carstens.jpg',
-                    description: ''
-                },
+                // {
+                //     src: 'assets/projects/fear/03_fear_cornelius_carstens.jpg',
+                //     description: ``
+                // },
                 {
                     src: 'assets/projects/fear/04_fear_cornelius_carstens.mp4',
                     description: {
                         en: 'first tests combining facial recognition and serial communication',
-                        de: 'Grundlegende Tests zu Gesichtserkennung und serieller Kommunikation'
+                        de: 'Grundlegende Tests zu Gesichtserkennung und serieller Kommunikation',
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'первые тесты, сочетающие распознавание лиц и последовательную связь'
                     }
                 },
             ]
@@ -256,34 +293,38 @@ Based on the Answers of the participant the conversation takes different directi
             title: 'Goetze',
             year: 2016,
             description: {
-                en: 'Website and online shop for a berlin based menswear label',
-                de: 'Website und Online Shop für Menswear Label aus Berlin'
+                en: 'Website and online shop for a Berlin based menswear label',
+                de: 'Website und Online Shop für Menswear Label aus Berlin',
+                ja: 'JAPANESE GOES HERE',
+                ru: 'Сайт и интернет-магазин берлинской марки мужской одежды'
             },
             darkMode: false,
             url: 'http://goetze.xyz',
             media: [
                 {
                     src: 'assets/projects/goetze/01_goetze_cornelius_carstens.mp4',
-                    description: ''
+                    description: ``
                 },
                 {
                     src: 'assets/projects/goetze/05_goetze_cornelius_carstens.mp4',
                     description: {
-                        en: 'Inspired by images of <a href="http://www.tvfilmprops.co.uk/userdata/prodpics/PRODPIC-2426-6.jpg" target="_blank">stacks of tube TVs</a> we developed a video wall feature that displays accordingly produced videos synchronously',
-                        de: 'Inspiriert durch <a @click.stop="" href="http://www.tvfilmprops.co.uk/userdata/prodpics/PRODPIC-2426-6.jpg" target="_blank">Röhrenfernseher-Wände</a> haben wir ein video wall feature entwickelt, das entsprechend produzierte Videos synchron wiedergibt'
+                        en: 'Inspired by images of <a href="http://www.tvfilmprops.co.uk/userdata/prodpics/PRODPIC-2426-6.jpg" target="_blank">stacks of tube TVs</a>, we developed a video wall that displays accordingly produced videos.',
+                        de: 'Inspiriert durch <a @click.stop="" href="http://www.tvfilmprops.co.uk/userdata/prodpics/PRODPIC-2426-6.jpg" target="_blank">Röhrenfernseher-Wände</a> haben wir ein video wall feature entwickelt, das entsprechend produzierte Videos synchron wiedergibt',
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'Вдохновленный образами <a href="http://www.tvfilmprops.co.uk/userdata/prodpics/PRODPIC-2426-6.jpg" target="_blank">старые телевизоры,стоящие друг на друге и образующие стену</a> мы разработали видео-характеристики стены,которые показывают все видео одновременно'
                     }
                 },
                 {
                     src: 'assets/projects/goetze/02_goetze_cornelius_carstens.jpg',
-                    description: ''
+                    description: ``
                 },
                 {
                     src: 'assets/projects/goetze/03_goetze_cornelius_carstens.jpg',
-                    description: ''
+                    description: ``
                 },
                 {
                     src: 'assets/projects/goetze/04_goetze_cornelius_carstens.jpg',
-                    description: ''
+                    description: ``
                 },
             ]
         },
@@ -291,72 +332,89 @@ Based on the Answers of the participant the conversation takes different directi
             title: {
                 en: 'Stethoscope',
                 de: 'Stethoskop',
-                ja: '聴診器',
-                ru: 'стетоскоп'
+                ja: 'JAPANESE GOES HERE',
+                ru: 'Стетоскоп'
             },
             year: 2018,
             darkMode: true,
             description: {
                 en: `
                 <p>embodied interfaces</p>
-                <p>Core to this installation is the confrontation of the participant with her own bodily signals. The participants listens to their own heartbeat using a stethoscope while standing in a dark room. In the center of the room particles move upwards in the pace of the heart beat in a holographic projection.</p>
-                <p>The auditive and visual perception of the participant is governed almost fully by signals of her own body while other sensory impressions are avoided.</p>
+                <p>The confrontation between a participant and her body's signals is central to this installation. The participants listens to his or her own heartbeat using a stethoscope while standing in a dark room. In the center of the room, particles move upwards in a holographic projection in time with the heartbeat.</p>
+                <p>Through eliminating external sensory input, I created an atmosphere where the participant's experience is unique to their internal feedback.</p>
                 `,
                 de: `
                 <p>embodied interfaces</p>
                 <p>Im Zentrum dieser Installation steht die Auseinandersetzung der Betrachter mit ihren körpereigenen Signalen. In einem dunklen Raum wird mithilfe eines Stethoskops der eigene Herzschlag abgehört. In der Raummitte bewegen sich Partikel im Takt des Herzschlags in einer holographischen Projektion.</p>
                 <p>Die auditive und visuelle Wahrnehmung der Teilnehmer wird nahezu vollständig von Signalen des eigenen Körpers bestimmt während die meisten anderen Sinneseindrücke in diesem Aufbau vermieden werden.</p>`,
-                ru: 'интерактивная установка, соединяющая пользователя с ее собственным слухом, используя стетоскоп и голографическую проекцию',
-                ja: '聴診器とホログラフィックプロジェクションを使用して、自分のヒアビートとユーザーを接続するインタラクティブインストール',
+                ja: 'JAPANESE GOES HERE',
+                ru: `<p>реализованные интерфейсы</p>
+    <p>Ядром этой инсталляции является противостояние участника со своими телесными сигналами. Участники слушают свое собственное сердцебиение с помощью стетоскопа, стоя в темной комнате. В центре помещения частицы движутся вверх в темпе сердцебиения в голографической проекции.</p>
+        <p>Слуховое и зрительное восприятие участника почти полностью управляется сигналами собственного тела, в то время как другие сенсорные впечатления избегаются</p>`
             },
             media: [
-                {
-                    src: 'assets/projects/stethoscope/01_stethoscope_cornelius_carstens.gif',
-                    description: {
-                        en: 'Due to the unrestricted viewing angle the participant can roam freely while interacting with the installation.',
-                        de: 'Durch den uneingeschränkten Betrachtungswinkel kann sich die Betrachterin frei im Raum bewegen.'
-                    }
-                },
                 {
                     src: 'assets/projects/stethoscope/02_stethoscope_cornelius_carstens.mp4',
                     description: {
                         en: 'Please listen with headphones',
-                        de: 'Bitte mit Kopfhörern hören'
+                        de: 'Bitte mit Kopfhörern hören',
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'Пожалуйста, слушайте в наушниках'
+                    }
+                },
+                {
+                    src: 'assets/projects/stethoscope/01_stethoscope_cornelius_carstens.gif',
+                    description: {
+                        en: 'The unrestricted viewing angle allows participants to roam freely while interacting with the installation.',
+                        de: 'Durch den uneingeschränkten Betrachtungswinkel kann sich die Betrachterin frei im Raum bewegen.',
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'Благодаря неограниченному углу обзора участник может свободно перемещаться во время взаимодействия с установкой'
                     }
                 },
                 {
                     src: 'assets/projects/stethoscope/03_stethoscope_cornelius_carstens.jpg',
                     description: {
                         en: 'Customized stethoscope with built in microphone and headphones',
-                        de: 'Manipuliertes Stethoskop mit eingebautem Tonabnehmer und Kopfhörern'
+                        de: 'Manipuliertes Stethoskop mit eingebautem Tonabnehmer und Kopfhörern',
+                        ja: 'JAPANESE GOES HERE',
+                        ru: `Настроенный
+                стетоскоп со встроенным микрофоном и наушниками`
                     }
                 },
                 {
                     sketchName: 'DotCloud',
                     description: {
-                        en: 'Work in progress state of the particle simulation based on \'nature of code\', Shiffmann',
-                        de: 'Vorstufe der Partikel-Simulation auf Basis von \'Nature of Code\', Shiffmann'
+                        en: 'Draft of the particle simulation based on <a href="https://natureofcode.com" target="_blank">\'The Nature of Code\', Shiffmann</a>',
+                        de: 'Vorstufe der Partikel-Simulation auf Basis von <a href="https://natureofcode.com" target="_blank">\'The Nature of Code\', Shiffmann</a>',
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'Незавершенное состояние моделирования частиц на основе <a href="https://natureofcode.com" target="_blank">\'The Nature of Code\', Шиффман</a>'
                     }
                 },
                 {
                     src: 'assets/projects/stethoscope/04_stethoscope_cornelius_carstens.mp4',
                     description: {
-                        en: 'In order to guarantee that there is only a single reflection visible in the holograph, the thickness of the acrylic sheets for the pyramid is 1.5 mm.',
-                        de: 'Damit es im Hologramm nur eine einzelne sichtbare Spiegelung gibt, ist die Pyramide aus 1,5 mm dünnem Acrylglas gefertigt.'
+                        en: 'In order to guarantee only a singular reflection in the holograph, I used 1.5 mm acrylic sheets.',
+                        de: 'Damit es im Hologramm nur eine einzelne sichtbare Spiegelung gibt, ist die Pyramide aus 1,5 mm dünnem Acrylglas gefertigt.',
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'Чтобы гарантировать одиночное отражение, видимое в голограмме,толщина акриловых листов для пирамиды должна составлять 1,5 мм.'
                     }
                 },
                 {
                     src: 'assets/projects/stethoscope/05_stethoscope_cornelius_carstens.jpg',
                     description: {
                         en: 'Prototype of the acrylic pyramid for the holograph',
-                        de: 'Prototyp der Acryl-Pyramide für das Hologramm'
+                        de: 'Prototyp der Acryl-Pyramide für das Hologramm',
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'Прототип акриловой пирамиды для голографа'
                     }
                 },
                 {
                     src: 'assets/projects/stethoscope/06_stethoscope_cornelius_carstens.mp4',
                     description: {
-                        en: 'Test image for adjusting the suspension of the acrylic pyramid',
-                        de: 'Testbild zur Justierung der Aufhängung'
+                        en: 'Adjusting the suspension of the acrylic pyramid',
+                        de: 'Testbild zur Justierung der Aufhängung',
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'Тестовое изображение для регулировки подвески акриловой пирамиды'
                     }
                 },
             ]
@@ -365,8 +423,10 @@ Based on the Answers of the participant the conversation takes different directi
             title: 'Christian Stemmler',
             year: 2016,
             description: {
-                en: 'Design and development of custom portfolio for berlin based fashion stylist',
-                de: 'Design und Entwicklung von Custom Portfolio für Mode Stylist aus Berlin'
+                en: 'Design and development of custom portfolio for the Berlin based fashion stylist',
+                de: 'Design und Entwicklung von Custom Portfolio für Mode Stylist aus Berlin',
+                ja: 'JAPANESE GOES HERE',
+                ru: 'Дизайн и разработка индивидуального портфолио для берлинского модного стилиста'
             },
             url: 'http://christianstemmler.com',
             media: [
@@ -374,20 +434,22 @@ Based on the Answers of the participant the conversation takes different directi
                     src: 'assets/projects/stemmi/01_christian_stemmler_cornelius_carstens.jpg',
                     description: {
                         en: `
-                        The adjustable layout resembles prints layed out on a table.
+                        The layout resembles prints layed out on a table.
                         `,
                         de: `
-                        Das justierbare Layout greift den visuellen Eindruck von Prints, die auf einem Tisch ausliegen auf.
-                        `
+                        Das Layout greift den visuellen Eindruck von Prints, die auf einem Tisch ausliegen auf.
+                        `,
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'Регулируемый макет обеспечивает визуальное впечатление от печати, лежащей на столе.'
                     }
                 },
                 {
                     src: 'assets/projects/stemmi/02_christian_stemmler_cornelius_carstens.mp4',
-                    description: ''
+                    description: ``
                 },
                 {
                     src: 'assets/projects/stemmi/03_christian_stemmler_cornelius_carstens.jpg',
-                    description: ''
+                    description: ``
                 },
             ]
         },
@@ -397,14 +459,18 @@ Based on the Answers of the participant the conversation takes different directi
             description: {
                 en: `
                 <p>experiment excess ethics</p>
-                <p>generation of text content and fashion photography for interdisciplinary magazine project</p>
-                <p>Verses of a poem that was generated based on a collectively drafted text make up for the whole text content of the magazine.</p>
-                ` ,
+                <p>generation of text content and fashion photography for an interdisciplinary magazine project</p>
+                <p>The text of the magazine consists of generated poem verses.</p>
+                `,
                 de: `
                 <p>Experiment Exzess Ethik</p>
                 <p>Generierung von Textinhalten und Modefotografie für interdisziplinäres Magazinprojekt</p>
                 <p>Der gesamte Text besteht aus Versen eines generativen Gedichts welches auf Basis eines kollektiv verfassten Textes erzeugt wurde.</p>
-                `
+                `,
+                ja: 'JAPANESE GOES HERE',
+                ru: `экспериментируйте с излишней этикой
+    создание текстового контента и фэшн-фотографии для междисциплинарного журнального проекта
+    Стихи, которые были созданы на основе коллективных мыслей, составляют весь текстовый контент журнала`
             },
             // globalAudio: {
             //     src: 'assets/nantes.mp3'
@@ -423,22 +489,26 @@ Based on the Answers of the participant the conversation takes different directi
                     src: 'assets/projects/eee/02_eee_cornelius_carstens.jpg',
                     description: {
                         en: `
-                        With the aid of <em>pattern</em> a natural language processing library for python, the input text gets analysed grammatically.
+                        Using <em>pattern</em>, a natural language processing library for python, the input text is grammatically analyzed.
                         `,
                         de: `
                         Mit Hilfe von pattern einer NLP python Library wird der Ausgangstext grammatikalisch/syntaktisch analysiert.
-                        `
+                        `,
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'С помощью <em>pattern < / em> библиотека обработки естественного языка,которая была передана для языка програмирования pyton,входной текст граммматически анализируется'
                     }
                 },
                 {
                     src: 'assets/projects/eee/03_eee_cornelius_carstens.jpg',
                     description: {
                         en: `
-                        After composing new sentences the sentence members are conjugated based on the number of the object member of the newly constructed sentence.
+                        In order to compose a new verse, sentence parts are grouped together randomly and conjugated accordingly.
                         `,
                         de: `
                         Nachdem neue Sätze zusammengefügt wurden werden die Satzglieder zu Versen zusammengeführt und entsprechend konjugiert.
-                        `
+                        `,
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'После того, как новые предложения были собраны вместе, фразы объединяются в стих и комбинируются соответственно'
                     }
                 },
                 {

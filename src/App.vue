@@ -12,15 +12,15 @@
       <div id="projects">
         <ProjectElement v-for="(project, key) in content.projects" :key="key" :content="project"/>
       </div>
-      <footer class="container">
+      <footer class="container-fluid">
           <div class="row">
-              <div class="col">
+              <div class="col offset-md-1">
                   <p>Cornelius Carstens</p>
                   <p>Sredzkistr. 30 <br>
                       10435 Berlin <br>
                       Germany</p>
                   <p><a href="mailto:test@test.de">Mail</a> <a href="http://github.com/ccarstens" target="_blank">GitHub</a></p>
-                  <p>DE314889795 </p>
+                  <p>VAT: DE314889795 </p>
               </div>
           </div>
       </footer>
@@ -117,7 +117,7 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     /*text-align: center;*/
     color: #007bff;
-    margin-top: 60px;
+    /*margin-top: 60px;*/
 
     opacity: 1;
     transition: opacity 300ms ease-out;

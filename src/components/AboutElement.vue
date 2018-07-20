@@ -1,7 +1,7 @@
 <template>
     <div id="about" :class="classObject">
             <div class="row">
-                <div class="maintext col col-sm-10 col-md-7 col-lg-5 offset-md-1" v-html="text"></div>
+                <div class="maintext col col-sm-10 col-md-12 col-lg-12 offset-md-1x" v-html="text"></div>
             </div>
             <div class="row">
                 <div class="col col-sm-10 col-md-7 col-lg-5 offset-md-1">
@@ -42,13 +42,22 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
     /*@import '../../node_modules/bootstrap-scss/grid';*/
     /*@import '../../node_modules/bootstrap-scss/mixins/breakpoints';*/
 
     .about{
         /*padding-top: 35vh;*/
         margin-bottom: 40vh;
+    }
+    #app .about{
+        font-size: 5em;
+        line-height: 1.4em;
+
+        p{
+            margin-bottom: .6em;
+        }
+
     }
 
     .no-audio-activation{

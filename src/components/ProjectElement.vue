@@ -156,8 +156,8 @@
         computed: {
             description(){
                 return `
-                    <p><h3>${ this.projectContent.title }</h3> ${this.projectContent.year}</p>
-                    <p>${ this.projectContent.description }</p>
+                    <s><h3>${ this.projectContent.title }</h3> ${this.projectContent.year}</s>
+                    <s>${ this.projectContent.description }</s>
                 `
             },
             classObject(){
