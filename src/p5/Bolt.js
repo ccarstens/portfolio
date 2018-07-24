@@ -9,16 +9,17 @@ class Bolt{
         this.width = width
         this.height = height
         this.color = this.p.color(0, 123, 255)
+        // this.color = this.p.color(255, 255, 240)
     }
     display(){
 
         this.move()
-
+        this.p.push()
         this.p.translate((this.width / -2) + this.location.x, (this.height / -2) + this.location.y)
         this.p.noStroke()
         this.p.fill(this.color)
         this.p.triangle(0, 0, 0, this.height, this.width, this.height / 2)
-        // this.p.pop()
+        this.p.pop()
     }
     distanceFromOrigin(){
         return this.origin.copy().sub(this.location).x

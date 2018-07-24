@@ -9,6 +9,7 @@ export default {
         canAutoplayAudio: false,
         globalVolume: 1,
         atLeastOneMediaElementInitialized: false,
+        audioActivationFinished: false,
     },
     setHeaderOffset(newValue){
         if(this.debug) console.log('Setting headerOffset to ', newValue)
@@ -67,6 +68,14 @@ export default {
         return this.state.atLeastOneMediaElementInitialized
     },
 
+    setAudioActivationFinished(newValue) {
+        if (this.debug) console.log('Set audioActivationFinished to', newValue)
+        this.state.audioActivationFinished = newValue
+    },
+    getAudioActivationFinished() {
+        if (this.debug) console.log('Get audioActivationFinished with value', this.state.audioActivationFinished)
+        return this.state.audioActivationFinished
+    },
 
 
 }

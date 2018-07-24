@@ -23,6 +23,7 @@
     import state from '../state'
     import e from '../localizedContent'
     import av from '../av'
+    import {event} from '../event'
 
     import PlayCollision from './PlayCollision'
     export default {
@@ -35,12 +36,15 @@
                 labels,
                 state,
                 av,
+                event,
                 userInteracted: false,
 
             }
         },
         created(){
-
+            this.event.$on('activation-sketch-finished', () => {
+                this.state.setAudioActivationFinished(true)
+            })
         },
         mounted(){
         },

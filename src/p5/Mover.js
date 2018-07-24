@@ -9,8 +9,17 @@ class Mover{
         this.speedLimit = 18
 
         this.p = p
+
+        this.mass = 1
+
+        this.fixedDirection = null
+
+        this.color = p.color(0, 123, 255)
+
+        this.dead = false
     }
 
+    //DOTCLOUD
     updateTowards(vector){
         this.direction = vector.copy().sub(this.location)
         this.direction.normalize()
@@ -22,9 +31,10 @@ class Mover{
         // console.log(this.location)
     }
 
+
     show(){
         this.p.noStroke()
-        this.p.fill(0, 123, 255)
+        this.p.fill(this.color)
         // this.p.fill(255, 0, 0)
         this.p.ellipse(this.location.x, this.location.y, this.size, this.size)
     }
@@ -33,6 +43,33 @@ class Mover{
         this.location.x = x
         this.location.y = y
     }
+
+
+
+
+
+    //AUDIOACTIVATION
+
+    move(){
+        this.velocity.add(this.acceleration)
+        this.location.add(this.velocity)
+        this.acceleration.mult(0)
+    }
+
+    applyForce(force){
+        this.acceleration.add(force)
+    }
+
+    displayForAudioActivation(){
+        this.move()
+        this.show()
+    }
+
+    kill(){
+        this.velocity = this.p.createVector(0, 0)
+        this.dead = true
+    }
+
 }
 
 export default Mover

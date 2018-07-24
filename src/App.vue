@@ -121,6 +121,7 @@ export default {
 
     opacity: 1;
     transition: opacity 300ms ease-out;
+    /*background: black;*/
 }
     #app.hide{
         opacity: 0;
