@@ -34,7 +34,6 @@
                 return {
                     about: true,
                     'no-show': this.state.state.scrollableIsAtHeaderPosition,
-                    'no-audio-activation': this.state.getCanAutoplayAudio() || this.state.getIsTouch(),
                     'container-fluid': true
                 }
             }
@@ -59,10 +58,6 @@
         }
 
     }
-
-    /*.no-audio-activation{*/
-        /*margin-top: 40vh;*/
-    /*}*/
 
     .no-show{
         opacity: 0;

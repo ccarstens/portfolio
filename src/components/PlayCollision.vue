@@ -35,6 +35,7 @@
             instableRects: [],
             tensionBolt: false,
             shootBolt: false,
+            explodedRects: 0,
 
         }),
         methods: {
@@ -67,6 +68,20 @@
                     }
 
                 }
+
+                this.instableRects.forEach(rect => {
+                    if(this.bolt.hitsInstableRectangle(rect) && !rect.broken){
+                        rect.breakIntoParticles(this.bolt.velocity.mag())
+                        this.explodedRects++
+                    }
+                })
+
+                if(this.explodedRects === this.instableRects.length){
+                    setTimeout(() => {
+                        this.event.$emit('activation-sketch-finished')
+                    }, 1000)
+                }
+
                 this.bolt.display()
                 this.instableRects.forEach(rect => {
                     rect.display()
@@ -83,9 +98,6 @@
             },
             mouseup(s){
                 this.releaseBolt(s)
-                setTimeout(() => {
-                    this.event.$emit('activation-sketch-finished')
-                }, 1000)
             },
             increaseTension(){
                 this.tensionBolt = true
@@ -101,8 +113,7 @@
                     this.bolt.velocity.x = v
                 }
 
-                this.instableRects[0].breakIntoParticles()
-                this.instableRects[1].breakIntoParticles()
+
             }
         }
     }

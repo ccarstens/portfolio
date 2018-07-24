@@ -18,7 +18,10 @@ class InstableRect{
         this.deadParticles = 0
 
         this.explosionFinished = false
+
         // this.color = p.color(255, 255, 240)
+
+        this.createParticles()
     }
 
     display(){
@@ -33,12 +36,12 @@ class InstableRect{
         this.particles = []
         for(let i = 0; i < this.particleCount; i++){
             let particle = new Mover(this.p, this.p.random(0, this.width), this.p.random(0, this.height))
-            particle.size = this.p.random(1, 11)
-            particle.mass = this.p.map(particle.size, 9, 1, 2, 8)
+            particle.size = this.p.random(1, 7)
+            particle.mass = this.p.map(particle.size, 6, 1, 2, 8)
             // particle.mass = this.p.random(0.5, 3)
             // particle.color = this.p.color(255, 0, 0)
             particle.fixedDirection = this.p.createVector(this.p.random(-1, 1), this.p.random(-1, 1)).normalize()
-            particle.velocity = particle.fixedDirection.copy().mult(40)
+            particle.velocity = particle.fixedDirection.copy()
             this.particles.push(particle)
         }
     }
@@ -51,9 +54,13 @@ class InstableRect{
         this.p.rect(0, 0, this.width, this.height)
         this.p.pop()
     }
-    breakIntoParticles(){
+    breakIntoParticles(impactStrength){
         this.broken = true
-        this.createParticles()
+
+        this.particles.forEach(particle => {
+            particle.velocity.mult(this.p.constrain(impactStrength, 20, 50))
+        })
+
     }
     displayParticles(){
         this.p.push()

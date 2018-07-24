@@ -60,8 +60,8 @@
                 return require('../' + x)
             },
             removeActivation(){
-                // return this.state.getCanAutoplayAudio() || this.state.getIsTouch()
-                return false
+                return (this.state.getCanAutoplayAudio() && !this.state.getAudioActivationFinished()) || this.state.getIsTouch()
+                // return false
             },
             sketchWidth(){
                 return window.innerWidth
@@ -75,11 +75,11 @@
                     'flex-wrap': true,
                     'justify-content-center': true,
                     'audio-activation': true,
-                    'show': !this.state.getIsTouch()
-                            && !this.state.getCanAutoplayAudio()
-                            && this.av.toInitialize.length > 0
-                    ,
-                    // 'show': true,
+                    // 'show': !this.state.getIsTouch()
+                    //         && !this.state.getCanAutoplayAudio()
+                    //         && this.av.toInitialize.length > 0
+                    // ,
+                    'show': true,
                     // 'fixed-top': true
 
                 }

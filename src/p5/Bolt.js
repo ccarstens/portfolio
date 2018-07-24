@@ -35,6 +35,12 @@ class Bolt{
         this.location.add(this.velocity)
         this.acceleration.mult(0)
     }
+
+    hitsInstableRectangle(rect){
+        const outerRight = this.location.x + this.width / 2
+        const rectLeft = rect.location.x - rect.width / 2
+        return outerRight >= rectLeft
+    }
 }
 
 export default Bolt

@@ -79,7 +79,8 @@ export default {
         classObject(){
             return {
                 hide: this.state.getLanguageSwitcherInAction(),
-                'no-hover': this.state.getIsTouch()
+                'no-hover': this.state.getIsTouch(),
+                'no-audio-activation': this.state.getCanAutoplayAudio() || this.state.getIsTouch(),
             }
         },
         wrapperClassObject(){
@@ -165,6 +166,9 @@ export default {
         }
     }
 
+    .no-audio-activation #wrapper{
+        top: 30vh;
+    }
 
     #wrapper{
         height: auto;
