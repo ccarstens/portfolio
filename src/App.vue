@@ -80,7 +80,7 @@ export default {
             return {
                 hide: this.state.getLanguageSwitcherInAction(),
                 'no-hover': this.state.getIsTouch(),
-                'no-audio-activation': this.state.getCanAutoplayAudio() || this.state.getIsTouch(),
+                'no-audio-activation': (this.state.getCanAutoplayAudio() && !this.state.getAudioActivationFinished()) || this.state.getIsTouch(),
             }
         },
         wrapperClassObject(){

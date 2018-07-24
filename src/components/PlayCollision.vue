@@ -37,14 +37,21 @@
             shootBolt: false,
             explodedRects: 0,
 
+            size: 900
+
         }),
         methods: {
             setup(s){
                 this.p = s
-                this.bolt = new Bolt(s, 0, 0, 80, 100)
 
-                this.instableRects.push(new InstableRect(s, 75, 0, 30, 100))
-                this.instableRects.push(new InstableRect(s, 125, 0, 30, 100))
+                const boltWidth = this.size / 3 * 0.8
+                const boltHeight = this.size / 3
+
+                this.bolt = new Bolt(s, 0, 0, boltWidth, this.size / 3)
+
+                const firstRectX = boltWidth * 0.75
+                this.instableRects.push(new InstableRect(s, firstRectX, 0, boltWidth * 0.375, boltHeight))
+                this.instableRects.push(new InstableRect(s, firstRectX + (boltWidth / 4) + boltWidth * 0.375, 0, boltWidth * 0.375, boltHeight))
 
                 s.createCanvas(this.width, this.height, s.WEBGL)
                 s.pixelDensity(window.devicePixelRatio)
@@ -79,7 +86,7 @@
                 if(this.explodedRects === this.instableRects.length){
                     setTimeout(() => {
                         this.event.$emit('activation-sketch-finished')
-                    }, 1000)
+                    }, 800)
                 }
 
                 this.bolt.display()
