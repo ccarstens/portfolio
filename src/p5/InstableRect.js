@@ -33,11 +33,11 @@ class InstableRect{
         this.particles = []
         for(let i = 0; i < this.particleCount; i++){
             let particle = new Mover(this.p, this.p.random(0, this.width), this.p.random(0, this.height))
-            particle.size = this.p.random(1, 7)
-            particle.mass = this.p.map(particle.size, 6, 1, 1.5, 3)
+            particle.size = this.p.random(1, 11)
+            particle.mass = this.p.map(particle.size, 9, 1, 2, 8)
             // particle.mass = this.p.random(0.5, 3)
-            // particle.color = this.p.color(255, 255, 0)
-            particle.fixedDirection = this.p.createVector(this.p.random(-1, 1), this.p.random(-1, 1))
+            // particle.color = this.p.color(255, 0, 0)
+            particle.fixedDirection = this.p.createVector(this.p.random(-1, 1), this.p.random(-1, 1)).normalize()
             particle.velocity = particle.fixedDirection.copy().mult(40)
             this.particles.push(particle)
         }

@@ -1,29 +1,29 @@
 <template>
   <div id="app" :class="classObject" @touchstart="initPendingMedia" @mousedown="initPendingMedia">
 
-      <HeaderElement/>
-      <!--<button @click="switchGerman">Deutsch</button>-->
       <AudioActivation @click=""></AudioActivation>
-      <AboutElement
-              :text="e(content.about)"
-      />
-      <!--<P5Sketch name="DotCloud"></P5Sketch>-->
+      <div id="wrapper" :class="wrapperClassObject">
+          <HeaderElement/>
+          <AboutElement
+                  :text="e(content.about)"
+          />
 
-      <div id="projects">
-        <ProjectElement v-for="(project, key) in content.projects" :key="key" :content="project"/>
-      </div>
-      <footer class="container-fluid">
-          <div class="row">
-              <div class="col offset-md-1">
-                  <p>Cornelius Carstens</p>
-                  <p>Sredzkistr. 30 <br>
-                      10435 Berlin <br>
-                      Germany</p>
-                  <p><a href="mailto:test@test.de">Mail</a> <a href="http://github.com/ccarstens" target="_blank">GitHub</a></p>
-                  <p>VAT: DE314889795 </p>
-              </div>
+          <div id="projects">
+            <ProjectElement v-for="(project, key) in content.projects" :key="key" :content="project"/>
           </div>
-      </footer>
+          <footer class="container-fluid">
+              <div class="row">
+                  <div class="col offset-md-1">
+                      <p>Cornelius Carstens</p>
+                      <p>Sredzkistr. 30 <br>
+                          10435 Berlin <br>
+                          Germany</p>
+                      <p><a href="mailto:test@test.de">Mail</a> <a href="http://github.com/ccarstens" target="_blank">GitHub</a></p>
+                      <p>VAT: DE314889795 </p>
+                  </div>
+              </div>
+          </footer>
+      </div>
 
   </div>
 </template>
@@ -82,6 +82,13 @@ export default {
                 'no-hover': this.state.getIsTouch()
             }
         },
+        wrapperClassObject(){
+            return {
+                hide: !this.state.getIsTouch()
+                        && !this.state.getCanAutoplayAudio()
+                    && !this.state.getAudioActivationFinished()
+            }
+        }
     },
     watch: {
         mainData: {
@@ -156,6 +163,24 @@ export default {
         #app{
 
         }
+    }
+
+
+    #wrapper{
+        height: auto;
+        overflow: auto;
+        opacity: 1;
+        -webkit-transition: opacity 300ms ease-in-out;
+        transition: opacity 300ms ease-in-out;
+
+        position: relative;
+        top: -50vh;
+    }
+
+    #wrapper.hide{
+        height: 0;
+        /*overflow: hidden;*/
+        opacity: 0;
     }
 
 

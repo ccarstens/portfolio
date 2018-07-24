@@ -60,9 +60,9 @@
 
     }
 
-    .no-audio-activation{
-        margin-top: 40vh;
-    }
+    /*.no-audio-activation{*/
+        /*margin-top: 40vh;*/
+    /*}*/
 
     .no-show{
         opacity: 0;

@@ -75,13 +75,13 @@
                     'flex-wrap': true,
                     'justify-content-center': true,
                     'audio-activation': true,
-                    // 'show': !this.state.getIsTouch()
-                    //         && !this.state.getCanAutoplayAudio()
-                    //         && this.av.toInitialize.length > 0
-                    //         && !this.userInteracted
-                    // ,
-                    'show': true
+                    'show': !this.state.getIsTouch()
+                            && !this.state.getCanAutoplayAudio()
+                            && this.av.toInitialize.length > 0
                     ,
+                    // 'show': true,
+                    // 'fixed-top': true
+
                 }
             },
         },
@@ -108,10 +108,12 @@
         transition: opacity 300ms ease-out;
 
         /*margin-top: 2em;*/
-        margin-bottom: 2em;
-        font-size: 10em;
+        /*margin-bottom: 2em;*/
+        /*font-size: 10em;*/
+        font-size: 0;
 
-        z-index: 1000;
+        z-index: -1000;
+
         .word{
             text-decoration: underline;
         }

@@ -40,12 +40,12 @@
         methods: {
             setup(s){
                 this.p = s
-                this.bolt = new Bolt(s, 0, window.innerHeight / 2 * -1, 80, 100)
+                this.bolt = new Bolt(s, 0, 0, 80, 100)
 
-                this.instableRects.push(new InstableRect(s, 75, window.innerHeight / 2 * -1, 30, 100))
-                this.instableRects.push(new InstableRect(s, 125, window.innerHeight / 2 * -1, 30, 100))
+                this.instableRects.push(new InstableRect(s, 75, 0, 30, 100))
+                this.instableRects.push(new InstableRect(s, 125, 0, 30, 100))
 
-                s.createCanvas(this.width, this.height * 2, s.WEBGL)
+                s.createCanvas(this.width, this.height, s.WEBGL)
                 s.pixelDensity(window.devicePixelRatio)
                 s.background(s.color(123, 0, 123))
                 // s.background(s.color(255, 255, 255))
@@ -73,8 +73,8 @@
                 })
 
                 if(this.instableRects[0].explosionFinished && this.instableRects[1].explosionFinished){
-                    s.frameRate(0)
-                    this.event.$emit('activation-sketch-finished')
+                    // s.frameRate(0)
+                    s.noLoop()
                 }
 
             },
@@ -83,6 +83,9 @@
             },
             mouseup(s){
                 this.releaseBolt(s)
+                setTimeout(() => {
+                    this.event.$emit('activation-sketch-finished')
+                }, 1000)
             },
             increaseTension(){
                 this.tensionBolt = true
