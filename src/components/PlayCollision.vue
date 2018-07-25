@@ -37,25 +37,25 @@
             shootBolt: false,
             explodedRects: 0,
 
-            size: 900
+            size: window.innerWidth * 0.4,
 
         }),
         methods: {
             setup(s){
-                this.p = s
+                this.s = s
+                const boltX = this.size / -2 + (this.size / 1.8 * 0.8) / 2
+                this.bolt = new Bolt(s, boltX, 0, this.size - (this.size / 1.8), this.size / 1.8)
 
-                const boltWidth = this.size / 3 * 0.8
-                const boltHeight = this.size / 3
 
-                this.bolt = new Bolt(s, 0, 0, boltWidth, this.size / 3)
 
-                const firstRectX = boltWidth * 0.75
-                this.instableRects.push(new InstableRect(s, firstRectX, 0, boltWidth * 0.375, boltHeight))
-                this.instableRects.push(new InstableRect(s, firstRectX + (boltWidth / 4) + boltWidth * 0.375, 0, boltWidth * 0.375, boltHeight))
+                    const firstRectX = this.size / 18 + this.size / 12
+                this.instableRects.push(new InstableRect(s, firstRectX, 0, this.size / 6, this.size / 1.8))
+                this.instableRects.push(new InstableRect(s, firstRectX + this.size / 6 + this.size / 9, 0, this.size / 6, this.size / 1.8))
 
                 s.createCanvas(this.width, this.height, s.WEBGL)
                 s.pixelDensity(window.devicePixelRatio)
                 s.background(s.color(123, 0, 123))
+
                 // s.background(s.color(255, 255, 255))
                 s.frameRate(30)
             },
