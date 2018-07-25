@@ -37,7 +37,7 @@
             shootBolt: false,
             explodedRects: 0,
 
-            size: window.innerWidth * 0.4,
+            size: window.innerWidth * 0.5,
 
         }),
         methods: {

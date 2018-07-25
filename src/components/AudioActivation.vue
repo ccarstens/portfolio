@@ -60,8 +60,8 @@
                 return require('../' + x)
             },
             removeActivation(){
-                return (this.state.getCanAutoplayAudio() && !this.state.getAudioActivationFinished()) || this.state.getIsTouch()
-                // return false
+                // return (this.state.getCanAutoplayAudio() && !this.state.getAudioActivationFinished()) || this.state.getIsTouch()
+                return false
             },
             sketchWidth(){
                 return window.innerWidth

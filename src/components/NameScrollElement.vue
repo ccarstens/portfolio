@@ -42,6 +42,8 @@
 
     .name-scroll{
         margin-top: 3em;
+        /*font-size: 1.5rem;*/
+        line-height: 1.4rem;
 
         .debug{
             position: fixed;

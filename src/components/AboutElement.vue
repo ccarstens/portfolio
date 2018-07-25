@@ -42,15 +42,17 @@
 </script>
 
 <style lang="scss" >
-    /*@import '../../node_modules/bootstrap-scss/grid';*/
-    /*@import '../../node_modules/bootstrap-scss/mixins/breakpoints';*/
+    @import '../../node_modules/bootstrap-scss/functions';
+    @import '../../node_modules/bootstrap-scss/variables';
+    @import '../../node_modules/bootstrap-scss/mixins';
+    @import '../../node_modules/bootstrap-scss/grid';
 
     .about{
         /*padding-top: 35vh;*/
-        margin-bottom: 40vh;
+        margin-bottom: 20vh;
     }
     #app .about{
-        font-size: 5em;
+        font-size: 4em;
         line-height: 1.4em;
 
         p{
@@ -63,9 +65,9 @@
         opacity: 0;
     }
 
-    /*@include media-breakpoint-between(xs, md){
-        .about{
-            font-size: 1.375rem;
+    @include media-breakpoint-down(md){
+        #app .about{
+            font-size: 2em;
         }
-    }*/
+    }
 </style>

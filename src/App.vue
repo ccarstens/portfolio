@@ -18,7 +18,7 @@
                       <p>Sredzkistr. 30 <br>
                           10435 Berlin <br>
                           Germany</p>
-                      <p><a href="mailto:test@test.de">Mail</a> <a href="http://github.com/ccarstens" target="_blank">GitHub</a></p>
+                      <p><a href="mailto:cornelius.carstens@me.com">Mail</a> <a href="http://github.com/ccarstens" target="_blank">GitHub</a></p>
                       <p>VAT: DE314889795 </p>
                   </div>
               </div>
@@ -81,12 +81,13 @@ export default {
                 hide: this.state.getLanguageSwitcherInAction(),
                 'no-hover': this.state.getIsTouch(),
                 'no-audio-activation': (this.state.getCanAutoplayAudio() && !this.state.getAudioActivationFinished()) || this.state.getIsTouch(),
+                // 'no-audio-activation': false,
             }
         },
         wrapperClassObject(){
             return {
                 hide: !this.state.getIsTouch()
-                        && !this.state.getCanAutoplayAudio()
+                        // && !this.state.getCanAutoplayAudio()
                     && !this.state.getAudioActivationFinished()
             }
         }
@@ -178,7 +179,7 @@ export default {
         transition: opacity 300ms ease-in-out;
 
         position: relative;
-        top: -50vh;
+        top: -30vh;
     }
 
     #wrapper.hide{

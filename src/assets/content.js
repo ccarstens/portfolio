@@ -22,19 +22,19 @@ export const labels = {
 export default {
     about: {
         en: `
-            <p>Hello, I’m Cornelius,</p>
-            <p>an interdisciplinary visual communication student interested in web development, interaction design, fashion photography and physical computing.</p>
+            <p>Hello, I'm Cornelius,</p>
+            <p>I'm interested in web development, interaction design, fashion photography and physical computing.</p>
             <p>While studying I ran the web design agency <a href="http://awesome-boys.com">Awesome Boys</a> and currently work at Apple.</p>
             <p>I like learning new things, feedback, getting hired, reading, bread with butter, piano improv, and Apfelschorle.</p>
-            <p>I am looking forward to <a href="mailto:cornelius.carstens@me.com">hearing from you</a>.</p>
+            <p>Drop me a <a href="mailto:cornelius.carstens@me.com">line or two</a> to get in touch!</p>
             Best,
         `,
         de: `
             <p>Hallo, ich bin Cornelius,</p>
-<p>ich studiere Kommunikationsdesign in Berlin und beschäftige mich mit Web Development, Interaktionsgestaltung, Modefotografie und Physical Computing.</p>
+<p>ich beschäftige mich mit Web Development, Interaktionsgestaltung, Modefotografie und Physical Computing.</p>
 <p>Neben dem Studium habe ich die Web Design Agentur <a href="http://awesome-boys.com">Awesome Boys</a> geführt und arbeite momentan für Apple.</p>
 <p>Ich mag es neue Dinge zu lernen, Feedback, Jobs bekommen, Lesen, Brot mit Butter, Klavierimprovisation und Apfelschorle.</p>
-<p>Ich freue mich darauf von Euch zu <a href="mailto:cornelius.carstens@me.com">hören</a>.</p>
+<p><a href="mailto:cornelius.carstens@me.com">Schreib mir</a> gerne!</p>
         `,
         ja: 'JAPANESE GOES HERE',
         ru: `<p>Привет, я Корнелиус</p>
