@@ -1,7 +1,7 @@
 <template>
     <div v-if="!removeActivation" :class="classObject">
         <div class="m-auto test-image">
-            <PlayCollision :width="sketchWidth" :height="sketchHeight"></PlayCollision>
+
         </div>
         <div v-if="true === false">
         <a
@@ -25,11 +25,9 @@
     import av from '../av'
     import {event} from '../event'
 
-    import PlayCollision from './PlayCollision'
     export default {
         name: "AudioActivation",
         components: {
-            PlayCollision
         },
         data(){
             return {
