@@ -381,15 +381,15 @@ export default {
                 стетоскоп со встроенным микрофоном и наушниками`
                     }
                 },
-                {
-                    sketchName: 'DotCloud',
-                    description: {
-                        en: 'Draft of the particle simulation based on <a href="https://natureofcode.com" target="_blank">\'The Nature of Code\', Shiffmann</a>',
-                        de: 'Vorstufe der Partikel-Simulation auf Basis von <a href="https://natureofcode.com" target="_blank">\'The Nature of Code\', Shiffmann</a>',
-                        ja: 'JAPANESE GOES HERE',
-                        ru: 'Незавершенное состояние моделирования частиц на основе <a href="https://natureofcode.com" target="_blank">\'The Nature of Code\', Шиффман</a>'
-                    }
-                },
+                // {
+                //     sketchName: 'DotCloud',
+                //     description: {
+                //         en: 'Draft of the particle simulation based on <a href="https://natureofcode.com" target="_blank">\'The Nature of Code\', Shiffmann</a>',
+                //         de: 'Vorstufe der Partikel-Simulation auf Basis von <a href="https://natureofcode.com" target="_blank">\'The Nature of Code\', Shiffmann</a>',
+                //         ja: 'JAPANESE GOES HERE',
+                //         ru: 'Незавершенное состояние моделирования частиц на основе <a href="https://natureofcode.com" target="_blank">\'The Nature of Code\', Шиффман</a>'
+                //     }
+                // },
                 {
                     src: 'assets/projects/stethoscope/04_stethoscope_cornelius_carstens.mp4',
                     description: {
@@ -431,6 +431,10 @@ export default {
             url: 'http://christianstemmler.com',
             media: [
                 {
+                    src: 'assets/projects/stemmi/02_christian_stemmler_cornelius_carstens.mp4',
+                    description: ``
+                },
+                {
                     src: 'assets/projects/stemmi/01_christian_stemmler_cornelius_carstens.jpg',
                     description: {
                         en: `
@@ -442,10 +446,6 @@ export default {
                         ja: 'JAPANESE GOES HERE',
                         ru: 'Регулируемый макет обеспечивает визуальное впечатление от печати, лежащей на столе.'
                     }
-                },
-                {
-                    src: 'assets/projects/stemmi/02_christian_stemmler_cornelius_carstens.mp4',
-                    description: ``
                 },
                 {
                     src: 'assets/projects/stemmi/03_christian_stemmler_cornelius_carstens.jpg',
@@ -478,6 +478,7 @@ export default {
             media: [
                 {
                     src: 'assets/projects/eee/01_eee_cornelius_carstens.jpg',
+                    noShadow: true,
                     description: {
                         en: `
                         `,
@@ -500,6 +501,7 @@ export default {
                 },
                 {
                     src: 'assets/projects/eee/03_eee_cornelius_carstens.jpg',
+                    noShadow: true,
                     description: {
                         en: `
                         In order to compose a new verse, sentence parts are grouped together randomly and conjugated accordingly.
@@ -513,6 +515,7 @@ export default {
                 },
                 {
                     src: 'assets/projects/eee/04_eee_cornelius_carstens.jpg',
+                    noShadow: true,
                     description: {
                         en: `
                         `,
@@ -522,6 +525,7 @@ export default {
                 },
                 {
                     src: 'assets/projects/eee/05_eee_cornelius_carstens.jpg',
+                    noShadow: true,
                     description: {
                         en: `
                         `,

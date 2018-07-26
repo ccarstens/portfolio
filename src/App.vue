@@ -178,8 +178,9 @@ export default {
         -webkit-transition: opacity 300ms ease-in-out;
         transition: opacity 300ms ease-in-out;
 
-        position: relative;
-        top: -30vh;
+        margin-top: 50vh;
+        /*position: relative;*/
+        /*<!--top: -30vh;-->*/
     }
 
     #wrapper.hide{

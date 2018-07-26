@@ -78,7 +78,7 @@ export default {
     video{
         max-width: 100%;
         max-height: 90vh;
-        width: 100%;
+        width: auto;
         object-fit: contain;
     }
 </style>

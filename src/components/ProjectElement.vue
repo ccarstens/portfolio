@@ -262,7 +262,7 @@
 
 
     .description{
-        /*<!--z-index: -10;-->*/
+        margin-top: calc(1em - 5px);
 
     }
 

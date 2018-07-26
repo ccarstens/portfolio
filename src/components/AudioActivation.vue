@@ -1,7 +1,7 @@
 <template>
     <div v-if="!removeActivation" :class="classObject">
         <div class="m-auto test-image">
-
+            <P5Sketch name="DotCloud" :dimensions="{width: '2000', height: '1000'}"></P5Sketch>
         </div>
         <div v-if="true === false">
         <a
@@ -25,9 +25,11 @@
     import av from '../av'
     import {event} from '../event'
 
+    import P5Sketch from './P5Sketch'
     export default {
         name: "AudioActivation",
         components: {
+            P5Sketch
         },
         data(){
             return {
@@ -40,8 +42,10 @@
             }
         },
         created(){
-            this.event.$on('activation-sketch-finished', () => {
-                this.state.setAudioActivationFinished(true)
+            this.event.$on('user-interacted-with-sketch', () => {
+                setTimeout(() => {
+                    this.state.setAudioActivationFinished(true)
+                }, 300)
             })
         },
         mounted(){
@@ -58,8 +62,16 @@
                 return require('../' + x)
             },
             removeActivation(){
-                // return (this.state.getCanAutoplayAudio() && !this.state.getAudioActivationFinished()) || this.state.getIsTouch()
-                return false
+                return (
+                    this.state.getIsTouch()
+                    // || this.state.getCanAutoplayAudio()
+                    // || (
+                    //     !this.state.getIsTouch()
+                    //     && this.state.getAudioActivationFinished()
+                    // )
+                )
+
+                // return false
             },
             sketchWidth(){
                 return window.innerWidth
@@ -78,7 +90,7 @@
                     //         && this.av.toInitialize.length > 0
                     // ,
                     'show': true,
-                    // 'fixed-top': true
+                    'fixed-top': true
 
                 }
             },
@@ -111,6 +123,10 @@
         font-size: 0;
 
         z-index: -1000;
+
+        width: 100%;
+        height: 100%;
+
 
         .word{
             text-decoration: underline;

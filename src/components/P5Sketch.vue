@@ -7,6 +7,7 @@
 
 <script>
     import DotCloud from './DotCloud'
+
     export default {
         name: "P5Sketch",
         data(){

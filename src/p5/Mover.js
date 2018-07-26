@@ -39,11 +39,6 @@ class Mover{
         this.p.ellipse(this.location.x, this.location.y, this.size, this.size)
     }
 
-    setLocation(x, y){
-        this.location.x = x
-        this.location.y = y
-    }
-
 
 
 
@@ -52,6 +47,7 @@ class Mover{
 
     move(){
         this.velocity.add(this.acceleration)
+        this.velocity.limit(this.speedLimit)
         this.location.add(this.velocity)
         this.acceleration.mult(0)
     }
@@ -60,7 +56,7 @@ class Mover{
         this.acceleration.add(force)
     }
 
-    displayForAudioActivation(){
+    display(){
         this.move()
         this.show()
     }
