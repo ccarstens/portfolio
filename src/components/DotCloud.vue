@@ -106,7 +106,7 @@
                         this.particles.forEach(particle => {
                             particle.speedLimit = 2
                         })
-                    }, 100)
+                    }, 5000)
 
 
 
