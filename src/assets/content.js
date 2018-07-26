@@ -23,14 +23,14 @@ export default {
     about: {
         en: `
             <p>Hello, I'm Cornelius,</p>
-            <p>I'm interested in web development, interaction design, fashion photography and physical computing.</p>
+            <p>I'm interested in web development, interaction design, fashion photography and building installations.</p>
             <p>While studying I ran the web design agency <a href="http://awesome-boys.com">Awesome Boys</a> and currently work at Apple.</p>
             <p>I like learning new things, getting feedback, getting hired, reading, bread with butter, piano improv, and Apfelschorle.</p>
             <p>Drop me a <a href="mailto:cornelius.carstens@me.com">line or two</a> to get in touch!</p>
         `,
         de: `
             <p>Hallo, ich bin Cornelius,</p>
-<p>ich beschäftige mich mit Web Development, Interaktionsgestaltung, Modefotografie und Physical Computing.</p>
+<p>ich beschäftige mich mit Web Development, Interaktionsgestaltung, Modefotografie und Installationen.</p>
 <p>Neben dem Studium habe ich die Web Design Agentur <a href="http://awesome-boys.com">Awesome Boys</a> geführt und arbeite momentan für Apple.</p>
 <p>Ich mag es neue Dinge zu lernen, Feedback und Jobs bekommen, Lesen, Brot mit Butter, Klavierimprovisation und Apfelschorle.</p>
 <p><a href="mailto:cornelius.carstens@me.com">Schreib mir</a> gerne!</p>

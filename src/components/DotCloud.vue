@@ -51,6 +51,9 @@
             deadParticlesCount: 0,
 
             backgroundMode: false,
+
+            targetRadius: 0,
+            targetTheta: 0
         }),
         created(){
 
@@ -83,7 +86,8 @@
                 this.createParticles()
 
                 this.target = s.createVector(0, 0)
-                this.setRandomTarget()
+                this.targetRadius = this.height * 0.3
+                this.setTarget()
 
                 // window.addEventListener('resize', () => {
                 //     p.resizeCanvas(this.width, this.height)
@@ -98,11 +102,11 @@
                     setTimeout(() => {
                         this.spillParticles = false
                         this.backgroundMode = true
-                        this.setRandomTarget()
+                        this.setTarget()
                         this.particles.forEach(particle => {
                             particle.speedLimit = 2
                         })
-                    }, 5000)
+                    }, 100)
 
 
 
@@ -114,7 +118,7 @@
                 if(this.mouseActive && !this.backgroundMode){
                     this.updateMouseVector()
                 }else if(s.frameCount % this.autoTargetInterval === 0){
-                    this.setRandomTarget()
+                    this.setTarget()
                 }
 
                 // s.fill(255, 0, 0)
@@ -150,9 +154,10 @@
                     force.normalize()
                     if(this.backgroundMode){
                         let factor = this.target.copy().sub(particle.location).mag() * 0.01
-                        force.mult(0.008).mult(1)
+                        force.mult(0.01).mult(1)
                     }
                     particle.applyForce(force)
+
                     particle.display()
                 })
             },
@@ -224,23 +229,34 @@
             stopPlayMode(){
                 this.s.frameRate(0)
             },
-            setRandomTarget(){
-                const minX = this.backgroundMode ? this.width / 9 * 4 : this.width / 5 * 2
-                const minY = this.backgroundMode ? this.height / 9 * 4 : this.height / 5 * 2
+            setTarget(){
+                if(this.backgroundMode){
+                    this.targetTheta += 10
+                    const x = this.targetRadius * this.s.sin(this.targetThetaInRadians)
+                    const y = this.targetRadius * this.s.cos(this.targetThetaInRadians)
+                    this.target.x = x + this.s.width / 2
+                    this.target.y = y + this.s.height / 2
+                }else{
+                    const minX = this.width / 5 * 2
+                    const minY = this.height / 5 * 2
 
-                const maxX = this.backgroundMode ? this.width / 9 * 5 : this.width / 5 * 3
-                const maxY = this.backgroundMode ? this.height / 9 * 5 : this.height / 5 * 3
+                    const maxX = this.width / 5 * 3
+                    const maxY = this.height / 5 * 3
 
-                if(this.target === null) this.target = this.s.createVector(0, 0)
+                    if(this.target === null) this.target = this.s.createVector(0, 0)
 
-                this.target.x = this.s.random(minX, maxX)
-                this.target.y = this.s.random(minY, maxY)
+                    this.target.x = this.s.random(minX, maxX)
+                    this.target.y = this.s.random(minY, maxY)
+                }
             }
         },
         computed: {
             autoTargetInterval(){
-                return this.backgroundMode ? 120 : 30
-            }
+                return this.backgroundMode ? 6 : 30
+            },
+            targetThetaInRadians(){
+                return this.s.radians(this.targetTheta)
+            },
         },
         watch: {
             width(newWidth){
