@@ -132,8 +132,8 @@
                     this.setTarget()
                 }
 
-                s.fill(255, 0, 0)
-                s.ellipse(this.target.x, this.target.y, 10, 10)
+                // s.fill(255, 0, 0)
+                // s.ellipse(this.target.x, this.target.y, 10, 10)
 
                 if(!this.spillParticles){
                     this.steerParticlesTowardsTarget()
