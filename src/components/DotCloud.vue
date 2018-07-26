@@ -61,7 +61,6 @@
         methods: {
             sketch(s){
                 s.draw = () => {
-                    // console.log("there")
                     s.background(255, 0, 0)
                 }
             },
@@ -83,6 +82,9 @@
 
                 this.createParticles()
 
+                this.target = s.createVector(0, 0)
+                this.setRandomTarget()
+
                 // window.addEventListener('resize', () => {
                 //     p.resizeCanvas(this.width, this.height)
                 //     p.background(this.bgColor)
@@ -92,31 +94,31 @@
             draw(s) {
                 if(this.deadParticlesCount === this.particles.length && !this.backgroundMode){
                     // s.noLoop()
-                    s.frameRate(30)
-                    this.spillParticles = false
-                    this.backgroundMode = true
+                    // s.frameRate(90)
+                    setTimeout(() => {
+                        this.spillParticles = false
+                        this.backgroundMode = true
+                        this.setRandomTarget()
+                        this.particles.forEach(particle => {
+                            particle.speedLimit = 2
+                        })
+                    }, 5000)
 
-                    this.particles.forEach(particle => {
-                        particle.speedLimit = 3
-                    })
+
 
                 }
 
                 s.translate(-s.width/2, -s.height/2)
                 s.background(this.bgColor)
 
-
-
                 if(this.mouseActive && !this.backgroundMode){
                     this.updateMouseVector()
                 }else if(s.frameCount % this.autoTargetInterval === 0){
-                    console.log(s.frameCount)
-                    this.target.x = s.random(this.width / 5 * 2, this.width / 5 * 3)
-                    this.target.y = s.random(this.height / 5 * 2, this.height / 5 * 3)
+                    this.setRandomTarget()
                 }
-                    // s.fill(255, 0, 0)
-                    // s.ellipse(this.target.x, this.target.y, 5, 5)
 
+                // s.fill(255, 0, 0)
+                // s.ellipse(this.target.x, this.target.y, 10, 10)
 
                 if(!this.spillParticles){
                     this.steerParticlesTowardsTarget()
@@ -142,15 +144,13 @@
             },
 
             steerParticlesTowardsTarget(){
-                if(this.s.frameCount % this.autoTargetInterval === 0){
-                    console.log("steering")
-                }
                 this.particles.forEach(particle => {
                     const force = this.target.copy().sub(particle.location)
                     // force.normalize().mult(particle.size * 0.7)
                     force.normalize()
                     if(this.backgroundMode){
-                        force.mult(0.008)
+                        let factor = this.target.copy().sub(particle.location).mag() * 0.01
+                        force.mult(0.008).mult(1)
                     }
                     particle.applyForce(force)
                     particle.display()
@@ -223,11 +223,23 @@
             },
             stopPlayMode(){
                 this.s.frameRate(0)
+            },
+            setRandomTarget(){
+                const minX = this.backgroundMode ? this.width / 9 * 4 : this.width / 5 * 2
+                const minY = this.backgroundMode ? this.height / 9 * 4 : this.height / 5 * 2
+
+                const maxX = this.backgroundMode ? this.width / 9 * 5 : this.width / 5 * 3
+                const maxY = this.backgroundMode ? this.height / 9 * 5 : this.height / 5 * 3
+
+                if(this.target === null) this.target = this.s.createVector(0, 0)
+
+                this.target.x = this.s.random(minX, maxX)
+                this.target.y = this.s.random(minY, maxY)
             }
         },
         computed: {
             autoTargetInterval(){
-                return this.backgroundMode ? 150 : 30
+                return this.backgroundMode ? 120 : 30
             }
         },
         watch: {
@@ -237,9 +249,7 @@
                 }
             },
             play(newState){
-                console.log("p5 play changed to", newState)
                 if(this.s){
-                    console.log("passed")
                     if(newState) this.startPlayMode()
                     else this.stopPlayMode()
                 }

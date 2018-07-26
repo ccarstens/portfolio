@@ -37,6 +37,16 @@
         },
         mounted(){
             this.slide = this.$parent
+
+
+            const linkElements = this.$el.getElementsByTagName('a')
+            for(let i = 0; i < linkElements.length; i++){
+                let link = linkElements[0]
+                console.log("there")
+                link.addEventListener('click', e => {
+                    e.stopImmediatePropagation()
+                })
+            }
         },
         data(){
             return {
