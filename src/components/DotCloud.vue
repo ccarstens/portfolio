@@ -52,7 +52,7 @@
 
             backgroundMode: false,
 
-            backgroundPolarMode: false,
+            backgroundPolarMode: true,
 
             backgroundRandomCount: 0,
 
