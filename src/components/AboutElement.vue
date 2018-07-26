@@ -3,11 +3,11 @@
             <div class="row">
                 <div class="maintext col col-sm-10 col-md-12 col-lg-12 offset-md-1x" v-html="text"></div>
             </div>
-            <div class="row">
-                <div class="col col-sm-10 col-md-7 col-lg-5 offset-md-1">
-                    <NameScrollElement/>
-                </div>
-            </div>
+            <!--<div class="row">-->
+                <!--<div class="col col-sm-10 col-md-7 col-lg-5 offset-md-1">-->
+                    <!--<NameScrollElement/>-->
+                <!--</div>-->
+            <!--</div>-->
     </div>
 </template>
 

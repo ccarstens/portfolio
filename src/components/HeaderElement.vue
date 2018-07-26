@@ -4,7 +4,7 @@
             <nav class="row">
                 <div class="wrapper col  offset-md-1">
                     <ul class="nav-list d-flex">
-                        <li :class="pageNameClasses"><a href="#">cornelius</a></li>
+                        <li :class=""><a href="#">cornelius</a></li>
                         <li class=""><a href="#projects">{{e(labels.projects)}}</a></li>
                         <li class="ml-auto ml-md-5 offset-lg-1 order-4 order-md-3">
                             <LanguageSwitcher></LanguageSwitcher>

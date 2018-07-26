@@ -1,7 +1,7 @@
 <template>
     <div v-if="!removeActivation" :class="classObject">
         <div class="m-auto test-image">
-            <P5Sketch name="DotCloud" :dimensions="{width: '2000', height: '1000'}"></P5Sketch>
+            <P5Sketch name="DotCloud" :dimensions="{width: sketchWidth, height: sketchHeight}"></P5Sketch>
         </div>
         <div v-if="true === false">
         <a
