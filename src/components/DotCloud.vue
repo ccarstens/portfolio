@@ -52,6 +52,10 @@
 
             backgroundMode: false,
 
+            backgroundPolarMode: false,
+
+            backgroundRandomCount: 0,
+
             targetRadius: 0,
             targetTheta: 0
         }),
@@ -118,11 +122,18 @@
                 if(this.mouseActive && !this.backgroundMode){
                     this.updateMouseVector()
                 }else if(s.frameCount % this.autoTargetInterval === 0){
+                    if(!this.backgroundPolarMode){
+                        this.backgroundRandomCount++
+                    }
+                    if(this.backgroundRandomCount === 10){
+                        this.backgroundRandomCount = 0
+                        this.backgroundPolarMode = true
+                    }
                     this.setTarget()
                 }
 
-                // s.fill(255, 0, 0)
-                // s.ellipse(this.target.x, this.target.y, 10, 10)
+                s.fill(255, 0, 0)
+                s.ellipse(this.target.x, this.target.y, 10, 10)
 
                 if(!this.spillParticles){
                     this.steerParticlesTowardsTarget()
@@ -230,12 +241,18 @@
                 this.s.frameRate(0)
             },
             setTarget(){
-                if(this.backgroundMode){
+                if(this.backgroundPolarMode){
                     this.targetTheta += 10
                     const x = this.targetRadius * this.s.sin(this.targetThetaInRadians)
                     const y = this.targetRadius * this.s.cos(this.targetThetaInRadians)
                     this.target.x = x + this.s.width / 2
                     this.target.y = y + this.s.height / 2
+
+                    if(this.targetTheta % 1800 === 0){
+                        this.targetTheta = 0
+                        this.backgroundPolarMode = false
+                    }
+
                 }else{
                     const minX = this.width / 5 * 2
                     const minY = this.height / 5 * 2
@@ -252,7 +269,14 @@
         },
         computed: {
             autoTargetInterval(){
-                return this.backgroundMode ? 6 : 30
+                if(this.backgroundMode){
+                    if(this.backgroundPolarMode){
+                        return 6
+                    }else{
+                        return 150
+                    }
+                }
+                return 30
             },
             targetThetaInRadians(){
                 return this.s.radians(this.targetTheta)
