@@ -15,11 +15,10 @@
               <div class="row">
                   <div class="col offset-md-1">
                       <p>Cornelius Carstens</p>
-                      <p>Sredzkistr. 30 <br>
-                          10435 Berlin <br>
+                      <p>Warthestr. 46 <br>
+                          12051 Berlin <br>
                           Germany</p>
                       <p><a href="mailto:cornelius.carstens@me.com">Mail</a> <a href="http://github.com/ccarstens" target="_blank">GitHub</a></p>
-                      <p>VAT: DE314889795 </p>
                   </div>
               </div>
           </footer>
