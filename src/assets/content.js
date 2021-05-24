@@ -309,7 +309,6 @@ The conversation addresses every day life topics along with ethical questions an
                 ja: 'JAPANESE GOES HERE',
                 ru: 'Дизайн и разработка индивидуального портфолио для берлинского парикмахера'
             },
-            url: 'http://mariushirschel.de',
             media: [
                 {
                     src: 'assets/projects/mh/01_marius_hirschel_cornelius_carstens.mp4',
@@ -382,8 +381,8 @@ The conversation addresses every day life topics along with ethical questions an
             title: 'Goetze',
             year: 2016,
             description: {
-                en: 'Website and online shop for a Berlin based menswear label',
-                de: 'Website und Online Shop für Menswear Label aus Berlin',
+                en: 'Website and online shop for a Berlin based clothing label',
+                de: 'Website und Online Shop für ein Mode-Label aus Berlin',
                 ja: 'JAPANESE GOES HERE',
                 ru: 'Сайт и интернет-магазин берлинской марки мужской одежды'
             },
