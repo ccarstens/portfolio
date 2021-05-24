@@ -24,21 +24,21 @@ export default {
         en: `
             <p>Hello, I'm Cornelius,</p>
             <p>I’m interested in voice interfaces, natural language processing, generative art, web development, physical computing, photography and project management.</p>
-            <p>While studying I ran the web design agency <a href="http://awesome-boys.com">Awesome Boys</a>  and worked in event management at Apple.</p>
-            <p>I like learning new things, getting feedback, getting hired, reading, bread with butter, piano improv, and Apfelschorle.</p>
+            <p>While studying I ran the web design agency Awesome Boys and worked in event management at Apple.</p>
+            <p>I like learning new things, getting feedback, reading, bread with butter, piano improv, and Apfelschorle.</p>
             <p>Drop me a <a href="mailto:cornelius.carstens@me.com">line or two</a> to get in touch!</p>
         `,
         de: `
             <p>Hallo, ich bin Cornelius,</p>
 <p>Ich beschäftige mich mit Sprachinterfaces, der Verarbeitung von natürlicher Sprache, generativer Kunst, Web Development, Physical Computing, Fotografie und Projektmanagement.</p>
-<p>Neben meinem Studium habe ich die Web Design Agentur <a href="http://awesome-boys.com">Awesome Boys</a> geführt und im Eventmanagement bei Apple gearbeitet.</p>
-<p>Ich mag es, neue Dinge zu lernen, Feedback und Jobs zu bekommen, Lesen, Brot mit Butter, Klavierimprovisation und Apfelschorle.</p>
+<p>Neben meinem Studium habe ich die Web Design Agentur Awesome Boys geführt und im Eventmanagement bei Apple gearbeitet.</p>
+<p>Ich mag es, neue Dinge zu lernen, Feedback zu bekommen, Lesen, Brot mit Butter, Klavierimprovisation und Apfelschorle.</p>
 <p><a href="mailto:cornelius.carstens@me.com">Schreib mir</a> gerne!</p>
         `,
         ja: 'JAPANESE GOES HERE',
         ru: `<p>Привет, я Корнелиус</p>
         <p>междисциплинарный студент визуальной коммуникации с интересом к веб-разработке, дизайну, модной фотографии и физическим вычислениям.</p>
-    <p>во время учебы я руководил агентством веб-дизайна <a href="http://awesome-boys.com"> Удивительные ребята </a> которое в настоящее время работает на Apple.</p>
+    <p>во время учебы я руководил агентством веб-дизайна Удивительные ребята которое в настоящее время работает на Apple.</p>
 <p>Мне нравится узнавать новое, общаться, работать, читать, импровизировать на фортепиано, есть хлеб с маслом и пить яблочный напиток.</p>
 <p>Я с нетерпением жду <a href="mailto:cornelius.carstens@me.com">ваше мнение, отзыв</a>.</p>`
 
