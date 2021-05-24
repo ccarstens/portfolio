@@ -23,28 +23,29 @@ export default {
     about: {
         en: `
             <p>Hello, I'm Cornelius,</p>
-            <p>I'm interested in web development, interaction design, fashion photography and building installations.</p>
-            <p>While studying I ran the web design agency <a href="http://awesome-boys.com">Awesome Boys</a> and currently work at Apple.</p>
+            <p>I’m interested in voice interfaces, natural language processing, generative art, web development, physical computing, photography and project management.</p>
+            <p>While studying I ran the web design agency <a href="http://awesome-boys.com">Awesome Boys</a>  and worked in event management at Apple.</p>
             <p>I like learning new things, getting feedback, getting hired, reading, bread with butter, piano improv, and Apfelschorle.</p>
             <p>Drop me a <a href="mailto:cornelius.carstens@me.com">line or two</a> to get in touch!</p>
         `,
         de: `
             <p>Hallo, ich bin Cornelius,</p>
-<p>ich beschäftige mich mit Web Development, Interaktionsgestaltung, Modefotografie und Installationen.</p>
-<p>Neben dem Studium habe ich die Web Design Agentur <a href="http://awesome-boys.com">Awesome Boys</a> geführt und arbeite momentan für Apple.</p>
-<p>Ich mag es neue Dinge zu lernen, Feedback und Jobs bekommen, Lesen, Brot mit Butter, Klavierimprovisation und Apfelschorle.</p>
+<p>Ich beschäftige mich mit Sprachinterfaces, der Verarbeitung von natürlicher Sprache, generativer Kunst, Web Development, Physical Computing, Fotografie und Projektmanagement.</p>
+<p>Neben meinem Studium habe ich die Web Design Agentur <a href="http://awesome-boys.com">Awesome Boys</a> geführt und im Eventmanagement bei Apple gearbeitet.</p>
+<p>Ich mag es, neue Dinge zu lernen, Feedback und Jobs zu bekommen, Lesen, Brot mit Butter, Klavierimprovisation und Apfelschorle.</p>
 <p><a href="mailto:cornelius.carstens@me.com">Schreib mir</a> gerne!</p>
         `,
         ja: 'JAPANESE GOES HERE',
         ru: `<p>Привет, я Корнелиус</p>
         <p>междисциплинарный студент визуальной коммуникации с интересом к веб-разработке, дизайну, модной фотографии и физическим вычислениям.</p>
     <p>во время учебы я руководил агентством веб-дизайна <a href="http://awesome-boys.com"> Удивительные ребята </a> которое в настоящее время работает на Apple.</p>
-<p>Мне нравится узнавать новое,общаться,работать,читать,импровизировать на фортепиано, есть хлеб с маслом и пить яблочный напиток.</p>
+<p>Мне нравится узнавать новое, общаться, работать, читать, импровизировать на фортепиано, есть хлеб с маслом и пить яблочный напиток.</p>
 <p>Я с нетерпением жду <a href="mailto:cornelius.carstens@me.com">ваше мнение, отзыв</a>.</p>`
 
 
     },
     projects: [
+
         {
             title: 'Conversation with LEA',
             year: 2017,
@@ -58,11 +59,9 @@ export default {
 
 
                 en: `
-                	For this installation, the audience sits one by one in a children's tent.
-                          In this intimate atmosphere, a conversation between a child-like synthetic voice and the interacting visitor develops.
-                          The voice mimics the curiosity of a child; by asking questions, it attempts to understand how the human world works.
-                          Based on the answers of the participant, the conversation takes different directions.</p>
-                          <p>Shown at World Usability Day Berlin 2017</p>
+                	<p>Interactive Installation with a voice interface that has the personality of a robot child, curious about the human world. The participants sit one by one in a children’s tent in dim, warm light. In this intimate atmosphere, a conversation between the child-like synthetic voice and the interacting visitor develops.
+The conversation addresses every day life topics along with ethical questions and ends when LEA asks whether or not the participator wants to become friends with her.</p>
+                          <p>Exhibited at World Usability Day Berlin 2017</p>
                 `,
                 ja: 'JAPANESE GOES HERE',
                 ru: `<p>Для этой инсталляции зрители сидят один за другим в детской палатке.
@@ -77,13 +76,13 @@ export default {
             },
             media: [
 
-                {
-                    src: 'assets/projects/lea/04_lea_cornelius_carstens.jpg',
-                    description: {
-                        en: ``,
-                        de: ``
-                    }
-                },
+                // {
+                //     src: 'assets/projects/lea/04_lea_cornelius_carstens.jpg',
+                //     description: {
+                //         en: ``,
+                //         de: ``
+                //     }
+                // },
                 {
                     src: 'assets/projects/lea/01_lea_cornelius_carstens.jpg',
                     description: {
@@ -208,6 +207,97 @@ export default {
     // Участники ответили, что это почти невозможно. Даже если в шутку ответить "да", то через некоторое время вы чувствуете ответственность за нее`
     //                 }
     //             },
+            ]
+        },
+        {
+            title: 'Poem Generator',
+            year: 2016,
+            description: {
+                en: `
+                <p>experimental approach to text production</p>
+                <p>The python based algorithm analyses a text grammatically and rearranges it by forming correct sentences that follow a poetic scheme.
+                The text output was used to create content for an experimental magazine project.</p>
+                `,
+                de: `
+                <p>Poem Generator</p>
+                <p>Der in Python geschriebene Algorithmus analysiert einen Text grammatikalisch und formt Sätze, die einem poetischen Schema folgen. Der Generator wurde u.A. zur Textproduktion für ein experimentelles Magazinprojekt verwendet.</p>
+             
+                `,
+                ja: 'JAPANESE GOES HERE',
+                ru: `экспериментируйте с излишней этикой
+    создание текстового контента и фэшн-фотографии для междисциплинарного журнального проекта
+    Стихи, которые были созданы на основе коллективных мыслей, составляют весь текстовый контент журнала`
+            },
+            // globalAudio: {
+            //     src: 'assets/nantes.mp3'
+            // },
+            media: [
+                {
+                    src: 'assets/projects/eee/00_eee_cornelius_carstens.mp4',
+                    description: {
+                        en: `
+                        Using <em>pattern</em>, a natural language processing library for python, the input text is grammatically analyzed.
+                        `,
+                        de: `
+                        Mit Hilfe von pattern einer NLP python Library wird der Ausgangstext grammatikalisch/syntaktisch analysiert.
+                        `,
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'С помощью <em>pattern < / em> библиотека обработки естественного языка,которая была передана для языка програмирования pyton,входной текст граммматически анализируется'
+                    }
+                },
+                {
+                    src: 'assets/projects/eee/01_eee_cornelius_carstens.jpg',
+                    noShadow: true,
+                    description: {
+                        en: `
+                        `,
+                        de: `
+                        `
+                    }
+                },
+                {
+                    src: 'assets/projects/eee/02_eee_cornelius_carstens.jpg',
+                    description: {
+                        en: `Part of the generated manifesto for the text cover
+                        `,
+                        de: `Teil des generierten Manifests auf dem Text-Cover
+                        `
+                    }
+                },
+                {
+                    src: 'assets/projects/eee/03_eee_cornelius_carstens.jpg',
+                    noShadow: true,
+                    description: {
+                        en: `
+                        In order to compose a new verse, sentence parts are grouped together randomly and conjugated accordingly.
+                        `,
+                        de: `
+                        Nachdem neue Sätze zusammengefügt wurden werden die Satzglieder zu Versen zusammengeführt und entsprechend konjugiert.
+                        `,
+                        ja: 'JAPANESE GOES HERE',
+                        ru: 'После того, как новые предложения были собраны вместе, фразы объединяются в стих и комбинируются соответственно'
+                    }
+                },
+                {
+                    src: 'assets/projects/eee/04_eee_cornelius_carstens.jpg',
+                    noShadow: true,
+                    description: {
+                        en: `
+                        `,
+                        de: `
+                        `
+                    }
+                },
+                {
+                    src: 'assets/projects/eee/05_eee_cornelius_carstens.jpg',
+                    noShadow: true,
+                    description: {
+                        en: `
+                        `,
+                        de: `
+                        `
+                    }
+                },
             ]
         },
         {
@@ -449,88 +539,6 @@ export default {
                 {
                     src: 'assets/projects/stemmi/03_christian_stemmler_cornelius_carstens.jpg',
                     description: ``
-                },
-            ]
-        },
-        {
-            title: 'EEE Magazine',
-            year: 2016,
-            description: {
-                en: `
-                <p>experiment excess ethics</p>
-                <p>generation of text content and fashion photography for an interdisciplinary magazine project</p>
-                <p>The text of the magazine consists of generated poem verses.</p>
-                `,
-                de: `
-                <p>Experiment Exzess Ethik</p>
-                <p>Generierung von Textinhalten und Modefotografie für interdisziplinäres Magazinprojekt</p>
-                <p>Der gesamte Text besteht aus Versen eines generativen Gedichts welches auf Basis eines kollektiv verfassten Textes erzeugt wurde.</p>
-                `,
-                ja: 'JAPANESE GOES HERE',
-                ru: `экспериментируйте с излишней этикой
-    создание текстового контента и фэшн-фотографии для междисциплинарного журнального проекта
-    Стихи, которые были созданы на основе коллективных мыслей, составляют весь текстовый контент журнала`
-            },
-            // globalAudio: {
-            //     src: 'assets/nantes.mp3'
-            // },
-            media: [
-                {
-                    src: 'assets/projects/eee/01_eee_cornelius_carstens.jpg',
-                    noShadow: true,
-                    description: {
-                        en: `
-                        `,
-                        de: `
-                        `
-                    }
-                },
-                {
-                    src: 'assets/projects/eee/02_eee_cornelius_carstens.jpg',
-                    description: {
-                        en: `
-                        Using <em>pattern</em>, a natural language processing library for python, the input text is grammatically analyzed.
-                        `,
-                        de: `
-                        Mit Hilfe von pattern einer NLP python Library wird der Ausgangstext grammatikalisch/syntaktisch analysiert.
-                        `,
-                        ja: 'JAPANESE GOES HERE',
-                        ru: 'С помощью <em>pattern < / em> библиотека обработки естественного языка,которая была передана для языка програмирования pyton,входной текст граммматически анализируется'
-                    }
-                },
-                {
-                    src: 'assets/projects/eee/03_eee_cornelius_carstens.jpg',
-                    noShadow: true,
-                    description: {
-                        en: `
-                        In order to compose a new verse, sentence parts are grouped together randomly and conjugated accordingly.
-                        `,
-                        de: `
-                        Nachdem neue Sätze zusammengefügt wurden werden die Satzglieder zu Versen zusammengeführt und entsprechend konjugiert.
-                        `,
-                        ja: 'JAPANESE GOES HERE',
-                        ru: 'После того, как новые предложения были собраны вместе, фразы объединяются в стих и комбинируются соответственно'
-                    }
-                },
-                {
-                    src: 'assets/projects/eee/04_eee_cornelius_carstens.jpg',
-                    noShadow: true,
-                    description: {
-                        en: `
-                        `,
-                        de: `
-                        `
-                    }
-                },
-                {
-                    src: 'assets/projects/eee/05_eee_cornelius_carstens.jpg',
-                    noShadow: true,
-                    description: {
-                        en: `
-                        `,
-                        de: `
-                        `
-                    }
                 },
             ]
         },

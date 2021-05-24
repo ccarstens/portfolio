@@ -106,6 +106,12 @@
 
 <style lang="scss">
 
+    @import '../../node_modules/bootstrap-scss/functions';
+    @import '../../node_modules/bootstrap-scss/variables';
+    @import '../../node_modules/bootstrap-scss/mixins';
+    @import '../../node_modules/bootstrap-scss/grid';
+
+
     $border-radius: 5px;
 
     $small-shadow: 0 8px 28px -5px rgba(0,0,0,0.20), 0 8px 10px -5px rgba(0,0,0,0.20);
@@ -160,8 +166,18 @@
     figure{
         text-align: center;
 
-        padding: 1em 2em 2em 2em;
+        padding: 0.8vw 1.5vw 1.5vw 1.5vw;
     }
+
+
+    @include media-breakpoint-down(lg){
+        figure{
+            padding: 1vw 4vw 4vw 4vw;
+        }
+
+    }
+
+
 
 
     figcaption{

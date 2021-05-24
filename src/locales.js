@@ -15,9 +15,9 @@ export const locales = [
     //     name: '日本語',
     //     dir: 'ltr'
     // },
-    {
-        code: 'ru',
-        name: 'русский',
-        dir: 'ltr'
-    },
+    // {
+    //     code: 'ru',
+    //     name: 'русский',
+    //     dir: 'ltr'
+    // },
 ]

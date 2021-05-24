@@ -52,7 +52,7 @@
 
             backgroundMode: false,
 
-            backgroundPolarMode: true,
+            backgroundPolarMode: false,
 
             backgroundRandomCount: 0,
 
@@ -103,6 +103,7 @@
                 if(this.deadParticlesCount === this.particles.length && !this.backgroundMode){
                     // s.noLoop()
                     // s.frameRate(90)
+                    this.backgroundPolarMode = true
                     setTimeout(() => {
                         this.spillParticles = false
                         this.backgroundMode = true

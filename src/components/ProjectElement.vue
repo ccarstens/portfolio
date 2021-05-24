@@ -262,7 +262,7 @@
 
 
     .description{
-        margin-top: calc(1em - 5px);
+        margin-top: calc(1vw - 5px);
 
     }
 
@@ -275,6 +275,17 @@
         /*background: red;*/
         /*min-height: 5em;*/
         /*margin-bottom: 2em;*/
+    }
+
+    @include media-breakpoint-down(lg){
+       .project-element .content{
+            padding: 0;
+        }
+
+        .description{
+            margin-top: calc(0.8vw - 5px);
+
+        }
     }
 
     @include media-breakpoint-up(md){
