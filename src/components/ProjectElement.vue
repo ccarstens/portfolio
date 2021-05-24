@@ -62,7 +62,7 @@
 
 <script>
 
-    import {Carousel, Slide} from '../../../vue-carousel/dist/vue-carousel.min'
+    import {Carousel, Slide} from 'vue-carousel'
     // import {Carousel, Slide} from 'vue-carousel'
     import VisualElement from './VisualElement'
     import AudioElement from './AudioElement'
