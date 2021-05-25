@@ -65,7 +65,45 @@ export default {
                     alt: {
                         en: 'Logo of Ava - Autonomous Virtual Assistant'
                     }
-                }
+                },
+                {
+                    src: 'assets/projects/ava/02_ava_network_cornelius_carstens.png',
+                    description: {
+                        en: 'Ava is communicating with their user as well as other user\'s virtual assistants in order to solve a task'
+                    },
+                    alt: {
+                        en: 'Network Overview of Ava - Autonomous Virtual Assistant'
+                    }
+                },
+                {
+                    src: 'assets/projects/ava/04_ava_scripted_conversation_cornelius_carstens.png',
+                    description: {
+                        en: 'In the process of creating the concept multiple fictional dialogues were written based on formalized planning strategies'
+                    },
+                    noShadow: true,
+                    alt: {
+                        en: 'Scripted Conversation - Autonomous Virtual Assistant'
+                    }
+                },
+                {
+                    src: 'assets/projects/ava/05_ava_training_cornelius_carstens.png',
+                    description: {
+                        en: 'Trust between user and assistant is vital - the more mutual trust there is, the less specific the user\'s queries have to be'
+                    },
+                    alt: {
+                        en: 'Training - Autonomous Virtual Assistant'
+                    }
+                },
+                {
+                    src: 'assets/projects/ava/03_ava_recipe_cornelius_carstens.png',
+                    description: {
+                        en: 'Ava has multiple recipies in order to make meaningful suggestions'
+                    },
+                    alt: {
+                        en: 'Day Suggestion Recipe - Autonomous Virtual Assistant'
+                    }
+                },
+                
             ]
         },
         {

@@ -2,7 +2,7 @@
     <div :class="classObject">
         <figure>
             <div class="wrapper">
-                <img v-if="isImage" :data-src="imageUrl"/>
+                <img v-if="isImage" :data-src="imageUrl" :alt="altText"/>
                 <VideoItem v-if="isVideo" :src="visualElementContent.src" :play="isVisible"/>
                 <P5Sketch
                         v-if="isP5Sketch"
@@ -77,6 +77,12 @@
                     return this.visualElementContent.src.match(/(gif|jpg|jpeg|png)$/)
                 }
                 return false
+            },
+
+            altText(){
+                if(this.isImage && this.visualElementContent.hasOwnProperty('alt')){
+                    return e(this.visualElementContent.alt)
+                }
             },
 
             isVideo(){
