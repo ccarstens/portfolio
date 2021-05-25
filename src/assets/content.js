@@ -47,6 +47,28 @@ export default {
     projects: [
 
         {
+            title: 'Prototyping an Autonomous Virtual Assistant',
+            year: 2019,
+            description: {
+                en: `<p>“Ava” is an autonomous virtual assistant that solves complex tasks in the user’s private and business life.</p><p>The concept was created after multiple stages of experimental UX research. An interactive voice prototype of “Ava” was implemented in Python using wit.ai for intent detection and named entity extraction.</p>`
+            },
+            url: {
+                uri: 'https://ava.how',
+                label: {
+                    en: 'Concept Overview',
+                }
+            },
+            media: [
+                {
+                    src: 'assets/projects/ava/01_ava_name_cornelius_carstens.png',
+                    description: {},
+                    alt: {
+                        en: 'Logo of Ava - Autonomous Virtual Assistant'
+                    }
+                }
+            ]
+        },
+        {
             title: 'Conversation with LEA',
             year: 2017,
             description: {
