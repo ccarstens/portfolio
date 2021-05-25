@@ -22,18 +22,18 @@ export const labels = {
 export default {
     about: {
         en: `
-            <p>Hello, I'm Cornelius,</p>
-            <p>I’m interested in voice interfaces, natural language processing, generative art, web development, physical computing, photography and project management.</p>
-            <p>While studying I ran the web design agency Awesome Boys and worked in event management at Apple.</p>
-            <p>I like learning new things, getting feedback, reading, bread with butter, piano improv, and Apfelschorle.</p>
-            <p>Drop me a <a href="mailto:cornelius.carstens@me.com">line or two</a> to get in touch!</p>
+        <p>Hello, I’m Cornelius!</p>
+        <p>I’m interested in voice interfaces, affective computing, UX research, generative art, software engineering, physical computing, psychology, photography and project management.</p>
+        <p>While in university I ran the web design agency Awesome Boys and I worked as an event producer at Apple Retail.</p>
+        <p>I like learning new things, feedback, mentoring, clear communication, bread with butter and Apfelschorle.</p>
+        <p>Drop me a <a href="mailto:cornelius.carstens@me.com">line or two</a> to get in touch!</p>
         `,
         de: `
-            <p>Hallo, ich bin Cornelius,</p>
-<p>Ich beschäftige mich mit Sprachinterfaces, der Verarbeitung von natürlicher Sprache, generativer Kunst, Web Development, Physical Computing, Fotografie und Projektmanagement.</p>
-<p>Neben meinem Studium habe ich die Web Design Agentur Awesome Boys geführt und im Eventmanagement bei Apple gearbeitet.</p>
-<p>Ich mag es, neue Dinge zu lernen, Feedback zu bekommen, Lesen, Brot mit Butter, Klavierimprovisation und Apfelschorle.</p>
-<p><a href="mailto:cornelius.carstens@me.com">Schreib mir</a> gerne!</p>
+        <p>Hallo, ich bin Cornelius!</p>
+        <p>Ich beschäftige mich mit Sprachinterfaces, Affective Computing, generativer Kunst, Design Research, Software Engineering, Physical Computing, Psychologie, Fotografie und Projektmanagement.</p>
+        <p>Neben meinem Studium habe ich die Web Design Agentur Awesome Boys geführt und als Event Producer bei Apple Retail gearbeitet.</p>
+        <p>Ich mag es, neue Dinge zu lernen, Feedback zu bekommen, Mentoring, klare Kommunikation, Brot mit Butter und Apfelschorle.</p>
+        <p><a href="mailto:cornelius.carstens@me.com">Schreib mir</a> gerne!</p>
         `,
         ja: 'JAPANESE GOES HERE',
         ru: `<p>Привет, я Корнелиус</p>
