@@ -1,7 +1,7 @@
 <template>
   <div id="app" :class="classObject" @touchstart="initPendingMedia" @mousedown="initPendingMedia">
 
-      <AudioActivation @click=""></AudioActivation>
+      <AudioActivation></AudioActivation>
       <div id="wrapper" :class="wrapperClassObject">
           <HeaderElement/>
           <AboutElement
@@ -119,22 +119,18 @@ export default {
     @import '../node_modules/bootstrap-scss/utilities/spacing';
     @import '../node_modules/bootstrap-scss/utilities/text';
 
-#app {
-    font-family: Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    /*text-align: center;*/
-    color: #007bff;
-    /*margin-top: 60px;*/
+    #app {
+        font-family: Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        /*text-align: center;*/
+        color: #007bff;
+        /*margin-top: 60px;*/
 
-    opacity: 1;
-    transition: opacity 300ms ease-out;
-    /*background: black;*/
-}
-    #app.hide{
-        opacity: 0;
+        opacity: 1;
+        transition: opacity 300ms ease-out;
+        /*background: black;*/
     }
-
     a{
         text-decoration: underline;
     }
@@ -147,22 +143,12 @@ export default {
     }
 
     @include media-breakpoint-up(sm){
-
         #app{
             font-size: 1.375rem;
         }
 
         #site-header, #about{
             font-size: 1.5rem;
-        }
-
-
-
-    }
-
-    @include media-breakpoint-up(md){
-        #app{
-
         }
     }
 
@@ -183,10 +169,18 @@ export default {
     }
 
     #wrapper.hide{
-        height: 0;
-        /*overflow: hidden;*/
-        opacity: 0;
+        & .about, 
+        .projects, 
+        footer, 
+        .language-switcher, 
+        .global-audio-control, 
+        .projects-link{
+            opacity: 0;
+        }
+
     }
+
+    
 
 
 </style>
