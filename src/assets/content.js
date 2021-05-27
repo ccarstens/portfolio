@@ -373,7 +373,7 @@ The conversation addresses every day life topics along with ethical questions an
                 {
                     src: 'assets/projects/mh/01_marius_hirschel_cornelius_carstens.mp4',
                     description: {
-                        en: 'In order to guide the viewer\'s attention to each image, the photos do not scroll vertically but fade in-and-out governed scrolling on the page.',
+                        en: 'In order to guide the viewer\'s attention to each image, the photos do not scroll vertically but fade in-and-out as the user is scrolling.',
                         de: 'Um die Aufmerksamkeit der Benutzer auf jedes einzelne Bild zu lenken werden die Inhalte nicht vertikal bewegt sondern durch scrollen auf der Seite ein und aus gefaded.',
                         ja: 'JAPANESE GOES HERE',
                         ru: 'Чтобы привлечь внимание зрителя к каждому изображению, фотографии не прокручиваются вертикально, а исчезают при прокрутке страницы'
