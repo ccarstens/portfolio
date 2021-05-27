@@ -66,8 +66,6 @@ export default {
         this.state.setIsTouch(typeof window !== "undefined" && "ontouchstart" in window)
 
         this.av.init()
-        console.log("launch");
-
     },
     methods: {
         e,
