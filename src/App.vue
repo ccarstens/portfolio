@@ -176,7 +176,8 @@ export default {
         footer, 
         .language-switcher, 
         .global-audio-control, 
-        .projects-link{
+        .projects-link,
+        .masthead .possessive{
             opacity: 0;
         }
 

@@ -4,7 +4,7 @@
             <nav class="row">
                 <div class="wrapper col  offset-md-1">
                     <ul class="nav-list d-flex">
-                        <li class="masthead"><a href="#">cornelius</a></li>
+                        <li class="masthead"><a href="#" @click.prevent="jumpToTop">cornelius<span class="possessive">'s</span></a></li>
                         <li class="projects-link"><a href="#projects">{{e(labels.projects)}}</a></li>
                         <li class="ml-auto ml-md-5 offset-lg-1 order-4 order-md-3">
                             <LanguageSwitcher></LanguageSwitcher>
@@ -57,6 +57,9 @@
                     if(this.state.debug) console.log('window.resize triggered, HeaderElement is handling')
                     this.offsetTop = this.$el.getElementsByTagName('li')[0].getBoundingClientRect().top
                 }, 100)
+            },
+            jumpToTop(){
+                window.scrollTo(0, 0)
             }
         },
         computed: {
