@@ -123,17 +123,19 @@ export default {
         font-family: Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        /*text-align: center;*/
         color: #007bff;
-        /*margin-top: 60px;*/
 
         opacity: 1;
         transition: opacity 300ms ease-out;
-        /*background: black;*/
+
+        &.hide{
+        opacity: 0;
+    }
     }
     a{
         text-decoration: underline;
     }
+
 
     // -up-FROM
     @include media-breakpoint-up(xs){
