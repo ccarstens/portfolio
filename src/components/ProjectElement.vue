@@ -10,14 +10,16 @@
     }
     }"
         >
-            <AudioElement v-if="hasGlobalAudio" :play="playAudio" :src="projectContent.globalAudio.src"></AudioElement>
-
             <header class="description col-12 order-0 col-lg-4 order-lg-1 d-flex flex-column">
                 <div>
                     <h3>{{e(projectContent.title)}}</h3> {{projectContent.year}}
                 </div>
 
                 <p v-html="e(projectContent.description) "></p>
+
+                <p v-if="hasGlobalAudio">
+                    <AudioSample :src="projectContent.globalAudio.src"></AudioSample>
+                </p>
 
                 <p v-if="hasUrl">
                     <a :href="projectUrl" target="_blank">{{projectUrlLabel}}</a>
@@ -66,6 +68,7 @@
     // import {Carousel, Slide} from 'vue-carousel'
     import VisualElement from './VisualElement'
     import AudioElement from './AudioElement'
+    import AudioSample from './AudioSample'
     import state from '../state'
     import {labels} from '../assets/content'
     import e from '../localizedContent'
@@ -75,7 +78,8 @@
             Carousel,
             Slide,
             VisualElement,
-            AudioElement
+            AudioElement,
+            AudioSample
         },
         props: [
             'content'
@@ -250,13 +254,7 @@
         ), auto;
     }
 
-    .VueCarousel-wrapper{
-        /*<!--margin-bottom: -18px;-->*/
-    }
-
     .VueCarousel-slide{
-        /*width: 100vw;*/
-        /*background: lightgrey;*/
         figure{
             margin-bottom: 0;
         }
