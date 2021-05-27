@@ -10,8 +10,6 @@
     }
     }"
         >
-            <AudioElement v-if="hasGlobalAudio" :play="playAudio" :src="projectContent.globalAudio.src"></AudioElement>
-
             <header class="description col-12 order-0 col-lg-4 order-lg-1 d-flex flex-column">
                 <div>
                     <h3>{{e(projectContent.title)}}</h3> {{projectContent.year}}
@@ -19,8 +17,12 @@
 
                 <p v-html="e(projectContent.description) "></p>
 
+                <p v-if="hasGlobalAudio">
+                    <AudioSample :src="projectContent.globalAudio.src"></AudioSample>
+                </p>
+
                 <p v-if="hasUrl">
-                    <a :href="projectContent.url" target="_blank">{{e(labels.visit)}}</a>
+                    <a :href="projectUrl" target="_blank">{{projectUrlLabel}}</a>
                 </p>
 
                 <!--<transition name="fade" mode="out-in">-->
@@ -66,6 +68,7 @@
     // import {Carousel, Slide} from 'vue-carousel'
     import VisualElement from './VisualElement'
     import AudioElement from './AudioElement'
+    import AudioSample from './AudioSample'
     import state from '../state'
     import {labels} from '../assets/content'
     import e from '../localizedContent'
@@ -75,7 +78,8 @@
             Carousel,
             Slide,
             VisualElement,
-            AudioElement
+            AudioElement,
+            AudioSample
         },
         props: [
             'content'
@@ -191,14 +195,35 @@
             },
             hasUrl(){
                 if(this.projectContent.hasOwnProperty('url')){
-                    return this.projectContent.url.length > 0
+                    return typeof this.projectContent.url == 'object' || this.projectContent.url.length > 0
                 }
                 return false
             },
             projectUrl(){
-                if(this.hasUrl()){
-                    return this.projectContent.url
+                if(this.hasUrl){
+                    if(this.urlIsString){
+                        return this.projectContent.url
+
+                    }
+                    return this.projectContent.url.uri
                 }
+            },
+            projectUrlLabel(){
+                if(this.hasUrl){
+                    if(this.urlIsString){
+                        return e(labels.visit)
+                    }
+                    return e(this.projectContent.url.label)
+                }
+            },
+            urlType(){
+                return typeof this.projectContent.url
+            },
+            urlIsObject(){
+                return this.urlType == 'object'
+            },
+            urlIsString(){
+                return this.urlType == 'string'
             }
         }
     }
@@ -229,13 +254,7 @@
         ), auto;
     }
 
-    .VueCarousel-wrapper{
-        /*<!--margin-bottom: -18px;-->*/
-    }
-
     .VueCarousel-slide{
-        /*width: 100vw;*/
-        /*background: lightgrey;*/
         figure{
             margin-bottom: 0;
         }

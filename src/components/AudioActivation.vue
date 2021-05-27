@@ -3,18 +3,6 @@
         <div class="m-auto test-image">
             <P5Sketch name="DotCloud" :dimensions="{width: sketchWidth, height: sketchHeight}"></P5Sketch>
         </div>
-        <div v-if="true === false">
-        <a
-                @click.prevent="initMedia"
-                @touchstart="$emit('click')"
-                href="#">
-            <span class="word">{{e(labels.click)}}</span><br><span v-if="false" class="emoji">🔈</span>
-            <!--<span v-else-if="inProgress" class="emoji progress">🏃🏻‍️️</span>-->
-            <span v-else class="emoji">🔊</span>
-            <!--<span>{{browserCanAutoplay}}</span>-->
-
-        </a>
-        </div>
     </div>
 </template>
 

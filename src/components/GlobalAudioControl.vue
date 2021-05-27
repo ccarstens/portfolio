@@ -1,5 +1,5 @@
 <template>
-    <button @click="handleChange" :class="classObject">
+    <button @click="handleChange" :class="classObject" class="global-audio-control">
         <span v-if="state.getGlobalVolume() === 1">🔊</span>
         <span v-else>🔈</span>
     </button>

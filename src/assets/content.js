@@ -22,18 +22,18 @@ export const labels = {
 export default {
     about: {
         en: `
-            <p>Hello, I'm Cornelius,</p>
-            <p>I’m interested in voice interfaces, natural language processing, generative art, web development, physical computing, photography and project management.</p>
-            <p>While studying I ran the web design agency Awesome Boys and worked in event management at Apple.</p>
-            <p>I like learning new things, getting feedback, reading, bread with butter, piano improv, and Apfelschorle.</p>
-            <p>Drop me a <a href="mailto:cornelius.carstens@me.com">line or two</a> to get in touch!</p>
+        <p>Hello, I’m Cornelius!</p>
+        <p>I’m interested in voice interfaces, affective computing, UX research, generative art, software engineering, physical computing, psychology, photography and project management.</p>
+        <p>While in university I ran the web design agency Awesome Boys and I worked as an event producer at Apple Retail.</p>
+        <p>I like learning new things, feedback, mentoring, clear communication, bread with butter and Apfelschorle.</p>
+        <p>Drop me a <a href="mailto:cornelius.carstens@me.com">line or two</a> to get in touch!</p>
         `,
         de: `
-            <p>Hallo, ich bin Cornelius,</p>
-<p>Ich beschäftige mich mit Sprachinterfaces, der Verarbeitung von natürlicher Sprache, generativer Kunst, Web Development, Physical Computing, Fotografie und Projektmanagement.</p>
-<p>Neben meinem Studium habe ich die Web Design Agentur Awesome Boys geführt und im Eventmanagement bei Apple gearbeitet.</p>
-<p>Ich mag es, neue Dinge zu lernen, Feedback zu bekommen, Lesen, Brot mit Butter, Klavierimprovisation und Apfelschorle.</p>
-<p><a href="mailto:cornelius.carstens@me.com">Schreib mir</a> gerne!</p>
+        <p>Hallo, ich bin Cornelius!</p>
+        <p>Ich beschäftige mich mit Sprachinterfaces, Affective Computing, generativer Kunst, Design Research, Software Engineering, Physical Computing, Psychologie, Fotografie und Projektmanagement.</p>
+        <p>Neben meinem Studium habe ich die Web Design Agentur Awesome Boys geführt und als Event Producer bei Apple Retail gearbeitet.</p>
+        <p>Ich mag es, neue Dinge zu lernen, Feedback zu bekommen, Mentoring, klare Kommunikation, Brot mit Butter und Apfelschorle.</p>
+        <p><a href="mailto:cornelius.carstens@me.com">Schreib mir</a> gerne!</p>
         `,
         ja: 'JAPANESE GOES HERE',
         ru: `<p>Привет, я Корнелиус</p>
@@ -46,6 +46,66 @@ export default {
     },
     projects: [
 
+        {
+            title: 'Prototyping an Autonomous Virtual Assistant',
+            year: 2019,
+            description: {
+                en: `<p>“Ava” is an autonomous virtual assistant that solves complex tasks in the user’s private and business life.</p><p>The concept was created after multiple stages of experimental UX research. An interactive voice prototype of “Ava” was implemented in Python using wit.ai for intent detection and named entity extraction.</p>`
+            },
+            url: {
+                uri: 'https://ava.how',
+                label: {
+                    en: 'Concept Overview',
+                }
+            },
+            media: [
+                {
+                    src: 'assets/projects/ava/01_ava_name_cornelius_carstens.png',
+                    description: {},
+                    alt: {
+                        en: 'Logo of Ava - Autonomous Virtual Assistant'
+                    }
+                },
+                {
+                    src: 'assets/projects/ava/02_ava_network_cornelius_carstens.png',
+                    description: {
+                        en: 'Ava is communicating with their user as well as other user\'s virtual assistants in order to solve a task'
+                    },
+                    alt: {
+                        en: 'Network Overview of Ava - Autonomous Virtual Assistant'
+                    }
+                },
+                {
+                    src: 'assets/projects/ava/04_ava_scripted_conversation_cornelius_carstens.png',
+                    description: {
+                        en: 'In the process of creating the concept multiple fictional dialogues were written based on formalized planning strategies'
+                    },
+                    noShadow: true,
+                    alt: {
+                        en: 'Scripted Conversation - Autonomous Virtual Assistant'
+                    }
+                },
+                {
+                    src: 'assets/projects/ava/05_ava_training_cornelius_carstens.png',
+                    description: {
+                        en: 'Trust between user and assistant is vital - the more mutual trust there is, the less specific the user\'s queries have to be'
+                    },
+                    alt: {
+                        en: 'Training - Autonomous Virtual Assistant'
+                    }
+                },
+                {
+                    src: 'assets/projects/ava/03_ava_recipe_cornelius_carstens.png',
+                    description: {
+                        en: 'Ava has multiple recipies in order to make meaningful suggestions'
+                    },
+                    alt: {
+                        en: 'Day Suggestion Recipe - Autonomous Virtual Assistant'
+                    }
+                },
+                
+            ]
+        },
         {
             title: 'Conversation with LEA',
             year: 2017,

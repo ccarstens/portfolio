@@ -4,8 +4,8 @@
             <nav class="row">
                 <div class="wrapper col  offset-md-1">
                     <ul class="nav-list d-flex">
-                        <li :class=""><a href="#">cornelius</a></li>
-                        <li class=""><a href="#projects">{{e(labels.projects)}}</a></li>
+                        <li class="masthead"><a href="#">cornelius</a></li>
+                        <li class="projects-link"><a href="#projects">{{e(labels.projects)}}</a></li>
                         <li class="ml-auto ml-md-5 offset-lg-1 order-4 order-md-3">
                             <LanguageSwitcher></LanguageSwitcher>
                         </li>
@@ -62,8 +62,6 @@
         computed: {
             pageNameClasses(){
                 return {
-                    // 'd-flex': true,
-                    // 'justify-content-left': true,
                     'no-show': !this.state.state.scrollableIsAtHeaderPosition
                 }
             }
