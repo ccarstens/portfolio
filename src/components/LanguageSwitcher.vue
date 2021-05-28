@@ -1,6 +1,6 @@
 <template>
     <ul class="language-switcher text-right text-sm-left">
-        <li v-for="locale in locales">
+        <li v-for="locale in locales" :key="locale.code">
             <router-link
                 :key="locale.code"
                 :to="`/${locale.code}`"

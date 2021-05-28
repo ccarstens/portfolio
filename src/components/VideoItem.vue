@@ -58,7 +58,6 @@ export default {
         updatePlay (play) {
             if(play){
                 this.playVideo()
-                // this.$el.webkitEnterFullScreen()
             }
             else this.pauseVideo()
         }

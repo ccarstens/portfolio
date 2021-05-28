@@ -45,21 +45,11 @@
             }
         },
         computed: {
-            test(){
-                let x = 'assets/play-button.png'
-                return require('../' + x)
-            },
             removeActivation(){
                 return (
                     this.state.getIsTouch()
-                    // || this.state.getCanAutoplayAudio()
-                    // || (
-                    //     !this.state.getIsTouch()
-                    //     && this.state.getAudioActivationFinished()
-                    // )
                 )
 
-                // return false
             },
             sketchWidth(){
                 return window.innerWidth
@@ -83,9 +73,6 @@
                 }
             },
         },
-        watch: {
-
-        }
     }
 </script>
 

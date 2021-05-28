@@ -19,7 +19,7 @@ export const labels = {
     }
 }
 
-export default {
+export const content = {
     about: {
         en: `
         <p>Hello, I’m Cornelius!</p>
