@@ -33,7 +33,7 @@ export default {
                 el.volume = 0
                 el.play().then(() => {
                     el.pause()
-                    el.currentTime = 0
+                    // el.currentTime = 0
 
                     el.volume = elVol
                     el.dataset.init = 'true'
