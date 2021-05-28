@@ -25,6 +25,7 @@ export default {
 
         if(this.toInitialize.length > 0){
             let tmp = this.toInitialize.slice()
+            console.log(this.toInitialize)
             this.toInitialize.length = 0
 
             for(let el of tmp){
@@ -33,10 +34,11 @@ export default {
                 el.play().then(() => {
                     el.pause()
                     el.currentTime = 0
+
                     el.volume = elVol
                     el.dataset.init = 'true'
                     this.initializedElements.push(el)
-                    if(!this.state.getAtLeastOneMediaElementInitialized()) this.state.setAtLeastOneMediaElementInitialized(true)
+                    this.state.setAtLeastOneMediaElementInitialized(true)
                 })
             }
         }
@@ -47,7 +49,7 @@ export default {
         this.mediaElements.forEach((element) => {
 
             const source = element.getElementsByTagName('source')[0]
-            element.addEventListener('canplay', () => {
+            const canPlayhandler = (event) => {
                 if(this.state.debug) console.log("CANPLAY")
 
                 if(this.state.getCanAutoplayAudio()){
@@ -59,10 +61,12 @@ export default {
 
                     }
                 }
+                element.oncanplay = null
 
-            })
+            }
+            element.addEventListener('canplay', canPlayhandler)
 
-            this.event.$emit('av-hooked-element-to-canplay', element)
+            this.event.$emit('av-hooked-element-to-canplay', element, {once: true})
 
             source.src = source.dataset.src
             element.load()

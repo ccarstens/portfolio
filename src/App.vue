@@ -1,65 +1,29 @@
 <template>
   <div id="app" :class="classObject" @touchstart="initPendingMedia" @mousedown="initPendingMedia">
 
-      <AudioActivation></AudioActivation>
-      <div id="wrapper" :class="wrapperClassObject">
-          <HeaderElement/>
-          <AboutElement
-                  :text="e(content.about)"
-          />
-
-          <div id="projects">
-            <ProjectElement v-for="(project, key) in content.projects" :key="key" :content="project"/>
-          </div>
-          <footer class="container-fluid">
-              <div class="row">
-                  <div class="col offset-md-1">
-                      <p>Cornelius Carstens</p>
-                      <p>Warthestr. 46 <br>
-                          12051 Berlin <br>
-                          Germany</p>
-                      <p><a href="mailto:cornelius.carstens@me.com">Mail</a> <a href="http://github.com/ccarstens" target="_blank">GitHub</a></p>
-                  </div>
-              </div>
-          </footer>
-      </div>
+    <AudioActivation></AudioActivation>
+    <router-view></router-view>
 
   </div>
 </template>
 
 <script>
-import HeaderElement from './components/HeaderElement'
-import ProjectElement from './components/ProjectElement'
-import AboutElement from './components/AboutElement'
-import AudioElement from './components/AudioElement'
-import P5Sketch from './components/P5Sketch'
+
 import AudioActivation from './components/AudioActivation'
 
 import state from './state'
-import e from './localizedContent'
 import av from './av'
 
-import mainContent from './assets/content'
 
 export default {
     name: 'App',
     components: {
-        ProjectElement,
-        HeaderElement,
-        AboutElement,
-        AudioElement,
-        P5Sketch,
         AudioActivation
     },
     data () {
         return{
             state,
             av,
-            content: mainContent,
-            name: "DotCloud",
-            mediaElements: null,
-            loadedMediaElementsCount: 0,
-            toInitialize: [],
         }
     },
     created(){
@@ -68,7 +32,6 @@ export default {
         this.av.init()
     },
     methods: {
-        e,
         initPendingMedia(){
             this.av.initPendingMedia()
         },
@@ -81,21 +44,6 @@ export default {
                 'no-audio-activation': (this.state.getCanAutoplayAudio() && !this.state.getAudioActivationFinished()) || this.state.getIsTouch(),
                 // 'no-audio-activation': false,
             }
-        },
-        wrapperClassObject(){
-            return {
-                hide: !this.state.getIsTouch()
-                        // && !this.state.getCanAutoplayAudio()
-                    && !this.state.getAudioActivationFinished()
-            }
-        }
-    },
-    watch: {
-        mainData: {
-            handler: function(newData){
-                this.content = newData
-            },
-            deep: true
         },
     },
 }
@@ -153,34 +101,6 @@ export default {
         }
     }
 
-    .no-audio-activation #wrapper{
-        top: 30vh;
-    }
-
-    #wrapper{
-        height: auto;
-        overflow: auto;
-        opacity: 1;
-        -webkit-transition: opacity 300ms ease-in-out;
-        transition: opacity 300ms ease-in-out;
-
-        margin-top: 50vh;
-        /*position: relative;*/
-        /*<!--top: -30vh;-->*/
-    }
-
-    #wrapper.hide{
-        & .about, 
-        .projects, 
-        footer, 
-        .language-switcher, 
-        .global-audio-control, 
-        .projects-link,
-        .masthead .possessive{
-            opacity: 0;
-        }
-
-    }
 
     
 
