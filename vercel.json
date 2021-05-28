@@ -1,7 +1,7 @@
 {
     "rewrites": [
         {
-            "source": "/**", "destination": "/index.html"
+            "source": "/:locale", "destination": "/index.html"
         }
     ]
 }
