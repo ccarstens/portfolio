@@ -13,6 +13,7 @@ import AudioActivation from './components/AudioActivation'
 
 import state from './state'
 import av from './av'
+import {defaultLocale} from './locales'
 
 
 export default {
@@ -28,6 +29,8 @@ export default {
     },
     created(){
         this.state.setIsTouch(typeof window !== "undefined" && "ontouchstart" in window)
+
+        document.querySelector('html').setAttribute('lang', defaultLocale)
 
         this.av.init()
     },
