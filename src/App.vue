@@ -15,40 +15,39 @@ import state from './state'
 import av from './av'
 import {defaultLocale} from './locales'
 
-
 export default {
     name: 'App',
     components: {
         AudioActivation
     },
     data () {
-        return{
+        return {
             state,
-            av,
+            av
         }
     },
-    created(){
-        this.state.setIsTouch(typeof window !== "undefined" && "ontouchstart" in window)
+    created () {
+        this.state.setIsTouch(typeof window !== 'undefined' && 'ontouchstart' in window)
 
         document.querySelector('html').setAttribute('lang', defaultLocale)
 
         this.av.init()
     },
     methods: {
-        initPendingMedia(){
+        initPendingMedia () {
             this.av.initPendingMedia()
-        },
+        }
     },
     computed: {
-        classObject(){
+        classObject () {
             return {
                 hide: this.state.getLanguageSwitcherInAction(),
                 'no-hover': this.state.getIsTouch(),
-                'no-audio-activation': (this.state.getCanAutoplayAudio() && !this.state.getAudioActivationFinished()) || this.state.getIsTouch(),
+                'no-audio-activation': (this.state.getCanAutoplayAudio() && !this.state.getAudioActivationFinished()) || this.state.getIsTouch()
                 // 'no-audio-activation': false,
             }
-        },
-    },
+        }
+    }
 }
 </script>
 
@@ -57,7 +56,6 @@ export default {
     @import '../node_modules/bootstrap-scss/functions';
     @import '../node_modules/bootstrap-scss/variables';
     @import '../node_modules/bootstrap-scss/mixins';
-
 
     @import '../node_modules/bootstrap-scss/reboot';
     @import '../node_modules/bootstrap-scss/images';
@@ -86,7 +84,6 @@ export default {
         text-decoration: underline;
     }
 
-
     // -up-FROM
     @include media-breakpoint-up(xs){
         #app{
@@ -103,9 +100,5 @@ export default {
             font-size: 1.5rem;
         }
     }
-
-
-    
-
 
 </style>

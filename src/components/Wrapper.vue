@@ -30,49 +30,49 @@
 </template>
 
 <script>
-import HeaderElement from "./HeaderElement";
-import ProjectElement from "./ProjectElement";
-import AboutElement from "./AboutElement";
+import HeaderElement from './HeaderElement'
+import ProjectElement from './ProjectElement'
+import AboutElement from './AboutElement'
 
-import { content } from "../assets/content";
-import state from "../state";
-import e from "../localizedContent";
+import { content } from '../assets/content'
+import state from '../state'
+import e from '../localizedContent'
 
 export default {
-  name: "Wrapper",
-  components: {
-    ProjectElement,
-    HeaderElement,
-    AboutElement,
-  },
-  data() {
-    return {
-      state,
-      content,
-      mediaElements: null,
-      loadedMediaElementsCount: 0,
-      toInitialize: [],
-    };
-  },
-  methods: {
-    e,
-  },
-  computed: {
-    wrapperClassObject() {
-      return {
-        hide:
+    name: 'Wrapper',
+    components: {
+        ProjectElement,
+        HeaderElement,
+        AboutElement
+    },
+    data () {
+        return {
+            state,
+            content,
+            mediaElements: null,
+            loadedMediaElementsCount: 0,
+            toInitialize: []
+        }
+    },
+    methods: {
+        e
+    },
+    computed: {
+        wrapperClassObject () {
+            return {
+                hide:
           !this.state.getIsTouch() &&
           // && !this.state.getCanAutoplayAudio()
-          !this.state.getAudioActivationFinished(),
-      };
+          !this.state.getAudioActivationFinished()
+            }
+        }
     },
-  },
-  beforeRouteUpdate: (to, from, next) => {
-    document.querySelector("html").setAttribute("lang", to.params.locale);
-    console.log(to.params.locale);
-    next();
-  },
-};
+    beforeRouteUpdate: (to, from, next) => {
+        document.querySelector('html').setAttribute('lang', to.params.locale)
+        console.log(to.params.locale)
+        next()
+    }
+}
 </script>
 
 <style lang="scss">
