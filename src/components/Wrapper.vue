@@ -37,7 +37,6 @@ import ProjectElement from './ProjectElement'
 import AboutElement from './AboutElement'
 
 import { content } from '../assets/content'
-import state from '../state'
 import e from '../localizedContent'
 
 import { mapState } from 'vuex'
@@ -56,7 +55,6 @@ export default {
     },
     data() {
         return {
-            state,
             content,
             mediaElements: null,
             loadedMediaElementsCount: 0,
@@ -64,13 +62,10 @@ export default {
         }
     },
     computed: {
-        ...mapState(['is_touch']),
+        ...mapState(['is_touch', 'audio_activation_finished']),
         wrapperClassObject() {
             return {
-                hide:
-                    !this.is_touch &&
-                    // && !this.state.getCanAutoplayAudio()
-                    !this.state.getAudioActivationFinished(),
+                hide: !this.is_touch && !this.audio_activation_finished,
             }
         },
     },

@@ -11,14 +11,13 @@
 
 <script>
 import { labels } from '../assets/content'
-import state from '../state'
 import e from '../localizedContent'
 import av from '../av'
 import { event } from '../event'
 
 import P5Sketch from './P5Sketch'
 
-import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 export default {
     name: 'AudioActivation',
     components: {
@@ -27,7 +26,6 @@ export default {
     data() {
         return {
             labels,
-            state,
             av,
             event,
             userInteracted: false,
@@ -58,13 +56,14 @@ export default {
     created() {
         this.event.$on('user-interacted-with-sketch', () => {
             setTimeout(() => {
-                this.state.setAudioActivationFinished(true)
+                this.SET_AUDIO_ACTIVATION_FINISHED(true)
             }, 300)
         })
     },
     mounted() {},
     methods: {
         e,
+        ...mapMutations(['SET_AUDIO_ACTIVATION_FINISHED']),
         initMedia() {
             this.userInteracted = true
         },

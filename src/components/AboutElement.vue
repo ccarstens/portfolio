@@ -10,16 +10,11 @@
 </template>
 
 <script>
-import state from '../state'
 
 export default {
     name: 'AboutElement',
     props: ['text'],
-    data() {
-        return {
-            state: state,
-        }
-    },
+
     computed: {
         classObject() {
             return {

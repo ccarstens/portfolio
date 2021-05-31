@@ -10,14 +10,12 @@
 </template>
 
 <script>
-import state from '../state'
 import { locales } from '../locales'
 import { mapState, mapMutations, mapActions } from 'vuex'
 export default {
     name: 'LanguageSwitcher',
     data() {
         return {
-            state,
             locales,
         }
     },

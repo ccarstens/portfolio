@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import state from '../state'
 import { event } from '../event'
 import { mapState } from 'vuex'
 export default {
@@ -13,26 +12,25 @@ export default {
     props: ['play', 'src'],
     data() {
         return {
-            state,
             event,
             test: undefined,
             element: null,
         }
     },
     computed: {
-        ...mapState(['is_touch']),
+        ...mapState(['is_touch', 'global_volume']),
         videoUrl() {
             return require('../' + this.test)
         },
         muted() {
-            return !this.state.state.globalVolume
+            return !this.global_volume
         },
     },
     watch: {
         play(newPlayState, b) {
             this.updatePlay(newPlayState)
         },
-        'state.state.globalVolume': function (to, from) {
+        global_volume: function (to, from) {
             this.$el.volume = to
         },
     },

@@ -13,7 +13,6 @@
 <script>
 import AudioActivation from './components/AudioActivation'
 
-import state from './state'
 import av from './av'
 import { defaultLocale } from './locales'
 import { mapState, mapMutations } from 'vuex'
@@ -25,22 +24,23 @@ export default {
     },
     data() {
         return {
-            state,
             av,
         }
     },
     computed: {
-        ...mapState(['locale_switch_in_action', 'is_touch']),
-        testi() {
-            return this.locale_switch_in_action
-        },
+        ...mapState([
+            'locale_switch_in_action',
+            'is_touch',
+            'can_autoplay_audio',
+            'audio_activation_finished',
+        ]),
         classObject() {
             return {
                 hide: this.locale_switch_in_action,
                 'no-hover': this.is_touch,
                 'no-audio-activation':
-                    (this.state.getCanAutoplayAudio() &&
-                        !this.state.getAudioActivationFinished()) ||
+                    (this.can_autoplay_audio &&
+                        !this.audio_activation_finished) ||
                     this.is_touch,
             }
         },

@@ -35,7 +35,6 @@
 </template>
 
 <script>
-import state from '../state'
 import { labels } from '../assets/content'
 import e from '../localizedContent'
 
@@ -52,7 +51,6 @@ export default {
         return {
             labels: labels,
             offsetTop: 0,
-            state: state,
         }
     },
     methods: {

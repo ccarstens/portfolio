@@ -84,7 +84,6 @@ import { Carousel, Slide } from 'vue-carousel'
 // import {Carousel, Slide} from 'vue-carousel'
 import VisualElement from './VisualElement'
 import AudioSample from './AudioSample'
-import state from '../state'
 import { labels } from '../assets/content'
 import e from '../localizedContent'
 
@@ -101,7 +100,6 @@ export default {
     data() {
         return {
             labels,
-            state,
             currentPage: 0,
             projectContent: {},
             projectInViewport: false,
