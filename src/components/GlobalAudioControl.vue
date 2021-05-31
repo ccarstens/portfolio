@@ -1,13 +1,16 @@
 <template>
-    <button
-        :class="classObject"
-        :tabindex="tabIdx"
-        class="global-audio-control"
-        @click="handleChange"
-    >
-        <span v-if="isOn">🔊</span>
-        <span v-else>🔈</span>
-    </button>
+    <div :class="classObject" class="global-audio-control">
+        <button
+            :tabindex="tabIdx"
+            role="switch"
+            :aria-checked="isOn"
+            aria-label="audio output"
+            @click="handleChange"
+        >
+            <span v-if="isOn">🔊</span>
+            <span v-else>🔈</span>
+        </button>
+    </div>
 </template>
 
 <script>
@@ -52,16 +55,17 @@ export default {
 <style lang="scss">
 .global-audio-control {
     opacity: 0;
-    pointer-events: none;
-
-    background: none;
-    border: none;
-    pointer-events: auto;
-    cursor: pointer;
 
     transition: opacity 300ms ease-in-out;
     position: relative;
     top: -0.2em;
+
+    button {
+        background: none;
+        border: none;
+        pointer-events: auto;
+        cursor: pointer;
+    }
 
     &.show {
         opacity: 1;

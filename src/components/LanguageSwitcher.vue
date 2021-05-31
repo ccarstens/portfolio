@@ -5,7 +5,6 @@
                 {{ locale.name }}
             </router-link>
         </li>
-        <span>{{ count }}</span>
     </ul>
 </template>
 
@@ -20,7 +19,7 @@ export default {
         }
     },
     computed: {
-        ...mapState(['locale', 'count']),
+        ...mapState(['locale']),
         current() {
             return this.$route.params.locale
         },
