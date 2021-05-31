@@ -1,10 +1,11 @@
 <template>
     <button
         :class="classObject"
+        :tabindex="tabIdx"
         class="global-audio-control"
         @click="handleChange"
     >
-        <span v-if="global_volume === 1">🔊</span>
+        <span v-if="isOn">🔊</span>
         <span v-else>🔈</span>
     </button>
 </template>
@@ -20,10 +21,18 @@ export default {
             'global_volume',
             'min_one_media_element_init',
         ]),
+        isOn() {
+            return this.global_volume === 1
+        },
+        tabIdx() {
+            return this.audioInitialized ? 0 : -1
+        },
+        audioInitialized() {
+            return this.can_autoplay_audio || this.min_one_media_element_init
+        },
         classObject() {
             return {
-                show:
-                    this.can_autoplay_audio || this.min_one_media_element_init,
+                show: this.audioInitialized,
             }
         },
     },
@@ -40,12 +49,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-button:focus {
-    outline: none;
-}
-
-button {
+<style lang="scss">
+.global-audio-control {
     opacity: 0;
     pointer-events: none;
 
@@ -57,10 +62,10 @@ button {
     transition: opacity 300ms ease-in-out;
     position: relative;
     top: -0.2em;
-}
 
-.show {
-    opacity: 1;
-    pointer-events: auto;
+    &.show {
+        opacity: 1;
+        pointer-events: auto;
+    }
 }
 </style>
