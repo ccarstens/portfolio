@@ -94,10 +94,5 @@ a {
     #app {
         font-size: 1.375rem;
     }
-
-    #site-header,
-    #about {
-        font-size: 1.5rem;
-    }
 }
 </style>

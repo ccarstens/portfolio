@@ -11,19 +11,12 @@
             class="row"
         >
             <header
-                class="
-                    description
-                    col-12
-                    order-0
-                    col-lg-4
-                    order-lg-1
-                    d-flex
-                    flex-column
-                "
+                class="description col-12 order-0 col-lg-4 order-lg-1 d-flex flex-column"
             >
                 <div>
-                    <h3>{{ e(projectContent.title) }}</h3>
-                    {{ projectContent.year }}
+                    <h2>{{ e(projectContent.title) }}</h2>
+                    <span class="year">({{ projectContent.year }}</span
+                    >)
                 </div>
 
                 <p v-html="e(projectContent.description)"></p>
@@ -115,12 +108,6 @@ export default {
     },
     computed: {
         ...mapState(['is_touch']),
-        description() {
-            return `
-                    <s><h3>${this.projectContent.title}</h3> ${this.projectContent.year}</s>
-                    <s>${this.projectContent.description}</s>
-                `
-        },
         classObject() {
             return {
                 visible: this.projectInViewport,
@@ -199,8 +186,7 @@ export default {
     mounted() {
         this.carousel = this.$el.getElementsByClassName('VueCarousel')[0]
 
-        this.standardContentDimensions.width =
-            this.carousel.getBoundingClientRect().width
+        this.standardContentDimensions.width = this.carousel.getBoundingClientRect().width
         this.standardContentDimensions.height =
             (this.carousel.getBoundingClientRect().width / 4) * 3
 
@@ -280,9 +266,12 @@ export default {
     padding-bottom: 15vh;
     color: #007bff;
 
-    h3 {
+    h2 {
         font-size: inherit;
         display: inline-block;
+    }
+    .year {
+        font-style: italic;
     }
     a {
         text-decoration: underline;
@@ -295,10 +284,6 @@ export default {
 
 .description {
     margin-top: calc(1vw - 5px);
-}
-
-.visible {
-    /*background: rgba(0, 255, 128, 0.1);*/
 }
 
 .fading-description {
