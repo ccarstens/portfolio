@@ -1,62 +1,66 @@
 <template>
-    <button @click="handleChange" :class="classObject" class="global-audio-control">
-        <span v-if="state.getGlobalVolume() === 1">🔊</span>
+    <button
+        :class="classObject"
+        class="global-audio-control"
+        @click="handleChange"
+    >
+        <span v-if="global_volume === 1">🔊</span>
         <span v-else>🔈</span>
     </button>
 </template>
 
 <script>
-    import state from '../state'
+import { mapState, mapMutations } from 'vuex'
 
-    export default {
-        name: "GlobalAudioControl",
-        data(){
+export default {
+    name: 'GlobalAudioControl',
+    computed: {
+        ...mapState([
+            'can_autoplay_audio',
+            'global_volume',
+            'min_one_media_element_init',
+        ]),
+        classObject() {
             return {
-                state
+                show:
+                    this.can_autoplay_audio || this.min_one_media_element_init,
             }
         },
-        methods: {
-            handleChange(){
-                if(this.state.getGlobalVolume() === 1){
-                    this.state.setGlobalVolume(0)
-                }else{
-                    this.state.setGlobalVolume(1)
-                }
+    },
+    methods: {
+        ...mapMutations(['SET_GLOBAL_VOLUME']),
+        handleChange() {
+            if (this.global_volume === 1) {
+                this.SET_GLOBAL_VOLUME(0)
+            } else {
+                this.SET_GLOBAL_VOLUME(1)
             }
         },
-        computed: {
-            classObject(){
-                return {
-                    show: this.state.getCanAutoplayAudio() || this.state.getAtLeastOneMediaElementInitialized()
-                }
-            }
-        }
-    }
+    },
+}
 </script>
 
 <style lang="scss" scoped>
+button:focus {
+    outline: none;
+}
 
-    button:focus{
-        outline: none;
-    }
+button {
+    opacity: 0;
+    pointer-events: none;
 
-    button{
-        opacity: 0;
-        pointer-events: none;
+    background: none;
+    border: none;
+    pointer-events: auto;
+    cursor: pointer;
 
-        background: none;
-        border: none;
-        pointer-events: auto;
-        cursor: pointer;
+    transition: opacity 300ms ease-in-out;
+    position: relative;
+    top: -0.2em;
+}
 
-        transition: opacity 300ms ease-in-out;
-        position: relative;
-        top: -.2em;
-
-    }
-
-    .show{
-        opacity: 1;
-        pointer-events: auto;
-    }
+.show {
+    opacity: 1;
+    pointer-events: auto;
+}
 </style>

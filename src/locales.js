@@ -1,6 +1,5 @@
 export const defaultLocale = 'en'
-export const locales = [
-    {
+export const locales = [{
         code: 'en',
         name: 'english',
         dir: 'ltr'
