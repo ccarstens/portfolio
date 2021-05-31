@@ -12,7 +12,6 @@
 
 <script>
 import { labels } from '../assets/content'
-import e from '../localizedContent'
 import av from '../av'
 
 import P5Sketch from './P5Sketch'
@@ -54,7 +53,6 @@ export default {
     },
     mounted() {},
     methods: {
-        e,
         ...mapMutations(['SET_AUDIO_ACTIVATION_FINISHED']),
         ...mapActions(['removeOverlay']),
         initMedia() {

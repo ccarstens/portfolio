@@ -3,20 +3,24 @@ export const labels = {
         en: 'click for sound',
         de: 'klick für Ton',
         ja: 'JAPANESE GOES HERE',
-        ru: 'щелчок'
+        ru: 'щелчок',
     },
     projects: {
         en: 'projects',
         de: 'projekte',
         ja: 'JAPANESE GOES HERE',
-        ru: 'проекты'
+        ru: 'проекты',
     },
     visit: {
         en: 'visit online version',
         de: 'Online Version ansehen',
         ja: 'JAPANESE GOES HERE',
-        ru: 'посетить онлайн версию'
-    }
+        ru: 'посетить онлайн версию',
+    },
+    playAudioSample: {
+        en: 'play audio sample',
+        de: 'Hörprobe abspielen',
+    },
 }
 
 export const content = {
@@ -40,83 +44,74 @@ export const content = {
         <p>междисциплинарный студент визуальной коммуникации с интересом к веб-разработке, дизайну, модной фотографии и физическим вычислениям.</p>
     <p>во время учебы я руководил агентством веб-дизайна Удивительные ребята которое в настоящее время работает на Apple.</p>
 <p>Мне нравится узнавать новое, общаться, работать, читать, импровизировать на фортепиано, есть хлеб с маслом и пить яблочный напиток.</p>
-<p>Я с нетерпением жду <a href="mailto:cornelius.carstens@me.com">ваше мнение, отзыв</a>.</p>`
-
-
+<p>Я с нетерпением жду <a href="mailto:cornelius.carstens@me.com">ваше мнение, отзыв</a>.</p>`,
     },
-    projects: [
-
-        {
+    projects: [{
             title: 'Prototyping an Autonomous Virtual Assistant',
             year: 2019,
             description: {
-                en: `<p>“Ava” is an autonomous virtual assistant that solves complex tasks in the user’s private and business life.</p><p>The concept was created after multiple stages of experimental UX research. An interactive voice prototype of “Ava” was implemented in Python using wit.ai for intent detection and named entity extraction.</p>`
+                en: `<p>“Ava” is an autonomous virtual assistant that solves complex tasks in the user’s private and business life.</p><p>The concept was created after multiple stages of experimental UX research. An interactive voice prototype of “Ava” was implemented in Python using wit.ai for intent detection and named entity extraction.</p>`,
             },
             url: {
                 uri: 'https://ava.how',
                 label: {
                     en: 'Concept Overview',
-                }
+                },
             },
-            media: [
-                {
+            media: [{
                     src: 'assets/projects/ava/01_ava_name_cornelius_carstens.png',
                     description: {},
                     alt: {
-                        en: 'Logo of Ava - Autonomous Virtual Assistant'
-                    }
+                        en: 'Logo of Ava - Autonomous Virtual Assistant',
+                    },
                 },
                 {
                     src: 'assets/projects/ava/02_ava_network_cornelius_carstens.png',
                     description: {
-                        en: 'Ava is communicating with their user as well as other user\'s virtual assistants in order to solve a task'
+                        en: "Ava is communicating with their user as well as other user's virtual assistants in order to solve a task",
                     },
                     alt: {
-                        en: 'Network Overview of Ava - Autonomous Virtual Assistant'
-                    }
+                        en: 'Network Overview of Ava - Autonomous Virtual Assistant',
+                    },
                 },
                 {
                     src: 'assets/projects/ava/04_ava_scripted_conversation_cornelius_carstens.png',
                     description: {
-                        en: 'In the process of creating the concept multiple fictional dialogues were written based on formalized planning strategies'
+                        en: 'In the process of creating the concept multiple fictional dialogues were written based on formalized planning strategies',
                     },
                     noShadow: true,
                     alt: {
-                        en: 'Scripted Conversation - Autonomous Virtual Assistant'
-                    }
+                        en: 'Scripted Conversation - Autonomous Virtual Assistant',
+                    },
                 },
                 {
                     src: 'assets/projects/ava/05_ava_training_cornelius_carstens.png',
                     description: {
-                        en: 'Trust between user and assistant is vital - the more mutual trust there is, the less specific the user\'s queries have to be'
+                        en: "Trust between user and assistant is vital - the more mutual trust there is, the less specific the user's queries have to be",
                     },
                     alt: {
-                        en: 'Training - Autonomous Virtual Assistant'
-                    }
+                        en: 'Training - Autonomous Virtual Assistant',
+                    },
                 },
                 {
                     src: 'assets/projects/ava/03_ava_recipe_cornelius_carstens.png',
                     description: {
-                        en: 'Ava has multiple recipies in order to make meaningful suggestions'
+                        en: 'Ava has multiple recipies in order to make meaningful suggestions',
                     },
                     alt: {
-                        en: 'Day Suggestion Recipe - Autonomous Virtual Assistant'
-                    }
+                        en: 'Day Suggestion Recipe - Autonomous Virtual Assistant',
+                    },
                 },
-                
-            ]
+            ],
         },
         {
             title: 'Conversation with LEA',
             year: 2017,
             description: {
-
-
                 de: `
                 <p>Interaktive Installation bei der die Betrachtenden einzeln in einem Kinderzelt aus Tüchern sitzen. In dieser intimen Atmosphäre entwickelt sich ein Gespräch zwischen einer kindlich klingenden Computerstimme und der Betrachterin. Die Stimme stellt Fragen mit denen sie die menschliche Welt zu verstehen versucht. Bedingt durch die Antworten der Teilnehmer ist der Gesprächsverlauf in jedem Gespräch unterschiedlich.</p>
                 <p>Ausgestellt auf dem World Usability Day Berlin 2017</p>
                 `,
-
 
                 en: `
                 	<p>Interactive Installation with a voice interface that has the personality of a robot child, curious about the human world. The participants sit one by one in a children’s tent in dim, warm light. In this intimate atmosphere, a conversation between the child-like synthetic voice and the interacting visitor develops.
@@ -128,14 +123,13 @@ The conversation addresses every day life topics along with ethical questions an
             В этой интимной атмосфере развивается разговор между детским звучащим синтетическим голосом и самим посетителем.
                 Голос имитирует любопытство ребенка, задает вопросы, направленные на понимание того, как работает мир людей.
                 Исходя из ответов участника, разговор идет в разных направлениях.</p>
-        Это я показал на Всемирный день юзабилити в Берлине в 2017 году.`
+        Это я показал на Всемирный день юзабилити в Берлине в 2017 году.`,
             },
             url: ``,
             globalAudio: {
-                src: 'assets/projects/lea/lea_cornelius_carstens.mp3'
+                src: 'assets/projects/lea/lea_cornelius_carstens.mp3',
             },
             media: [
-
                 // {
                 //     src: 'assets/projects/lea/04_lea_cornelius_carstens.jpg',
                 //     description: {
@@ -151,17 +145,17 @@ The conversation addresses every day life topics along with ethical questions an
                         The atmosphere creates a calm and trusting mood.
                         `,
                         de: 'Nachdem die Besucher ihre Schuhe ausgezogen haben betreten sie durch eine schmale Öffnung das Zelt.\n' +
-                        'Die Atmosphäre zielt darauf ab die Teilnehmer in eine entspannte und vertrauende Haltung zu bringen.',
+                            'Die Atmosphäre zielt darauf ab die Teilnehmer in eine entspannte und vertrauende Haltung zu bringen.',
                         ja: 'JAPANESE GOES HERE',
                         ru: `Сняв обувь, посетители входят в палатку через узкое отверстие
-            Атмосфера направлена ​​на то, чтобы принести посетителям спокойное и доверительное настроение`
+            Атмосфера направлена ​​на то, чтобы принести посетителям спокойное и доверительное настроение`,
                     },
                     alt: {
                         en: 'interior of the tent',
                         de: 'Innenraum des Zeltes',
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'Интерьер шатра'
-                    }
+                        ru: 'Интерьер шатра',
+                    },
                 },
                 {
                     src: 'assets/projects/lea/02_lea_cornelius_carstens.jpg',
@@ -169,14 +163,14 @@ The conversation addresses every day life topics along with ethical questions an
                         en: 'Construction of the tent: left is the tent, right is the access tunnel',
                         de: 'Zeltkonstruktion; links Zelt, rechts Zugangstunnel mit Platz für die Türe des Raumes',
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'Конструкция шатра: левый шатер, правый туннель с пространством для двери комнаты'
+                        ru: 'Конструкция шатра: левый шатер, правый туннель с пространством для двери комнаты',
                     },
                     alt: {
-                        en: 'exterior view of the tent\'s construction',
+                        en: "exterior view of the tent's construction",
                         de: 'Zeltkonstruktion von Außen',
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'внешний вид конструкции палатки'
-                    }
+                        ru: 'внешний вид конструкции палатки',
+                    },
                 },
                 {
                     src: 'assets/projects/lea/03_lea_cornelius_carstens.jpg',
@@ -184,14 +178,14 @@ The conversation addresses every day life topics along with ethical questions an
                         en: 'hand written draft of the conversation sequences',
                         de: 'Handschriftlicher Entwurf der Gesprächssequenzen',
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'рукописный черновик последовательности разговоров'
+                        ru: 'рукописный черновик последовательности разговоров',
                     },
                     alt: {
                         en: 'Original draft of the conversation sequences',
                         de: 'Grundentwurf der Gesprächssequenzen',
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'Первоначальный черновик последовательности бесед'
-                    }
+                        ru: 'Первоначальный черновик последовательности бесед',
+                    },
                 },
                 {
                     src: 'assets/projects/lea/07_lea_cornelius_carstens.jpg',
@@ -203,8 +197,8 @@ The conversation addresses every day life topics along with ethical questions an
                         Das Gespräch ist anhand einzelner Themen in Sequenzen unterteilt. Sequenzen beinhalten Leas Reaktionen auf die Antworten der Teilnehmer.
                         `,
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'Разговор имеет структуру отдельных последовательностей, каждая из которых имеет свою тему.Последовательности содержат реакции Леа на ответы участника. '
-                    }
+                        ru: 'Разговор имеет структуру отдельных последовательностей, каждая из которых имеет свою тему.Последовательности содержат реакции Леа на ответы участника. ',
+                    },
                 },
                 {
                     src: 'assets/projects/lea/09_lea_cornelius_carstens.jpg',
@@ -216,58 +210,58 @@ The conversation addresses every day life topics along with ethical questions an
                         Lea versteht bejahende, verneinende und unentschlossene Antworten. Zudem erwartet sie auf manche Fragen eine freie Antwort, die sie zur Kenntnis nimmt.
                         `,
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'Леа понимает позитивные, негативные и неопределенные ответы. Более того, на некоторые вопросы она ожидает свободных ответов и подтверждает ответ'
-                    }
+                        ru: 'Леа понимает позитивные, негативные и неопределенные ответы. Более того, на некоторые вопросы она ожидает свободных ответов и подтверждает ответ',
+                    },
                 },
-    //             {
-    //                 src: 'assets/projects/lea/05_lea_cornelius_carstens.jpg',
-    //                 description: {
-    //                     en: `
-    //                     Leas voice uses vocal smilies to enrich her expressions with meaning and accentuation.
-		// 				In conjunction with precisely controlled delays, an impression of lifelike comprehension is given.
-    //                     `,
-    //                     de: `
-    //                     Leas Stimme verfügt über Vocal Smileys, die den Aussagen Betonung und Ausdruck hinzufügen.
-		// 				In Verbindung mit präzise austarierten Verzögerungen wird der Eindruck von menschlichem Verständnis erzeugt.
-    //                     `,
-    //                     ja: 'JAPANESE GOES HERE',
-    //                     ru: 'Голос Леа использует голосовые смайлики, чтобы обогатить свои выражения смыслом и интонацией.В сочетании с точно контролируемыми паузами между словами возникает впечатление человеческого понимания'
-    //                 }
-    //             },
-    //             {
-    //                 src: 'assets/projects/lea/06_lea_cornelius_carstens.jpg',
-    //                 description: {
-    //                     en: `
-    //                     The conversation can be clustered in three phases. In the beginning Lea asks questions on natural science matters.
-		// 				The second phase deals with social norms that regulate the daily human interaction. In the last phase she inquires about ethical questions.
-    //                     `,
-    //                     de: `
-    //                     Das Gespräch gliedert sich in drei Phasen. Zu Beginn stellt Lea weltliche, naturwissenschaftliche Fragen.
-		// 				Die zweite Phase bezieht sich auf psychosoziale Normen, die den tagtäglichen Umgang mit anderen Menschen betreffen.
-		// 				Die letzte Phase befasst sich mit moralischen Fragestellungen.
-    //                     `,
-    //                     ja: 'JAPANESE GOES HERE',
-    //                     ru: `Диалог можно сгруппировать в три этапа. Сначала Леа задает вопросы по естественным наукам.
-    // Второй этап касается социальных норм, регулирующих повседневное взаимодействие человека. На последнем этапе она интересуется этическими вопросами`
-    //                 }
-    //             },
-    //             {
-    //                 src: 'assets/projects/lea/08_lea_cornelius_carstens.jpg',
-    //                 description: {
-    //                     en: `
-    //                     'Is it ok to kill people I don't like?' is one of the core questions of the project.
-		// 				Participants reported that it nearly impossible to respond affirmatively, even as a joke, because they felt somewhat responsible for Lea.
-    //                     `,
-    //                     de: `
-    //                     Die Frage ob man Menschen, die man nicht mag töten darf ist eine der Kernfragen.
-		// 				Teilnehmer haben die Rückmeldung gegeben, dass es aufgrund des Verantwortungsbewusstseins für Lea schwer fällt auch nur zum Scherz mit 'Ja' zu antworten.
-    //                     `,
-    //                     ja: 'JAPANESE GOES HERE',
-    //                     ru: `Нормально ли убивать людей, которые мне не нравятся?"это один из ключевых вопросов проекта.
-    // Участники ответили, что это почти невозможно. Даже если в шутку ответить "да", то через некоторое время вы чувствуете ответственность за нее`
-    //                 }
-    //             },
-            ]
+                //             {
+                //                 src: 'assets/projects/lea/05_lea_cornelius_carstens.jpg',
+                //                 description: {
+                //                     en: `
+                //                     Leas voice uses vocal smilies to enrich her expressions with meaning and accentuation.
+                // 				In conjunction with precisely controlled delays, an impression of lifelike comprehension is given.
+                //                     `,
+                //                     de: `
+                //                     Leas Stimme verfügt über Vocal Smileys, die den Aussagen Betonung und Ausdruck hinzufügen.
+                // 				In Verbindung mit präzise austarierten Verzögerungen wird der Eindruck von menschlichem Verständnis erzeugt.
+                //                     `,
+                //                     ja: 'JAPANESE GOES HERE',
+                //                     ru: 'Голос Леа использует голосовые смайлики, чтобы обогатить свои выражения смыслом и интонацией.В сочетании с точно контролируемыми паузами между словами возникает впечатление человеческого понимания'
+                //                 }
+                //             },
+                //             {
+                //                 src: 'assets/projects/lea/06_lea_cornelius_carstens.jpg',
+                //                 description: {
+                //                     en: `
+                //                     The conversation can be clustered in three phases. In the beginning Lea asks questions on natural science matters.
+                // 				The second phase deals with social norms that regulate the daily human interaction. In the last phase she inquires about ethical questions.
+                //                     `,
+                //                     de: `
+                //                     Das Gespräch gliedert sich in drei Phasen. Zu Beginn stellt Lea weltliche, naturwissenschaftliche Fragen.
+                // 				Die zweite Phase bezieht sich auf psychosoziale Normen, die den tagtäglichen Umgang mit anderen Menschen betreffen.
+                // 				Die letzte Phase befasst sich mit moralischen Fragestellungen.
+                //                     `,
+                //                     ja: 'JAPANESE GOES HERE',
+                //                     ru: `Диалог можно сгруппировать в три этапа. Сначала Леа задает вопросы по естественным наукам.
+                // Второй этап касается социальных норм, регулирующих повседневное взаимодействие человека. На последнем этапе она интересуется этическими вопросами`
+                //                 }
+                //             },
+                //             {
+                //                 src: 'assets/projects/lea/08_lea_cornelius_carstens.jpg',
+                //                 description: {
+                //                     en: `
+                //                     'Is it ok to kill people I don't like?' is one of the core questions of the project.
+                // 				Participants reported that it nearly impossible to respond affirmatively, even as a joke, because they felt somewhat responsible for Lea.
+                //                     `,
+                //                     de: `
+                //                     Die Frage ob man Menschen, die man nicht mag töten darf ist eine der Kernfragen.
+                // 				Teilnehmer haben die Rückmeldung gegeben, dass es aufgrund des Verantwortungsbewusstseins für Lea schwer fällt auch nur zum Scherz mit 'Ja' zu antworten.
+                //                     `,
+                //                     ja: 'JAPANESE GOES HERE',
+                //                     ru: `Нормально ли убивать людей, которые мне не нравятся?"это один из ключевых вопросов проекта.
+                // Участники ответили, что это почти невозможно. Даже если в шутку ответить "да", то через некоторое время вы чувствуете ответственность за нее`
+                //                 }
+                //             },
+            ],
         },
         {
             title: 'Poem Generator',
@@ -286,13 +280,12 @@ The conversation addresses every day life topics along with ethical questions an
                 ja: 'JAPANESE GOES HERE',
                 ru: `экспериментируйте с излишней этикой
     создание текстового контента и фэшн-фотографии для междисциплинарного журнального проекта
-    Стихи, которые были созданы на основе коллективных мыслей, составляют весь текстовый контент журнала`
+    Стихи, которые были созданы на основе коллективных мыслей, составляют весь текстовый контент журнала`,
             },
             // globalAudio: {
             //     src: 'assets/nantes.mp3'
             // },
-            media: [
-                {
+            media: [{
                     src: 'assets/projects/eee/00_eee_cornelius_carstens.mp4',
                     description: {
                         en: `
@@ -302,8 +295,8 @@ The conversation addresses every day life topics along with ethical questions an
                         Mit Hilfe von pattern einer NLP python Library wird der Ausgangstext grammatikalisch/syntaktisch analysiert.
                         `,
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'С помощью <em>pattern < / em> библиотека обработки естественного языка,которая была передана для языка програмирования pyton,входной текст граммматически анализируется'
-                    }
+                        ru: 'С помощью <em>pattern < / em> библиотека обработки естественного языка,которая была передана для языка програмирования pyton,входной текст граммматически анализируется',
+                    },
                 },
                 {
                     src: 'assets/projects/eee/01_eee_cornelius_carstens.jpg',
@@ -312,8 +305,8 @@ The conversation addresses every day life topics along with ethical questions an
                         en: `
                         `,
                         de: `
-                        `
-                    }
+                        `,
+                    },
                 },
                 {
                     src: 'assets/projects/eee/02_eee_cornelius_carstens.jpg',
@@ -321,8 +314,8 @@ The conversation addresses every day life topics along with ethical questions an
                         en: `Part of the generated manifesto for the text cover
                         `,
                         de: `Teil des generierten Manifests auf dem Text-Cover
-                        `
-                    }
+                        `,
+                    },
                 },
                 {
                     src: 'assets/projects/eee/03_eee_cornelius_carstens.jpg',
@@ -335,8 +328,8 @@ The conversation addresses every day life topics along with ethical questions an
                         Nachdem neue Sätze zusammengefügt wurden werden die Satzglieder zu Versen zusammengeführt und entsprechend konjugiert.
                         `,
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'После того, как новые предложения были собраны вместе, фразы объединяются в стих и комбинируются соответственно'
-                    }
+                        ru: 'После того, как новые предложения были собраны вместе, фразы объединяются в стих и комбинируются соответственно',
+                    },
                 },
                 {
                     src: 'assets/projects/eee/04_eee_cornelius_carstens.jpg',
@@ -345,8 +338,8 @@ The conversation addresses every day life topics along with ethical questions an
                         en: `
                         `,
                         de: `
-                        `
-                    }
+                        `,
+                    },
                 },
                 {
                     src: 'assets/projects/eee/05_eee_cornelius_carstens.jpg',
@@ -355,10 +348,10 @@ The conversation addresses every day life topics along with ethical questions an
                         en: `
                         `,
                         de: `
-                        `
-                    }
+                        `,
+                    },
                 },
-            ]
+            ],
         },
         {
             title: 'Marius Hirschel',
@@ -367,17 +360,16 @@ The conversation addresses every day life topics along with ethical questions an
                 en: 'Design and development of custom portfolio for the Berlin based hair stylist Marius Hirschel',
                 de: 'Design und Entwicklung von Custom Portfolio für Hair Stylist aus Berlin',
                 ja: 'JAPANESE GOES HERE',
-                ru: 'Дизайн и разработка индивидуального портфолио для берлинского парикмахера'
+                ru: 'Дизайн и разработка индивидуального портфолио для берлинского парикмахера',
             },
-            media: [
-                {
+            media: [{
                     src: 'assets/projects/mh/01_marius_hirschel_cornelius_carstens.mp4',
                     description: {
-                        en: 'In order to guide the viewer\'s attention to each image, the photos do not scroll vertically but fade in-and-out as the user is scrolling.',
+                        en: "In order to guide the viewer's attention to each image, the photos do not scroll vertically but fade in-and-out as the user is scrolling.",
                         de: 'Um die Aufmerksamkeit der Benutzer auf jedes einzelne Bild zu lenken werden die Inhalte nicht vertikal bewegt sondern durch scrollen auf der Seite ein und aus gefaded.',
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'Чтобы привлечь внимание зрителя к каждому изображению, фотографии не прокручиваются вертикально, а исчезают при прокрутке страницы'
-                    }
+                        ru: 'Чтобы привлечь внимание зрителя к каждому изображению, фотографии не прокручиваются вертикально, а исчезают при прокрутке страницы',
+                    },
                 },
                 {
                     src: 'assets/projects/mh/02_marius_hirschel_cornelius_carstens.jpg',
@@ -385,10 +377,10 @@ The conversation addresses every day life topics along with ethical questions an
                         en: 'In order to work without a hint to scroll, the contents the first image is positioned in a way that forces the user to scroll in order to see it fully.',
                         de: 'Um auf einen Hinweis zum Scrollen verzichten zu können ist das erste Bild so platziert, dass auf jeden Fall gescrollt werden muss.',
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'Для того, чтобы работать без подсказки, первое изображение расположено таким образом, что заставляет пользователя прокручивать, чтобы увидеть его полностью'
-                    }
-                }
-            ]
+                        ru: 'Для того, чтобы работать без подсказки, первое изображение расположено таким образом, что заставляет пользователя прокручивать, чтобы увидеть его полностью',
+                    },
+                },
+            ],
         },
         {
             title: 'Fear',
@@ -397,21 +389,20 @@ The conversation addresses every day life topics along with ethical questions an
                 en: 'Rapid prototype of an assault rifle that automatically aims at the head of the viewer. This installation is a critical examination of autonomous combat systems and automated warfare.',
                 de: 'Rapid Prototype einer Installation bei der sich ein Sturmgewehr automatisch auf den Kopf der Betrachter ausrichtet und sie verfolgt. Kritische Auseinandersetzung mit autonomen Waffensystemen und automatisierter Kriegsführung.',
                 ja: 'JAPANESE GOES HERE',
-                ru: 'Быстрый прототип штурмовой винтовки, которая автоматически целится в голову зрителя. Данная установка представляет собой критическое экспертизу автономных боевых систем и средств автоматизированной борьбы'
+                ru: 'Быстрый прототип штурмовой винтовки, которая автоматически целится в голову зрителя. Данная установка представляет собой критическое экспертизу автономных боевых систем и средств автоматизированной борьбы',
             },
             darkMode: true,
             // globalAudio: {
             //     src: ``
             // },
-            media: [
-                {
+            media: [{
                     src: 'assets/projects/fear/01_fear_cornelius_carstens.jpg',
                     description: {
                         en: 'Mockup of a possible exhibition of the prototype',
                         de: 'Mockup in möglichem Ausstellungskontext',
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'Макет возможной выставки прототипа'
-                    }
+                        ru: 'Макет возможной выставки прототипа',
+                    },
                 },
                 {
                     src: 'assets/projects/fear/02_fear_cornelius_carstens.mp4',
@@ -419,8 +410,8 @@ The conversation addresses every day life topics along with ethical questions an
                         en: 'By using video imaging in conjunction with face recognition, the position of the viewer is calculated. The servo motors receive that information via serial communication and adjust their angles respectively.',
                         de: 'Über ein Videobild und Gesichtserkennung wird die Position des Betrachters ermittelt. Auf dieser Grundlage werden Servomotoren seriell angesteuert und bewegen das Gewehr an die entsprechende Position.',
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'При использовании видео в сочетании с распознаванием лиц рассчитывается позиция зрителя. Моторы сервопривода получают эту информацию через серийное сообщение и регулируют их углы соответственно'
-                    }
+                        ru: 'При использовании видео в сочетании с распознаванием лиц рассчитывается позиция зрителя. Моторы сервопривода получают эту информацию через серийное сообщение и регулируют их углы соответственно',
+                    },
                 },
                 // {
                 //     src: 'assets/projects/fear/03_fear_cornelius_carstens.jpg',
@@ -432,10 +423,10 @@ The conversation addresses every day life topics along with ethical questions an
                         en: 'first tests combining facial recognition and serial communication',
                         de: 'Grundlegende Tests zu Gesichtserkennung und serieller Kommunikation',
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'первые тесты, сочетающие распознавание лиц и последовательную связь'
-                    }
+                        ru: 'первые тесты, сочетающие распознавание лиц и последовательную связь',
+                    },
                 },
-            ]
+            ],
         },
         {
             title: 'Goetze',
@@ -444,14 +435,13 @@ The conversation addresses every day life topics along with ethical questions an
                 en: 'Website and online shop for a Berlin based clothing label',
                 de: 'Website und Online Shop für ein Mode-Label aus Berlin',
                 ja: 'JAPANESE GOES HERE',
-                ru: 'Сайт и интернет-магазин берлинской марки мужской одежды'
+                ru: 'Сайт и интернет-магазин берлинской марки мужской одежды',
             },
             darkMode: false,
             url: 'http://goetze.xyz',
-            media: [
-                {
+            media: [{
                     src: 'assets/projects/goetze/01_goetze_cornelius_carstens.mp4',
-                    description: ``
+                    description: ``,
                 },
                 {
                     src: 'assets/projects/goetze/05_goetze_cornelius_carstens.mp4',
@@ -459,29 +449,29 @@ The conversation addresses every day life topics along with ethical questions an
                         en: 'Inspired by images of <a href="http://www.tvfilmprops.co.uk/userdata/prodpics/PRODPIC-2426-6.jpg" target="_blank">stacks of tube TVs</a>, we developed a video wall that displays accordingly produced videos.',
                         de: 'Inspiriert durch <a @click.stop="" href="http://www.tvfilmprops.co.uk/userdata/prodpics/PRODPIC-2426-6.jpg" target="_blank">Röhrenfernseher-Wände</a> haben wir ein video wall feature entwickelt, das entsprechend produzierte Videos synchron wiedergibt',
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'Вдохновленный образами <a href="http://www.tvfilmprops.co.uk/userdata/prodpics/PRODPIC-2426-6.jpg" target="_blank">старые телевизоры,стоящие друг на друге и образующие стену</a> мы разработали видео-характеристики стены,которые показывают все видео одновременно'
-                    }
+                        ru: 'Вдохновленный образами <a href="http://www.tvfilmprops.co.uk/userdata/prodpics/PRODPIC-2426-6.jpg" target="_blank">старые телевизоры,стоящие друг на друге и образующие стену</a> мы разработали видео-характеристики стены,которые показывают все видео одновременно',
+                    },
                 },
                 {
                     src: 'assets/projects/goetze/02_goetze_cornelius_carstens.jpg',
-                    description: ``
+                    description: ``,
                 },
                 {
                     src: 'assets/projects/goetze/03_goetze_cornelius_carstens.jpg',
-                    description: ``
+                    description: ``,
                 },
                 {
                     src: 'assets/projects/goetze/04_goetze_cornelius_carstens.jpg',
-                    description: ``
+                    description: ``,
                 },
-            ]
+            ],
         },
         {
             title: {
                 en: 'Stethoscope',
                 de: 'Stethoskop',
                 ja: 'JAPANESE GOES HERE',
-                ru: 'Стетоскоп'
+                ru: 'Стетоскоп',
             },
             year: 2018,
             darkMode: true,
@@ -498,17 +488,16 @@ The conversation addresses every day life topics along with ethical questions an
                 ja: 'JAPANESE GOES HERE',
                 ru: `<p>реализованные интерфейсы</p>
     <p>Ядром этой инсталляции является противостояние участника со своими телесными сигналами. Участники слушают свое собственное сердцебиение с помощью стетоскопа, стоя в темной комнате. В центре помещения частицы движутся вверх в темпе сердцебиения в голографической проекции.</p>
-        <p>Слуховое и зрительное восприятие участника почти полностью управляется сигналами собственного тела, в то время как другие сенсорные впечатления избегаются</p>`
+        <p>Слуховое и зрительное восприятие участника почти полностью управляется сигналами собственного тела, в то время как другие сенсорные впечатления избегаются</p>`,
             },
-            media: [
-                {
+            media: [{
                     src: 'assets/projects/stethoscope/02_stethoscope_cornelius_carstens.mp4',
                     description: {
                         en: 'Please listen with headphones',
                         de: 'Bitte mit Kopfhörern hören',
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'Пожалуйста, слушайте в наушниках'
-                    }
+                        ru: 'Пожалуйста, слушайте в наушниках',
+                    },
                 },
                 {
                     src: 'assets/projects/stethoscope/01_stethoscope_cornelius_carstens.gif',
@@ -516,8 +505,8 @@ The conversation addresses every day life topics along with ethical questions an
                         en: 'The unrestricted viewing angle allows participants to roam freely while interacting with the installation.',
                         de: 'Durch den uneingeschränkten Betrachtungswinkel kann sich die Betrachterin frei im Raum bewegen.',
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'Благодаря неограниченному углу обзора участник может свободно перемещаться во время взаимодействия с установкой'
-                    }
+                        ru: 'Благодаря неограниченному углу обзора участник может свободно перемещаться во время взаимодействия с установкой',
+                    },
                 },
                 {
                     src: 'assets/projects/stethoscope/03_stethoscope_cornelius_carstens.jpg',
@@ -526,8 +515,8 @@ The conversation addresses every day life topics along with ethical questions an
                         de: 'Manipuliertes Stethoskop mit eingebautem Tonabnehmer und Kopfhörern',
                         ja: 'JAPANESE GOES HERE',
                         ru: `Настроенный
-                стетоскоп со встроенным микрофоном и наушниками`
-                    }
+                стетоскоп со встроенным микрофоном и наушниками`,
+                    },
                 },
                 // {
                 //     sketchName: 'DotCloud',
@@ -544,8 +533,8 @@ The conversation addresses every day life topics along with ethical questions an
                         en: 'In order to guarantee only a singular reflection in the holograph, I used 1.5 mm acrylic sheets.',
                         de: 'Damit es im Hologramm nur eine einzelne sichtbare Spiegelung gibt, ist die Pyramide aus 1,5 mm dünnem Acrylglas gefertigt.',
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'Чтобы гарантировать одиночное отражение, видимое в голограмме,толщина акриловых листов для пирамиды должна составлять 1,5 мм.'
-                    }
+                        ru: 'Чтобы гарантировать одиночное отражение, видимое в голограмме,толщина акриловых листов для пирамиды должна составлять 1,5 мм.',
+                    },
                 },
                 {
                     src: 'assets/projects/stethoscope/05_stethoscope_cornelius_carstens.jpg',
@@ -553,8 +542,8 @@ The conversation addresses every day life topics along with ethical questions an
                         en: 'Prototype of the acrylic pyramid for the holograph',
                         de: 'Prototyp der Acryl-Pyramide für das Hologramm',
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'Прототип акриловой пирамиды для голографа'
-                    }
+                        ru: 'Прототип акриловой пирамиды для голографа',
+                    },
                 },
                 {
                     src: 'assets/projects/stethoscope/06_stethoscope_cornelius_carstens.mp4',
@@ -562,10 +551,10 @@ The conversation addresses every day life topics along with ethical questions an
                         en: 'Adjusting the suspension of the acrylic pyramid',
                         de: 'Testbild zur Justierung der Aufhängung',
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'Тестовое изображение для регулировки подвески акриловой пирамиды'
-                    }
+                        ru: 'Тестовое изображение для регулировки подвески акриловой пирамиды',
+                    },
                 },
-            ]
+            ],
         },
         {
             title: 'Christian Stemmler',
@@ -574,13 +563,12 @@ The conversation addresses every day life topics along with ethical questions an
                 en: 'Design and development of custom portfolio for the Berlin based fashion stylist',
                 de: 'Design und Entwicklung von Custom Portfolio für Mode Stylist aus Berlin',
                 ja: 'JAPANESE GOES HERE',
-                ru: 'Дизайн и разработка индивидуального портфолио для берлинского модного стилиста'
+                ru: 'Дизайн и разработка индивидуального портфолио для берлинского модного стилиста',
             },
             url: 'http://christianstemmler.com',
-            media: [
-                {
+            media: [{
                     src: 'assets/projects/stemmi/02_christian_stemmler_cornelius_carstens.mp4',
-                    description: ``
+                    description: ``,
                 },
                 {
                     src: 'assets/projects/stemmi/01_christian_stemmler_cornelius_carstens.jpg',
@@ -592,14 +580,14 @@ The conversation addresses every day life topics along with ethical questions an
                         Das Layout greift den visuellen Eindruck von Prints, die auf einem Tisch ausliegen auf.
                         `,
                         ja: 'JAPANESE GOES HERE',
-                        ru: 'Регулируемый макет обеспечивает визуальное впечатление от печати, лежащей на столе.'
-                    }
+                        ru: 'Регулируемый макет обеспечивает визуальное впечатление от печати, лежащей на столе.',
+                    },
                 },
                 {
                     src: 'assets/projects/stemmi/03_christian_stemmler_cornelius_carstens.jpg',
-                    description: ``
+                    description: ``,
                 },
-            ]
+            ],
         },
-    ]
+    ],
 }

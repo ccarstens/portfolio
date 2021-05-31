@@ -36,7 +36,6 @@
 
 <script>
 import { labels } from '../assets/content'
-import e from '../localizedContent'
 
 import LanguageSwitcher from './LanguageSwitcher'
 import GlobalAudioControl from './GlobalAudioControl'
@@ -54,7 +53,6 @@ export default {
         }
     },
     methods: {
-        e,
         jumpToTop() {
             window.scrollTo(0, 0)
         },

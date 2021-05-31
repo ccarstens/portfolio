@@ -11,7 +11,15 @@
             class="row"
         >
             <header
-                class="description col-12 order-0 col-lg-4 order-lg-1 d-flex flex-column"
+                class="
+                    description
+                    col-12
+                    order-0
+                    col-lg-4
+                    order-lg-1
+                    d-flex
+                    flex-column
+                "
             >
                 <div>
                     <h2>{{ e(projectContent.title) }}</h2>
@@ -32,12 +40,6 @@
                         projectUrlLabel
                     }}</a>
                 </p>
-
-                <!--<transition name="fade" mode="out-in">-->
-                <!--<div class="fading-description" v-for="(slide, index) in projectContent.media" :key="index" v-if="index === currentPage">-->
-                <!--{{ e(slide.description) }}-->
-                <!--</div>-->
-                <!--</transition>-->
             </header>
 
             <div class="content col-12 order-1 col-lg-8 order-lg-0">
@@ -74,11 +76,9 @@
 
 <script>
 import { Carousel, Slide } from 'vue-carousel'
-// import {Carousel, Slide} from 'vue-carousel'
 import VisualElement from './VisualElement'
 import AudioSample from './AudioSample'
 import { labels } from '../assets/content'
-import e from '../localizedContent'
 
 import { mapState } from 'vuex'
 export default {
@@ -158,9 +158,9 @@ export default {
         projectUrlLabel() {
             if (this.hasUrl) {
                 if (this.urlIsString) {
-                    return e(labels.visit)
+                    return this.e(labels.visit)
                 }
-                return e(this.projectContent.url.label)
+                return this.e(this.projectContent.url.label)
             }
             return ''
         },
@@ -186,7 +186,8 @@ export default {
     mounted() {
         this.carousel = this.$el.getElementsByClassName('VueCarousel')[0]
 
-        this.standardContentDimensions.width = this.carousel.getBoundingClientRect().width
+        this.standardContentDimensions.width =
+            this.carousel.getBoundingClientRect().width
         this.standardContentDimensions.height =
             (this.carousel.getBoundingClientRect().width / 4) * 3
 
@@ -205,7 +206,6 @@ export default {
         // console.log("img", this.$el.getElementsByTagName('img')[0].naturalWidth)
     },
     methods: {
-        e,
         viewportVisibilityChanged(projectInViewport) {
             this.projectInViewport = projectInViewport
         },

@@ -1,5 +1,5 @@
 import { store } from './store'
-export default (value) => {
+export const e = (value) => {
     if (typeof value === 'string') return value
 
     const lang = store.state.locale
