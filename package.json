@@ -22,14 +22,14 @@
         "vue": "^2.6.12",
         "vue-carousel": "github:ccarstens/vue-carousel#master",
         "vue-observe-visibility": "^0.4.6",
-        "vue-p5": "^0.6.0",
+        "vue-p5": "^0.8.4",
         "vue-router": "^3.5.1",
         "vuex": "^3.6.2"
     },
     "devDependencies": {
         "autoprefixer": "^7.1.2",
         "babel-core": "^6.22.1",
-        "babel-eslint": "^8.2.6",
+        "babel-eslint": "^10.1.0",
         "babel-helper-vue-jsx-merge-props": "^2.0.3",
         "babel-loader": "^7.1.5",
         "babel-plugin-istanbul": "^4.1.1",
@@ -43,6 +43,11 @@
         "copy-webpack-plugin": "^4.6.0",
         "cross-env": "^5.2.1",
         "css-loader": "^0.28.0",
+        "eslint": "^7.27.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-loader": "^4.0.2",
+        "eslint-plugin-prettier": "^3.4.0",
+        "eslint-plugin-vue": "^7.10.0",
         "extract-text-webpack-plugin": "^3.0.0",
         "file-loader": "^1.1.4",
         "friendly-errors-webpack-plugin": "^1.6.1",
@@ -90,5 +95,11 @@
         "> 1%",
         "last 2 versions",
         "not ie <= 8"
-    ]
+    ],
+    "prettier": {
+        "trailingComma": "es5",
+        "tabWidth": 4,
+        "semi": false,
+        "singleQuote": true
+    }
 }

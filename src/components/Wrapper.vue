@@ -1,32 +1,34 @@
 <template>
-  <div id="wrapper" :class="wrapperClassObject">
-    <HeaderElement />
-    <AboutElement :text="e(content.about)" />
+    <div id="wrapper" :class="wrapperClassObject">
+        <HeaderElement />
+        <AboutElement :text="e(content.about)" />
 
-    <div id="projects">
-      <ProjectElement
-        v-for="(project, key) in content.projects"
-        :key="key"
-        :content="project"
-      />
-    </div>
-    <footer class="container-fluid">
-      <div class="row">
-        <div class="col offset-md-1">
-          <p>Cornelius Carstens</p>
-          <p>
-            Warthestr. 46 <br />
-            12051 Berlin <br />
-            Germany
-          </p>
-          <p>
-            <a href="mailto:cornelius.carstens@me.com">Mail</a>
-            <a href="http://github.com/ccarstens" target="_blank">GitHub</a>
-          </p>
+        <div id="projects">
+            <ProjectElement
+                v-for="(project, key) in content.projects"
+                :key="key"
+                :content="project"
+            />
         </div>
-      </div>
-    </footer>
-  </div>
+        <footer class="container-fluid">
+            <div class="row">
+                <div class="col offset-md-1">
+                    <p>Cornelius Carstens</p>
+                    <p>
+                        Warthestr. 46 <br />
+                        12051 Berlin <br />
+                        Germany
+                    </p>
+                    <p>
+                        <a href="mailto:cornelius.carstens@me.com">Mail</a>
+                        <a href="http://github.com/ccarstens" target="_blank"
+                            >GitHub</a
+                        >
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
 </template>
 
 <script>
@@ -43,66 +45,66 @@ export default {
     components: {
         ProjectElement,
         HeaderElement,
-        AboutElement
+        AboutElement,
     },
-    data () {
+    data() {
         return {
             state,
             content,
             mediaElements: null,
             loadedMediaElementsCount: 0,
-            toInitialize: []
+            toInitialize: [],
         }
     },
     methods: {
-        e
+        e,
     },
     computed: {
-        wrapperClassObject () {
+        wrapperClassObject() {
             return {
                 hide:
-          !this.state.getIsTouch() &&
-          // && !this.state.getCanAutoplayAudio()
-          !this.state.getAudioActivationFinished()
+                    !this.state.getIsTouch() &&
+                    // && !this.state.getCanAutoplayAudio()
+                    !this.state.getAudioActivationFinished(),
             }
-        }
+        },
     },
     beforeRouteUpdate: (to, from, next) => {
         document.querySelector('html').setAttribute('lang', to.params.locale)
         console.log(to.params.locale)
         next()
-    }
+    },
 }
 </script>
 
 <style lang="scss">
 .no-audio-activation #wrapper {
-  top: 30vh;
+    top: 30vh;
 }
 
 #wrapper {
-  height: auto;
-  overflow: auto;
-  opacity: 1;
-  -webkit-transition: opacity 300ms ease-in-out;
-  transition: opacity 300ms ease-in-out;
+    height: auto;
+    overflow: auto;
+    opacity: 1;
+    -webkit-transition: opacity 300ms ease-in-out;
+    transition: opacity 300ms ease-in-out;
 
-  margin-top: 50vh;
-  /*position: relative;*/
-  /*<!--top: -30vh;-->*/
+    margin-top: 50vh;
+    /*position: relative;*/
+    /*<!--top: -30vh;-->*/
 }
 
 #wrapper.hide {
-  height: 0;
+    height: 0;
 
-  & .about,
-  .projects,
-  footer,
-  .language-switcher,
-  .global-audio-control,
-  .projects-link,
-  .masthead .possessive {
-    opacity: 0;
-  }
+    & .about,
+    .projects,
+    footer,
+    .language-switcher,
+    .global-audio-control,
+    .projects-link,
+    .masthead .possessive {
+        opacity: 0;
+    }
 }
 </style>
