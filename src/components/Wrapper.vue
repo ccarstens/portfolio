@@ -40,12 +40,19 @@ import { content } from '../assets/content'
 import state from '../state'
 import e from '../localizedContent'
 
+import { mapState } from 'vuex'
+
 export default {
     name: 'Wrapper',
     components: {
         ProjectElement,
         HeaderElement,
         AboutElement,
+    },
+    beforeRouteUpdate: (to, from, next) => {
+        document.querySelector('html').setAttribute('lang', to.params.locale)
+        console.log(to.params.locale)
+        next()
     },
     data() {
         return {
@@ -56,23 +63,19 @@ export default {
             toInitialize: [],
         }
     },
-    methods: {
-        e,
-    },
     computed: {
+        ...mapState(['is_touch']),
         wrapperClassObject() {
             return {
                 hide:
-                    !this.state.getIsTouch() &&
+                    !this.is_touch &&
                     // && !this.state.getCanAutoplayAudio()
                     !this.state.getAudioActivationFinished(),
             }
         },
     },
-    beforeRouteUpdate: (to, from, next) => {
-        document.querySelector('html').setAttribute('lang', to.params.locale)
-        console.log(to.params.locale)
-        next()
+    methods: {
+        e,
     },
 }
 </script>

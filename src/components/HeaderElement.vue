@@ -42,8 +42,6 @@ import e from '../localizedContent'
 import LanguageSwitcher from './LanguageSwitcher'
 import GlobalAudioControl from './GlobalAudioControl'
 
-import { mapActions } from 'vuex'
-
 export default {
     name: 'HeaderElement',
     components: {
@@ -57,38 +55,8 @@ export default {
             state: state,
         }
     },
-    computed: {
-        pageNameClasses() {
-            return {
-                'no-show': !this.state.state.scrollableIsAtHeaderPosition,
-            }
-        },
-    },
-    watch: {
-        offsetTop(newOffset) {
-            this.setHeaderOffset(newOffset)
-        },
-    },
-    created() {
-        window.addEventListener('resize', this.handleResize)
-    },
-    mounted() {
-        this.handleResize()
-    },
     methods: {
         e,
-        ...mapActions(['setHeaderOffset']),
-        handleResize() {
-            setTimeout((event) => {
-                if (this.state.debug)
-                    console.log(
-                        'window.resize triggered, HeaderElement is handling'
-                    )
-                this.offsetTop = this.$el
-                    .getElementsByTagName('li')[0]
-                    .getBoundingClientRect().top
-            }, 100)
-        },
         jumpToTop() {
             window.scrollTo(0, 0)
         },

@@ -1,19 +1,17 @@
 <template>
-    <video loop playsinline :controls="state.getIsTouch()" :muted="muted">
-        <source v-if="test" :data-src="videoUrl">
+    <video loop playsinline :controls="is_touch" :muted="muted">
+        <source v-if="test" :data-src="videoUrl" />
     </video>
 </template>
 
 <script>
-    import state from '../state'
-    import {event} from '../event'
+import state from '../state'
+import { event } from '../event'
+import { mapState } from 'vuex'
 export default {
     name: 'VideoItem',
-    props: [
-        'play',
-        'src'
-    ],
-    data () {
+    props: ['play', 'src'],
+    data() {
         return {
             state,
             event,
@@ -21,63 +19,63 @@ export default {
             element: null,
         }
     },
-    created () {
+    computed: {
+        ...mapState(['is_touch']),
+        videoUrl() {
+            return require('../' + this.test)
+        },
+        muted() {
+            return !this.state.state.globalVolume
+        },
+    },
+    watch: {
+        play(newPlayState, b) {
+            this.updatePlay(newPlayState)
+        },
+        'state.state.globalVolume': function (to, from) {
+            this.$el.volume = to
+        },
+    },
+    created() {
         this.test = this.$props.src
     },
-    mounted () {
+    mounted() {
         this.event.$on('av-hooked-element-to-canplay', (element) => {
-            if(element === this.$el){
+            if (element === this.$el) {
                 this.$el.addEventListener('canplay', () => {
                     this.playVideo()
                 })
             }
         })
     },
-    computed: {
-        videoUrl(){
-            return require('../' + this.test)
-        },
-        muted(){
-            return !this.state.state.globalVolume
-        }
-    },
     methods: {
-        getInit(){
+        getInit() {
             return this.$el.dataset.init == 'true'
         },
-        playVideo(){
-            if(this.getInit() && this.play){
+        playVideo() {
+            if (this.getInit() && this.play) {
                 this.$el.play()
             }
         },
-        pauseVideo(){
-            if(this.getInit()){
+        pauseVideo() {
+            if (this.getInit()) {
                 this.$el.pause()
             }
         },
-        updatePlay (play) {
-            if(play){
+        updatePlay(play) {
+            if (play) {
                 this.playVideo()
-            }
-            else this.pauseVideo()
-        }
-    },
-    watch: {
-        play (newPlayState, b) {
-            this.updatePlay(newPlayState)
+            } else this.pauseVideo()
         },
-        'state.state.globalVolume': function(to, from){
-            this.$el.volume = to
-        }
-    }
+    },
 }
 </script>
 
 <style lang="scss">
-    video{
-        max-width: 100%;
-        max-height: 90vh;
-        width: auto;
-        object-fit: contain;
-    }
+video {
+    max-width: 100%;
+    max-height: 90vh;
+    width: auto;
+    object-fit: contain;
+}
 </style>
