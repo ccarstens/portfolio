@@ -23,7 +23,6 @@ export default {
     initPendingMedia() {
         if (this.toInitialize.length > 0) {
             let tmp = this.toInitialize.slice()
-            console.log(this.toInitialize)
             this.toInitialize.length = 0
 
             for (let el of tmp) {
