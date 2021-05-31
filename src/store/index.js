@@ -37,7 +37,13 @@ const store = new Vuex.Store({
             state.audio_activation_finished = finished
         },
     },
-    actions: {},
+    actions: {
+        removeOverlay({ commit }) {
+            setTimeout(() => {
+                commit('SET_AUDIO_ACTIVATION_FINISHED', true)
+            }, 300)
+        },
+    },
     getters: {},
 })
 

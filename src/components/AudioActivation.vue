@@ -3,6 +3,7 @@
         <div class="m-auto test-image">
             <P5Sketch
                 name="DotCloud"
+                @user-interaction="removeOverlay"
                 :dimensions="{ width: sketchWidth, height: sketchHeight }"
             ></P5Sketch>
         </div>
@@ -13,11 +14,10 @@
 import { labels } from '../assets/content'
 import e from '../localizedContent'
 import av from '../av'
-import { event } from '../event'
 
 import P5Sketch from './P5Sketch'
 
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapMutations, mapActions } from 'vuex'
 export default {
     name: 'AudioActivation',
     components: {
@@ -27,7 +27,6 @@ export default {
         return {
             labels,
             av,
-            event,
             userInteracted: false,
         }
     },
@@ -53,17 +52,11 @@ export default {
             }
         },
     },
-    created() {
-        this.event.$on('user-interacted-with-sketch', () => {
-            setTimeout(() => {
-                this.SET_AUDIO_ACTIVATION_FINISHED(true)
-            }, 300)
-        })
-    },
     mounted() {},
     methods: {
         e,
         ...mapMutations(['SET_AUDIO_ACTIVATION_FINISHED']),
+        ...mapActions(['removeOverlay']),
         initMedia() {
             this.userInteracted = true
         },
