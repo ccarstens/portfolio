@@ -15,7 +15,7 @@ import AudioActivation from './components/AudioActivation'
 
 import av from './av'
 import { defaultLocale } from './locales'
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapMutations, mapActions } from 'vuex'
 
 export default {
     name: 'App',
@@ -56,6 +56,7 @@ export default {
     },
     methods: {
         ...mapMutations(['SET_IS_TOUCH']),
+        ...mapActions(['removeOverlay']),
         initPendingMedia() {
             this.av.initPendingMedia()
         },

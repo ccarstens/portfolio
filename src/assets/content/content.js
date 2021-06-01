@@ -25,6 +25,26 @@ export const labels = {
         en: 'audio output',
         de: 'Tonausgabe',
     },
+    nextButton: {
+        en: 'next image or video',
+        de: 'nächstes Bild oder Video',
+    },
+    prevButton: {
+        en: 'previous image or video',
+        de: 'letztes Bild oder Video',
+    },
+    item: {
+        en: 'item',
+        de: 'Element',
+    },
+    ofLabel: {
+        en: 'of',
+        de: 'von',
+    },
+    projectContent: {
+        en: 'images and videos of the project',
+        de: 'Bilder und Videos des Projektes',
+    },
 }
 
 export const content = {

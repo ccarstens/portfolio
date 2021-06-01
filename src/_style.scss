@@ -9,3 +9,12 @@
 @import '../node_modules/bootstrap-scss/utilities/position';
 @import '../node_modules/bootstrap-scss/utilities/spacing';
 @import '../node_modules/bootstrap-scss/utilities/text';
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
