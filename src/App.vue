@@ -5,7 +5,7 @@
         @touchstart="initPendingMedia"
         @mousedown="initPendingMedia"
     >
-        <AudioActivation></AudioActivation>
+        <!-- <AudioActivation></AudioActivation> -->
         <router-view></router-view>
     </div>
 </template>
@@ -15,7 +15,7 @@ import AudioActivation from './components/AudioActivation'
 
 import av from './av'
 import { defaultLocale } from './locales'
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapMutations, mapActions } from 'vuex'
 
 export default {
     name: 'App',
@@ -46,6 +46,7 @@ export default {
         },
     },
     created() {
+        this.removeOverlay()
         this.SET_IS_TOUCH(
             typeof window !== 'undefined' && 'ontouchstart' in window
         )
@@ -56,6 +57,7 @@ export default {
     },
     methods: {
         ...mapMutations(['SET_IS_TOUCH']),
+        ...mapActions(['removeOverlay']),
         initPendingMedia() {
             this.av.initPendingMedia()
         },

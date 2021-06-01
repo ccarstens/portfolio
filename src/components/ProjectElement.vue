@@ -43,7 +43,10 @@
                     }}</a>
                 </p>
             </header>
-            <MediaSlider :content="content"></MediaSlider>
+            <MediaSlider
+                :content="content"
+                :in-viewport="projectInViewport"
+            ></MediaSlider>
         </div>
     </article>
 </template>

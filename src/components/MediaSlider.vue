@@ -1,5 +1,9 @@
 <template>
-    <div class="content col-12 order-1 col-lg-8 order-lg-0">
+    <div class="media-slider content col-12 order-1 col-lg-8 order-lg-0">
+        <p>{{ currentPage + 1 }}/{{ content.media.length }}</p>
+        <div class="carousel-nav-button nav-left d-flex align-items-center">
+            <button @click="navigateToPrevSlide"></button>
+        </div>
         <Carousel
             v-model="currentPage"
             :per-page="1"
@@ -17,10 +21,13 @@
                 <VisualElement
                     :content="slide"
                     :standard-dimensions="standardContentDimensions"
-                    :is-visible="projectInViewport && currentPage === index"
+                    :is-visible="inViewport && currentPage === index"
                 ></VisualElement>
             </Slide>
         </Carousel>
+        <div class="carousel-nav-button nav-right d-flex align-items-center">
+            <button @click="navigateToNextSlide"></button>
+        </div>
     </div>
 </template>
 
@@ -36,11 +43,10 @@ export default {
         Slide,
         VisualElement,
     },
-    props: ['content'],
+    props: ['content', 'inViewport'],
     data() {
         return {
             currentPage: 0,
-            projectInViewport: false,
             cursorPosition: '',
             carousel: undefined,
             standardContentDimensions: {
@@ -83,13 +89,21 @@ export default {
         })
     },
     methods: {
+        navigateToPrevSlide() {
+            console.log('prev')
+            if (this.currentPage > 0) this.currentPage--
+        },
+        navigateToNextSlide() {
+            console.log('next')
+            if (this.currentPage + 1 < this.slideCount) this.currentPage++
+        },
         handleCarouselClick(e) {
+            return false
             if (!this.is_touch) {
                 if (this.getLeftRightByEvent(e) === 'left') {
-                    if (this.currentPage > 0) this.currentPage--
+                    this.navigateToPrevSlide()
                 } else {
-                    if (this.currentPage + 1 < this.slideCount)
-                        this.currentPage++
+                    this.navigateToNextSlide()
                 }
             }
         },
@@ -104,6 +118,9 @@ export default {
             const targetLocation = e.offsetX
             return targetLocation <= targetWidth / 2 ? 'left' : 'right'
         },
+        ariaHiddenHandler(index) {
+            return () => (this.currentPage === index ? 'false' : 'true')
+        },
     },
 }
 </script>
@@ -113,19 +130,66 @@ export default {
 @import '../../node_modules/bootstrap-scss/variables';
 @import '../../node_modules/bootstrap-scss/mixins';
 @import '../../node_modules/bootstrap-scss/grid';
+
+.media-slider {
+    // background: red;
+    position: relative;
+
+    .carousel-nav-button {
+        position: absolute;
+        top: 0;
+
+        height: 100%;
+        &.nav-left {
+            left: 2em;
+            z-index: 100;
+            button::before {
+                content: '\02c2';
+            }
+        }
+
+        &.nav-right {
+            right: 2em;
+            button::before {
+                content: '\02c3';
+            }
+        }
+        button {
+            background: none;
+            border-radius: 3em;
+            width: 3em;
+            height: 3em;
+            position: relative;
+            border: none;
+            &:hover,
+            &:focus {
+                background: rgba(200, 200, 200, 0.5);
+            }
+            &:before {
+                // position: absolute;
+                top: 0;
+                left: 0;
+                font-size: 2em;
+                font-family: Arial, Helvetica, sans-serif;
+                color: #007bff;
+            }
+        }
+    }
+}
+
 .VueCarousel {
     width: 100%;
 }
 
-.VueCarousel.cursor-right {
-    cursor: url(../assets/cursor-right.png), auto;
-    cursor: -webkit-image-set(url(../assets/cursor-right.png) 2x), auto;
-}
+// .VueCarousel.cursor-right {
+//     cursor: url(../assets/cursor-right.png), auto;
+//     cursor: -webkit-image-set(url(../assets/cursor-right.png) 2x), auto;
+// }
 
-.VueCarousel.cursor-left {
-    cursor: url(../assets/cursor-left.png), auto;
-    cursor: -webkit-image-set(url(../assets/cursor-left.png) 2x), auto;
-}
+// .VueCarousel.cursor-left {
+//     cursor: url(../assets/cursor-left.png), auto;
+//     cursor: -webkit-image-set(url(../assets/cursor-left.png) 2x), auto;
+// }
 
 .VueCarousel-slide {
     figure {
@@ -134,7 +198,7 @@ export default {
 }
 
 @include media-breakpoint-down(lg) {
-    .project-element .content {
+    .project-element .media-slider {
         padding: 0;
     }
 }
