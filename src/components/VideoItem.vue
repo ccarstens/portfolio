@@ -1,5 +1,5 @@
 <template>
-    <video loop playsinline :controls="is_touch" :muted="muted">
+    <video loop playsinline :controls="is_touch" :muted="muted" :alt="alt">
         <source v-if="test" :data-src="videoUrl" />
     </video>
 </template>
@@ -9,7 +9,7 @@ import { event } from '../event'
 import { mapState } from 'vuex'
 export default {
     name: 'VideoItem',
-    props: ['play', 'src'],
+    props: ['play', 'src', 'alt'],
     data() {
         return {
             event,

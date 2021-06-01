@@ -3,8 +3,8 @@
         <button
             :tabindex="tabIdx"
             role="switch"
-            :aria-checked="isOn"
-            aria-label="audio output"
+            :aria-checked="checked"
+            :aria-label="e(labels.audioOutput)"
             @click="handleChange"
         >
             <span v-if="isOn">🔊</span>
@@ -15,9 +15,11 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
+import { labels } from '../assets/content'
 
 export default {
     name: 'GlobalAudioControl',
+
     computed: {
         ...mapState([
             'can_autoplay_audio',
@@ -38,6 +40,12 @@ export default {
                 show: this.audioInitialized,
             }
         },
+        checked() {
+            return this.isOn ? 'true' : 'false'
+        },
+    },
+    created() {
+        this.labels = labels
     },
     methods: {
         ...mapMutations(['SET_GLOBAL_VOLUME']),

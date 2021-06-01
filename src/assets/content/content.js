@@ -21,6 +21,10 @@ export const labels = {
         en: 'play audio sample',
         de: 'Hörprobe abspielen',
     },
+    audioOutput: {
+        en: 'audio output',
+        de: 'Tonausgabe',
+    },
 }
 
 export const content = {
@@ -62,7 +66,7 @@ export const content = {
                     src: 'assets/projects/ava/01_ava_name_cornelius_carstens.png',
                     description: {},
                     alt: {
-                        en: 'Logo of Ava - Autonomous Virtual Assistant',
+                        en: 'Logo of Ava',
                     },
                 },
                 {
@@ -71,7 +75,7 @@ export const content = {
                         en: "Ava is communicating with their user as well as other user's virtual assistants in order to solve a task",
                     },
                     alt: {
-                        en: 'Network Overview of Ava - Autonomous Virtual Assistant',
+                        en: 'three robots connecting each other and their users',
                     },
                 },
                 {
@@ -81,7 +85,7 @@ export const content = {
                     },
                     noShadow: true,
                     alt: {
-                        en: 'Scripted Conversation - Autonomous Virtual Assistant',
+                        en: 'screenplay script with ava and a user in the leading roles',
                     },
                 },
                 {
@@ -90,7 +94,7 @@ export const content = {
                         en: "Trust between user and assistant is vital - the more mutual trust there is, the less specific the user's queries have to be",
                     },
                     alt: {
-                        en: 'Training - Autonomous Virtual Assistant',
+                        en: 'coordinate system showing trust growing over time while required detail is decreasing over time',
                     },
                 },
                 {
@@ -99,7 +103,7 @@ export const content = {
                         en: 'Ava has multiple recipies in order to make meaningful suggestions',
                     },
                     alt: {
-                        en: 'Day Suggestion Recipe - Autonomous Virtual Assistant',
+                        en: 'nested flowchart of logical processing of a user query',
                     },
                 },
             ],
@@ -199,6 +203,9 @@ The conversation addresses every day life topics along with ethical questions an
                         ja: 'JAPANESE GOES HERE',
                         ru: 'Разговор имеет структуру отдельных последовательностей, каждая из которых имеет свою тему.Последовательности содержат реакции Леа на ответы участника. ',
                     },
+                    alt: {
+                        en: `written conversation flow with multiple levels of nesting`,
+                    },
                 },
                 {
                     src: 'assets/projects/lea/09_lea_cornelius_carstens.jpg',
@@ -211,6 +218,9 @@ The conversation addresses every day life topics along with ethical questions an
                         `,
                         ja: 'JAPANESE GOES HERE',
                         ru: 'Леа понимает позитивные, негативные и неопределенные ответы. Более того, на некоторые вопросы она ожидает свободных ответов и подтверждает ответ',
+                    },
+                    alt: {
+                        en: `written conversation flow with multiple levels of nesting`,
                     },
                 },
                 //             {
@@ -297,6 +307,9 @@ The conversation addresses every day life topics along with ethical questions an
                         ja: 'JAPANESE GOES HERE',
                         ru: 'С помощью <em>pattern < / em> библиотека обработки естественного языка,которая была передана для языка програмирования pyton,входной текст граммматически анализируется',
                     },
+                    alt: {
+                        en: `words are shuffled and are slowly sorted into poem verses`,
+                    },
                 },
                 {
                     src: 'assets/projects/eee/01_eee_cornelius_carstens.jpg',
@@ -307,6 +320,9 @@ The conversation addresses every day life topics along with ethical questions an
                         de: `
                         `,
                     },
+                    alt: {
+                        en: `magazine cover showing a long poem and a detail of a portrait`,
+                    },
                 },
                 {
                     src: 'assets/projects/eee/02_eee_cornelius_carstens.jpg',
@@ -315,6 +331,9 @@ The conversation addresses every day life topics along with ethical questions an
                         `,
                         de: `Teil des generierten Manifests auf dem Text-Cover
                         `,
+                    },
+                    alt: {
+                        en: `detail of a magazine cover showing a long poem`,
                     },
                 },
                 {
@@ -330,6 +349,9 @@ The conversation addresses every day life topics along with ethical questions an
                         ja: 'JAPANESE GOES HERE',
                         ru: 'После того, как новые предложения были собраны вместе, фразы объединяются в стих и комбинируются соответственно',
                     },
+                    alt: {
+                        en: `open magazine with poem verses running over the pages`,
+                    },
                 },
                 {
                     src: 'assets/projects/eee/04_eee_cornelius_carstens.jpg',
@@ -340,6 +362,9 @@ The conversation addresses every day life topics along with ethical questions an
                         de: `
                         `,
                     },
+                    alt: {
+                        en: `open magazine with a dimly lit portrait and a poem verse`,
+                    },
                 },
                 {
                     src: 'assets/projects/eee/05_eee_cornelius_carstens.jpg',
@@ -349,6 +374,9 @@ The conversation addresses every day life topics along with ethical questions an
                         `,
                         de: `
                         `,
+                    },
+                    alt: {
+                        en: `open magazine with the words I wear you running over both pages`,
                     },
                 },
             ],
@@ -370,6 +398,9 @@ The conversation addresses every day life topics along with ethical questions an
                         ja: 'JAPANESE GOES HERE',
                         ru: 'Чтобы привлечь внимание зрителя к каждому изображению, фотографии не прокручиваются вертикально, а исчезают при прокрутке страницы',
                     },
+                    alt: {
+                        en: `images on a website are fading in and out while the user scrolls`,
+                    },
                 },
                 {
                     src: 'assets/projects/mh/02_marius_hirschel_cornelius_carstens.jpg',
@@ -378,6 +409,9 @@ The conversation addresses every day life topics along with ethical questions an
                         de: 'Um auf einen Hinweis zum Scrollen verzichten zu können ist das erste Bild so platziert, dass auf jeden Fall gescrollt werden muss.',
                         ja: 'JAPANESE GOES HERE',
                         ru: 'Для того, чтобы работать без подсказки, первое изображение расположено таким образом, что заставляет пользователя прокручивать, чтобы увидеть его полностью',
+                    },
+                    alt: {
+                        en: `detail of an image being placed slightly towards the bottom of the page`,
                     },
                 },
             ],
@@ -403,6 +437,9 @@ The conversation addresses every day life topics along with ethical questions an
                         ja: 'JAPANESE GOES HERE',
                         ru: 'Макет возможной выставки прототипа',
                     },
+                    alt: {
+                        en: `assault rifle hanging from the ceiling in a gallery space`,
+                    },
                 },
                 {
                     src: 'assets/projects/fear/02_fear_cornelius_carstens.mp4',
@@ -412,11 +449,17 @@ The conversation addresses every day life topics along with ethical questions an
                         ja: 'JAPANESE GOES HERE',
                         ru: 'При использовании видео в сочетании с распознаванием лиц рассчитывается позиция зрителя. Моторы сервопривода получают эту информацию через серийное сообщение и регулируют их углы соответственно',
                     },
+                    alt: {
+                        en: `interaction between a person moving infront of a suspended plastic assault rifle that is pointing towards the person as they move`,
+                    },
                 },
-                // {
-                //     src: 'assets/projects/fear/03_fear_cornelius_carstens.jpg',
-                //     description: ``
-                // },
+                {
+                    src: 'assets/projects/fear/03_fear_cornelius_carstens.jpg',
+                    description: ``,
+                    alt: {
+                        en: `plastic assault rifle taped to its suspension`,
+                    },
+                },
                 {
                     src: 'assets/projects/fear/04_fear_cornelius_carstens.mp4',
                     description: {
@@ -424,6 +467,9 @@ The conversation addresses every day life topics along with ethical questions an
                         de: 'Grundlegende Tests zu Gesichtserkennung und serieller Kommunikation',
                         ja: 'JAPANESE GOES HERE',
                         ru: 'первые тесты, сочетающие распознавание лиц и последовательную связь',
+                    },
+                    alt: {
+                        en: `person moving their head over a line triggering a motor to move`,
                     },
                 },
             ],
@@ -442,6 +488,9 @@ The conversation addresses every day life topics along with ethical questions an
             media: [{
                     src: 'assets/projects/goetze/01_goetze_cornelius_carstens.mp4',
                     description: ``,
+                    alt: {
+                        en: `website with fashion photos and a branded video playing`,
+                    },
                 },
                 {
                     src: 'assets/projects/goetze/05_goetze_cornelius_carstens.mp4',
@@ -451,18 +500,30 @@ The conversation addresses every day life topics along with ethical questions an
                         ja: 'JAPANESE GOES HERE',
                         ru: 'Вдохновленный образами <a href="http://www.tvfilmprops.co.uk/userdata/prodpics/PRODPIC-2426-6.jpg" target="_blank">старые телевизоры,стоящие друг на друге и образующие стену</a> мы разработали видео-характеристики стены,которые показывают все видео одновременно',
                     },
+                    alt: {
+                        en: `website showing product photos and six videos playing in sync`,
+                    },
                 },
                 {
                     src: 'assets/projects/goetze/02_goetze_cornelius_carstens.jpg',
                     description: ``,
+                    alt: {
+                        en: `online store with a grid of product photos`,
+                    },
                 },
                 {
                     src: 'assets/projects/goetze/03_goetze_cornelius_carstens.jpg',
                     description: ``,
+                    alt: {
+                        en: `product detail page with the product added to the cart`,
+                    },
                 },
                 {
                     src: 'assets/projects/goetze/04_goetze_cornelius_carstens.jpg',
                     description: ``,
+                    alt: {
+                        en: `text and images combined on a webpage`,
+                    },
                 },
             ],
         },
@@ -498,6 +559,9 @@ The conversation addresses every day life topics along with ethical questions an
                         ja: 'JAPANESE GOES HERE',
                         ru: 'Пожалуйста, слушайте в наушниках',
                     },
+                    alt: {
+                        en: `blood particles rising upwards following the heartbeat`,
+                    },
                 },
                 {
                     src: 'assets/projects/stethoscope/01_stethoscope_cornelius_carstens.gif',
@@ -506,6 +570,9 @@ The conversation addresses every day life topics along with ethical questions an
                         de: 'Durch den uneingeschränkten Betrachtungswinkel kann sich die Betrachterin frei im Raum bewegen.',
                         ja: 'JAPANESE GOES HERE',
                         ru: 'Благодаря неограниченному углу обзора участник может свободно перемещаться во время взаимодействия с установкой',
+                    },
+                    alt: {
+                        en: `blood particles in a hologram shown from multiple angles`,
                     },
                 },
                 {
@@ -516,6 +583,9 @@ The conversation addresses every day life topics along with ethical questions an
                         ja: 'JAPANESE GOES HERE',
                         ru: `Настроенный
                 стетоскоп со встроенным микрофоном и наушниками`,
+                    },
+                    alt: {
+                        en: `stethoscope with electric cables running in and out of it`,
                     },
                 },
                 // {
@@ -535,6 +605,9 @@ The conversation addresses every day life topics along with ethical questions an
                         ja: 'JAPANESE GOES HERE',
                         ru: 'Чтобы гарантировать одиночное отражение, видимое в голограмме,толщина акриловых листов для пирамиды должна составлять 1,5 мм.',
                     },
+                    alt: {
+                        en: `glue being applied to acrylic glas with a hypothermic needle`,
+                    },
                 },
                 {
                     src: 'assets/projects/stethoscope/05_stethoscope_cornelius_carstens.jpg',
@@ -544,6 +617,9 @@ The conversation addresses every day life topics along with ethical questions an
                         ja: 'JAPANESE GOES HERE',
                         ru: 'Прототип акриловой пирамиды для голографа',
                     },
+                    alt: {
+                        en: `acrylic pyramid fully assempled`,
+                    },
                 },
                 {
                     src: 'assets/projects/stethoscope/06_stethoscope_cornelius_carstens.mp4',
@@ -552,6 +628,9 @@ The conversation addresses every day life topics along with ethical questions an
                         de: 'Testbild zur Justierung der Aufhängung',
                         ja: 'JAPANESE GOES HERE',
                         ru: 'Тестовое изображение для регулировки подвески акриловой пирамиды',
+                    },
+                    alt: {
+                        en: `suspended acrylic pyramid showing a test image`,
                     },
                 },
             ],
@@ -569,6 +648,9 @@ The conversation addresses every day life topics along with ethical questions an
             media: [{
                     src: 'assets/projects/stemmi/02_christian_stemmler_cornelius_carstens.mp4',
                     description: ``,
+                    alt: {
+                        en: `website showing fashion photos arranged in an imperfect grid`,
+                    },
                 },
                 {
                     src: 'assets/projects/stemmi/01_christian_stemmler_cornelius_carstens.jpg',
@@ -582,10 +664,16 @@ The conversation addresses every day life topics along with ethical questions an
                         ja: 'JAPANESE GOES HERE',
                         ru: 'Регулируемый макет обеспечивает визуальное впечатление от печати, лежащей на столе.',
                     },
+                    alt: {
+                        en: `website showing fashion photos arranged in an imperfect grid`,
+                    },
                 },
                 {
                     src: 'assets/projects/stemmi/03_christian_stemmler_cornelius_carstens.jpg',
                     description: ``,
+                    alt: {
+                        en: `website showing large fashion photos`,
+                    },
                 },
             ],
         },

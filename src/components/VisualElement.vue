@@ -6,6 +6,7 @@
                 <VideoItem
                     v-if="isVideo"
                     :src="visualElementContent.src"
+                    :alt="e(visualElementContent.alt)"
                     :play="isVisible"
                 />
                 <P5Sketch

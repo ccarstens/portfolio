@@ -2,7 +2,7 @@
     <div class="audio-sample">
         <button
             role="switch"
-            :aria-checked="playing"
+            :aria-checked="checked"
             :aria-label="e(buttonLabels)"
             @click="togglePlay"
         >
@@ -40,6 +40,9 @@ export default {
         },
         buttonLabels() {
             return labels.playAudioSample
+        },
+        checked() {
+            return this.playing ? 'true' : 'false'
         },
     },
     methods: {
