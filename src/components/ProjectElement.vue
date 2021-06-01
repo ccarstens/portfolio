@@ -167,26 +167,6 @@ export default {
 @import '../../node_modules/bootstrap-scss/mixins';
 @import '../../node_modules/bootstrap-scss/grid';
 
-.VueCarousel {
-    width: 100%;
-}
-
-.VueCarousel.cursor-right {
-    cursor: url(../assets/cursor-right.png), auto;
-    cursor: -webkit-image-set(url(../assets/cursor-right.png) 2x), auto;
-}
-
-.VueCarousel.cursor-left {
-    cursor: url(../assets/cursor-left.png), auto;
-    cursor: -webkit-image-set(url(../assets/cursor-left.png) 2x), auto;
-}
-
-.VueCarousel-slide {
-    figure {
-        margin-bottom: 0;
-    }
-}
-
 .project-element {
     min-height: 100vh;
     padding-top: 20vh;
@@ -212,47 +192,9 @@ export default {
 .description {
     margin-top: calc(1vw - 5px);
 }
-
-.fading-description {
-    margin-top: 1em;
-    /*background: red;*/
-    /*min-height: 5em;*/
-    /*margin-bottom: 2em;*/
-}
-
 @include media-breakpoint-down(lg) {
-    .project-element .content {
-        padding: 0;
-    }
-
     .description {
         margin-top: calc(0.8vw - 5px);
     }
-}
-
-@include media-breakpoint-up(md) {
-    .fading-description {
-        /*margin-top: 5em;*/
-        /*min-height: 0;*/
-        /*margin-bottom: 0;*/
-    }
-}
-
-.fade-enter,
-.fade-leave-to {
-    opacity: 0;
-}
-
-.fade-enter-to,
-.fade-leave {
-    opacity: 1;
-}
-
-.fade-enter-active {
-    transition: opacity 500ms ease-out;
-}
-
-.fade-leave-active {
-    transition: opacity 200ms ease-out;
 }
 </style>

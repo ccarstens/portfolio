@@ -108,4 +108,34 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@import '../../node_modules/bootstrap-scss/functions';
+@import '../../node_modules/bootstrap-scss/variables';
+@import '../../node_modules/bootstrap-scss/mixins';
+@import '../../node_modules/bootstrap-scss/grid';
+.VueCarousel {
+    width: 100%;
+}
+
+.VueCarousel.cursor-right {
+    cursor: url(../assets/cursor-right.png), auto;
+    cursor: -webkit-image-set(url(../assets/cursor-right.png) 2x), auto;
+}
+
+.VueCarousel.cursor-left {
+    cursor: url(../assets/cursor-left.png), auto;
+    cursor: -webkit-image-set(url(../assets/cursor-left.png) 2x), auto;
+}
+
+.VueCarousel-slide {
+    figure {
+        margin-bottom: 0;
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .project-element .content {
+        padding: 0;
+    }
+}
+</style>
