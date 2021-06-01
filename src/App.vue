@@ -5,7 +5,7 @@
         @touchstart="initPendingMedia"
         @mousedown="initPendingMedia"
     >
-        <!-- <AudioActivation></AudioActivation> -->
+        <AudioActivation></AudioActivation>
         <router-view></router-view>
     </div>
 </template>
@@ -46,7 +46,6 @@ export default {
         },
     },
     created() {
-        this.removeOverlay()
         this.SET_IS_TOUCH(
             typeof window !== 'undefined' && 'ontouchstart' in window
         )
