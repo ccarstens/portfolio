@@ -20,7 +20,7 @@
         "progressive-image": "^1.2.0",
         "sass-loader": "^7.3.1",
         "vue": "^2.6.12",
-        "vue-carousel": "github:ccarstens/vue-carousel#master",
+        "vue-carousel": "^0.18.0",
         "vue-observe-visibility": "^0.4.6",
         "vue-p5": "^0.8.4",
         "vue-router": "^3.5.1",

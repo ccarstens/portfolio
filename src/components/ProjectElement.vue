@@ -43,42 +43,13 @@
                     }}</a>
                 </p>
             </header>
-
-            <div class="content col-12 order-1 col-lg-8 order-lg-0">
-                <Carousel
-                    v-model="currentPage"
-                    :per-page="1"
-                    :pagination-enabled="false"
-                    :navigation-enabled="false"
-                    pagination-active-color="rgba(0, 123, 255, 1)"
-                    pagination-color="rgba(0, 123, 255, .25)"
-                    :pagination-size="9"
-                    :class="carouselClassObject"
-                    @click.native="handleCarouselClick"
-                    @mousemove.native="handleCarouselMousemove"
-                    @mouseout.native="handleCarouselMouseout"
-                >
-                    <Slide
-                        v-for="(slide, index) in projectContent.media"
-                        :key="index"
-                    >
-                        <VisualElement
-                            :content="slide"
-                            :standard-dimensions="standardContentDimensions"
-                            :is-visible="
-                                projectInViewport && currentPage === index
-                            "
-                        ></VisualElement>
-                    </Slide>
-                </Carousel>
-            </div>
+            <MediaSlider :content="content"></MediaSlider>
         </div>
     </article>
 </template>
 
 <script>
-import { Carousel, Slide } from 'vue-carousel'
-import VisualElement from './VisualElement'
+import MediaSlider from './MediaSlider'
 import AudioSample from './AudioSample'
 import { labels } from '../assets/content'
 
@@ -86,22 +57,16 @@ import { mapState } from 'vuex'
 export default {
     name: 'ProjectElement',
     components: {
-        Carousel,
-        Slide,
-        VisualElement,
+        MediaSlider,
         AudioSample,
     },
     props: ['content'],
     data() {
         return {
             labels,
-            currentPage: 0,
             projectContent: {},
             projectInViewport: false,
             throttle: 300,
-            carousel: null,
-            slideCount: 0,
-            cursorPosition: '',
             standardContentDimensions: {
                 width: 0,
                 height: 0,
@@ -126,12 +91,7 @@ export default {
                 dark: this.hasDarkMode,
             }
         },
-        carouselClassObject() {
-            return {
-                'cursor-right': this.cursorPosition === 'right',
-                'cursor-left': this.cursorPosition === 'left',
-            }
-        },
+
         threshold() {
             return window.innerWidth > 400 ? 0.4 : 0.4
         },
@@ -191,54 +151,11 @@ export default {
     },
     created() {
         this.projectContent = this.content
-        this.slideCount = this.projectContent.media.length
     },
-    mounted() {
-        this.carousel = this.$el.getElementsByClassName('VueCarousel')[0]
 
-        this.standardContentDimensions.width =
-            this.carousel.getBoundingClientRect().width
-        this.standardContentDimensions.height =
-            (this.carousel.getBoundingClientRect().width / 4) * 3
-
-        const firstImage = this.$el.getElementsByTagName('img')[0]
-
-        firstImage.onload = (event) => {
-            this.$nextTick(() => {
-                this.standardContentDimensions.height = event.target.height
-            })
-        }
-
-        window.addEventListener('resize', () => {
-            this.standardContentDimensions.width = firstImage.width
-            this.standardContentDimensions.height = firstImage.height
-        })
-        // console.log("img", this.$el.getElementsByTagName('img')[0].naturalWidth)
-    },
     methods: {
         viewportVisibilityChanged(projectInViewport) {
             this.projectInViewport = projectInViewport
-        },
-        handleCarouselClick(e) {
-            if (!this.is_touch) {
-                if (this.getLeftRightByEvent(e) === 'left') {
-                    if (this.currentPage > 0) this.currentPage--
-                } else {
-                    if (this.currentPage + 1 < this.slideCount)
-                        this.currentPage++
-                }
-            }
-        },
-        handleCarouselMousemove(e) {
-            this.cursorPosition = this.getLeftRightByEvent(e)
-        },
-        handleCarouselMouseout(e) {
-            this.cursorPosition = ''
-        },
-        getLeftRightByEvent(e) {
-            const targetWidth = e.target.offsetWidth
-            const targetLocation = e.offsetX
-            return targetLocation <= targetWidth / 2 ? 'left' : 'right'
         },
     },
 }
