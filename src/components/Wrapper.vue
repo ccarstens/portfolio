@@ -37,7 +37,6 @@ import ProjectElement from './ProjectElement'
 import AboutElement from './AboutElement'
 
 import { content } from '../assets/content'
-import e from '../localizedContent'
 
 import { mapState } from 'vuex'
 
@@ -68,9 +67,6 @@ export default {
                 hide: !this.is_touch && !this.audio_activation_finished,
             }
         },
-    },
-    methods: {
-        e,
     },
 }
 </script>

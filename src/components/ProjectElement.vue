@@ -22,8 +22,9 @@
                 "
             >
                 <div>
-                    <h3>{{ e(projectContent.title) }}</h3>
-                    {{ projectContent.year }}
+                    <h2>{{ e(projectContent.title) }}</h2>
+                    <span class="year">({{ projectContent.year }}</span
+                    >)
                 </div>
 
                 <p v-html="e(projectContent.description)"></p>
@@ -39,12 +40,6 @@
                         projectUrlLabel
                     }}</a>
                 </p>
-
-                <!--<transition name="fade" mode="out-in">-->
-                <!--<div class="fading-description" v-for="(slide, index) in projectContent.media" :key="index" v-if="index === currentPage">-->
-                <!--{{ e(slide.description) }}-->
-                <!--</div>-->
-                <!--</transition>-->
             </header>
 
             <div class="content col-12 order-1 col-lg-8 order-lg-0">
@@ -81,11 +76,9 @@
 
 <script>
 import { Carousel, Slide } from 'vue-carousel'
-// import {Carousel, Slide} from 'vue-carousel'
 import VisualElement from './VisualElement'
 import AudioSample from './AudioSample'
 import { labels } from '../assets/content'
-import e from '../localizedContent'
 
 import { mapState } from 'vuex'
 export default {
@@ -115,12 +108,6 @@ export default {
     },
     computed: {
         ...mapState(['is_touch']),
-        description() {
-            return `
-                    <s><h3>${this.projectContent.title}</h3> ${this.projectContent.year}</s>
-                    <s>${this.projectContent.description}</s>
-                `
-        },
         classObject() {
             return {
                 visible: this.projectInViewport,
@@ -171,9 +158,9 @@ export default {
         projectUrlLabel() {
             if (this.hasUrl) {
                 if (this.urlIsString) {
-                    return e(labels.visit)
+                    return this.e(labels.visit)
                 }
-                return e(this.projectContent.url.label)
+                return this.e(this.projectContent.url.label)
             }
             return ''
         },
@@ -219,7 +206,6 @@ export default {
         // console.log("img", this.$el.getElementsByTagName('img')[0].naturalWidth)
     },
     methods: {
-        e,
         viewportVisibilityChanged(projectInViewport) {
             this.projectInViewport = projectInViewport
         },
@@ -280,9 +266,12 @@ export default {
     padding-bottom: 15vh;
     color: #007bff;
 
-    h3 {
+    h2 {
         font-size: inherit;
         display: inline-block;
+    }
+    .year {
+        font-style: italic;
     }
     a {
         text-decoration: underline;
@@ -295,10 +284,6 @@ export default {
 
 .description {
     margin-top: calc(1vw - 5px);
-}
-
-.visible {
-    /*background: rgba(0, 255, 128, 0.1);*/
 }
 
 .fading-description {

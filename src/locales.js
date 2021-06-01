@@ -2,12 +2,12 @@ export const defaultLocale = 'en'
 export const locales = [{
         code: 'en',
         name: 'english',
-        dir: 'ltr'
+        dir: 'ltr',
     },
     {
         code: 'de',
         name: 'Deutsch',
-        dir: 'ltr'
+        dir: 'ltr',
     },
     // {
     //     code: 'ja',

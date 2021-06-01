@@ -5,19 +5,19 @@
                 <div class="wrapper col offset-md-1">
                     <ul class="nav-list d-flex">
                         <li class="masthead">
-                            <a href="#" @click.prevent="jumpToTop"
-                                >cornelius<span class="possessive">'s</span></a
-                            >
+                            <h1>
+                                <a href="#" @click.prevent="jumpToTop"
+                                    >cornelius<span class="possessive"
+                                        >'s</span
+                                    ></a
+                                >
+                            </h1>
                         </li>
                         <li class="projects-link">
                             <a href="#projects">{{ e(labels.projects) }}</a>
                         </li>
                         <li
-                            class="
-                                ml-auto ml-md-5
-                                offset-lg-1
-                                order-4 order-md-3
-                            "
+                            class="ml-auto ml-md-5 offset-lg-1 order-4 order-md-3"
                         >
                             <LanguageSwitcher></LanguageSwitcher>
                         </li>
@@ -36,7 +36,6 @@
 
 <script>
 import { labels } from '../assets/content'
-import e from '../localizedContent'
 
 import LanguageSwitcher from './LanguageSwitcher'
 import GlobalAudioControl from './GlobalAudioControl'
@@ -54,7 +53,6 @@ export default {
         }
     },
     methods: {
-        e,
         jumpToTop() {
             window.scrollTo(0, 0)
         },
@@ -63,35 +61,29 @@ export default {
 </script>
 
 <style lang="scss">
-#site-header,
-.gradient {
-    width: 100%;
-    height: 30px;
+h1 {
+    font-size: 1.5rem;
 }
-
 .nav-list > li:not(:last-child) {
     padding-right: 0.5em;
 }
 
 #site-header {
+    width: 100%;
+    height: 30px;
     z-index: 2;
     pointer-events: none;
-
+    font-size: 1.5rem;
     ul {
         list-style-type: none;
         padding-left: 0;
-
-        /*-webkit-justify-content: space-between;*/
     }
 
     li {
-        /*width: 30%;*/
-
         pointer-events: auto;
 
         a {
             display: inline-block;
-            /*color: #000000;*/
         }
     }
 
@@ -107,36 +99,7 @@ export default {
     }
 }
 
-.gradient {
-    background: -moz-linear-gradient(
-        top,
-        rgba(255, 255, 255, 1) 0%,
-        rgba(255, 255, 255, 1) 66%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    background: -webkit-linear-gradient(
-        top,
-        rgba(255, 255, 255, 1) 0%,
-        rgba(255, 255, 255, 1) 66%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 1) 0%,
-        rgba(255, 255, 255, 1) 66%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
-    z-index: 0;
-}
-
 nav {
     padding-top: 20px;
 }
-
-/*@media screen and (max-width: 500px){*/
-/*nav{*/
-/*padding-top: 40px;*/
-/*}*/
-/*}*/
 </style>

@@ -7,9 +7,16 @@ import router from './router'
 import App from './App'
 import VueObserveVisibility from 'vue-observe-visibility'
 import { store } from './store'
+import { e } from './localizedContent'
 
 Vue.config.productionTip = false
 Vue.use(VueObserveVisibility)
+
+Vue.mixin({
+    methods: {
+        e,
+    },
+})
 
 /* eslint-disable no-new */
 new Vue({

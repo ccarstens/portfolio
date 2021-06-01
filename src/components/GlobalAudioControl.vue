@@ -1,31 +1,51 @@
 <template>
-    <button
-        :class="classObject"
-        class="global-audio-control"
-        @click="handleChange"
-    >
-        <span v-if="global_volume === 1">🔊</span>
-        <span v-else>🔈</span>
-    </button>
+    <div :class="classObject" class="global-audio-control">
+        <button
+            :tabindex="tabIdx"
+            role="switch"
+            :aria-checked="checked"
+            :aria-label="e(labels.audioOutput)"
+            @click="handleChange"
+        >
+            <span v-if="isOn">🔊</span>
+            <span v-else>🔈</span>
+        </button>
+    </div>
 </template>
 
 <script>
 import { mapState, mapMutations } from 'vuex'
+import { labels } from '../assets/content'
 
 export default {
     name: 'GlobalAudioControl',
+
     computed: {
         ...mapState([
             'can_autoplay_audio',
             'global_volume',
             'min_one_media_element_init',
         ]),
+        isOn() {
+            return this.global_volume === 1
+        },
+        tabIdx() {
+            return this.audioInitialized ? 0 : -1
+        },
+        audioInitialized() {
+            return this.can_autoplay_audio || this.min_one_media_element_init
+        },
         classObject() {
             return {
-                show:
-                    this.can_autoplay_audio || this.min_one_media_element_init,
+                show: this.audioInitialized,
             }
         },
+        checked() {
+            return this.isOn ? 'true' : 'false'
+        },
+    },
+    created() {
+        this.labels = labels
     },
     methods: {
         ...mapMutations(['SET_GLOBAL_VOLUME']),
@@ -40,27 +60,24 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-button:focus {
-    outline: none;
-}
-
-button {
+<style lang="scss">
+.global-audio-control {
     opacity: 0;
-    pointer-events: none;
-
-    background: none;
-    border: none;
-    pointer-events: auto;
-    cursor: pointer;
 
     transition: opacity 300ms ease-in-out;
     position: relative;
     top: -0.2em;
-}
 
-.show {
-    opacity: 1;
-    pointer-events: auto;
+    button {
+        background: none;
+        border: none;
+        pointer-events: auto;
+        cursor: pointer;
+    }
+
+    &.show {
+        opacity: 1;
+        pointer-events: auto;
+    }
 }
 </style>
