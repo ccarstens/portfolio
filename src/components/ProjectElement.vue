@@ -22,7 +22,9 @@
                 "
             >
                 <div>
-                    <h2>{{ e(projectContent.title) }}</h2>
+                    <h2 :id="slug">
+                        {{ e(projectContent.title) }}
+                    </h2>
                     <span class="year">({{ projectContent.year }}</span
                     >)
                 </div>
@@ -108,6 +110,14 @@ export default {
     },
     computed: {
         ...mapState(['is_touch']),
+        hashSlug() {
+            return '#' + this.slug
+        },
+        slug() {
+            return this.e(this.projectContent.title)
+                .toLowerCase()
+                .replaceAll(' ', '-')
+        },
         classObject() {
             return {
                 visible: this.projectInViewport,
