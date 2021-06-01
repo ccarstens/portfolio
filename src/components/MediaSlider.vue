@@ -1,8 +1,26 @@
 <template>
-    <div class="media-slider content col-12 order-1 col-lg-8 order-lg-0">
-        <p>{{ currentPage + 1 }}/{{ content.media.length }}</p>
-        <div class="carousel-nav-button nav-left d-flex align-items-center">
-            <button @click="navigateToPrevSlide"></button>
+    <section class="media-slider content col-12 order-1 col-lg-8 order-lg-0">
+        <p
+            v-if="inViewport"
+            class="visually-hidden"
+            aria-live="polite"
+            aria-atomic="true"
+        >
+            {{ progressDisplayContent }}
+        </p>
+        <p :id="sectionLabelIdOne" class="visually-hidden" hidden>
+            {{ e(labels.projectContent) }}
+        </p>
+        <div
+            class="carousel-nav-button nav-left align-items-center"
+            :class="leftButtonClasses"
+            :hidden="!leftButtonActive"
+        >
+            <button
+                :aria-hidden="!leftButtonActive"
+                :aria-label="e(labels.prevButton)"
+                @click="navigateToPrevSlide"
+            ></button>
         </div>
         <Carousel
             v-model="currentPage"
@@ -25,16 +43,30 @@
                 ></VisualElement>
             </Slide>
         </Carousel>
-        <div class="carousel-nav-button nav-right d-flex align-items-center">
-            <button @click="navigateToNextSlide"></button>
+        <div
+            class="
+                carousel-nav-button
+                nav-right
+                align-items-center
+                justify-content-end
+            "
+            :hidden="!rightButtonActive"
+            :class="rightButtonClasses"
+        >
+            <button
+                :aria-hidden="!rightButtonActive"
+                :aria-label="e(labels.nextButton)"
+                @click="navigateToNextSlide"
+            ></button>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
 import { Carousel, Slide } from 'vue-carousel'
 import VisualElement from './VisualElement'
 import { mapState } from 'vuex'
+import { labels } from '../assets/content'
 
 export default {
     name: 'MediaSlider',
@@ -43,7 +75,7 @@ export default {
         Slide,
         VisualElement,
     },
-    props: ['content', 'inViewport'],
+    props: ['content', 'inViewport', 'labelledBy'],
     data() {
         return {
             currentPage: 0,
@@ -63,9 +95,36 @@ export default {
                 'cursor-left': this.cursorPosition === 'left',
             }
         },
+        leftButtonActive() {
+            return this.currentPage > 0
+        },
+        rightButtonActive() {
+            return this.currentPage + 1 < this.content.media.length
+        },
+        leftButtonClasses() {
+            return {
+                hidden: !this.leftButtonActive,
+                'd-flex': this.leftButtonActive,
+            }
+        },
+        rightButtonClasses() {
+            return {
+                hidden: !this.rightButtonActive,
+                'd-flex': this.rightButtonActive,
+            }
+        },
+        progressDisplayContent() {
+            return `${this.e(this.labels.item)} ${
+                this.currentPage + 1
+            } ${this.e(this.labels.ofLabel)} ${this.content.media.length}`
+        },
+        sectionLabelIdOne() {
+            return 'project-content-' + this.labelledBy
+        },
     },
     created() {
         this.slideCount = this.content.media.length
+        this.labels = labels
     },
     mounted() {
         this.carousel = this.$el.getElementsByClassName('VueCarousel')[0]
@@ -140,6 +199,10 @@ export default {
         top: 0;
 
         height: 100%;
+        width: 20%;
+        &.hidden {
+            display: none;
+        }
         &.nav-left {
             left: 2em;
             z-index: 100;
@@ -147,11 +210,17 @@ export default {
                 content: '\02c2';
             }
         }
-
         &.nav-right {
             right: 2em;
             button::before {
                 content: '\02c3';
+            }
+        }
+        &:hover button,
+        & button:focus {
+            background: rgba(220, 220, 220, 0.5);
+            &::before {
+                color: #007bff;
             }
         }
         button {
@@ -161,17 +230,12 @@ export default {
             height: 3em;
             position: relative;
             border: none;
-            &:hover,
-            &:focus {
-                background: rgba(200, 200, 200, 0.5);
-            }
             &:before {
-                // position: absolute;
                 top: 0;
                 left: 0;
                 font-size: 2em;
                 font-family: Arial, Helvetica, sans-serif;
-                color: #007bff;
+                color: transparent;
             }
         }
     }
@@ -181,15 +245,17 @@ export default {
     width: 100%;
 }
 
-// .VueCarousel.cursor-right {
-//     cursor: url(../assets/cursor-right.png), auto;
-//     cursor: -webkit-image-set(url(../assets/cursor-right.png) 2x), auto;
-// }
+.VueCarousel.cursor-right {
+    // cursor: url(../assets/cursor-right.png), auto;
+    // cursor: -webkit-image-set(url(../assets/cursor-right.png) 2x), auto;
+    .carousel-nav-button {
+    }
+}
 
-// .VueCarousel.cursor-left {
-//     cursor: url(../assets/cursor-left.png), auto;
-//     cursor: -webkit-image-set(url(../assets/cursor-left.png) 2x), auto;
-// }
+.VueCarousel.cursor-left {
+    // cursor: url(../assets/cursor-left.png), auto;
+    // cursor: -webkit-image-set(url(../assets/cursor-left.png) 2x), auto;
+}
 
 .VueCarousel-slide {
     figure {

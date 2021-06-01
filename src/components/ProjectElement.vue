@@ -46,6 +46,7 @@
             <MediaSlider
                 :content="content"
                 :in-viewport="projectInViewport"
+                :labelled-by="slug"
             ></MediaSlider>
         </div>
     </article>
